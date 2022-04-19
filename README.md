@@ -19,7 +19,7 @@ Quanto mais livros seminovos e usados forem reutilizados, conseguimos possibilit
 ## Problema
 O problema que esperamos resolver é diminuir o consumo de matéria-prima destinada a produção de novos livros, e por consequência, diminuir o impacto ambiental.
 
-## Objetivos
+## Objetivo
 
 Criar uma plataforma intuitiva que possibilite o usuário vender seus livros seminovos ou usados.
 
