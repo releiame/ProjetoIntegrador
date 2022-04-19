@@ -13,7 +13,9 @@ Projeto final do bootcamp oferecido pela Porto Seguro em parceria com a Digital 
 
 ## Introdução
 Com o mundo cada vez mais tecnológico, podemos utilizar de diversas alternativas para ter acesso a um livro, uma delas é de forma online, mas por outro lado, muitas pessoas não abrem mão de ter seu livro físico.
+
 Pensando no consumo consciente e na diversidade cultural aplicada no mundo do livro e das editoras, vamos conectar amantes por livros de todo o país. 
+
 Quanto mais livros seminovos e usados forem reutilizados, conseguimos possibilitar o maior acesso à cultura por um valor acessível.
 
 ## Problema
