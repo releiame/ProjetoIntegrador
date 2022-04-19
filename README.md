@@ -30,6 +30,7 @@ Criar uma plataforma intuitiva que possibilite o usuário vender seus livros sem
 Nos baseamos na ODS 12 – Consumo e Produção:
 
 12.7 – Promover práticas de compras pública sustentáveis, de acordo com as políticas e prioridades nacionais.
+
 Diante disso, percebemos a necessidade em desenvolver uma plataforma com intuito de expandir o reuso e consumo consciente dos livros.
 
 
