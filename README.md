@@ -38,13 +38,13 @@ Diante disso, percebemos a necessidade em desenvolver uma plataforma com intuito
 
 Dentre as preocupações para a montagem da interface do sistema, estabelecemos um foco em questões como simplificar a vida dos leitores, e por isso, criamos uma plataforma dinâmica, interativa e acessível e para diversos usuários. Desta forma, o projeto tem uma identidade visual padronizada em todas as telas que são projetadas para funcionamento em desktops e dispositivos móveis.
 
-# Diagrama de Fluxo
+### Diagrama de Fluxo
 
 O diagrama apresentado na figura abaixo mostra o fluxo de interação do usuário pelas telas do sistema:
 
 <img width="835" alt="DiagramaFluxo" src="https://user-images.githubusercontent.com/82852325/165625562-3954c4d4-6e73-4178-a04e-c95b8ac3ba8f.png">
 
-# Wireframes
+### Wireframes
 As telas do sistema são apresentadas em detalhes nos itens que se seguem. 
 As telas apresentam as estruturas header, navegator, footer e o main, como demonstrado a seguir.
 
