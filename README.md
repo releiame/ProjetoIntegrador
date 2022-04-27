@@ -42,7 +42,7 @@ Dentre as preocupações para a montagem da interface do sistema, estabelecemos 
 
 O diagrama apresentado na figura abaixo mostra o fluxo de interação do usuário pelas telas do sistema:
 
-<img width="615" alt="DiagramaFluxo" src="https://user-images.githubusercontent.com/82852325/165624240-19aaba5f-75af-4cf1-94b0-ca772e5a4026.png">
+<img width="835" alt="DiagramaFluxo" src="https://user-images.githubusercontent.com/82852325/165625562-3954c4d4-6e73-4178-a04e-c95b8ac3ba8f.png">
 
 # Wireframes
 As telas do sistema são apresentadas em detalhes nos itens que se seguem. 
