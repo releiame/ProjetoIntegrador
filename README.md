@@ -57,7 +57,7 @@ A tela de home-Page com base na estrutura padrão, o Main traz a possiblidade de
 
 Na tela de login o usuário poderá acessar uma área privada através do e-mail e senha, tendo a possibilidade de se cadastrar caso seja um usuário novo e solicitar nova senha caso tenha esquecido a mesma. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page. 
 
-![FigLogin](https://user-images.githubusercontent.com/82852325/165624891-49d3acc8-9800-4200-af38-0aaaf20c80f5.png)
+![FigCad](https://user-images.githubusercontent.com/82852325/165627179-c8697820-e3f0-4299-938c-646c3abb89a0.png)
 
 ### Tela - Cadastrar
 
