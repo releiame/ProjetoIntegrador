@@ -64,6 +64,12 @@ A tela de cadastro o usuário digita alguns dados pessoais para ter acesso aos l
 
 ![FigCad](https://user-images.githubusercontent.com/82852325/165625281-50074ede-9a2f-4cde-a2a3-26441da22833.png)
 
+### Tela - Home-Page com o Usuário Logado
+
+Nesta etapa o uusuário estará logado e poderá visualizar os produtos. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
+
+![Logado](https://user-images.githubusercontent.com/82852325/165649145-b9456ffa-ceda-4c4b-8755-975c8cec1a4c.png)
+
 
 # Arquitetura da Solução
 
