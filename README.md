@@ -69,9 +69,9 @@ A tela de cadastro o usuário digita alguns dados pessoais para ter acesso aos l
 
 Nesta seção são apresentados os detalhes técnicos da solução criada pela equipe, tratando dos componentes que fazem parte da solução e do ambiente de hospedagem da solução.
 
-## Diagrama de Classes
+### Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas.
 
-<img width="356" alt="diagramadeClasse" src="https://user-images.githubusercontent.com/82852325/165629226-3e1b2d76-540d-4473-8687-497e53c5db03.png">
+<img width="356" alt="DiagramaCla" src="https://user-images.githubusercontent.com/82852325/165629447-b39dfedb-2fd9-4a2a-9d95-5be0cd984924.png">
 
