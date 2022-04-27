@@ -73,5 +73,5 @@ Nesta seção são apresentados os detalhes técnicos da solução criada pela e
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas.
 
-<img width="475" alt="DiagramaCla" src="https://user-images.githubusercontent.com/82852325/165636907-165cc2ec-dd50-441d-a8c1-94d5e7617318.png">
+<img width="527" alt="DiagramaCla" src="https://user-images.githubusercontent.com/82852325/165637289-c4c6569c-4782-4708-90c7-ba97391368cb.png">
 
