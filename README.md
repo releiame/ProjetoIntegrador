@@ -45,8 +45,7 @@ O diagrama apresentado na figura abaixo mostra o fluxo de interação do usuári
 <img width="835" alt="DiagramaFluxo" src="https://user-images.githubusercontent.com/82852325/165625562-3954c4d4-6e73-4178-a04e-c95b8ac3ba8f.png">
 
 ### Wireframes
-As telas do sistema são apresentadas em detalhes nos itens que se seguem. 
-As telas apresentam as estruturas header, navegator, footer e o main, como demonstrado a seguir.
+As telas do sistema são apresentadas em detalhes nos itens que se seguem, apresentando as estruturas header, navegator, footer e o main, como demonstrado a seguir.
 
 ### Tela - Home-Page
 A tela de home-Page com base na estrutura padrão, o Main traz a possiblidade de escolher um livro para compra. 
