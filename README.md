@@ -66,9 +66,15 @@ A tela de cadastro o usuário digita alguns dados pessoais para ter acesso aos l
 
 ### Tela - Home-Page com o Usuário Logado
 
-Nesta etapa o uusuário estará logado e poderá visualizar os produtos. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
+Nesta etapa o usuário estará logado e poderá visualizar os produtos. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
 
 ![Logado](https://user-images.githubusercontent.com/82852325/165649145-b9456ffa-ceda-4c4b-8755-975c8cec1a4c.png)
+
+### Tela - Home-Page com o Usuário Logado
+
+Nesta tela o usuário consegue escolher mais produtos, excluir produto adicionado no carrinho ou finalizar o pedido. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
+
+![Carrinho](https://user-images.githubusercontent.com/82852325/165651351-54e0550f-d2f9-4e57-9ea8-814e51d9f7cb.png)
 
 
 # Arquitetura da Solução
