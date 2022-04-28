@@ -7,5 +7,5 @@ import com.projetointegrador.projetointegrador.model.Funcionario;
 
 @Repository
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long>{
-
+	
 }

@@ -16,8 +16,4 @@ public class Funcionario implements Usuario {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
-	
-
 }
