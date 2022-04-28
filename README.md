@@ -50,7 +50,7 @@ As telas do sistema são apresentadas em detalhes nos itens que se seguem, apres
 ### Tela - Home-Page
 A tela de home-Page com base na estrutura padrão, o Main traz a possiblidade de escolher um livro para compra. 
 
-![FigHome](https://user-images.githubusercontent.com/82852325/165624669-83ca3039-761d-45d1-afd2-54bed92559e2.png)
+![FigHome](https://user-images.githubusercontent.com/82852325/165763104-ab8156e7-56d8-4683-8e45-1e53739757ed.png)
 
 ### Tela – Login
 
@@ -64,9 +64,9 @@ A tela de cadastro o usuário digita alguns dados pessoais para ter acesso aos l
 
 ![FigCad](https://user-images.githubusercontent.com/82852325/165625281-50074ede-9a2f-4cde-a2a3-26441da22833.png)
 
-### Tela - Mais Produtos
+### Tela - Veja mais
 
-Nesta etapa o usuário estará logado e poderá visualizar os produtos. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
+Nesta tela o usuário poderá visualizar mais produtos. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
 
 ![Logado](https://user-images.githubusercontent.com/82852325/165649145-b9456ffa-ceda-4c4b-8755-975c8cec1a4c.png)
 
