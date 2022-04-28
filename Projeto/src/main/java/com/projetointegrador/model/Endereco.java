@@ -1,4 +1,4 @@
-package com.projetointegrador.projetointegrador.model;
+package com.projetointegrador.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,9 +1,9 @@
-package com.projetointegrador.projetointegrador.repository;
+package com.projetointegrador.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.projetointegrador.projetointegrador.model.Endereco;
+import com.projetointegrador.model.Endereco;
 
 @Repository
 public interface EnderecoRepository extends JpaRepository<Endereco, Long>{

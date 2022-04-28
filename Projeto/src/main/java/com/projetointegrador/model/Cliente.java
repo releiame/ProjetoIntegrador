@@ -1,4 +1,4 @@
-package com.projetointegrador.projetointegrador.model;
+package com.projetointegrador.model;
 
 import java.util.Date;
 import java.util.List;
