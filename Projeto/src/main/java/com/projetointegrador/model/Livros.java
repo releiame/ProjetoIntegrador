@@ -4,8 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table (name = "tb_livros")
@@ -24,6 +27,14 @@ public class Livros {
 	
 	@NotNull
 	private String tag;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("livros")
+	private Pedido pedido;
+	
+	@ManyToOne
+	@JsonIgnoreProperties("livros")
+	private Funcionario funcionario;
 
 	public long getId_livros() {
 		return id_livros;
@@ -64,4 +75,21 @@ public class Livros {
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
+	}
+
+	public Funcionario getFuncionario() {
+		return funcionario;
+	}
+
+	public void setFuncionario(Funcionario funcionario) {
+		this.funcionario = funcionario;
+	}
+
 }

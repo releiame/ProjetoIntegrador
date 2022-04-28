@@ -1,5 +1,6 @@
 package com.projetointegrador.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_pedido")
@@ -17,10 +20,12 @@ public class Pedido {
 	private long id_pedido;
 	
 	@ManyToOne
-	private long id_cliente;
+	@JsonIgnoreProperties("pedido")
+	private Cliente cliente;
 	
-	@OneToMany
-	private long id_livros;
+	@OneToMany(mappedBy = "pedido", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("pedido")
+	private Livros livros;
 	
 	private int qtde_pedido;
 
@@ -31,28 +36,30 @@ public class Pedido {
 	public void setId_pedido(long id_pedido) {
 		this.id_pedido = id_pedido;
 	}
-
-	public long getId_cliente() {
-		return id_cliente;
-	}
-
-	public void setId_cliente(long id_cliente) {
-		this.id_cliente = id_cliente;
-	}
-
-	public long getId_livros() {
-		return id_livros;
-	}
-
-	public void setId_livros(long id_livros) {
-		this.id_livros = id_livros;
-	}
-
+	
 	public int getQtde_pedido() {
 		return qtde_pedido;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Livros getLivros() {
+		return livros;
+	}
+
+	public void setLivros(Livros livros) {
+		this.livros = livros;
 	}
 
 	public void setQtde_pedido(int qtde_pedido) {
 		this.qtde_pedido = qtde_pedido;
 	}
+	
+	
 }

@@ -3,14 +3,17 @@ package com.projetointegrador.model;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_cliente")
@@ -38,8 +41,13 @@ public class Cliente {
 	@NotNull
 	private Date dataNascimento;
 	
-	@OneToOne
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("cliente")
 	private List<Endereco> endereco;
+	
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("cliente")
+	private Pedido pedido;
 
 	public long getId_cliente() {
 		return id_cliente;
@@ -95,6 +103,14 @@ public class Cliente {
 
 	public void setEndereco(List<Endereco> endereco) {
 		this.endereco = endereco;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
 	}
 	
 }
