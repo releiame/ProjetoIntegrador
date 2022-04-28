@@ -70,7 +70,7 @@ Nesta etapa o usuário estará logado e poderá visualizar os produtos. O Header
 
 ![Logado](https://user-images.githubusercontent.com/82852325/165649145-b9456ffa-ceda-4c4b-8755-975c8cec1a4c.png)
 
-### Tela - Home-Page com o Usuário Logado
+### Tela - Meus Pedidos
 
 Nesta tela o usuário consegue escolher mais produtos, excluir produto adicionado no carrinho ou finalizar o pedido. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
 
