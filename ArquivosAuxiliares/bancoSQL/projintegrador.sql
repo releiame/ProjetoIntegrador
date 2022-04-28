@@ -7,8 +7,7 @@ create table tb_funcionario (
     codf int unique not null,
     senha varchar(15) not null,
     nome varchar(100) not null,
-    primary key (id_funcionario),
-    unique index idx_codf (codf asc) visible
+    primary key (id_funcionario)
 );
 
 create table tb_cliente (
@@ -23,27 +22,26 @@ create table tb_cliente (
 
 create table tb_endereco (
 	id_endereco int not null,
-    cep varchar(15),
-    numero int,
-    complemento varchar(50),
-    bairro varchar(50),
-    rua varchar(50),
-    cidade varchar(50),
-    nome_endereco varchar(15),
+    cep varchar(15) not null,
+    numero int not null,
+    complemento varchar(50) not null,
+    bairro varchar(50) not null,
+    rua varchar(50) not null,
+    cidade varchar(50) not null,
+    nome_endereco varchar(15) not null,
     id_cliente int not null,
     primary key (id_endereco),
-    unique index idx_cep (cep asc) visible,
     constraint fk_id_endereco foreign key (id_endereco) REFERENCES tb_cliente (id_cliente)
     on delete no action
 	on update no action
 );
 
-create table tb_estoque(
+create table tb_livros(
 	id_livros int not null,
-    titulo varchar(30),
+    titulo varchar(30) not null,
     descricao varchar(300),
     autor varchar(100),
-    tag varchar(20),
+    tag varchar(20) not null,
     primary key (id_livros)
 );
 
