@@ -62,39 +62,4 @@ public class FuncionarioController {
 	public void delete(@PathVariable long id_funcionario) {
 		repository.deleteById(id_funcionario);
 	}
-	
-	//CRUD dos Livros
-	
-	@GetMapping
-	public ResponseEntity<List<Livros>>GetAllLivros(){
-		return ResponseEntity.ok(repositoryLivros.findAll());
-	}
-	
-	@GetMapping("/{id_livros}")
-	public ResponseEntity<Livros> GetByIdLivros(@PathVariable long id_livros){
-		return repositoryLivros.findById(id_livros)
-				.map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.notFound().build());
-	}
-	
-	@GetMapping("/titulo/{titulo}")
-	public ResponseEntity<List<Livros>> GetByTitulo(@PathVariable String titulo){
-		return ResponseEntity.ok(repositoryLivros.findAllByTituloContainingIgnoreCase(titulo));
-	}
-	
-	@PostMapping
-	public ResponseEntity<Livros> post (@RequestBody Livros livros){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryLivros.save(livros));
-	}
-	
-	@DeleteMapping("/{id_livros}")
-	public void deleteLivros(@PathVariable long id_livros) {
-		repositoryLivros.deleteById(id_livros);
-	}
-	
-	@PutMapping
-	public ResponseEntity<Livros> put (@RequestBody Livros livros){
-		return ResponseEntity.status(HttpStatus.OK).body(repositoryLivros.save(livros));
-	}
-
 }

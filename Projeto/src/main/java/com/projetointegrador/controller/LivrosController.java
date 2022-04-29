@@ -17,8 +17,6 @@ import com.projetointegrador.repository.LivrosRepository;
 
 public class LivrosController {
 	
-	//CRIADO SOMENTE COM O OBJETIVO DE TESTES PELO POSTMAN
-	
 	@Autowired
 	private LivrosRepository repositoryLivros;
 	
