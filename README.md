@@ -76,6 +76,12 @@ Nesta tela o usuário consegue escolher mais produtos, excluir produto adicionad
 
 ![Carrinho](https://user-images.githubusercontent.com/82852325/165652803-bf1c42be-d34d-4cf9-9a92-7a9db2fc6343.png)
 
+### Tela - Pgamento
+
+Nesta tela o usuário poderá escolhar a forma de pagamento, o endereço de entrega do produto e finalizar a compra. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
+
+![TelaPagamento](https://user-images.githubusercontent.com/82852325/165866226-96ea73a0-d6a5-4591-a065-59d887b23ab9.png)
+
 
 # Arquitetura da Solução
 
