@@ -15,16 +15,16 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity
-@Table(name = "tb_cliente")
+@Entity //Indicando ao SPRING a classe é uma entidade
+@Table(name = "tb_cliente") //Nome que vai ser dado a tabela no banco de dados
 public class Cliente {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Id //Indicando que é a chave primaria
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //Para fazer o auto-incremendo do ID na tabela no banco de dados
 	private long id_cliente;
 	
-	@NotNull
-	@Size(min = 5, max = 100)
+	@NotNull //Obrigando o campo a não ser nulo
+	@Size(min = 5, max = 100) //Dando um tamanho minimo e maximo obrigade caracteres ao campo
 	private String email;
 	
 	@NotNull
@@ -41,13 +41,15 @@ public class Cliente {
 	@NotNull
 	private Date dataNascimento;
 	
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("cliente")
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE) //Indicando que é uma relação "um para muitos"
+	@JsonIgnoreProperties("cliente") //Indicando que deve ignorar campos desconhecidos
 	private List<Endereco> endereco;
 	
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("cliente")
 	private Pedido pedido;
+	
+	//CRIANDO OS GETTERS E SETTERS
 
 	public long getId_cliente() {
 		return id_cliente;

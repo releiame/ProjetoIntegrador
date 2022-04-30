@@ -46,9 +46,11 @@ public class Endereco {
 	@Size(min = 5, max = 15)
 	private String nome_endereco;
 	
-	@ManyToOne
+	@ManyToOne //Indicando que é um relacionamento "muitos para um"
 	@JsonIgnoreProperties("endereco")
 	private Cliente cliente;
+	
+	//CRIANDO OS GETTERS E SETTERS
 
 	public long getId_endereco() {
 		return id_endereco;
