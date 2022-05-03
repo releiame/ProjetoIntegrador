@@ -21,7 +21,7 @@ public class Pedido {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("pedido")
-	private Cliente cliente;
+	private ClienteModel cliente;
 	
 	@OneToMany(mappedBy = "pedido", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("pedido")
@@ -41,11 +41,11 @@ public class Pedido {
 		return qtde_pedido;
 	}
 
-	public Cliente getCliente() {
+	public ClienteModel getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
+	public void setCliente(ClienteModel cliente) {
 		this.cliente = cliente;
 	}
 

@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table (name = "tb_endereco")
-public class Endereco {
+public class EnderecoModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,7 +48,7 @@ public class Endereco {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("endereco")
-	private Cliente cliente;
+	private ClienteModel cliente;
 
 	public long getId_endereco() {
 		return id_endereco;
@@ -114,11 +114,11 @@ public class Endereco {
 		this.nome_endereco = nome_endereco;
 	}
 
-	public Cliente getCliente() {
+	public ClienteModel getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(Cliente cliente) {
+	public void setCliente(ClienteModel cliente) {
 		this.cliente = cliente;
 	}
 

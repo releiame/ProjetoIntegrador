@@ -17,33 +17,36 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_cliente")
-public class Cliente {
+public class ClienteModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id_cliente;
 	
-	@NotNull
+	@NotNull(message = "O campo email deve ser preenchido")
 	@Size(min = 5, max = 100)
 	private String email;
 	
-	@NotNull
+	@NotNull(message = "A sua senha deve ter de 5 à 15 caracteres")
 	@Size(min = 5, max = 15)
 	private String senha;
 	
-	@NotNull
+	@NotNull(message = "Preencha o seu nome")
 	@Size(min = 5, max = 100)
 	private String nome;
 	
+	@NotNull(message = "Digite o seu telefone")
 	@Size(min = 5, max = 15)
 	private String telefone;
 	
-	@NotNull
+	@NotNull(message = "Digite a sua data de nascimento")
 	private Date dataNascimento;
+	
+	private String token;
 	
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("cliente")
-	private List<Endereco> endereco;
+	private List<EnderecoModel> endereco;
 	
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("cliente")
@@ -97,11 +100,11 @@ public class Cliente {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public List<Endereco> getEndereco() {
+	public List<EnderecoModel> getEndereco() {
 		return endereco;
 	}
 
-	public void setEndereco(List<Endereco> endereco) {
+	public void setEndereco(List<EnderecoModel> endereco) {
 		this.endereco = endereco;
 	}
 
@@ -112,5 +115,13 @@ public class Cliente {
 	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
 	}
-	
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+		
 }

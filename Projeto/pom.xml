@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.7</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.6.6</version>
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.projetointegrador</groupId>
 	<artifactId>projetointegrador</artifactId>
@@ -16,25 +15,63 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
 	<dependencies>
+
+		<!--SPRING DATA JPA fornece suporte de repositório para a Java Persistence API (JPA). 
+			Facilita o desenvolvimento de aplicativos que precisam acessar fontes de dados JPA.  -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-		</dependency>
+
+		<!-- SPRING WEB: Inicialmente desenvolvido para criação de aplicações web escritas em Java, e anteriormente denominado 
+			como Spring Framework, o Spring é um ecossistema de desenvolvimento para facilitar a criação de aplicações Java utilizando
+			diversos módulos independentes.-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+
+		<!--SPRING SECURITY: Utilizado para fazer a segurança do sistema -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<!--COMMONS CODEC: Utilizada para criptografar as senhas -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+
+		<!-- SPRING VALIDATION: Utilizada para respostas mais rápidas caso tenha algum problema com aguma requisição.-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<!-- SPRING DEVTOOLS: avisa ao Thymeleaf para não fazer cache dos seus templates, o benefício da reinicialização automática 
+			dos diretórios src/main/java e src/main/resources caso haja alterações-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- O Connector/J é um driver JDBC para utilizar MySQL, desta forma, A JDBC é a API que permite construir aplicações Java 
+			para bancos de dados de forma uniforme e portável. Em que situação o tema é útil: O tema é útil para a criação ou 
+			manutenção de aplicações Java que utilizem bancos de dados.-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+
+		<!--SPRING BOOT STARTER TEST: Contém a maioria das dependências necessárias para realizar testes da sua aplicação: 
+			Junit, AssertJ, Hamcrest, Mockito, entre outros. -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
