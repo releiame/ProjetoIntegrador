@@ -1,5 +1,7 @@
 package com.projetointegrador.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,7 +35,7 @@ public class Funcionario{
 	
 	@OneToMany(mappedBy = "funcionario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("funcionario")
-	private Livros livros;
+	private List<Livros> livros;
 	
 	public int getId_funcionario() {
 		return id_funcionario;
@@ -66,12 +68,12 @@ public class Funcionario{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	public Livros getLivros() {
+
+	public List<Livros> getLivros() {
 		return livros;
 	}
-	
-	public void setLivros(Livros livros) {
+
+	public void setLivros(List<Livros> livros) {
 		this.livros = livros;
 	}
 

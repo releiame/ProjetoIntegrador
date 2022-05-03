@@ -42,7 +42,7 @@ public class FuncionarioController {
 	
 	@GetMapping("/codf/{codf}")
 	public ResponseEntity<List<Funcionario>> GetByCodf(@PathVariable int codf){
-		return ResponseEntity.ok(repository.findAllByCodfContainingIgnoreCase(codf));
+		return ResponseEntity.ok(repository.findByCodf(codf));
 	} //Metodo de busca de funcionario pelo codf cadastrado
 	
 	@PostMapping

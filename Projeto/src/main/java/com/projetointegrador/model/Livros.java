@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -34,6 +35,7 @@ public class Livros {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("livros")
+	@JoinColumn(name = "id_funcionario")
 	private Funcionario funcionario;
 
 	public long getId_livros() {

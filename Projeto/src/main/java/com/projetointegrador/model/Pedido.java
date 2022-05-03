@@ -1,10 +1,13 @@
 package com.projetointegrador.model;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -25,9 +28,8 @@ public class Pedido {
 	
 	@OneToMany(mappedBy = "pedido", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("pedido")
-	private Livros livros;
+	private List<Livros> livros;
 	
-	private int qtde_pedido;
 
 	public long getId_pedido() {
 		return id_pedido;
@@ -35,10 +37,6 @@ public class Pedido {
 
 	public void setId_pedido(long id_pedido) {
 		this.id_pedido = id_pedido;
-	}
-	
-	public int getQtde_pedido() {
-		return qtde_pedido;
 	}
 
 	public Cliente getCliente() {
@@ -49,17 +47,11 @@ public class Pedido {
 		this.cliente = cliente;
 	}
 
-	public Livros getLivros() {
+	public List<Livros> getLivros() {
 		return livros;
 	}
 
-	public void setLivros(Livros livros) {
+	public void setLivros(List<Livros> livros) {
 		this.livros = livros;
 	}
-
-	public void setQtde_pedido(int qtde_pedido) {
-		this.qtde_pedido = qtde_pedido;
-	}
-	
-	
 }

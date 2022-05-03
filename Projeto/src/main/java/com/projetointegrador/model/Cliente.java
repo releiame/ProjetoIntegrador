@@ -41,13 +41,13 @@ public class Cliente {
 	@NotNull
 	private Date dataNascimento;
 	
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE) //Indicando que é uma relação "um para muitos"
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("cliente") //Indicando que deve ignorar campos desconhecidos
 	private List<Endereco> endereco;
 	
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("cliente")
-	private Pedido pedido;
+	private List<Pedido> pedido;
 	
 	//CRIANDO OS GETTERS E SETTERS
 
@@ -107,11 +107,11 @@ public class Cliente {
 		this.endereco = endereco;
 	}
 
-	public Pedido getPedido() {
+	public List<Pedido> getPedido() {
 		return pedido;
 	}
 
-	public void setPedido(Pedido pedido) {
+	public void setPedido(List<Pedido> pedido) {
 		this.pedido = pedido;
 	}
 	
