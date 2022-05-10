@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table (name = "tb_livros")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Livros {
 	
 	@Id
@@ -31,6 +32,7 @@ public class Livros {
 	
 	@ManyToOne
 	@JsonIgnoreProperties("livros")
+	@JoinColumn(name = "id_pedido")
 	private Pedido pedido;
 	
 	@ManyToOne

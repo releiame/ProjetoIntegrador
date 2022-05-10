@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.projetointegrador.model.Funcionario;
-import com.projetointegrador.model.Livros;
 import com.projetointegrador.repository.FuncionarioRepository;
-import com.projetointegrador.repository.LivrosRepository;
 
 @RestController //Indicando ao Spring que essa classe é um controller
 @RequestMapping("/funcionario") //O parametro o qual devo usar para acessar a classe
@@ -45,8 +43,11 @@ public class FuncionarioController {
 		return ResponseEntity.ok(repository.findByCodf(codf));
 	} //Metodo de busca de funcionario pelo codf cadastrado
 	
+	
+	
 	@PostMapping
-	public ResponseEntity<Funcionario> post (@RequestBody Funcionario funcionario){
+	public ResponseEntity<Funcionario> post (@RequestBody Funcionario funcionario)
+	{
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(funcionario));
 	} //Metodo de cadastro de um funcionario
 	

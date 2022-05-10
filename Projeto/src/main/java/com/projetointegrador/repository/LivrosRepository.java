@@ -9,6 +9,7 @@ import com.projetointegrador.model.Livros;
 
 @Repository
 public interface LivrosRepository extends JpaRepository<Livros, Long>{
+	
 	public List<Livros>findAllByTituloContainingIgnoreCase(String titulo);
 	
 }

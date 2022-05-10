@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.projetointegrador.model.Funcionario;
 import com.projetointegrador.model.Livros;
+import com.projetointegrador.repository.FuncionarioRepository;
 import com.projetointegrador.repository.LivrosRepository;
 
 @RestController
@@ -25,6 +27,9 @@ public class LivrosController {
 	
 	@Autowired
 	private LivrosRepository repositoryLivros;
+	
+	@Autowired
+	private FuncionarioRepository funcionarioRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<Livros>>GetAll(){
@@ -45,6 +50,8 @@ public class LivrosController {
 	
 	@PostMapping
 	public ResponseEntity<Livros> post (@RequestBody Livros livros){
+		Funcionario funcionario = funcionarioRepository.getById(livros.getFuncionario().getId_funcionario());
+		livros.setFuncionario(funcionario);
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryLivros.save(livros));
 	}
 	
