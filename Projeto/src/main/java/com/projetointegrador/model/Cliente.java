@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -41,6 +42,7 @@ public class Cliente {
 	@NotNull
 	private Date dataNascimento;
 	
+
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("cliente") //Indicando que deve ignorar campos desconhecidos
 	private List<Endereco> endereco;
@@ -48,6 +50,11 @@ public class Cliente {
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("cliente")
 	private List<Pedido> pedido;
+	
+	@OneToOne
+	@JsonIgnoreProperties("cliente")
+	private Carrinho carrinho;
+	
 	
 	//CRIANDO OS GETTERS E SETTERS
 

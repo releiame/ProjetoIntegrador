@@ -27,6 +27,10 @@ public class Livros {
 	
 	private String autor;
 	
+	@ManyToOne
+	
+	private Carrinho carrinho;
+	
 	@NotNull
 	private String tag;
 	
