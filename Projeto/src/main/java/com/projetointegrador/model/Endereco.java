@@ -28,7 +28,6 @@ public class Endereco {
 	private int numero;
 	
 	@NotNull
-	@Size(min = 5, max = 50)
 	private String complemento;
 	
 	@NotNull

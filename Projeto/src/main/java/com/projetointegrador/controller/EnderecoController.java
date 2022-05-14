@@ -27,21 +27,20 @@ public class EnderecoController {
 	private EnderecoRepository repository;
 	
 	@GetMapping
-	public ResponseEntity<List<Endereco>>GetAll()
-	{
+	public ResponseEntity<List<Endereco>>GetAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
-	@GetMapping("/{endereco}")
+	
+	@GetMapping("/{id_endereco}")
 	public ResponseEntity<Endereco> GetById(@PathVariable long id_endereco){
 		return repository.findById(id_endereco)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("endereco/{endereco}")
-	public ResponseEntity<List<Endereco>> GetByEndereco (@PathVariable String endereco){
-		return ResponseEntity.ok(repository.findAllByCepContainingIgnoreCase(endereco));
-	
+	@GetMapping("cep/{cep}")
+	public ResponseEntity<List<Endereco>> GetByCep (@PathVariable String cep){
+		return ResponseEntity.ok(repository.findAllByCepContainingIgnoreCase(cep));
 	}
 	
 	@PostMapping
@@ -59,5 +58,4 @@ public class EnderecoController {
 		repository.deleteById(id_endereco);
 	}
 	
-
 }

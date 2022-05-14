@@ -9,12 +9,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity //Indicando ao SPRING a classe é uma entidade
 @Table(name = "tb_cliente") //Nome que vai ser dado a tabela no banco de dados
@@ -24,12 +26,13 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Para fazer o auto-incremendo do ID na tabela no banco de dados
 	private long id_cliente;
 	
-	@NotNull //Obrigando o campo a não ser nulo
-	@Size(min = 5, max = 100) //Dando um tamanho minimo e maximo obrigade caracteres ao campo
+	@NotNull(message = "O atributo cliente é obrigatório") //Obrigando o campo a não ser nulo
+	@Schema(example = "email@email.com")
+	@Email(message = "O atributo cliente deve ser um e-mail válido")
 	private String email;
 	
 	@NotNull
-	@Size(min = 5, max = 15)
+	@Size(min = 8)
 	private String senha;
 	
 	@NotNull
@@ -41,7 +44,6 @@ public class Cliente {
 	
 	@NotNull
 	private Date dataNascimento;
-	
 
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("cliente") //Indicando que deve ignorar campos desconhecidos
@@ -51,10 +53,23 @@ public class Cliente {
 	@JsonIgnoreProperties("cliente")
 	private List<Pedido> pedido;
 	
-	@OneToOne
-	@JsonIgnoreProperties("cliente")
-	private Carrinho carrinho;
+	//CRIANDO OS CONSTRUTORES
 	
+	public Cliente(long id_cliente, String email,String senha, String nome, String telefone, Date dataNascimento, List<Endereco> endereco, 
+			List<Pedido> pedido) {
+		this.id_cliente = id_cliente;
+		this.email = email;
+		this.senha = senha;
+		this.nome = nome;
+		this.telefone = telefone;
+		this.dataNascimento = dataNascimento;
+		this.endereco = endereco;
+		this.pedido = pedido;
+	}
+	
+	public Cliente() {
+		
+	}
 	
 	//CRIANDO OS GETTERS E SETTERS
 
@@ -121,5 +136,7 @@ public class Cliente {
 	public void setPedido(List<Pedido> pedido) {
 		this.pedido = pedido;
 	}
+	
+	
 	
 }

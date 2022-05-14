@@ -31,6 +31,8 @@ public class Pedido {
 	@JsonIgnoreProperties("pedido")
 	private List<Livros> livros;
 	
+	private float valorTotal;
+	
 
 	public long getId_pedido() {
 		return id_pedido;
@@ -55,4 +57,13 @@ public class Pedido {
 	public void setLivros(List<Livros> livros) {
 		this.livros = livros;
 	}
+
+	public float getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(float valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+	
 }

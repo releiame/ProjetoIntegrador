@@ -10,13 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_funcionario")
+@Table(name = "tb_funcionario", uniqueConstraints={@UniqueConstraint(columnNames={"codf"})})
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Funcionario{
 	
@@ -28,7 +29,7 @@ public class Funcionario{
 	private int codf;
 	
 	@NotNull
-	@Size(min = 8, max = 15)
+	@Size(min = 8)
 	private String senha;
 	
 	@NotNull
@@ -38,6 +39,22 @@ public class Funcionario{
 	@OneToMany(mappedBy = "funcionario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("funcionario")
 	private List<Livros> livros;
+	
+	//CRIANDO OS CONSTRUTORES
+	
+	public Funcionario(long id_funcionario, int codf, String senha, String nome, List<Livros> livros) {
+		this.id_funcionario = id_funcionario;
+		this.codf = codf;
+		this.senha = senha;
+		this.nome = nome;
+		this.livros = livros;
+	}
+	
+	public Funcionario() {
+		
+	}
+	
+	//CRIANDO OS GETTERS E SETTERS
 	
 	public long getId_funcionario() {
 		return id_funcionario;

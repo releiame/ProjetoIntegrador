@@ -27,12 +27,11 @@ public class Livros {
 	
 	private String autor;
 	
-	@ManyToOne
-	
-	private Carrinho carrinho;
-	
 	@NotNull
 	private String tag;
+	
+	@NotNull
+	private float valor;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("livros")
@@ -82,6 +81,14 @@ public class Livros {
 
 	public void setTag(String tag) {
 		this.tag = tag;
+	}
+
+	public float getValor() {
+		return valor;
+	}
+
+	public void setValor(float valor) {
+		this.valor = valor;
 	}
 
 	public Pedido getPedido() {
