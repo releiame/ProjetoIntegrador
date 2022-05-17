@@ -42,7 +42,6 @@ public class Cliente {
 	@Size(min = 5, max = 15)
 	private String telefone;
 	
-	@NotNull
 	private Date dataNascimento;
 
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
@@ -55,16 +54,12 @@ public class Cliente {
 	
 	//CRIANDO OS CONSTRUTORES
 	
-	public Cliente(long id_cliente, String email,String senha, String nome, String telefone, Date dataNascimento, List<Endereco> endereco, 
-			List<Pedido> pedido) {
+	public Cliente(long id_cliente, String email,String senha, String nome, String telefone) {
 		this.id_cliente = id_cliente;
 		this.email = email;
 		this.senha = senha;
 		this.nome = nome;
 		this.telefone = telefone;
-		this.dataNascimento = dataNascimento;
-		this.endereco = endereco;
-		this.pedido = pedido;
 	}
 	
 	public Cliente() {

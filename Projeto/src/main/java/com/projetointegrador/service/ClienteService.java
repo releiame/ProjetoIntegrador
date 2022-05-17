@@ -33,17 +33,12 @@ public class ClienteService {
 	public Optional<Cliente> atualizarCliente(Cliente cliente){
 		
 		if(clienteRepository.findById(cliente.getId_cliente()).isPresent()) {
-			
 			Optional<Cliente> buscaCliente = clienteRepository.findByEmail(cliente.getEmail());
-			
 			if((buscaCliente.isPresent()) && (buscaCliente.get().getId_cliente() != cliente.getId_cliente()))
 				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Usuário já existe!", null);
-			
-			cliente.setSenha(criptografarSenha(cliente.getSenha()));
-			
+			cliente.setSenha(criptografarSenha(cliente.getSenha()));	
 			return Optional.ofNullable(clienteRepository.save(cliente));
 		}
-		
 		return Optional.empty();
 		
 	}
@@ -59,7 +54,6 @@ public class ClienteService {
 				ClienteLogin.get().setId_cliente(cliente.get().getId_cliente());
 				ClienteLogin.get().setNome(cliente.get().getNome());
 				ClienteLogin.get().setEmail(cliente.get().getEmail());
-				ClienteLogin.get().setDataNascimento(cliente.get().getDataNascimento());
 				ClienteLogin.get().setSenha(cliente.get().getSenha());
 				ClienteLogin.get().setTelefone(cliente.get().getTelefone());
 				ClienteLogin.get().setToken(gerarBasicToken(ClienteLogin.get().getEmail(), ClienteLogin.get().getSenha()));
@@ -89,9 +83,9 @@ public class ClienteService {
 
 	}
 	
-	private String gerarBasicToken(String usuario, String senha) {
+	private String gerarBasicToken(String cliente, String senha) {
 
-		String token = usuario + ":" + senha;
+		String token = cliente + ":" + senha;
 		byte[] tokenBase64 = Base64.encodeBase64(token.getBytes(Charset.forName("US-ASCII")));
 		return "Basic " + new String(tokenBase64);
 

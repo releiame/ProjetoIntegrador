@@ -61,7 +61,7 @@ public class ClienteController {
 	}
 	
 	@PutMapping("/atualizar")
-	public ResponseEntity<Cliente> putUsuario(@Valid @RequestBody Cliente cliente) {
+	public ResponseEntity<Cliente> putCliente(@Valid @RequestBody Cliente cliente) {
 		return clienteService.atualizarCliente(cliente)
 			.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());

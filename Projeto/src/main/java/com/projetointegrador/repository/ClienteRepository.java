@@ -12,7 +12,7 @@ import com.projetointegrador.model.Cliente;
 @Repository //Indicando que a interface é um repositório
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 	
-	public Optional<Cliente>findByEmail(@Param("email") String email);
+	public Optional<Cliente>findByEmail(String email);
 	
 	public List<Cliente>findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
 	
