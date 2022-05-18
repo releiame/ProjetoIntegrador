@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Login</title>
+</head>
+
+<body>
+
+
+    <form action="" method="post">
+        <fieldset id="bloco-login">
+            <h1>Acesse sua conta</h1>
+            <p>
+                <label for="email">
+                    E-mail <br>
+                    <input type="email" id="email" onkeyup="validaEmail()" value required>
+                </label>
+            <div id="txtEmail"></div>
+            </p>
+            
+            <p>
+                <label for="senha">
+                    Senha <br>
+                    <input type="password" id="senha" onkeyup="validaSenha()"><br>
+                </label>
+            <div id="txtSenha"></div>
+            </p>
+
+            <div class="bloco-esqueci-logado-botao">
+                <div class="bloco-esqueci-logado">
+                    <label class="">
+                        <a href="/recuperar-senha">Esqueceu sua senha?</a><br><br>
+                    </label>
+                    <label class="">
+                        <input type="checkbox" value="false" ng-model="loginForm.manterConectado"
+                            class="ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched">Continuar conectado neste
+                        computador
+                    </label>
+                </div>
+                <button class="botao" onclick="entrar()">ENTRAR</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <div class="nao-cadastrado">
+        <label>Ainda não é cadastrado? <br>
+            <a href="/cadastro.html" target="_blank" rel="noopener noreferrer">Crie sua conta</a> e economize tempo na
+            próxima
+            compra.</a>
+        </label>
+    </div>
+
+</body>
+
+</html>
