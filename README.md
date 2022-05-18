@@ -1,6 +1,7 @@
-# Projeto Integrador
+# :artificial_satellite: Sobre o Projeto Integrador
 Projeto final do bootcamp oferecido pela Porto Seguro em parceria com a Digital House Brasil
 
+:construction::warning: Em desenvolvimento 
 ## Integrantes
 
 * <a href="https://www.linkedin.com/in/alinetiburcio/">Aline Gabriela Tibúrcio</a>
@@ -12,21 +13,21 @@ Projeto final do bootcamp oferecido pela Porto Seguro em parceria com a Digital 
 * <a href="https://www.linkedin.com/in/joaow-victor/">João Victor</a>
 
 
-## Introdução
+## :books: Introdução
 Com o mundo cada vez mais tecnológico, podemos utilizar de diversas alternativas para ter acesso a um livro, uma delas é de forma online, mas por outro lado, muitas pessoas não abrem mão de ter seu livro físico.
 
 Pensando no consumo consciente e na diversidade cultural aplicada no mundo do livro e das editoras, vamos conectar amantes por livros de todo o país. 
 
 Quanto mais livros seminovos e usados forem reutilizados, conseguimos possibilitar o maior acesso à cultura por um valor acessível.
 
-## Problema
+## :jigsaw: Problema
 O problema que esperamos resolver é diminuir o consumo de matéria-prima destinada a produção de novos livros, e por consequência, diminuir o impacto ambiental.
 
-## Objetivo
+## :dart: Objetivo
 
 Criar uma plataforma intuitiva que possibilite o usuário vender seus livros seminovos ou usados.
 
-## Justificativa
+## :loudspeaker: Justificativa
 
 Nos baseamos na ODS 12 – Consumo e Produção:
 
@@ -34,11 +35,11 @@ Nos baseamos na ODS 12 – Consumo e Produção:
 
 Diante disso, percebemos a necessidade em desenvolver uma plataforma com intuito de expandir o reuso e consumo consciente dos livro
 
-# Projeto de Interface
+# :framed_picture: Projeto de Interface
 
 Dentre as preocupações para a montagem da interface do sistema, estabelecemos um foco em questões como simplificar a vida dos leitores, e por isso, criamos uma plataforma dinâmica, interativa e acessível e para diversos usuários. Desta forma, o projeto tem uma identidade visual padronizada em todas as telas que são projetadas para funcionamento em desktops e dispositivos móveis.
 
-### Diagrama de Fluxo
+### :abacus: Diagrama de Fluxo
 
 O diagrama apresentado na figura abaixo mostra o fluxo de interação do usuário pelas telas do sistema:
 
