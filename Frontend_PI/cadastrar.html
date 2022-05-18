@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="assets/css/style_cadastrar.css">
+</head>
+
+<body>
+    <form action="" method="post">
+        <fieldset id="bloco-info">
+            <h1>Crie sua conta</h1>
+            <p>
+                <label for="nome">
+                    Nome Completo<br>
+                    <input type="text" id="nome" onkeyup="validaNome()" value required>
+                </label>
+            <div id="txtNome"></div>
+            </p>
+
+            <p>
+                <label for="email">
+                    E-mail <br>
+                    <input type="email" id="email" onkeyup="validaEmail()" value required>
+                </label>
+            <div id="txtEmail"></div>
+            </p>
+
+            <p>
+                <label for="senha">
+                    Senha <br>
+                    <input type="password" id="senha" onkeyup="validaSenha()"><br>
+                </label>
+            <div id="txtSenha"></div>
+            </p>
+
+            <p class="mailing">
+                <input id="mailing" type="checkbox" value="true" checked>
+                Desejo receber emails promocionais e informativos da Estante Virtual.
+            </p>
+
+            <div class="bloco-logado-botao">
+
+                <p class="message">Já é cadastrado?</p>
+                    <a href="/login.html">Acesse sua conta</a><br>
+                </p>
+
+                <button class="botao2" onclick="criarConta()">CRIAR CONTA</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>
