@@ -46,7 +46,7 @@ As seguintes linguagens de programação foram usadas:
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" width="100" height="100"/>
   </a>
   <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/" target="_blank">
-   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" alt="Java" width="100" height="100"/>
+   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original.svg" alt="Spring" width="100" height="100"/>
   </a>
 
 ### **Front-end**
@@ -60,7 +60,10 @@ As seguintes linguagens de programação foram usadas:
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="Css3" width="100" height="100"/>
   </a>
   <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="Css3" width="100" height="100"/>
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="Javascript" width="100" height="100"/>
+  </a>
+  <a href="https://angular.io/docs" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg" alt="AngularJS" width="100" height="100"/>
   </a>
 
 # :framed_picture: Projeto de Interface
