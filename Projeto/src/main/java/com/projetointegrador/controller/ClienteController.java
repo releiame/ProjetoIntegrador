@@ -33,7 +33,7 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 	
-	@GetMapping
+	@GetMapping("/listartodos")
 	public ResponseEntity <List<Cliente>> getAll(){
 		return ResponseEntity.ok(repository.findAll());
 		
@@ -66,4 +66,5 @@ public class ClienteController {
 			.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
+	
 }

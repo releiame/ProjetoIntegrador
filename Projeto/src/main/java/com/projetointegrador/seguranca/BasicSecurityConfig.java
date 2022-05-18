@@ -39,15 +39,16 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(HttpSecurity http) throws Exception
 	{
-		http.authorizeRequests()
-		.antMatchers("/cliente/logar").permitAll()
+		http.csrf().disable()
+		.authorizeRequests()
 		.antMatchers("/cliente/cadastrar").permitAll()
+		.antMatchers("/cliente/logar").permitAll()
+		.antMatchers("/cliente/**").permitAll()
 		.antMatchers(HttpMethod.OPTIONS).permitAll()//para acertar no heroku
 		.anyRequest().authenticated()
 		.and().httpBasic()
 		.and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-		.and().cors()
-		.and().csrf().disable();
+		.and().cors();
 	}
 	
 }

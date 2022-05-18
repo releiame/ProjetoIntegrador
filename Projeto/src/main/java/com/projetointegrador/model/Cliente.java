@@ -32,7 +32,7 @@ public class Cliente {
 	private String email;
 	
 	@NotNull
-	@Size(min = 8)
+	@Size(min = 3)
 	private String senha;
 	
 	@NotNull
