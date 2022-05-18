@@ -3,13 +3,13 @@ Projeto final do bootcamp oferecido pela Porto Seguro em parceria com a Digital 
 
 ## Integrantes
 
-* Aline Gabriela Tibúrcio
-* Aneska Karina
-* Carlos R. Oliveira Junior
-* Ana Menici
-* Wesley Zanelatto
-* Rejane Santos
-* João Victor
+* <a href="https://www.linkedin.com/in/alinetiburcio/">Aline Gabriela Tibúrcio</a>
+* <a href="https://www.linkedin.com/in/aneska/">Aneska Karina</a>
+* <a href="https://www.linkedin.com/in/karlinhos987/">Carlos R. Oliveira Junior</a>
+* <a href="https://www.linkedin.com/in/anamenici/">Ana Menici</a>
+* <a href="https://www.linkedin.com/in/wesley-zanelatto-53862628/">Wesley Zanelatto</a>
+* <a href="https://www.linkedin.com/in/rejane-ssantos/">Rejane Santos</a>
+* <a href="https://www.linkedin.com/in/joaow-victor/">João Victor</a>
 
 
 ## Introdução
