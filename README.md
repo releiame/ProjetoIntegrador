@@ -25,7 +25,7 @@ O problema que esperamos resolver é diminuir o consumo de matéria-prima destin
 
 ## :dart: Objetivo
 
-Criar uma plataforma intuitiva que possibilite o usuário vender seus livros seminovos ou usados.
+Criar uma plataforma intuitiva que possibilite a compra de livros seminovos ou usados.
 
 ## :loudspeaker: Justificativa
 
