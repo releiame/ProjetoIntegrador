@@ -76,50 +76,50 @@ O diagrama apresentado na figura abaixo mostra o fluxo de interação do usuári
 
 <img width="672" alt="DiagramaFluxo" src="https://user-images.githubusercontent.com/82852325/165638268-12244293-d0be-4bcb-804d-8caf72fdce01.png">
 
-### Wireframes
+### :rainbow: Esboço Wireframes
 As telas do sistema são apresentadas em detalhes nos itens que se seguem, apresentando as estruturas header, navegator, footer e o main, como demonstrado a seguir.
 
-### Tela - Home-Page
+### :framed_picture: Tela - Home-Page
 A tela de home-Page com base na estrutura padrão, o Main traz a possiblidade de escolher um livro para compra. 
 
 ![FigHome](https://user-images.githubusercontent.com/82852325/165763104-ab8156e7-56d8-4683-8e45-1e53739757ed.png)
 
-### Tela – Login
+### :framed_picture: Tela – Login
 
 Na tela de login o usuário poderá acessar uma área privada através do e-mail e senha, tendo a possibilidade de se cadastrar caso seja um usuário novo e solicitar nova senha caso tenha esquecido a mesma. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page. 
 
 ![FigCad](https://user-images.githubusercontent.com/82852325/165627774-59ffa5b2-fa0b-41d8-b69a-ad4c9191fa4d.png)
 
-### Tela - Cadastrar
+### :framed_picture: Tela - Cadastrar
 
 A tela de cadastro o usuário digita alguns dados pessoais para ter acesso aos livros e poder finalizar suas compras. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
 
 ![FigCad](https://user-images.githubusercontent.com/82852325/165625281-50074ede-9a2f-4cde-a2a3-26441da22833.png)
 
-### Tela - Veja mais
+### :framed_picture: Tela - Veja mais
 
 Nesta tela o usuário poderá visualizar mais produtos. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
 
 ![Logado](https://user-images.githubusercontent.com/82852325/165649145-b9456ffa-ceda-4c4b-8755-975c8cec1a4c.png)
 
-### Tela - Carrinho
+### :framed_picture: Tela - Carrinho
 
 Nesta tela o usuário consegue escolher mais produtos, excluir produto adicionado no carrinho ou finalizar o pedido. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
 
 ![Carrinho](https://user-images.githubusercontent.com/82852325/165652803-bf1c42be-d34d-4cf9-9a92-7a9db2fc6343.png)
 
-### Tela - Pgamento
+### :framed_picture: Tela - Pgamento
 
 Nesta tela o usuário poderá escolhar a forma de pagamento, o endereço de entrega do produto e finalizar a compra. O Header, Navegator e Footer apresentam os mesmos elementos da Home-Page.
 
 ![TelaPagamento](https://user-images.githubusercontent.com/82852325/165866226-96ea73a0-d6a5-4591-a065-59d887b23ab9.png)
 
 
-# Arquitetura da Solução
+# :clipboard: Arquitetura da Solução
 
 Nesta seção são apresentados os detalhes técnicos da solução criada pela equipe, tratando dos componentes que fazem parte da solução e do ambiente de hospedagem da solução.
 
-### Diagrama de Classes
+### :paperclips: Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas.
 
