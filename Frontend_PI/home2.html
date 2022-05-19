@@ -8,50 +8,31 @@
     <title>Home</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-
 </head>
 
 <body>
     <!--Cabeçalho-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav col-sm-2">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <div class="col-xs-8">
-                <div class="input-group">
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon">
-                        <button class="fa fa-search" style="background:transparent;border:none"></button>
-                    </span>
-                </div>
-            </div>
-            <ul class="navbar-nav col-sm-2">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cadastrar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <img src="assets/images/carrinho.png" alt="" width=20 heigth=20>
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">Navbar</span>
+        <ul class="nav justify-content-center">
+            <li class="nav-item d-flex">
+                <input class="form-control mr-sm-2" type="search" placeholder="Procure um livro" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><img
+                        src="img/lupa-arredondada.png"></button>
+            </li>
+        </ul>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Cadastrar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#"><img class="carrinho"
+                        src="img/carrinho-de-compras-de-design-xadrez.png"></a>
+            </li>
+        </ul>
     </nav>
     <!--Fim do Cabeçalho-->
 
@@ -106,7 +87,14 @@
     <!--Fim do Botão-->
 
 
-    <!--Rodapé Ana-->
+    <!--Rodapé-->
+
+
+
+
+
+
+
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 
@@ -122,48 +110,20 @@
                 </ul>
             </div>
 
-            <div class="col-md-12 text-align:center">
+            <div class="col-md-12 d-flex justify-content-center">
                 <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
                     <svg class="bi" width="30" height="24">
                         <use xlink:href="#bootstrap"></use>
                     </svg>
                 </a>
-                <p class="text-align:center">Política de Privacidade</p>
+                <p class="justify-content-center">Política de Privacidade</p><br><br>
                 <p class="justify-content-center">Termo de uso</p>
             </div>
 
         </footer>
     </div>
-    <!--Fim do Rodapé Ana-->
 
-    <!--Footer João-->
-    <div class="footer">
-        <div class="container">
-            <div class="row-redes d-flex justify-content-center">
-                <div class="col-redes">
-                    <img src="img/instagram.png">
-                </div>
-                <div class="col-redes">
-                    <img src="img/e-mail.png">
-                </div>
-                <div class="col-redes">
-                    <img src="img/twitter.png">
-                </div>
-                <div class="col-redes">
-                    <img src="img/whatsapp.png">
-                </div>
-            </div>
-        </div>
-        <div class="row mt-5 d-flex justify-content-center">
-            <div class="col-md-6">
-                <div class="termos-politicas">
-                    <p>Politicas de Privacidade</p>
-                    <p>Termos de uso</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--\Footer-->
+    <!--Fim do Rodapé-->
 
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -175,6 +135,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
         integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
         crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
