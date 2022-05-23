@@ -65,6 +65,7 @@ public class ClienteController {
 		return clienteService.atualizarCliente(cliente)
 			.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+		
 	}
 	
 }

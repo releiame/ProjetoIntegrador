@@ -45,8 +45,7 @@ public class FuncionarioController {
 
 	
 	@PostMapping
-	public ResponseEntity<Funcionario> post (@RequestBody Funcionario funcionario)
-	{
+	public ResponseEntity<Funcionario> post (@RequestBody Funcionario funcionario){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(funcionario));
 	} //Metodo de cadastro de um funcionario
 	

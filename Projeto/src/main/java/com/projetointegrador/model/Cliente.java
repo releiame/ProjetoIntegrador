@@ -1,5 +1,6 @@
 package com.projetointegrador.model;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -42,6 +43,7 @@ public class Cliente {
 	@Size(min = 5, max = 15)
 	private String telefone;
 	
+	@NotNull
 	private Date dataNascimento;
 
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
@@ -131,7 +133,5 @@ public class Cliente {
 	public void setPedido(List<Pedido> pedido) {
 		this.pedido = pedido;
 	}
-	
-	
 	
 }

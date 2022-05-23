@@ -32,7 +32,6 @@ public class Pedido {
 	private List<Livros> livros;
 	
 	private float valorTotal;
-	
 
 	public long getId_pedido() {
 		return id_pedido;
