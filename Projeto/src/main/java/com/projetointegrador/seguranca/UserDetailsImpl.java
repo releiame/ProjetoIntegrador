@@ -7,6 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.projetointegrador.model.Cliente;
+import com.projetointegrador.model.Funcionario;
 
 public class UserDetailsImpl implements UserDetails {
 
@@ -14,12 +15,20 @@ public class UserDetailsImpl implements UserDetails {
 
 	private String userName;
 	private String password;
+	private int userFunc;
 
 	private List<GrantedAuthority> authorities;
 
 	public UserDetailsImpl(Cliente user) {
 		this.userName = user.getEmail();
 		this.password = user.getSenha();
+
+	}
+
+	public UserDetailsImpl(Funcionario userFuncionario) {
+		this.userFunc = userFuncionario.getCodf();
+		this.password = userFuncionario.getSenha();
+
 	}
 
 	public UserDetailsImpl() {
@@ -39,6 +48,12 @@ public class UserDetailsImpl implements UserDetails {
 	@Override
 	public String getUsername() {
 		return userName;
+
+	}
+
+	public int getUserFunc() {
+		return userFunc;
+
 	}
 
 	@Override

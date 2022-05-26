@@ -1,6 +1,7 @@
 package com.projetointegrador.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -39,7 +40,7 @@ public class FuncionarioController {
 	} //Metodo de busca de funcionarios pelo id cadastrado
 	
 	@GetMapping("/codf/{codf}")
-	public ResponseEntity<List<Funcionario>> GetByCodf(@PathVariable int codf){
+	public ResponseEntity<Optional<Funcionario>> GetByCodf(@PathVariable int codf){
 		return ResponseEntity.ok(repository.findByCodf(codf));
 	} //Metodo de busca de funcionario pelo codf cadastrado
 
