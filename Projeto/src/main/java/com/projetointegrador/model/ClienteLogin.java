@@ -10,7 +10,18 @@ public class ClienteLogin {
 	private String nome;
 	private String telefone;
 	private String token;
+	private Date dataNascimento;
 	
+	public ClienteLogin(long id_cliente, String email, String senha, String nome, String telefone, String token,
+			Date dataNascimento) {
+		this.id_cliente = id_cliente;
+		this.email = email;
+		this.senha = senha;
+		this.nome = nome;
+		this.telefone = telefone;
+		this.token = token;
+		this.dataNascimento = dataNascimento;
+	}
 	
 	public String getToken() {
 		return token;
@@ -48,4 +59,13 @@ public class ClienteLogin {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	
 }

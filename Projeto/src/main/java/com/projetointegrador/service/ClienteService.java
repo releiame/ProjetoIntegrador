@@ -1,6 +1,8 @@
 package com.projetointegrador.service;
 
 import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Optional;
 
 import org.apache.commons.codec.binary.Base64;
@@ -22,9 +24,24 @@ public class ClienteService {
 	
 	public Optional<Cliente> CadastrarCliente(Cliente cliente){
 		
-		//Checa se o Cliente existe no Banco, pois não pode ter 2 clientes com o mesmo e-mail, se não existir retorna o Optional vazio
+		//Pegando somente o ano atual
+		String timeStamp = new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
 		
+		//Convertendo o ano para Inteiro
+		int dataConvertida = Integer.parseInt(timeStamp);
+		
+		//Checa se o Cliente existe no Banco, pois não pode ter 2 clientes com o mesmo e-mail, se não existir retorna o Optional vazio
 		if(clienteRepository.findByEmail(cliente.getEmail()).isPresent())
+			return Optional.empty();
+		
+		//Pegando o ano de nascimento do usuário que está tentando se cadastrar
+		String anoCliente = new SimpleDateFormat("yyyy").format(cliente.getDataNascimento().getTime());
+		
+		//Convertendo a data de nascimento do cliente para Inteiro
+		int dataConvertidaC = Integer.parseInt(anoCliente);
+		
+		//Subtraindo a data atual com a data de nascimento do cliente, se retornar menor que 18 anos retorna um Optional vazio
+		if((dataConvertida - dataConvertidaC)<18)
 			return Optional.empty();
 		
 		//Se o cliente não existir a senha sera criptografada
@@ -34,7 +51,6 @@ public class ClienteService {
 		//O resultado do método save será retornado dentro de um Optional, com o Usuario persistido no Banco de Dados
 		
 		//Retorna um Optional com o valor fornecido, não podendo ser nulo
-		
 		return Optional.of(clienteRepository.save(cliente));
 	}
 	
