@@ -43,17 +43,17 @@ public class EnderecoController {
 		return ResponseEntity.ok(repository.findAllByCepContainingIgnoreCase(cep));
 	}
 	
-	@PostMapping
+	@PostMapping("/adicionar")
 	public ResponseEntity<Endereco> post (@RequestBody Endereco endereco){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(endereco));
 	}
 	
-	@PutMapping
+	@PutMapping("/alterar")
 	public ResponseEntity<Endereco> put (@RequestBody Endereco endereco){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(endereco));
 	}
 	
-	@DeleteMapping("/{id_endereco}")
+	@DeleteMapping("/deletarendereco/{id_endereco}")
 	public void delete(@PathVariable long id_endereco) {
 		repository.deleteById(id_endereco);
 	}

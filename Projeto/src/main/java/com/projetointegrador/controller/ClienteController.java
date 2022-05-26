@@ -54,10 +54,11 @@ public class ClienteController {
 	}
 	
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Optional<Cliente>> Post(@Valid @RequestBody Cliente cliente)
+	public ResponseEntity<Cliente> PostCliente(@Valid @RequestBody Cliente cliente)
 	{
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(clienteService.CadastrarCliente(cliente));
+		return clienteService.CadastrarCliente(cliente)
+				.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))
+				.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
 	}
 	
 	@PutMapping("/atualizar")
@@ -65,6 +66,7 @@ public class ClienteController {
 		return clienteService.atualizarCliente(cliente)
 			.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 			.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+		
 	}
 	
 }

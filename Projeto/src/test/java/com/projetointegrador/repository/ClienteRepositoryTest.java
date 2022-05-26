@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,11 +29,16 @@ public class ClienteRepositoryTest {
 	@BeforeAll
 	void start() throws ParseException
 	{
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+		
+		Date dataFormatada = formato.parse("01/01/2000");
+		
+		
 		clienteRepository.deleteAll();
-		clienteRepository.save(new Cliente(0L,"testt@gmail.com","123456789","testt","1122223333"));
-		clienteRepository.save(new Cliente(0L,"teste1@gmail.com","1234567891","Teste1","1122223333"));
-		clienteRepository.save(new Cliente(0L,"teste2@gmail.com","1234567892","Teste2","1122223333"));
-		clienteRepository.save(new Cliente(0L,"teste3@gmail.com","1234567893","Teste3","1122223333"));
+		clienteRepository.save(new Cliente(0L,"testt@gmail.com","123456789","testt","1122223333", dataFormatada));
+		clienteRepository.save(new Cliente(0L,"teste1@gmail.com","1234567891","Teste1","1122223333", dataFormatada));
+		clienteRepository.save(new Cliente(0L,"teste2@gmail.com","1234567892","Teste2","1122223333", dataFormatada));
+		clienteRepository.save(new Cliente(0L,"teste3@gmail.com","1234567893","Teste3","1122223333", dataFormatada));
 		
 	}
 	

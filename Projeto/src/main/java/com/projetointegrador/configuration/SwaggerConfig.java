@@ -12,12 +12,13 @@ import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.responses.ApiResponse;
 import io.swagger.v3.oas.models.responses.ApiResponses;
 
-@Configuration
+@Configuration //indica que a classe é uma fonte de configuração e definição de Beans
 public class SwaggerConfig {
 
-	@Bean
+	@Bean //Indicando que o objeto que pode ser injetado em qualquer ponto da sua aplicação
 	public OpenAPI springVendaLivrosOpenAPI()
 	{
+		//gerando a documentação no Swagger utilizando a especificação OpenAPI
 		return new OpenAPI()
 				.info(new Info()
 					.title("Aplicação do Grupo 6 - Digital House")
