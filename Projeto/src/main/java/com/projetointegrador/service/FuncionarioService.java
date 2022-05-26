@@ -10,8 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.projetointegrador.model.Cliente;
-import com.projetointegrador.model.ClienteLogin;
 import com.projetointegrador.model.Funcionario;
 import com.projetointegrador.model.FuncionarioLogin;
 import com.projetointegrador.repository.FuncionarioRepository;
