@@ -1,0 +1,33 @@
+{
+  "name": "ngx-bootstrap/buttons",
+  "version": "8.0.0",
+  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "license": "MIT",
+  "module": "fesm2015/ngx-bootstrap-buttons.mjs",
+  "es2020": "fesm2020/ngx-bootstrap-buttons.mjs",
+  "esm2020": "esm2020/ngx-bootstrap-buttons.mjs",
+  "fesm2020": "fesm2020/ngx-bootstrap-buttons.mjs",
+  "fesm2015": "fesm2015/ngx-bootstrap-buttons.mjs",
+  "typings": "ngx-bootstrap-buttons.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-bootstrap-buttons.d.ts",
+      "esm2020": "./esm2020/ngx-bootstrap-buttons.mjs",
+      "es2020": "./fesm2020/ngx-bootstrap-buttons.mjs",
+      "es2015": "./fesm2015/ngx-bootstrap-buttons.mjs",
+      "node": "./fesm2015/ngx-bootstrap-buttons.mjs",
+      "default": "./fesm2020/ngx-bootstrap-buttons.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "13.1.1",
+    "@angular/forms": "13.1.1"
+  }
+}

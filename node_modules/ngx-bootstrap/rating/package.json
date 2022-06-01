@@ -1,0 +1,34 @@
+{
+  "name": "ngx-bootstrap/rating",
+  "version": "8.0.0",
+  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "license": "MIT",
+  "module": "fesm2015/ngx-bootstrap-rating.mjs",
+  "es2020": "fesm2020/ngx-bootstrap-rating.mjs",
+  "esm2020": "esm2020/ngx-bootstrap-rating.mjs",
+  "fesm2020": "fesm2020/ngx-bootstrap-rating.mjs",
+  "fesm2015": "fesm2015/ngx-bootstrap-rating.mjs",
+  "typings": "ngx-bootstrap-rating.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-bootstrap-rating.d.ts",
+      "esm2020": "./esm2020/ngx-bootstrap-rating.mjs",
+      "es2020": "./fesm2020/ngx-bootstrap-rating.mjs",
+      "es2015": "./fesm2015/ngx-bootstrap-rating.mjs",
+      "node": "./fesm2015/ngx-bootstrap-rating.mjs",
+      "default": "./fesm2020/ngx-bootstrap-rating.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "13.1.1",
+    "@angular/forms": "13.1.1",
+    "@angular/common": "13.1.1"
+  }
+}

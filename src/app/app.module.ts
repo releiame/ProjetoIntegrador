@@ -2,14 +2,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeaderCarrouselComponent } from './header-carrousel/header-carrousel.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderInicioDeslogComponent } from './components/template/header-inicio-deslog/header-inicio-deslog.component';
+import { HeaderInicioLogComponent } from './components/template/header-inicio-log/header-inicio-log.component';
+import { CarouselInicioComponent } from './components/template/carousel-inicio/carousel-inicio.component';
+import { LoginComponent } from './components/modal/login/login.component';
+import { CadastroComponent } from './components/modal/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderCarrouselComponent,
-    HeaderComponent
+    HeaderInicioDeslogComponent,
+    HeaderInicioLogComponent,
+    CarouselInicioComponent,
+    LoginComponent,
+    CadastroComponent
+
   ],
   imports: [
     BrowserModule

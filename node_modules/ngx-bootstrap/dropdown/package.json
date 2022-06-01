@@ -1,0 +1,40 @@
+{
+  "name": "ngx-bootstrap/dropdown",
+  "version": "8.0.0",
+  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "license": "MIT",
+  "module": "fesm2015/ngx-bootstrap-dropdown.mjs",
+  "es2020": "fesm2020/ngx-bootstrap-dropdown.mjs",
+  "esm2020": "esm2020/ngx-bootstrap-dropdown.mjs",
+  "fesm2020": "fesm2020/ngx-bootstrap-dropdown.mjs",
+  "fesm2015": "fesm2015/ngx-bootstrap-dropdown.mjs",
+  "typings": "ngx-bootstrap-dropdown.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-bootstrap-dropdown.d.ts",
+      "esm2020": "./esm2020/ngx-bootstrap-dropdown.mjs",
+      "es2020": "./fesm2020/ngx-bootstrap-dropdown.mjs",
+      "es2015": "./fesm2015/ngx-bootstrap-dropdown.mjs",
+      "node": "./fesm2015/ngx-bootstrap-dropdown.mjs",
+      "default": "./fesm2020/ngx-bootstrap-dropdown.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "13.1.1",
+    "ngx-bootstrap/utils": "8.0.0",
+    "@angular/animations": "13.1.1",
+    "rxjs": "7.4.0",
+    "ngx-bootstrap/component-loader": "8.0.0",
+    "ngx-bootstrap/positioning": "8.0.0",
+    "@angular/common": "13.1.1",
+    "@angular-devkit/core": "13.1.2",
+    "@angular/platform-browser": "13.1.1"
+  }
+}

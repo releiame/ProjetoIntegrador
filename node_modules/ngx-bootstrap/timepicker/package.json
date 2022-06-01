@@ -1,0 +1,37 @@
+{
+  "name": "ngx-bootstrap/timepicker",
+  "version": "8.0.0",
+  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "license": "MIT",
+  "module": "fesm2015/ngx-bootstrap-timepicker.mjs",
+  "es2020": "fesm2020/ngx-bootstrap-timepicker.mjs",
+  "esm2020": "esm2020/ngx-bootstrap-timepicker.mjs",
+  "fesm2020": "fesm2020/ngx-bootstrap-timepicker.mjs",
+  "fesm2015": "fesm2015/ngx-bootstrap-timepicker.mjs",
+  "typings": "ngx-bootstrap-timepicker.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-bootstrap-timepicker.d.ts",
+      "esm2020": "./esm2020/ngx-bootstrap-timepicker.mjs",
+      "es2020": "./fesm2020/ngx-bootstrap-timepicker.mjs",
+      "es2015": "./fesm2015/ngx-bootstrap-timepicker.mjs",
+      "node": "./fesm2015/ngx-bootstrap-timepicker.mjs",
+      "default": "./fesm2020/ngx-bootstrap-timepicker.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "13.1.1",
+    "@angular/forms": "13.1.1",
+    "ngx-bootstrap/mini-ngrx": "8.0.0",
+    "rxjs": "7.4.0",
+    "@angular/platform-browser": "13.1.1",
+    "@angular/common": "13.1.1"
+  }
+}

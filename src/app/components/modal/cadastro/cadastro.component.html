@@ -1,0 +1,82 @@
+<!-- Modal fazer cadastro -->
+<div class="modal" id="modalCadastro">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Cadastre-se</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <form class="needs-validation" novalidate>
+          <div class="p-4">
+            <div class="form-group">
+              <label for="nomecompleto">Nome Completo</label>
+              <input type="text" class="form-control col-sm-12" id="nomecompleto" aria-describedby="nomeHelp" placeholder="Nome Completo" required>
+              <div class="invalid-feedback">
+                Por favor, preencha seu nome completo.
+              </div>
+              <div class="valid-feedback">
+                Tudo certo!
+              </div>
+            </div> 
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control col-sm-12" id="email" aria-describedby="emailHelp" placeholder="Seuemail@mail.com" required>
+                <div class="invalid-feedback">
+                  Por favor, preencha seu email para continuar.
+                </div>
+                <div class="valid-feedback">
+                  Tudo certo!
+                </div>
+              </div> 
+            <div class="form-row"> 
+              <div class="col-md-6 mb-2">
+                <label for="validationCustom01">Escolha uma senha</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="Sua Senha" required>
+                <small>Sua senha deve ter no mínimo 6 caracteres.</small>
+                <div class="valid-feedback">
+                  Tudo certo!
+                </div>
+                <div class="invalid-feedback">
+                  Por favor, escolha uma senha com no mínimo 6 dígitos para continuar.
+                </div>
+              </div>
+              <div class="col-md-6 mb-2">
+                <label for="dataNasc">Data de Nascimento</label>
+                <input type="date" class="form-control" id="dataNasc" required>
+                <div class="valid-feedback">
+                  Tudo certo!
+                </div>
+              </div>
+            </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="checkconect">
+                <label class="form-check-label" for="checkconect">Desejo receber emails promocionais e informativos da Releia.me</label>
+              </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                  Concordo com os termos e condições de uso.
+                </label>
+                <div class="invalid-feedback">
+                  Você deve concordar, antes de continuar.
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Criar Cadastro</button>
+            <br><br>
+            <p> Já é cadastrado? <a class="text-dark" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Acesse sua conta.</a></p>
+          </div>
+        </form>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

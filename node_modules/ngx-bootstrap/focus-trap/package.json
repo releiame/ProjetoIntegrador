@@ -1,0 +1,34 @@
+{
+  "name": "ngx-bootstrap/focus-trap",
+  "version": "8.0.0",
+  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "license": "MIT",
+  "module": "fesm2015/ngx-bootstrap-focus-trap.mjs",
+  "es2020": "fesm2020/ngx-bootstrap-focus-trap.mjs",
+  "esm2020": "esm2020/ngx-bootstrap-focus-trap.mjs",
+  "fesm2020": "fesm2020/ngx-bootstrap-focus-trap.mjs",
+  "fesm2015": "fesm2015/ngx-bootstrap-focus-trap.mjs",
+  "typings": "ngx-bootstrap-focus-trap.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-bootstrap-focus-trap.d.ts",
+      "esm2020": "./esm2020/ngx-bootstrap-focus-trap.mjs",
+      "es2020": "./fesm2020/ngx-bootstrap-focus-trap.mjs",
+      "es2015": "./fesm2015/ngx-bootstrap-focus-trap.mjs",
+      "node": "./fesm2015/ngx-bootstrap-focus-trap.mjs",
+      "default": "./fesm2020/ngx-bootstrap-focus-trap.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "13.1.1",
+    "@angular/core": "13.1.1",
+    "rxjs": "7.4.0"
+  }
+}

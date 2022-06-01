@@ -1,0 +1,15 @@
+{
+  "name": "schematics",
+  "version": "8.0.0",
+  "schematics": "./collection.json",
+  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "license": "MIT",
+  "main": "./ng-add/index.js",
+  "typings": "./ng-add/index.d.ts",
+  "dependencies": {
+    "@schematics/angular": "13.1.2",
+    "@angular-devkit/schematics": "13.1.2",
+    "@angular-devkit/core": "13.1.2"
+  },
+  "peerDependencies": {}
+}

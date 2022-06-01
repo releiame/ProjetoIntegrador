@@ -1,0 +1,34 @@
+{
+  "name": "ngx-bootstrap/collapse",
+  "version": "8.0.0",
+  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "license": "MIT",
+  "module": "fesm2015/ngx-bootstrap-collapse.mjs",
+  "es2020": "fesm2020/ngx-bootstrap-collapse.mjs",
+  "esm2020": "esm2020/ngx-bootstrap-collapse.mjs",
+  "fesm2020": "fesm2020/ngx-bootstrap-collapse.mjs",
+  "fesm2015": "fesm2015/ngx-bootstrap-collapse.mjs",
+  "typings": "ngx-bootstrap-collapse.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-bootstrap-collapse.d.ts",
+      "esm2020": "./esm2020/ngx-bootstrap-collapse.mjs",
+      "es2020": "./fesm2020/ngx-bootstrap-collapse.mjs",
+      "es2015": "./fesm2015/ngx-bootstrap-collapse.mjs",
+      "node": "./fesm2015/ngx-bootstrap-collapse.mjs",
+      "default": "./fesm2020/ngx-bootstrap-collapse.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/animations": "13.1.1",
+    "@angular/core": "13.1.1",
+    "@angular/platform-browser": "13.1.1"
+  }
+}

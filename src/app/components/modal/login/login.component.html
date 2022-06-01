@@ -1,0 +1,46 @@
+<!-- login Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Faça login para continuar</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <form class="needs-validation" novalidate>
+          <div class="p-4">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control col-sm-12" id="email" aria-describedby="emailHelp" placeholder="Seuemail@mail.com" required>
+              <div class="invalid-feedback">
+                Por favor, preencha seu email para continuar.
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Senha</label>
+              <input type="password" class="form-control col-sm-12" id="password" placeholder="Senha" required>
+              <div class="invalid-feedback">
+                Por favor, preencha sua senha para continuar.
+              </div>
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="checkconect">
+              <label class="form-check-label" for="checkconect">Me manter conectado</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+            <div>
+              <br>
+              <p>Primeira compra? <a class="text-dark" data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#">Criar Conta.</a></p>
+            </div>
+          </div>
+        </form>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

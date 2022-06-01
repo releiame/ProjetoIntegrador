@@ -1,0 +1,34 @@
+{
+  "name": "ngx-bootstrap/pagination",
+  "version": "8.0.0",
+  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "license": "MIT",
+  "module": "fesm2015/ngx-bootstrap-pagination.mjs",
+  "es2020": "fesm2020/ngx-bootstrap-pagination.mjs",
+  "esm2020": "esm2020/ngx-bootstrap-pagination.mjs",
+  "fesm2020": "fesm2020/ngx-bootstrap-pagination.mjs",
+  "fesm2015": "fesm2015/ngx-bootstrap-pagination.mjs",
+  "typings": "ngx-bootstrap-pagination.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-bootstrap-pagination.d.ts",
+      "esm2020": "./esm2020/ngx-bootstrap-pagination.mjs",
+      "es2020": "./fesm2020/ngx-bootstrap-pagination.mjs",
+      "es2015": "./fesm2015/ngx-bootstrap-pagination.mjs",
+      "node": "./fesm2015/ngx-bootstrap-pagination.mjs",
+      "default": "./fesm2020/ngx-bootstrap-pagination.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "13.1.1",
+    "@angular/forms": "13.1.1",
+    "@angular/common": "13.1.1"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "ngx-bootstrap/sortable",
+  "version": "8.0.0",
+  "author": "Dmitriy Shekhovtsov <valorkin@gmail.com>",
+  "license": "MIT",
+  "module": "fesm2015/ngx-bootstrap-sortable.mjs",
+  "es2020": "fesm2020/ngx-bootstrap-sortable.mjs",
+  "esm2020": "esm2020/ngx-bootstrap-sortable.mjs",
+  "fesm2020": "fesm2020/ngx-bootstrap-sortable.mjs",
+  "fesm2015": "fesm2015/ngx-bootstrap-sortable.mjs",
+  "typings": "ngx-bootstrap-sortable.d.ts",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./ngx-bootstrap-sortable.d.ts",
+      "esm2020": "./esm2020/ngx-bootstrap-sortable.mjs",
+      "es2020": "./fesm2020/ngx-bootstrap-sortable.mjs",
+      "es2015": "./fesm2015/ngx-bootstrap-sortable.mjs",
+      "node": "./fesm2015/ngx-bootstrap-sortable.mjs",
+      "default": "./fesm2020/ngx-bootstrap-sortable.mjs"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/core": "13.1.1",
+    "rxjs": "7.4.0",
+    "@angular/forms": "13.1.1",
+    "@angular/common": "13.1.1",
+    "@angular/platform-browser": "13.1.1"
+  }
+}
