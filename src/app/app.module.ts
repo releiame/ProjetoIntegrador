@@ -7,6 +7,8 @@ import { HeaderInicioLogComponent } from './components/template/header-inicio-lo
 import { CarouselInicioComponent } from './components/template/carousel-inicio/carousel-inicio.component';
 import { LoginComponent } from './components/modal/login/login.component';
 import { CadastroComponent } from './components/modal/cadastro/cadastro.component';
+import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { CadastroComponent } from './components/modal/cadastro/cadastro.componen
     HeaderInicioLogComponent,
     CarouselInicioComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    FaleConoscoComponent
 
   ],
   imports: [
