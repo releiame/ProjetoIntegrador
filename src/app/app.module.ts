@@ -8,6 +8,7 @@ import { CarouselInicioComponent } from './components/template/carousel-inicio/c
 import { LoginComponent } from './components/modal/login/login.component';
 import { CadastroComponent } from './components/modal/cadastro/cadastro.component';
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
+import { RodapeComponent } from './components/rodape/rodape.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conos
     CarouselInicioComponent,
     LoginComponent,
     CadastroComponent,
-    FaleConoscoComponent
+    FaleConoscoComponent,
+    RodapeComponent
 
   ],
   imports: [
