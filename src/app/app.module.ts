@@ -9,6 +9,7 @@ import { LoginComponent } from './components/modal/login/login.component';
 import { CadastroComponent } from './components/modal/cadastro/cadastro.component';
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
+import { Page1Component } from './components/template/page1/page1.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { RodapeComponent } from './components/rodape/rodape.component';
     LoginComponent,
     CadastroComponent,
     FaleConoscoComponent,
-    RodapeComponent
+    RodapeComponent,
+    Page1Component
 
   ],
   imports: [

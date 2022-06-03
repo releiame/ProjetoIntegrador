@@ -1,0 +1,52 @@
+.card {
+  width: 13rem;
+}
+
+.filtro-badge {
+  text-decoration: none;
+}
+
+.filtro-badge:hover {
+  padding: 2%;
+  color: #fff;
+  transition: 0.5s;
+}
+
+.del {
+  color: #a9a9a9;
+}
+
+.tam-qtd-item {
+  width: 12vh;
+}
+
+.comprar-qtd {
+  display: flex;
+
+  visibility: hidden;
+}
+
+.cartao {
+  text-decoration: none;
+  color: #000;
+}
+
+.cartao:hover {
+  left: 1%;
+  border: #fff solid 1px;
+  box-shadow: 2px 2px 4px 2px #bcbcbc;
+  visibility: visible;
+}
+
+.cartao:hover .comprar-qtd {
+  visibility: visible;
+}
+ 
+.espaco {
+    margin-left: 4vh;
+    margin-bottom: 2vh;
+}
+.paginacao{
+  width: 12px;
+  height: 12px;
+}
