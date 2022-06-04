@@ -10,6 +10,7 @@ import { CadastroComponent } from './components/modal/cadastro/cadastro.componen
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { Page1Component } from './components/template/page1/page1.component';
+import { HpEAOrdemDaFenixComponent } from './components/details-books/hp-e-a-ordem-da-fenix/hp-e-a-ordem-da-fenix.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { Page1Component } from './components/template/page1/page1.component';
     CadastroComponent,
     FaleConoscoComponent,
     RodapeComponent,
-    Page1Component
+    Page1Component,
+    HpEAOrdemDaFenixComponent
 
   ],
   imports: [

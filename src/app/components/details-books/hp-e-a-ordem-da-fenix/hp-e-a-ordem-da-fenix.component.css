@@ -1,0 +1,27 @@
+img {
+    width: 370px;
+    height: auto;
+}
+
+.border {
+    border: 5px solid #000
+}
+
+.filtro-badge {
+    text-decoration: none;
+}
+
+.filtro-badge:hover {
+    padding: 0.5%;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.del {
+    color: #a9a9a9;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
