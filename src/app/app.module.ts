@@ -11,6 +11,7 @@ import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conos
 import { RodapeComponent } from './components/rodape/rodape.component';
 import { Page1Component } from './components/template/page1/page1.component';
 import { HpEAOrdemDaFenixComponent } from './components/details-books/hp-e-a-ordem-da-fenix/hp-e-a-ordem-da-fenix.component';
+import { HpEOEnigmaDoPrincipeComponent } from './components/details-books/hp-e-o-enigma-do-principe/hp-e-o-enigma-do-principe.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HpEAOrdemDaFenixComponent } from './components/details-books/hp-e-a-ord
     FaleConoscoComponent,
     RodapeComponent,
     Page1Component,
-    HpEAOrdemDaFenixComponent
+    HpEAOrdemDaFenixComponent,
+    HpEOEnigmaDoPrincipeComponent
 
   ],
   imports: [
