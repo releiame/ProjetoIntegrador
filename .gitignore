@@ -1,3 +1,6 @@
 /target/
 Projeto/src/main/resources/application.properties
 Projeto/target/classes/application.properties
+ProjetoIntegrador\Projeto\src\test\resources
+ProjetoIntegrador\Projeto\src\main\resources
+Projeto/src/main/java/com/projetointegrador/seguranca/UserDetailsServiceImpl.java

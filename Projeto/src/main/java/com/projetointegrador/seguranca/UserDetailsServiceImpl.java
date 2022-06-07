@@ -11,12 +11,11 @@ import org.springframework.stereotype.Service;
 import com.projetointegrador.model.Cliente;
 import com.projetointegrador.model.Funcionario;
 import com.projetointegrador.repository.ClienteRepository;
-<<<<<<< HEAD
 import com.projetointegrador.repository.FuncionarioRepository;
-=======
+
 
 //Indicando que essa é uma classe de serviço
->>>>>>> d788b54a08ae1ce97c85d0b30187e1b60095eb6e
+
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -24,9 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
 	private ClienteRepository userRepository;
 	
-<<<<<<< HEAD
 
-=======
 	/**
 	 * 
 	 * Sobrescreve (@Override) o método loadUserByUsername.
@@ -38,16 +35,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	 * 
 	 */
 	
->>>>>>> d788b54a08ae1ce97c85d0b30187e1b60095eb6e
+
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 		
 		//Busca o cliente no Bancod de dados
 		
 		Optional<Cliente> user = userRepository.findByEmail(email);
-<<<<<<< HEAD
+
 		user.orElseThrow(() -> new UsernameNotFoundException(email + ": not found"));
-=======
+
 		
 		//Se não existir o método lança uma Exception do tipo UsernameNotFoundException
 		
@@ -62,7 +59,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		 * Classe UserDetailsImpl. 
 		 */
 		
->>>>>>> d788b54a08ae1ce97c85d0b30187e1b60095eb6e
+
 		return user.map(UserDetailsImpl::new).get();
 	
 			
