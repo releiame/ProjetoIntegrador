@@ -1,4 +1,4 @@
-export class Cliente{
+export class ClienteLogin{
     public id_cliente: number
     public email: string
     public senha: string
