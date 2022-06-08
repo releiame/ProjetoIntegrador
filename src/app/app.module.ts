@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderInicioDeslogComponent } from './components/template/header-inicio-deslog/header-inicio-deslog.component';
@@ -24,6 +25,7 @@ import { HpEACamaraSecretaComponent } from './components/details-books/hp-e-a-ca
 import { HpEOPrisioneiroDeAzkabanComponent } from './components/details-books/hp-e-o-prisioneiro-de-azkaban/hp-e-o-prisioneiro-de-azkaban.component';
 import { HpEOCaliceDeFogoComponent } from './components/details-books/hp-e-o-calice-de-fogo/hp-e-o-calice-de-fogo.component';
 import { HpEAsReliquiasDaMorteComponent } from './components/details-books/hp-e-as-reliquias-da-morte/hp-e-as-reliquias-da-morte.component';
+
 
 
 @NgModule({
@@ -54,7 +56,8 @@ import { HpEAsReliquiasDaMorteComponent } from './components/details-books/hp-e-
   imports: [
     BrowserModule, 
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
