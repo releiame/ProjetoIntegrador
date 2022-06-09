@@ -1,5 +1,6 @@
 package com.projetointegrador.model;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,15 +13,18 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.UpdateTimestamp;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name = "tb_pedido")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Pedido {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_pedido;
+	private Long id_pedido;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("pedido")
@@ -31,13 +35,16 @@ public class Pedido {
 	@JsonIgnoreProperties("pedido")
 	private List<Livros> livros;
 	
-	private float valorTotal;
+	private Double valorTotal;
+	
+	@UpdateTimestamp
+	private LocalDateTime data;
 
-	public long getId_pedido() {
+	public Long getId_pedido() {
 		return id_pedido;
 	}
 
-	public void setId_pedido(long id_pedido) {
+	public void setId_pedido(Long id_pedido) {
 		this.id_pedido = id_pedido;
 	}
 
@@ -57,12 +64,20 @@ public class Pedido {
 		this.livros = livros;
 	}
 
-	public float getValorTotal() {
+	public Double getValorTotal() {
 		return valorTotal;
 	}
 
-	public void setValorTotal(float valorTotal) {
+	public void setValorTotal(Double valorTotal) {
 		this.valorTotal = valorTotal;
+	}
+
+	public LocalDateTime getData() {
+		return data;
+	}
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
 	}
 	
 }

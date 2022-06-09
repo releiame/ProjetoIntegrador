@@ -34,7 +34,8 @@ public class UserDetailsImpl implements UserDetails {
 
 	private String userName;
 	private String password;
-	private int userFunc;
+	private String userFunc;
+	private boolean admin;
 
 	private List<GrantedAuthority> authorities;
 
@@ -74,7 +75,7 @@ public class UserDetailsImpl implements UserDetails {
 
 	}
 
-	public int getUserFunc() {
+	public String getUserFunc() {
 		return userFunc;
 
 	}

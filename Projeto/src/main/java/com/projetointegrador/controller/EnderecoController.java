@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.projetointegrador.model.Cliente;
 import com.projetointegrador.model.Endereco;
+import com.projetointegrador.repository.ClienteRepository;
 import com.projetointegrador.repository.EnderecoRepository;
 
 @RestController
@@ -25,6 +27,9 @@ public class EnderecoController {
 	
 	@Autowired
 	private EnderecoRepository repository;
+	
+	@Autowired
+	private ClienteRepository repositoryCliente;
 	
 	@GetMapping
 	public ResponseEntity<List<Endereco>>GetAll(){
@@ -45,6 +50,8 @@ public class EnderecoController {
 	
 	@PostMapping("/adicionar")
 	public ResponseEntity<Endereco> post (@RequestBody Endereco endereco){
+		Cliente cliente = repositoryCliente.getById(endereco.getCliente().getId_cliente());
+		endereco.setCliente(cliente);
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(endereco));
 	}
 	

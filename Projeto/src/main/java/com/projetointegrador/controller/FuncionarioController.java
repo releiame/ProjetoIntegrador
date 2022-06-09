@@ -1,7 +1,6 @@
 package com.projetointegrador.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.projetointegrador.model.Funcionario;
 import com.projetointegrador.repository.FuncionarioRepository;
+import com.projetointegrador.service.FuncionarioService;
 
 @RestController //Indicando ao Spring que essa classe é um controller
 @RequestMapping("/funcionario") //O parametro o qual devo usar para acessar a classe
@@ -26,6 +26,9 @@ public class FuncionarioController {
 	
 	@Autowired //Injeção de dependencia
 	private FuncionarioRepository repository;
+	
+	@Autowired
+	private FuncionarioService service;
 	
 	@GetMapping //Vai dizer que sempre que vier uma requisição externa
 	public ResponseEntity<List<Funcionario>>GetAll(){
@@ -40,19 +43,25 @@ public class FuncionarioController {
 	} //Metodo de busca de funcionarios pelo id cadastrado
 	
 	@GetMapping("/codf/{codf}")
-	public ResponseEntity<Optional<Funcionario>> GetByCodf(@PathVariable int codf){
-		return ResponseEntity.ok(repository.findByCodf(codf));
+	public ResponseEntity<Funcionario> GetByCodf(@PathVariable String codf){
+		return repository.findByCodf(codf)
+				.map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.notFound().build());
 	} //Metodo de busca de funcionario pelo codf cadastrado
 
 	
-	@PostMapping
+	@PostMapping("/cadastrar")
 	public ResponseEntity<Funcionario> post (@RequestBody Funcionario funcionario){
-		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(funcionario));
+		return service.CadastrarFuncionario(funcionario)
+				.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))
+				.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
 	} //Metodo de cadastro de um funcionario
 	
 	@PutMapping
 	public ResponseEntity<Funcionario> put (@RequestBody Funcionario funcionario){
-		return ResponseEntity.status(HttpStatus.OK).body(repository.save(funcionario));
+		return service.atualizarFuncionario(funcionario)
+				.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
+				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	} //Metodo de alteração de dados de um funcionario cadastrado
 	
 	@DeleteMapping("/{id_funcionario}")

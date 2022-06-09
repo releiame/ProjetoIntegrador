@@ -1,0 +1,31 @@
+FRONT-END
+
+minha conta
+meus pedidos
+pagina dos livros
+tela do funcionario (campos: cadastro de livros, clientes e funcionarios cadastrados no sistema, livros cadastrados no sistema)
+tela de cadastro de livros do funcionario (campos: titulo, descrição, autor, tag, quantidade, valor do livro)
+tela de pagamento
+tela de cadastro de endereço
+
+-------------------------------------------------
+
+JAVASCRIPT
+
+Fazer verificação de idade para o cadastro
+Criar filtro de amostra dos livros
+
+-------------------------------------------------
+
+BACK-END
+
+Fazer um metodo para o cliente escolher quantos livros iguais ele quer no seu pedido
+Fazer um metodo para comparar a quantidade de livros que o cliente pediu com a quantidade de livros que tem em estoque
+cadastrar roles para o cliente e funcionario
+criar testes para Funcionario, Pedidos, Endereços e Livros
+perguntar o porque do token não funcionar
+
+- Percorrer a Lista "livros"
+- Pegar o ID do Livro em questão
+- Comparar com o Id na tabela "Livros"
+- Mudar o atributo "qtdePedido" na tabela Livro

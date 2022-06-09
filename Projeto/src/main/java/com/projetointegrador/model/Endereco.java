@@ -18,7 +18,7 @@ public class Endereco {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_endereco;
+	private Long id_endereco;
 	
 	@NotNull
 	@Size(min = 5, max = 15)
@@ -43,7 +43,7 @@ public class Endereco {
 	private String cidade;
 	
 	@NotNull
-	@Size(min = 5, max = 15)
+	@Size(min = 4, max = 15)
 	private String nome_endereco;
 	
 	@ManyToOne //Indicando que é um relacionamento "muitos para um"
@@ -53,11 +53,11 @@ public class Endereco {
 	
 	//CRIANDO OS GETTERS E SETTERS
 
-	public long getId_endereco() {
+	public Long getId_endereco() {
 		return id_endereco;
 	}
 
-	public void setId_endereco(long id_endereco) {
+	public void setId_endereco(Long id_endereco) {
 		this.id_endereco = id_endereco;
 	}
 

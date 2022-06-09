@@ -1,6 +1,5 @@
 package com.projetointegrador.model;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -21,11 +20,12 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity //Indicando ao SPRING a classe é uma entidade
 @Table(name = "tb_cliente") //Nome que vai ser dado a tabela no banco de dados
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Cliente {
 	
 	@Id //Indicando que é a chave primaria
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Para fazer o auto-incremendo do ID na tabela no banco de dados
-	private long id_cliente;
+	private Long id_cliente;
 	
 	@NotNull(message = "O atributo cliente é obrigatório") //Obrigando o campo a não ser nulo
 	@Schema(example = "email@email.com")
@@ -56,7 +56,7 @@ public class Cliente {
 	
 	//CRIANDO OS CONSTRUTORES
 	
-	public Cliente(long id_cliente, String email, String senha, String nome, String telefone, Date dataNascimento) {
+	public Cliente(Long id_cliente, String email, String senha, String nome, String telefone, Date dataNascimento) {
 		this.id_cliente = id_cliente;
 		this.email = email;
 		this.senha = senha;
@@ -71,11 +71,11 @@ public class Cliente {
 	
 	//CRIANDO OS GETTERS E SETTERS
 
-	public long getId_cliente() {
+	public Long getId_cliente() {
 		return id_cliente;
 	}
 
-	public void setId_cliente(long id_cliente) {
+	public void setId_cliente(Long id_cliente) {
 		this.id_cliente = id_cliente;
 	}
 

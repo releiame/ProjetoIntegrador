@@ -91,16 +91,55 @@ public class ClienteControllerTest {
 	{
 		Date dataFormatada = formato.parse("01/01/2000");
 		
+		//Cadastrando o cliente no banco
+		
 		Optional<Cliente> clienteCreate = clienteService.CadastrarCliente(new Cliente(0L,
 				"teste2@gmail.com","1234567891","teste2","1122223333", dataFormatada));
+		
+		//É usado o "isPresent" pois nunca se pode usar um "get()" sem provar que o Optional está presente
+		
 		if(clienteCreate.isPresent()) {
+			
+			//Após provar que o Optional não está vazio inicia o método para atualizar o cliente que está no banco
+			
 		Cliente clienteUpdate = new Cliente(clienteCreate.get().getId_cliente(),
 				"testeAtualizado2@gmail.com","1234567891","testeAtualizado2","1122223333", dataFormatada);
+		
+		//Insere o objeto da Classe Cliente (clienteUpdate) dentro de um Objeto da Classe HttpEntity (Entidade HTTP)
+		
 		HttpEntity<Cliente> requisicao = new HttpEntity<Cliente>(clienteUpdate);
+		
+		/**
+		 * Cria um Objeto da Classe ResponseEntity (corpoResposta), que receberá a Resposta da Requisição que será 
+		 * enviada pelo Objeto da Classe TestRestTemplate.
+		 * 
+		 * Na requisição HTTP será enviada a URL do recurso (/cliente/atualizar), o verbo (PUT), a entidade
+		 * HTTP criada acima (corpoRequisicao) e a Classe de retornos da Resposta (Cliente).
+		 * 
+		 * Observe que o Método Atualizar não está liberado de autenticação (Login do usuário), por isso utilizamos o
+		 * Método withBasicAuth para autenticar o usuário em memória, criado na BasicSecurityConfig.
+		 * 
+		 * Usuário: root
+		 * Senha: root
+		 */
+		
 		ResponseEntity<Cliente> resposta = testRestTemplate
 				.withBasicAuth("root", "root")
-				.exchange("/cliente/cadastrar",HttpMethod.PUT,requisicao,Cliente.class);
+				.exchange("/cliente/atualizar",HttpMethod.PUT,requisicao,Cliente.class);
+		
+		/**
+		 *  Verifica se a requisição retornou o Status Code OK (200) 
+		 * Se for verdadeira, o teste passa, se não, o teste falha.
+		 */
+		
 		assertEquals(HttpStatus.OK,resposta.getStatusCode());
+		
+		/**
+		 * Verifica se o Atributo Nome do Objeto da Classe Usuario retornado no Corpo da Requisição 
+		 * é igual ao Atributo Nome do Objeto da Classe Usuario Retornado no Corpo da Resposta
+		 * Se for verdadeiro, o teste passa, senão o teste falha.
+		 */
+		
 		assertEquals(clienteUpdate.getEmail(),resposta.getBody().getEmail());
 		assertEquals(clienteUpdate.getNome(),resposta.getBody().getNome());
 		assertEquals(clienteUpdate.getTelefone(),resposta.getBody().getTelefone());

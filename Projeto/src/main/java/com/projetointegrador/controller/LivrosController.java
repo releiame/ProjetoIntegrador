@@ -48,7 +48,7 @@ public class LivrosController {
 		return ResponseEntity.ok(repositoryLivros.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	
-	@PostMapping
+	@PostMapping("/cadastrar")
 	public ResponseEntity<Livros> post (@RequestBody Livros livros){
 		Funcionario funcionario = funcionarioRepository.getById(livros.getFuncionario().getId_funcionario());
 		livros.setFuncionario(funcionario);

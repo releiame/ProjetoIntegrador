@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class ClienteLogin {
 	
-	private long id_cliente;
+	private Long id_cliente;
 	private String email;
 	private String senha;
 	private String nome;
@@ -12,7 +12,7 @@ public class ClienteLogin {
 	private String token;
 	private Date dataNascimento;
 	
-	public ClienteLogin(long id_cliente, String email, String senha, String nome, String telefone, String token,
+	public ClienteLogin(Long id_cliente, String email, String senha, String nome, String telefone, String token,
 			Date dataNascimento) {
 		this.id_cliente = id_cliente;
 		this.email = email;
@@ -29,10 +29,10 @@ public class ClienteLogin {
 	public void setToken(String token) {
 		this.token = token;
 	}
-	public long getId_cliente() {
+	public Long getId_cliente() {
 		return id_cliente;
 	}
-	public void setId_cliente(long id_cliente) {
+	public void setId_cliente(Long id_cliente) {
 		this.id_cliente = id_cliente;
 	}
 	public String getEmail() {

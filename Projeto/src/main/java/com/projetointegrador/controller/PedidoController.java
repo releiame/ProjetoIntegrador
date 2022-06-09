@@ -1,6 +1,7 @@
 package com.projetointegrador.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,8 +16,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.projetointegrador.model.Cliente;
+import com.projetointegrador.model.Livros;
 import com.projetointegrador.model.Pedido;
+import com.projetointegrador.repository.ClienteRepository;
+import com.projetointegrador.repository.LivrosRepository;
 import com.projetointegrador.repository.PedidoRepository;
+import com.projetointegrador.service.PedidoService;
 
 @RestController
 @RequestMapping("/pedidos")
@@ -25,6 +31,15 @@ public class PedidoController {
 
 	@Autowired
 	private PedidoRepository repositoryPedido;
+	
+	@Autowired
+	private PedidoService pedidoService;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private LivrosRepository livroRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<Pedido>>GetAll(){
@@ -40,6 +55,10 @@ public class PedidoController {
 	
 	@PostMapping
 	public ResponseEntity<Pedido> post (@RequestBody Pedido pedido){
+		Cliente cliente = clienteRepository.getById(pedido.getCliente().getId_cliente());
+		pedido.setCliente(cliente);
+		pedidoService.AdicionarLivroPedido(pedido);
+		pedidoService.calcularValor(pedido);
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryPedido.save(pedido));
 	}
 	
@@ -53,5 +72,15 @@ public class PedidoController {
 		return ResponseEntity.status(HttpStatus.OK).body(repositoryPedido.save(pedido));
 	}
 	
+	@GetMapping("/{id_livros}/{id_pedido}")
+	public ResponseEntity<Pedido> GetById(@PathVariable Long id_livros, @PathVariable Long id_pedido){
+		Livros livro = livroRepository.getById(id_pedido);
+		Pedido pedido = repositoryPedido.getById(id_pedido);
+		pedidoService.AdicionarLivro(livro, pedido);
+		pedidoService.AdicionarLivroPedido(pedido);
+		pedidoService.calcularValor(pedido);
+		return ResponseEntity.status(HttpStatus.OK).body(repositoryPedido.save(pedido));
+		
+	}
 	
 }

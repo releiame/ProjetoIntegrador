@@ -18,7 +18,10 @@ public class Livros {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_livros;
+	private Long id_livros;
+	
+	@NotNull
+	private String capa;
 
 	@NotNull
 	private String titulo;
@@ -31,7 +34,17 @@ public class Livros {
 	private String tag;
 	
 	@NotNull
-	private float valor;
+	private Integer qtdeEstoque;
+	
+	private Integer qtdePedido = 1;
+	
+	private boolean temEstoque = true;
+	
+	@NotNull
+	private int isbn;
+	
+	@NotNull
+	private Double valorUnitario;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("livros")
@@ -43,12 +56,20 @@ public class Livros {
 	@JoinColumn(name = "id_funcionario")
 	private Funcionario funcionario;
 
-	public long getId_livros() {
+	public Long getId_livros() {
 		return id_livros;
 	}
 
-	public void setId_livros(long id_livros) {
+	public void setId_livros(Long id_livros) {
 		this.id_livros = id_livros;
+	}
+
+	public String getCapa() {
+		return capa;
+	}
+
+	public void setCapa(String capa) {
+		this.capa = capa;
 	}
 
 	public String getTitulo() {
@@ -83,12 +104,36 @@ public class Livros {
 		this.tag = tag;
 	}
 
-	public float getValor() {
-		return valor;
+	public Integer getQtdeEstoque() {
+		return qtdeEstoque;
 	}
 
-	public void setValor(float valor) {
-		this.valor = valor;
+	public void setQtdeEstoque(Integer qtdeEstoque) {
+		this.qtdeEstoque = qtdeEstoque;
+	}
+
+	public Integer getQtdePedido() {
+		return qtdePedido;
+	}
+
+	public void setQtdePedido(Integer qtdePedido) {
+		this.qtdePedido = qtdePedido;
+	}
+
+	public boolean isTemEstoque() {
+		return temEstoque;
+	}
+
+	public void setTemEstoque(boolean temEstoque) {
+		this.temEstoque = temEstoque;
+	}
+
+	public Double getValorUnitario() {
+		return valorUnitario;
+	}
+
+	public void setValorUnitario(Double valorUnitario) {
+		this.valorUnitario = valorUnitario;
 	}
 
 	public Pedido getPedido() {
@@ -105,6 +150,14 @@ public class Livros {
 
 	public void setFuncionario(Funcionario funcionario) {
 		this.funcionario = funcionario;
+	}
+
+	public int getIsbn() {
+		return isbn;
+	}
+
+	public void setIsbn(int isbn) {
+		this.isbn = isbn;
 	}
 
 }

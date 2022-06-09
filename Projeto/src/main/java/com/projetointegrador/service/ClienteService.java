@@ -19,29 +19,19 @@ import com.projetointegrador.repository.ClienteRepository;
 @Service
 public class ClienteService {
 	
+	/*
+	 * Regras do nosso negócio
+	 * 1 - Não pode ter 2 clientes cadastrados no sistema com o mesmo e-mail
+	 * 2 - Não pode ter cadastrado no nosso sistema um cliente menor de idade (menos que 18 anos)
+	 */
+	
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
 	public Optional<Cliente> CadastrarCliente(Cliente cliente){
 		
-		//Pegando somente o ano atual
-		String timeStamp = new SimpleDateFormat("yyyy").format(Calendar.getInstance().getTime());
-		
-		//Convertendo o ano para Inteiro
-		int dataConvertida = Integer.parseInt(timeStamp);
-		
 		//Checa se o Cliente existe no Banco, pois não pode ter 2 clientes com o mesmo e-mail, se não existir retorna o Optional vazio
 		if(clienteRepository.findByEmail(cliente.getEmail()).isPresent())
-			return Optional.empty();
-		
-		//Pegando o ano de nascimento do usuário que está tentando se cadastrar
-		String anoCliente = new SimpleDateFormat("yyyy").format(cliente.getDataNascimento().getTime());
-		
-		//Convertendo a data de nascimento do cliente para Inteiro
-		int dataConvertidaC = Integer.parseInt(anoCliente);
-		
-		//Subtraindo a data atual com a data de nascimento do cliente, se retornar menor que 18 anos retorna um Optional vazio
-		if((dataConvertida - dataConvertidaC)<18)
 			return Optional.empty();
 		
 		//Se o cliente não existir a senha sera criptografada

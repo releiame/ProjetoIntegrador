@@ -3,6 +3,7 @@ package com.projetointegrador.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,10 +23,11 @@ public class Funcionario{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id_funcionario;
+	private Long id_funcionario;
 	
 	@NotNull
-	private int codf;
+	@Column(unique = true)
+	private String codf;
 	
 	@NotNull
 	@Size(min = 8)
@@ -41,33 +43,33 @@ public class Funcionario{
 	
 	//CRIANDO OS CONSTRUTORES
 	
-	public Funcionario(long id_funcionario, int codf, String senha, String nome, List<Livros> livros) {
+	public Funcionario(Long id_funcionario, String codf, String senha, String nome, List<Livros> livros) {
 		this.id_funcionario = id_funcionario;
 		this.codf = codf;
 		this.senha = senha;
 		this.nome = nome;
 		this.livros = livros;
 	}
-	
+
 	public Funcionario() {
 		
 	}
 	
 	//CRIANDO OS GETTERS E SETTERS
 	
-	public long getId_funcionario() {
+	public Long getId_funcionario() {
 		return id_funcionario;
 	}
 
-	public void setId_funcionario(int id_funcionario) {
+	public void setId_funcionario(Long id_funcionario) {
 		this.id_funcionario = id_funcionario;
 	}
 
-	public int getCodf() {
+	public String getCodf() {
 		return codf;
 	}
 	
-	public void setCodf(int codf) {
+	public void setCodf(String codf) {
 		this.codf = codf;
 	}
 	
@@ -93,10 +95,6 @@ public class Funcionario{
 
 	public void setLivros(List<Livros> livros) {
 		this.livros = livros;
-	}
-
-	public String getTelefone() {
-		return null;
 	}
 
 }
