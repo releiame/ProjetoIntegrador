@@ -1,12 +1,22 @@
+h4 {
+  margin: 16px;
+}
+
+.page-footer {
+  background-color: #212529;
+}
+
 ul.social-network {
   list-style: none;
   padding: 5%;
+  margin-bottom: 0;
 }
 
 ul.social-network li {
   display: inline-block;
   margin: 0;
   padding: 0%;
+  margin-bottom: 0;
 }
 
 .fa {
