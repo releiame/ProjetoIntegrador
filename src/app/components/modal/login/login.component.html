@@ -14,18 +14,18 @@
         <div class="p-4">
           <div class="mb-3">
             <label for="emailLogin" class="form-label">Email</label>
-            <input type="email" class="form-control" placeholder="seuemail@mail.com" id="emailLogin"
+            <input [(ngModel)]="clienteLogin.email" type="email" class="form-control" placeholder="seuemail@mail.com" id="emailLogin"
               aria-describedby="email">
           </div>
           <div class="mb-3">
             <label for="passwordLogin" class="form-label">Senha</label>
-            <input type="password" placeholder="Senha@123" class="form-control" id="passwordLogin">
+            <input [(ngModel)]="clienteLogin.senha" type="password" placeholder="Senha@123" class="form-control" id="passwordLogin">
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="checkConect">
             <label class="form-check-label" for="checkConect">Me manter conectado</label>
           </div>
-          <button type="submit" class="btn btn-primary">Entrar</button>
+          <button type="submit" class="btn btn-primary" (click)="entrar()">Entrar</button>
           <br><br>
           <p>Primeira compra? <a class="text-dark" data-bs-toggle="modal" data-bs-target="#modalCadastro" href="#">Criar
               Conta.</a></p>

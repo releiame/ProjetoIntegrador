@@ -25,6 +25,7 @@ import { HpEACamaraSecretaComponent } from './components/details-books/hp-e-a-ca
 import { HpEOPrisioneiroDeAzkabanComponent } from './components/details-books/hp-e-o-prisioneiro-de-azkaban/hp-e-o-prisioneiro-de-azkaban.component';
 import { HpEOCaliceDeFogoComponent } from './components/details-books/hp-e-o-calice-de-fogo/hp-e-o-calice-de-fogo.component';
 import { HpEAsReliquiasDaMorteComponent } from './components/details-books/hp-e-as-reliquias-da-morte/hp-e-as-reliquias-da-morte.component';
+import { FuncLoginComponent } from './components/modal/func-login/func-login.component';
 
 
 
@@ -50,7 +51,8 @@ import { HpEAsReliquiasDaMorteComponent } from './components/details-books/hp-e-
     HpEACamaraSecretaComponent,
     HpEOPrisioneiroDeAzkabanComponent,
     HpEOCaliceDeFogoComponent,
-    HpEAsReliquiasDaMorteComponent
+    HpEAsReliquiasDaMorteComponent,
+    FuncLoginComponent
 
   ],
   imports: [

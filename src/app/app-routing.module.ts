@@ -1,14 +1,18 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
-import { ADancaDosDragoesComponent } from "./components/details-books/a-danca-dos-dragoes/a-danca-dos-dragoes.component";
-import { AFuriaDosReisComponent } from "./components/details-books/a-furia-dos-reis/a-furia-dos-reis.component";
+import { CadastroComponent } from "./components/modal/cadastro/cadastro.component";
+import { LoginComponent } from "./components/modal/login/login.component";
+import { CarouselInicioComponent } from "./components/template/carousel-inicio/carousel-inicio.component";
+import { HeaderInicioDeslogComponent } from "./components/template/header-inicio-deslog/header-inicio-deslog.component";
 import { Page1Component } from "./components/template/page1/page1.component";
 
 const routes: Routes = [
     {path: '', redirectTo:'page1', pathMatch: 'full'},
-    {path: 'page', component:Page1Component},
-    {path: 'a-danca-dos-dragoes', component:ADancaDosDragoesComponent},
-    {path: 'a-furia-dos-reis', component:AFuriaDosReisComponent}
+    {path: 'page1', component:Page1Component},
+    {path: 'login', component:LoginComponent},
+    {path: 'cadastro', component:CadastroComponent},
+    {path: 'header-inicio-log', component:HeaderInicioDeslogComponent},
+    {path: 'carousel', component:CarouselInicioComponent},
 ];
 
 @NgModule({

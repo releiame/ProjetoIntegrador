@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Cliente } from 'src/app/model/Cliente';
 import { ClienteLogin } from 'src/app/model/ClienteLogin';
 import { AuthService } from 'src/app/service/auth.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
@@ -14,7 +14,8 @@ export class CadastroComponent implements OnInit {
   clienteLogin: ClienteLogin = new ClienteLogin
 
   constructor(
-    private authService:AuthService
+    private authService:AuthService,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -23,8 +24,8 @@ export class CadastroComponent implements OnInit {
   cadastrar() {
     this.authService.cadastrar(this.cliente).subscribe((resp: Cliente)=>{
       this.cliente = resp
+      this.router.navigate(['/login'])
       alert('Cliente cadastrado com sucesso!!!')
     })
   }
-
 }
