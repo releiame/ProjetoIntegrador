@@ -17,7 +17,6 @@ import com.projetointegrador.service.FuncionarioService;
 
 //habilita a configuração de segurança padrão do Spring Security na nossa api.
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Autowired //Uma auto injeção de dependencia

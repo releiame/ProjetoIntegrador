@@ -33,21 +33,10 @@ public class PedidoService {
 		for(int i = 0; i<pedido.getLivros().size(); i++) {
 			livro = livroRepository.getById(pedido.getLivros().get(i).getId_livros());
 			carrinho.add(livro);
-			if(livro.getId_livros().equals(pedido.getLivros().get(i).getId_livros())) {
-				livro.setQtdeEstoque(livro.getQtdeEstoque() - 1);
-			}
 		}
 		
 		pedido.setLivros(carrinho);
 		
-	}
-	
-	public void AdicionarLivro(Livros livro, Pedido pedido) {
-		List<Livros> carrinho = new ArrayList<Livros>();
-		carrinho = pedido.getLivros();
-		carrinho.add(livro);
-		livro.setQtdeEstoque(livro.getQtdeEstoque() - 1);
-		livroRepository.save(livro);
 	}
 	
 	public void calcularValor(Pedido pedido){
@@ -63,13 +52,22 @@ public class PedidoService {
 	}
 	
 	public void checarEstoque(Livros livro) {
-		for(long i = 0; i<livroRepository.count(); i++) {
-			livro = livroRepository.getById(i);
+		for(int i = 0; i<livroRepository.count(); i++) {
+			livro = livroRepository.getById((long) i);
 			if(livro.getQtdeEstoque() == 0) {
 				livro.setTemEstoque(false);
 			}
 		}
 	}
+	
+	/*
+	public void AdicionarLivro(Livros livro, Pedido pedido) {
+		List<Livros> carrinho = new ArrayList<Livros>();
+		carrinho = pedido.getLivros();
+		carrinho.add(livro);
+		livro.setQtdeEstoque(livro.getQtdeEstoque() - 1);
+		livroRepository.save(livro);
+	}*/
 	
 	
 	

@@ -1,18 +1,23 @@
 package com.projetointegrador.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table (name = "tb_livros")
+@Table (name = "tb_livros", uniqueConstraints={@UniqueConstraint(columnNames={"isbn"})})
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Livros {
 	
@@ -46,10 +51,14 @@ public class Livros {
 	@NotNull
 	private Double valorUnitario;
 	
-	@ManyToOne
+	@ManyToMany
 	@JsonIgnoreProperties("livros")
-	@JoinColumn(name = "id_pedido")
-	private Pedido pedido;
+	@JoinTable(
+			name = "pedido_livros", 
+			uniqueConstraints = @UniqueConstraint(columnNames = {"livros_fk", "pedido_fk"}),
+			joinColumns = {@JoinColumn(name = "livros_fk")}, 
+			inverseJoinColumns = {@JoinColumn(name = "pedido_fk")})
+	private List<Pedido> pedido;
 	
 	@ManyToOne
 	@JsonIgnoreProperties("livros")
@@ -136,11 +145,11 @@ public class Livros {
 		this.valorUnitario = valorUnitario;
 	}
 
-	public Pedido getPedido() {
+	public List<Pedido> getPedido() {
 		return pedido;
 	}
 
-	public void setPedido(Pedido pedido) {
+	public void setPedido(List<Pedido> pedido) {
 		this.pedido = pedido;
 	}
 

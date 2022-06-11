@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.projetointegrador.model.Funcionario;
 import com.projetointegrador.model.Livros;
+import com.projetointegrador.model.Pedido;
 import com.projetointegrador.repository.FuncionarioRepository;
 import com.projetointegrador.repository.LivrosRepository;
+import com.projetointegrador.repository.PedidoRepository;
 
 @RestController
 @RequestMapping("/livros")
@@ -30,6 +32,9 @@ public class LivrosController {
 	
 	@Autowired
 	private FuncionarioRepository funcionarioRepository;
+	
+	@Autowired
+	private PedidoRepository pedidoRepository;
 	
 	@GetMapping
 	public ResponseEntity<List<Livros>>GetAll(){
@@ -48,7 +53,7 @@ public class LivrosController {
 		return ResponseEntity.ok(repositoryLivros.findAllByTituloContainingIgnoreCase(titulo));
 	}
 	
-	@PostMapping("/cadastrar")
+	@PostMapping
 	public ResponseEntity<Livros> post (@RequestBody Livros livros){
 		Funcionario funcionario = funcionarioRepository.getById(livros.getFuncionario().getId_funcionario());
 		livros.setFuncionario(funcionario);

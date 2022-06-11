@@ -19,13 +19,30 @@ Criar filtro de amostra dos livros
 
 BACK-END
 
-Fazer um metodo para o cliente escolher quantos livros iguais ele quer no seu pedido
-Fazer um metodo para comparar a quantidade de livros que o cliente pediu com a quantidade de livros que tem em estoque
-cadastrar roles para o cliente e funcionario
-criar testes para Funcionario, Pedidos, Endereços e Livros
-perguntar o porque do token não funcionar
+ - Fazer um metodo para o cliente escolher quantos livros iguais ele quer no seu pedido
+ - Fazer um metodo para comparar a quantidade de livros que o cliente pediu com a quantidade de livros que tem em estoque
+ - Cadastrar roles para o cliente e funcionario
+ - Criar testes para Funcionario, Pedidos, Endereços e Livros
+ - Perguntar o porque do token não funcionar
+ - Perguntar se o relacionamento entre Pedido e Livro ta correto
+ - Perguntar como podemos fazer o relacionamento do Livro com o Pedido (Em vez de puxar o livro para o pedido, 
+   se poderia criar outro objeto Livro e colocar ele no pedido)
+	Quando apaga um pedido, os livros cadastrados dentro dele são apagados juntos
+	Um livro só pode ser adicionado em um pedido
 
-- Percorrer a Lista "livros"
-- Pegar o ID do Livro em questão
-- Comparar com o Id na tabela "Livros"
-- Mudar o atributo "qtdePedido" na tabela Livro
+
+-------------------------------------------------
+
+REGRAS
+
+Cliente:
+ - Somente acima de 18 anos podem criar contas
+ - Não pode ter 2 ou mais clientes com o mesmo e-mail
+
+Pedido:
+ - O limite de livros por pedido não pode ultrapassar a quantidade em estoque
+ - Não deve adicionar um livro que não tenha estoque disponivel
+
+Livro:
+ - Não pode ter livros com o mesmo ISBN
+

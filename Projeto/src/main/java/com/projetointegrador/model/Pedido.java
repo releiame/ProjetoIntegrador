@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -31,8 +32,8 @@ public class Pedido {
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 	
-	@OneToMany(mappedBy = "pedido", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("pedido")
+	@ManyToMany(mappedBy = "pedido")
+	@JsonIgnoreProperties("livros")
 	private List<Livros> livros;
 	
 	private Double valorTotal;
