@@ -1,38 +1,42 @@
-h4 {
-  margin: 16px;
+h6 {
+  margin: 1%;
+  padding: 1%;
 }
 
 .page-footer {
   background-color: #212529;
+  list-style: none;
+  flex: none;
+  max-width: 100%;
+}
+
+.icone-footer img {
+  transition: opacity;
+  height: 3rem;
+  padding: 2px;
+  justify-content: center;
+}
+
+.icone-footer:hover {
+  color: white;
 }
 
 ul.social-network {
-  list-style: none;
   padding: 5%;
   margin-bottom: 0;
 }
 
 ul.social-network li {
-  display: inline-block;
+  display: inline;
+  align-content: center;
   margin: 0;
   padding: 0%;
   margin-bottom: 0;
 }
 
-.fa {
-  font-size: 35pt;
-  color: white;
-  padding: 10%;
-}
-
-.fa-facebook-square:hover {
-  color:white;
-}
-
-.fa-instagram:hover {
-  color:white;
-}
-
-.fa-linkedin-square:hover {
-  color:white;
+ul.safe-website li {
+  display: inline-block;
+  margin: 0;
+  padding: 1%;
+  margin-bottom: 0;
 }
