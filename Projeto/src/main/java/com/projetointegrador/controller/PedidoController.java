@@ -72,15 +72,4 @@ public class PedidoController {
 		return ResponseEntity.status(HttpStatus.OK).body(repositoryPedido.save(pedido));
 	}
 	
-	/*@GetMapping("/{id_livros}/{id_pedido}")
-	public ResponseEntity<Pedido> GetById(@PathVariable Long id_livros, @PathVariable Long id_pedido){
-		Livros livro = livroRepository.getById(id_pedido);
-		Pedido pedido = repositoryPedido.getById(id_pedido);
-		pedidoService.AdicionarLivro(livro, pedido);
-		pedidoService.AdicionarLivroPedido(pedido);
-		pedidoService.calcularValor(pedido);
-		return ResponseEntity.status(HttpStatus.OK).body(repositoryPedido.save(pedido));
-		
-	}*/
-	
 }

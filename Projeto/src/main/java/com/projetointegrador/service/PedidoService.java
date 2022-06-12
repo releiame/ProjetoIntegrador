@@ -29,12 +29,15 @@ public class PedidoService {
 	public void AdicionarLivroPedido(Pedido pedido) {
 		
 		List<Livros> carrinho = new ArrayList<Livros>();
+		List<Pedido> p = new ArrayList<Pedido>();
+		p.add(pedido);
 		
 		for(int i = 0; i<pedido.getLivros().size(); i++) {
 			livro = livroRepository.getById(pedido.getLivros().get(i).getId_livros());
 			carrinho.add(livro);
 		}
 		
+		livro.setPedido(p);
 		pedido.setLivros(carrinho);
 		
 	}
@@ -59,15 +62,6 @@ public class PedidoService {
 			}
 		}
 	}
-	
-	/*
-	public void AdicionarLivro(Livros livro, Pedido pedido) {
-		List<Livros> carrinho = new ArrayList<Livros>();
-		carrinho = pedido.getLivros();
-		carrinho.add(livro);
-		livro.setQtdeEstoque(livro.getQtdeEstoque() - 1);
-		livroRepository.save(livro);
-	}*/
 	
 	
 	
