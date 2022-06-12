@@ -32,6 +32,15 @@ ul.developed-by li {
   list-style: none;
 }
 
+ul.books-tips-themes li {
+  display:list-item;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+  margin-right: 2rem;
+}
+
 .blue-heart {
   height: 1.5rem;
   margin: 0.5%;
