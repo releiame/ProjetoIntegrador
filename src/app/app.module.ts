@@ -8,13 +8,13 @@ import { AppComponent } from './app.component';
 import { HeaderInicioDeslogComponent } from './components/template/header-inicio-deslog/header-inicio-deslog.component';
 import { HeaderInicioLogComponent } from './components/template/header-inicio-log/header-inicio-log.component';
 import { CarouselInicioComponent } from './components/template/carousel-inicio/carousel-inicio.component';
-import { Page1Component } from './components/template/page1/page1.component';
 import { RodapeComponent } from './components/template/rodape/rodape.component';
 import { DetalhesLivrosComponent } from './components/template/detalhes-livros/detalhes-livros.component';
 
 import { LoginComponent } from './components/modal/login/login.component';
 import { CadastroComponent } from './components/modal/cadastro/cadastro.component';
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
+import { HomeComponent } from './components/template/home/home.component';
 
 
 @NgModule({
@@ -27,8 +27,8 @@ import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conos
     CadastroComponent,
     FaleConoscoComponent,
     RodapeComponent,
-    Page1Component,
-    DetalhesLivrosComponent
+    DetalhesLivrosComponent,
+    HomeComponent
 
   ],
   imports: [
