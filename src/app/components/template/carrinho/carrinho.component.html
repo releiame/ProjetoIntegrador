@@ -1,0 +1,102 @@
+<div class="container">
+    <!--menu-->
+    <div class="nav justify-content-evenly h5 py-3 traco">
+        <div class="nav-item">
+            <ul class="nav-link text-center carrinho" aria-current="page" href="#">
+                <a routerLink="#">
+                    <li><img src="../../../../assets/img/carrinho_preto.png" /></li>
+                    <li class="text-dark">Carrinho</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav-item opacity-25 text-center">
+            <ul class="nav-link text-dark">
+                <li><img src="../../../../assets/img/forma-de-pagamento.png" /></li>
+                <li>Pagamento</li>
+            </ul>
+        </div>
+        <div class="nav-item opacity-25 text-center">
+            <ul class="nav-link text-dark">
+                <li><img src="../../../../assets/img/conta.png" /></li>
+                <li>Compra Finalizada</li>
+            </ul>
+        </div>
+    </div>
+    <!--conteúdo-->
+    <div class="d-flex justify-content-center">
+        <h2 class="my-4">Meu Carrinho</h2>
+    </div>
+
+
+    <table class="table table-borderless borda align-middle">
+        <thead class="vermelho text-light">
+            <tr>
+                <th scope="col">Produto(s)</th>
+                <th scope="col">Valor Unitário</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Valor Total</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="d-flex align-items-center">
+                    <img class="img-thumbnail tam me-4" src="../../../../assets/img/a-cabana.jpg" />
+                    <a routerLink="#">A CABANA (William P. Young)</a>
+                </th>
+                <td>R$ 56,50</td>
+                <td><input type="number" class="form-control" id="qtdItem" value="1"></td>
+                <td>(VU*Qtd) </td>
+                <td><a (click)="delete()"><img class="lixo" src="../../../../assets/img/lata-de-lixo.png"></a></td>
+            </tr>
+            <tr>
+                <th class="d-flex align-items-center">
+                    <img class="img-thumbnail tam me-4" src="../../../../assets/img/hp-ordemdafenix.jpg" />
+                    <a routerLink="#">HARRY POTTER E A ORDEM DA FÊNIX (J. K. Rowling)</a>
+                </th>
+                <td>R$ 56,50</td>
+                <td><input type="number" class="form-control" id="qtdItem" value="1"></td>
+                <td>(VU*Qtd) </td>
+                <td><a (click)="delete()"><img class="lixo" src="../../../../assets/img/lata-de-lixo.png"></a></td>
+            </tr>
+            <tr>
+                <th class="d-flex align-items-center">
+                    <img class="img-thumbnail tam me-4" src="../../../../assets/img/a-menina-que-roubava-livros.jpg" />
+                    <a routerLink="#">A MENINA QUE ROUBAVA LIVROS (Markus Zusak)</a>
+                </th>
+                <td>R$ 56,50</td>
+                <td><input type="number" class="form-control" id="qtdItem" value="1"></td>
+                <td>(VU*Qtd) </td>
+                <td><a (click)="delete()"><img class="lixo" src="../../../../assets/img/lata-de-lixo.png"></a></td>
+            </tr>
+            <tr>
+                <th>
+                    <button class="btn btn-outline-secondary">Escolher mais produtos</button>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+<!-- AQUI VAI SER O PESQUISAR CEP E PREÇO TOTAL E BOTÃO DE FINALIZAR PEDIDO
+    <div class="d-flex justify-content-between">
+
+            <div class="card tam-card">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+          <div class="card tam-card">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+    </div> -->
+</div>

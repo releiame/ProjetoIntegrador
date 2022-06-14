@@ -15,6 +15,7 @@ import { LoginComponent } from './components/modal/login/login.component';
 import { CadastroComponent } from './components/modal/cadastro/cadastro.component';
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
 import { HomeComponent } from './components/template/home/home.component';
+import { CarrinhoComponent } from './components/template/carrinho/carrinho.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HomeComponent } from './components/template/home/home.component';
     FaleConoscoComponent,
     RodapeComponent,
     DetalhesLivrosComponent,
-    HomeComponent
+    HomeComponent,
+    CarrinhoComponent
 
   ],
   imports: [
