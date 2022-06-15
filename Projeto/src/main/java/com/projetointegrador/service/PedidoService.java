@@ -2,13 +2,11 @@ package com.projetointegrador.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import com.projetointegrador.model.Cliente;
 import com.projetointegrador.model.Livros;
 import com.projetointegrador.model.Pedido;
 import com.projetointegrador.repository.LivrosRepository;
@@ -35,11 +33,23 @@ public class PedidoService {
 		for(int i = 0; i<pedido.getLivros().size(); i++) {
 			livro = livroRepository.getById(pedido.getLivros().get(i).getId_livros());
 			carrinho.add(livro);
+			livro.setQtdeEstoque(livro.getQtdeEstoque() - 1);
 		}
 		
 		livro.setPedido(p);
 		pedido.setLivros(carrinho);
 		
+	}
+	
+	public void RemovendoLivro(Pedido pedido, Livros livro) {
+		
+		for(int i = 0; i<pedido.getLivros().size(); i++) {
+			if(pedido.getLivros().get(i).equals(livro)) {
+				pedido.getLivros().remove(i);
+				livro.setQtdeEstoque(livro.getQtdeEstoque() + 1);
+				break;
+			}
+		}
 	}
 	
 	public void calcularValor(Pedido pedido){
@@ -53,17 +63,5 @@ public class PedidoService {
 		
 		pedido.setValorTotal(valor);	
 	}
-	
-	public void checarEstoque(Livros livro) {
-		for(int i = 0; i<livroRepository.count(); i++) {
-			livro = livroRepository.getById((long) i);
-			if(livro.getQtdeEstoque() == 0) {
-				livro.setTemEstoque(false);
-			}
-		}
-	}
-	
-	
-	
 	
 }

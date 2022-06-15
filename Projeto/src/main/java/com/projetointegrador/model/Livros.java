@@ -36,9 +36,6 @@ public class Livros {
 	private String autor;
 	
 	@NotNull
-	private String tag;
-	
-	@NotNull
 	private Integer qtdeEstoque;
 	
 	private Integer qtdePedido = 1;
@@ -50,6 +47,10 @@ public class Livros {
 	
 	@NotNull
 	private Double valorUnitario;
+	
+	@ManyToMany(mappedBy = "tag")
+	@JsonIgnoreProperties("livros")
+	private List<Tag> tag;
 	
 	@ManyToMany
 	@JsonIgnoreProperties("livros")
@@ -103,14 +104,6 @@ public class Livros {
 
 	public void setAutor(String autor) {
 		this.autor = autor;
-	}
-
-	public String getTag() {
-		return tag;
-	}
-
-	public void setTag(String tag) {
-		this.tag = tag;
 	}
 
 	public Integer getQtdeEstoque() {
@@ -167,6 +160,14 @@ public class Livros {
 
 	public void setIsbn(int isbn) {
 		this.isbn = isbn;
+	}
+
+	public List<Tag> getTag() {
+		return tag;
+	}
+
+	public void setTag(List<Tag> tag) {
+		this.tag = tag;
 	}
 
 }

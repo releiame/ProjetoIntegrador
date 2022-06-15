@@ -21,6 +21,8 @@ import com.projetointegrador.model.Pedido;
 import com.projetointegrador.repository.FuncionarioRepository;
 import com.projetointegrador.repository.LivrosRepository;
 import com.projetointegrador.repository.PedidoRepository;
+import com.projetointegrador.service.LivroService;
+import com.projetointegrador.service.PedidoService;
 
 @RestController
 @RequestMapping("/livros")
@@ -36,8 +38,18 @@ public class LivrosController {
 	@Autowired
 	private PedidoRepository pedidoRepository;
 	
+	@Autowired
+	private LivroService service;
+	
 	@GetMapping
 	public ResponseEntity<List<Livros>>GetAll(){
+		Livros livro = new Livros();
+		for(int i = 0; i<repositoryLivros.count(); i++) {
+			livro = repositoryLivros.getById((long) i);
+			if(livro.getQtdeEstoque() <= 0) {
+				livro.setTemEstoque(false);
+			}
+		}
 		return ResponseEntity.ok(repositoryLivros.findAll());
 	}
 	
