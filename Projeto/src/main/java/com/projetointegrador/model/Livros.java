@@ -48,7 +48,7 @@ public class Livros {
 	@NotNull
 	private Double valorUnitario;
 	
-	@ManyToMany(mappedBy = "tag")
+	@ManyToMany(mappedBy = "livros")
 	@JsonIgnoreProperties("livros")
 	private List<Tag> tag;
 	
