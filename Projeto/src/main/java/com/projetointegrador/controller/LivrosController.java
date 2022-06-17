@@ -43,13 +43,13 @@ public class LivrosController {
 	
 	@GetMapping
 	public ResponseEntity<List<Livros>>GetAll(){
-		Livros livro = new Livros();
-		for(int i = 0; i<repositoryLivros.count(); i++) {
+		/*Livros livro = new Livros();
+		for(int i = 1; i<=repositoryLivros.count(); i++) {
 			livro = repositoryLivros.getById((long) i);
 			if(livro.getQtdeEstoque() <= 0) {
 				livro.setTemEstoque(false);
 			}
-		}
+		}*/
 		return ResponseEntity.ok(repositoryLivros.findAll());
 	}
 	
@@ -69,6 +69,7 @@ public class LivrosController {
 	public ResponseEntity<Livros> post (@RequestBody Livros livros){
 		Funcionario funcionario = funcionarioRepository.getById(livros.getFuncionario().getId_funcionario());
 		livros.setFuncionario(funcionario);
+		service.AdicionarTag(livros);
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryLivros.save(livros));
 	}
 	
@@ -80,6 +81,12 @@ public class LivrosController {
 	@PutMapping
 	public ResponseEntity<Livros> put (@RequestBody Livros livros){
 		return ResponseEntity.status(HttpStatus.OK).body(repositoryLivros.save(livros));
+	}
+	
+	@PutMapping("/livro_pedido/livros/{id_livros}/pedido/{id_pedido}")
+	public ResponseEntity<Livros> putLivros(@PathVariable long id_livros, @PathVariable long id_pedido){
+		System.out.println("INICIO - OK");
+		return ResponseEntity.ok(service.AdicionarMais(id_pedido, id_livros));
 	}
 
 }

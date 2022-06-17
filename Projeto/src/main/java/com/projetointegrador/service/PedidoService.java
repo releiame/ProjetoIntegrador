@@ -41,17 +41,6 @@ public class PedidoService {
 		
 	}
 	
-	public void RemovendoLivro(Pedido pedido, Livros livro) {
-		
-		for(int i = 0; i<pedido.getLivros().size(); i++) {
-			if(pedido.getLivros().get(i).equals(livro)) {
-				pedido.getLivros().remove(i);
-				livro.setQtdeEstoque(livro.getQtdeEstoque() + 1);
-				break;
-			}
-		}
-	}
-	
 	public void calcularValor(Pedido pedido){
 		
 		Double valor = 0.;
@@ -63,5 +52,21 @@ public class PedidoService {
 		
 		pedido.setValorTotal(valor);	
 	}
+	/*
+	public void RemovendoLivro(Pedido pedido, Livros livro) {
+		
+		for(int i = 0; i<pedido.getLivros().size(); i++) {
+			if(pedido.getLivros().get(i).equals(livro)) {
+				pedido.getLivros().remove(i);
+				livro.setQtdeEstoque(livro.getQtdeEstoque() + 1);
+				break;
+			}
+		}
+	}
+	
+	public void adicionarLivro(Livros livro, Pedido pedido) {
+		pedido.getLivros().add(livro);
+		livro.getPedido().add(pedido);
+	}*/
 	
 }

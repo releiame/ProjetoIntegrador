@@ -50,7 +50,7 @@ public class Cliente {
 	@JsonIgnoreProperties("cliente") //Indicando que deve ignorar campos desconhecidos
 	private List<Endereco> endereco;
 	
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "cliente")
 	@JsonIgnoreProperties("cliente")
 	private List<Pedido> pedido;
 	

@@ -57,14 +57,6 @@ public class Pedido {
 		this.cliente = cliente;
 	}
 
-	public List<Livros> getLivros() {
-		return livros;
-	}
-
-	public void setLivros(List<Livros> livros) {
-		this.livros = livros;
-	}
-
 	public Double getValorTotal() {
 		return valorTotal;
 	}
@@ -79,6 +71,14 @@ public class Pedido {
 
 	public void setData(LocalDateTime data) {
 		this.data = data;
+	}
+
+	public List<Livros> getLivros() {
+		return livros;
+	}
+
+	public void setLivros(List<Livros> livros) {
+		this.livros = livros;
 	}
 	
 }

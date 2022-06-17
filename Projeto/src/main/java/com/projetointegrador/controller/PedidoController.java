@@ -22,6 +22,7 @@ import com.projetointegrador.model.Pedido;
 import com.projetointegrador.repository.ClienteRepository;
 import com.projetointegrador.repository.LivrosRepository;
 import com.projetointegrador.repository.PedidoRepository;
+import com.projetointegrador.service.LivroService;
 import com.projetointegrador.service.PedidoService;
 
 @RestController
@@ -40,6 +41,9 @@ public class PedidoController {
 	
 	@Autowired
 	private LivrosRepository livroRepository;
+	
+	@Autowired
+	private LivroService service;
 	
 	@GetMapping
 	public ResponseEntity<List<Pedido>>GetAll(){
@@ -70,6 +74,11 @@ public class PedidoController {
 	@PutMapping
 	public ResponseEntity<Pedido> put (@RequestBody Pedido pedido){
 		return ResponseEntity.status(HttpStatus.OK).body(repositoryPedido.save(pedido));
+	}
+	
+	@DeleteMapping("livros_pedido/livros/{id_livros}/pedido/{id_pedido}")
+	public void putLivro(@PathVariable long id_livros, @PathVariable long id_pedido) {
+		service.deletarLivro(id_livros, id_pedido);
 	}
 	
 }

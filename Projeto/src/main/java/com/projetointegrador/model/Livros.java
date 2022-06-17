@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
@@ -36,9 +37,9 @@ public class Livros {
 	private String autor;
 	
 	@NotNull
-	private Integer qtdeEstoque;
+	private int qtdeEstoque;
 	
-	private Integer qtdePedido = 1;
+	private int qtdePedido;
 	
 	private boolean temEstoque = true;
 	
@@ -138,14 +139,6 @@ public class Livros {
 		this.valorUnitario = valorUnitario;
 	}
 
-	public List<Pedido> getPedido() {
-		return pedido;
-	}
-
-	public void setPedido(List<Pedido> pedido) {
-		this.pedido = pedido;
-	}
-
 	public Funcionario getFuncionario() {
 		return funcionario;
 	}
@@ -168,6 +161,14 @@ public class Livros {
 
 	public void setTag(List<Tag> tag) {
 		this.tag = tag;
+	}
+
+	public List<Pedido> getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(List<Pedido> pedido) {
+		this.pedido = pedido;
 	}
 
 }
