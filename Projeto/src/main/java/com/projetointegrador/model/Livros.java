@@ -23,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Livros {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private Long id_livros;
 	
 	@NotNull
@@ -39,8 +39,6 @@ public class Livros {
 	@NotNull
 	private int qtdeEstoque;
 	
-	private int qtdePedido;
-	
 	private boolean temEstoque = true;
 	
 	@NotNull
@@ -48,6 +46,8 @@ public class Livros {
 	
 	@NotNull
 	private Double valorUnitario;
+	
+	private Double valorTotal;
 	
 	@ManyToMany(mappedBy = "livros")
 	@JsonIgnoreProperties("livros")
@@ -107,22 +107,6 @@ public class Livros {
 		this.autor = autor;
 	}
 
-	public Integer getQtdeEstoque() {
-		return qtdeEstoque;
-	}
-
-	public void setQtdeEstoque(Integer qtdeEstoque) {
-		this.qtdeEstoque = qtdeEstoque;
-	}
-
-	public Integer getQtdePedido() {
-		return qtdePedido;
-	}
-
-	public void setQtdePedido(Integer qtdePedido) {
-		this.qtdePedido = qtdePedido;
-	}
-
 	public boolean isTemEstoque() {
 		return temEstoque;
 	}
@@ -171,4 +155,20 @@ public class Livros {
 		this.pedido = pedido;
 	}
 
+	public Double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(Double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public int getQtdeEstoque() {
+		return qtdeEstoque;
+	}
+
+	public void setQtdeEstoque(int qtdeEstoque) {
+		this.qtdeEstoque = qtdeEstoque;
+	}
+	
 }

@@ -24,6 +24,8 @@ public class PedidoService {
 	
 	private Livros livro = new Livros();
 	
+	private List<Livros> livros = new ArrayList<Livros>();
+	
 	public void AdicionarLivroPedido(Pedido pedido) {
 		
 		List<Livros> carrinho = new ArrayList<Livros>();
@@ -39,18 +41,7 @@ public class PedidoService {
 		livro.setPedido(p);
 		pedido.setLivros(carrinho);
 		
-	}
-	
-	public void calcularValor(Pedido pedido){
 		
-		Double valor = 0.;
-		
-		for(int i=0; i<pedido.getLivros().size(); i++) {
-			livro = pedido.getLivros().get(i);
-			valor += livro.getQtdePedido()*livro.getValorUnitario();
-		}
-		
-		pedido.setValorTotal(valor);	
 	}
 	/*
 	public void RemovendoLivro(Pedido pedido, Livros livro) {

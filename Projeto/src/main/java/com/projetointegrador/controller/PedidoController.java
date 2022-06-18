@@ -61,8 +61,8 @@ public class PedidoController {
 	public ResponseEntity<Pedido> post (@RequestBody Pedido pedido){
 		Cliente cliente = clienteRepository.getById(pedido.getCliente().getId_cliente());
 		pedido.setCliente(cliente);
+		System.out.println("Passo 1");
 		pedidoService.AdicionarLivroPedido(pedido);
-		pedidoService.calcularValor(pedido);
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryPedido.save(pedido));
 	}
 	

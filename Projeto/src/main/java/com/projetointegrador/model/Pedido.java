@@ -38,6 +38,8 @@ public class Pedido {
 	
 	private Double valorTotal;
 	
+	private int qtdeLivrosPedido;
+	
 	@UpdateTimestamp
 	private LocalDateTime data;
 
@@ -79,6 +81,14 @@ public class Pedido {
 
 	public void setLivros(List<Livros> livros) {
 		this.livros = livros;
+	}
+
+	public int getQtdeLivrosPedido() {
+		return qtdeLivrosPedido;
+	}
+
+	public void setQtdeLivrosPedido(int qtdeLivrosPedido) {
+		this.qtdeLivrosPedido = qtdeLivrosPedido;
 	}
 	
 }
