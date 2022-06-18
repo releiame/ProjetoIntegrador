@@ -62,6 +62,7 @@ public class FuncionarioController {
 		return service.atualizarFuncionario(funcionario)
 				.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+	
 	} //Metodo de alteração de dados de um funcionario cadastrado
 	
 	@DeleteMapping("/{id_funcionario}")
