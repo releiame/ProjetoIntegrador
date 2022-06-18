@@ -1,6 +1,7 @@
 package com.projetointegrador.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,8 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.projetointegrador.model.Funcionario;
+import com.projetointegrador.model.FuncionarioLogin;
 import com.projetointegrador.repository.FuncionarioRepository;
 import com.projetointegrador.service.FuncionarioService;
 
@@ -28,9 +29,9 @@ public class FuncionarioController {
 	private FuncionarioRepository repository;
 	
 	@Autowired
-	private FuncionarioService service;
+	private FuncionarioService funcionarioService;
 	
-	@GetMapping //Vai dizer que sempre que vier uma requisição externa
+	@GetMapping("/listartodos_funcionarios") //Vai dizer que sempre que vier uma requisição externa
 	public ResponseEntity<List<Funcionario>>GetAll(){
 		return ResponseEntity.ok(repository.findAll());
 	} //Metodo para retornar todos o funcionarios cadastrados
@@ -48,20 +49,27 @@ public class FuncionarioController {
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	} //Metodo de busca de funcionario pelo codf cadastrado
-
 	
-	@PostMapping("/cadastrar")
+	@PostMapping("/logar_funcionario")
+	public ResponseEntity<FuncionarioLogin> Autentication(@RequestBody Optional<FuncionarioLogin> user)
+	{
+		return funcionarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
+				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
+	}
+
+	@PostMapping("/cadastrar_funcionario")
 	public ResponseEntity<Funcionario> post (@RequestBody Funcionario funcionario){
-		return service.CadastrarFuncionario(funcionario)
+		return funcionarioService.CadastrarFuncionario(funcionario)
 				.map(resposta -> ResponseEntity.status(HttpStatus.CREATED).body(resposta))
 				.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
 	} //Metodo de cadastro de um funcionario
 	
-	@PutMapping
+	@PutMapping("/atualizar_funcionario")
 	public ResponseEntity<Funcionario> put (@RequestBody Funcionario funcionario){
-		return service.atualizarFuncionario(funcionario)
+		return funcionarioService.atualizarFuncionario(funcionario)
 				.map(resposta -> ResponseEntity.status(HttpStatus.OK).body(resposta))
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+	
 	} //Metodo de alteração de dados de um funcionario cadastrado
 	
 	@DeleteMapping("/{id_funcionario}")
