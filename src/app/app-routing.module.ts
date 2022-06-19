@@ -8,6 +8,7 @@ import { CarouselInicioComponent } from "./components/template/carousel-inicio/c
 import { HeaderInicioDeslogComponent } from "./components/template/header-inicio-deslog/header-inicio-deslog.component";
 import { HomeComponent } from "./components/template/home/home.component";
 import { CarrinhoComponent } from "./components/template/carrinho/carrinho.component";
+import { DevsComponent } from "./components/modal/devs/devs.component";
 
 // --------------Substituir # por nome das respectivas classes-------------
 
@@ -21,6 +22,7 @@ const routes: Routes = [
     {path: 'carousel', component:CarouselInicioComponent},
     {path: 'fale-conosco', component:FaleConoscoComponent},
     {path: 'carrinho', component:CarrinhoComponent},
+    {path: 'devs', component:DevsComponent},
     // {path: 'minha-conta', component:#}, 
     // {path: 'meus-pedidos', component:#},
     // {path: 'trocar-devolver', component:#},

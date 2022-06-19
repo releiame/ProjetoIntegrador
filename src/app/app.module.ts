@@ -16,6 +16,7 @@ import { CadastroComponent } from './components/modal/cadastro/cadastro.componen
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
 import { HomeComponent } from './components/template/home/home.component';
 import { CarrinhoComponent } from './components/template/carrinho/carrinho.component';
+import { DevsComponent } from './components/modal/devs/devs.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CarrinhoComponent } from './components/template/carrinho/carrinho.compo
     RodapeComponent,
     DetalhesLivrosComponent,
     HomeComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    DevsComponent
 
   ],
   imports: [
