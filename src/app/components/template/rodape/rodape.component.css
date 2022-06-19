@@ -9,31 +9,18 @@ h6 {
   max-width: 100%;
 }
 
-.icone-footer img {
-  transition: opacity;
-  height: 1.9rem;
-  padding: 2.5px;
-  justify-content: center;
-}
-
-ul.developed-by img {
-  transition: opacity;
-  height: 1.2rem;
-  padding: 1px;
-  padding-left: 5px;
-  justify-content: center;
-}
-
-ul.developed-by li {
-  display: flex;
+ul.links li {
+  display: list-item;
   margin: 0;
   padding: 0;
   margin-bottom: 0;
   list-style: none;
+  margin-right: 2rem;
+  align-items: center;
 }
 
 ul.books-tips-themes li {
-  display:list-item;
+  display: list-item;
   margin: 0;
   padding: 0;
   margin-bottom: 0;
@@ -41,22 +28,27 @@ ul.books-tips-themes li {
   margin-right: 2rem;
 }
 
-.blue-heart {
-  height: 1.5rem;
-  margin: 0.5%;
-  padding: 0% 0.5% 1% 0.5%;
+ul.safe-website {
+  margin-top: 15%;
+  align-items: center;
 }
 
 ul.safe-website li {
   display: inline-block;
-  margin: 0;
   padding: 1%;
   margin-bottom: 0;
 }
 
-.footer-social-network {
-  margin: 1%;
-  padding: 1%;
+.social-network-icons {
+  margin-top: 15%;
+  align-items: center;
+}
+
+.social-network-icon img {
+  transition: opacity;
+  height: 2.5rem;
+  padding: 2.5px;
+  justify-content: center;
 }
 
 .footer-copyright {
