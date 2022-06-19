@@ -27,9 +27,9 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //Para fazer o auto-incremendo do ID na tabela no banco de dados
 	private Long id_cliente;
 	
-	@NotNull(message = "O atributo cliente é obrigatório") //Obrigando o campo a não ser nulo
+	@NotNull(message = "O atributo email é obrigatório") //Obrigando o campo a não ser nulo
 	@Schema(example = "email@email.com")
-	@Email(message = "O atributo cliente deve ser um e-mail válido")
+	@Email(message = "O atributo email deve ser um e-mail válido")
 	private String email;
 	
 	@NotNull
@@ -37,11 +37,8 @@ public class Cliente {
 	private String senha;
 	
 	@NotNull
-	@Size(min = 5, max = 100)
+	@Size(min = 3, max = 100)
 	private String nome;
-	
-	@Size(min = 5, max = 15)
-	private String telefone;
 	
 	@NotNull
 	private Date dataNascimento;
@@ -56,12 +53,11 @@ public class Cliente {
 	
 	//CRIANDO OS CONSTRUTORES
 	
-	public Cliente(Long id_cliente, String email, String senha, String nome, String telefone, Date dataNascimento) {
+	public Cliente(Long id_cliente, String email, String senha, String nome, Date dataNascimento) {
 		this.id_cliente = id_cliente;
 		this.email = email;
 		this.senha = senha;
 		this.nome = nome;
-		this.telefone = telefone;
 		this.dataNascimento = dataNascimento;
 	}
 	
@@ -103,13 +99,6 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
 
 	public Date getDataNascimento() {
 		return dataNascimento;

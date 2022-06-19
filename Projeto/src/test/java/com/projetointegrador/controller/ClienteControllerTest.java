@@ -58,14 +58,13 @@ public class ClienteControllerTest {
 	{
 		Date dataFormatada = formato.parse("01/01/2000");
 		
-		HttpEntity<Cliente> requisicao = new HttpEntity<Cliente>(new Cliente(0L,"teste@gmail.com","123456789","teste","1122223333", dataFormatada));
+		HttpEntity<Cliente> requisicao = new HttpEntity<Cliente>(new Cliente(0L,"teste@gmail.com","123456789","teste", dataFormatada));
 		ResponseEntity<Cliente> resposta = testRestTemplate
 				.exchange("/cliente/cadastrar",HttpMethod.POST,requisicao,Cliente.class);
 		
 		assertEquals(HttpStatus.CREATED,resposta.getStatusCode());
 		assertEquals(requisicao.getBody().getEmail(),resposta.getBody().getEmail());
 		assertEquals(requisicao.getBody().getNome(),resposta.getBody().getNome());
-		assertEquals(requisicao.getBody().getTelefone(),resposta.getBody().getTelefone());
 		assertEquals(requisicao.getBody().getDataNascimento(),resposta.getBody().getDataNascimento());
 		
 	}
@@ -77,8 +76,8 @@ public class ClienteControllerTest {
 	{ 
 		Date dataFormatada = formato.parse("01/01/2000");
 		
-		clienteService.CadastrarCliente(new Cliente(0L,"teste2@gmail.com","1234567891","teste2","1122223333", dataFormatada));
-		HttpEntity<Cliente> requisicao = new HttpEntity<Cliente>(new Cliente(0L,"teste2@gmail.com","1234567891","teste2","1122223333", dataFormatada));
+		clienteService.CadastrarCliente(new Cliente(0L,"teste2@gmail.com","1234567891","teste2", dataFormatada));
+		HttpEntity<Cliente> requisicao = new HttpEntity<Cliente>(new Cliente(0L,"teste2@gmail.com","1234567891","teste2", dataFormatada));
 		ResponseEntity<Cliente> resposta = testRestTemplate
 				.exchange("/cliente/cadastrar",HttpMethod.POST,requisicao,Cliente.class);
 		assertEquals(HttpStatus.BAD_REQUEST, resposta.getStatusCode());
@@ -94,7 +93,7 @@ public class ClienteControllerTest {
 		//Cadastrando o cliente no banco
 		
 		Optional<Cliente> clienteCreate = clienteService.CadastrarCliente(new Cliente(0L,
-				"teste2@gmail.com","1234567891","teste2","1122223333", dataFormatada));
+				"teste2@gmail.com","1234567891","teste2", dataFormatada));
 		
 		//É usado o "isPresent" pois nunca se pode usar um "get()" sem provar que o Optional está presente
 		
@@ -103,7 +102,7 @@ public class ClienteControllerTest {
 			//Após provar que o Optional não está vazio inicia o método para atualizar o cliente que está no banco
 			
 		Cliente clienteUpdate = new Cliente(clienteCreate.get().getId_cliente(),
-				"testeAtualizado2@gmail.com","1234567891","testeAtualizado2","1122223333", dataFormatada);
+				"testeAtualizado2@gmail.com","1234567891","testeAtualizado2", dataFormatada);
 		
 		//Insere o objeto da Classe Cliente (clienteUpdate) dentro de um Objeto da Classe HttpEntity (Entidade HTTP)
 		
@@ -142,7 +141,6 @@ public class ClienteControllerTest {
 		
 		assertEquals(clienteUpdate.getEmail(),resposta.getBody().getEmail());
 		assertEquals(clienteUpdate.getNome(),resposta.getBody().getNome());
-		assertEquals(clienteUpdate.getTelefone(),resposta.getBody().getTelefone());
 		assertEquals(clienteUpdate.getDataNascimento(),resposta.getBody().getDataNascimento());
 		}else {
 			System.out.println("Nenhum valor");
@@ -157,8 +155,8 @@ public class ClienteControllerTest {
 	{
 		Date dataFormatada = formato.parse("01/01/2000");
 		
-		clienteService.CadastrarCliente(new Cliente(0L,"teste@gmail.com","123456789","teste","1122223333", dataFormatada));
-		clienteService.CadastrarCliente(new Cliente(0L,"teste2@gmail.com","1234567891","teste2","1122223333", dataFormatada));
+		clienteService.CadastrarCliente(new Cliente(0L,"teste@gmail.com","123456789","teste", dataFormatada));
+		clienteService.CadastrarCliente(new Cliente(0L,"teste2@gmail.com","1234567891","teste2", dataFormatada));
 		ResponseEntity<String> resposta = testRestTemplate
 				.withBasicAuth("root", "root")
 				.exchange("/cliente/listartodos", HttpMethod.GET,null,String.class);
@@ -172,7 +170,7 @@ public class ClienteControllerTest {
 	{
 		Date dataFormatada = formato.parse("01/01/2000");
 		
-		Optional<Cliente> clienteBusca = clienteService.CadastrarCliente(new Cliente(0L,"teste@gmail.com","123456789","teste","1122223333", dataFormatada));
+		Optional<Cliente> clienteBusca = clienteService.CadastrarCliente(new Cliente(0L,"teste@gmail.com","123456789","teste", dataFormatada));
 		if(clienteBusca.isPresent()) {
 		ResponseEntity<String> resposta = testRestTemplate
 				.withBasicAuth("root", "root")
@@ -190,8 +188,8 @@ public class ClienteControllerTest {
 	{
 		Date dataFormatada = formato.parse("01/01/2000");
 		
-		clienteService.CadastrarCliente(new Cliente(0L,"teste@gmail.com","123456789","teste","1122223333", dataFormatada));
-		HttpEntity<ClienteLogin> corpoRequisicao = new HttpEntity<ClienteLogin>(new ClienteLogin(0L, "teste@gmail.com", "123456789", "", "", "", dataFormatada));
+		clienteService.CadastrarCliente(new Cliente(0L,"teste@gmail.com","123456789","teste", dataFormatada));
+		HttpEntity<ClienteLogin> corpoRequisicao = new HttpEntity<ClienteLogin>(new ClienteLogin(0L, "teste@gmail.com", "123456789", "", "", dataFormatada));
 		ResponseEntity<ClienteLogin> corpoResposta = testRestTemplate
 				.exchange("/cliente/logar", HttpMethod.POST, corpoRequisicao, ClienteLogin.class);
 		assertEquals(HttpStatus.OK, corpoResposta.getStatusCode());
@@ -205,20 +203,12 @@ public class ClienteControllerTest {
 	{
 		Date dataFormatada = formato.parse("01/01/2005");
 		
-		HttpEntity<Cliente> requisicao = new HttpEntity<Cliente>(new Cliente(0L,"teste@gmail.com","123456789","teste","1122223333", dataFormatada));
+		HttpEntity<Cliente> requisicao = new HttpEntity<Cliente>(new Cliente(0L,"teste@gmail.com","123456789","teste", dataFormatada));
 		ResponseEntity<Cliente> resposta = testRestTemplate
 				.exchange("/cliente/cadastrar",HttpMethod.POST,requisicao,Cliente.class);
 		
 		assertEquals(HttpStatus.BAD_REQUEST, resposta.getStatusCode());
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

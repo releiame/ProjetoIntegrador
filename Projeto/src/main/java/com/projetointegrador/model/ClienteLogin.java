@@ -8,17 +8,15 @@ public class ClienteLogin {
 	private String email;
 	private String senha;
 	private String nome;
-	private String telefone;
 	private String token;
 	private Date dataNascimento;
 	
-	public ClienteLogin(Long id_cliente, String email, String senha, String nome, String telefone, String token,
+	public ClienteLogin(Long id_cliente, String email, String senha, String nome, String token,
 			Date dataNascimento) {
 		this.id_cliente = id_cliente;
 		this.email = email;
 		this.senha = senha;
 		this.nome = nome;
-		this.telefone = telefone;
 		this.token = token;
 		this.dataNascimento = dataNascimento;
 	}
@@ -52,12 +50,6 @@ public class ClienteLogin {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
 	}
 
 	public Date getDataNascimento() {
