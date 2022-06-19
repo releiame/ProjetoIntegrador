@@ -102,7 +102,6 @@ public class ClienteService {
 				ClienteLogin.get().setNome(cliente.get().getNome());
 				ClienteLogin.get().setEmail(cliente.get().getEmail());
 				ClienteLogin.get().setSenha(cliente.get().getSenha());
-				ClienteLogin.get().setTelefone(cliente.get().getTelefone());
 				ClienteLogin.get().setToken(gerarBasicToken(ClienteLogin.get().getEmail(), ClienteLogin.get().getSenha()));
 				
 				//Retorna o objeto atualizado para a classe controller

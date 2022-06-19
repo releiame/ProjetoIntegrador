@@ -35,21 +35,22 @@ public class ClienteController {
 	
 	@GetMapping("/listartodos")
 	public ResponseEntity <List<Cliente>> getAll(){
+		
 		return ResponseEntity.ok(repository.findAll());
 		
 	}
 	
 	@GetMapping("/{id_cliente}")
-	public ResponseEntity<Cliente> getById(@PathVariable long id_cliente) {
+	public ResponseEntity<Cliente> getById(@PathVariable Long id_cliente) {
 		return repository.findById(id_cliente)
 			.map(resposta -> ResponseEntity.ok(resposta))
 			.orElse(ResponseEntity.notFound().build());
 	}
 	
 	@PostMapping("/logar")
-	public ResponseEntity<ClienteLogin> Autentication(@RequestBody Optional<ClienteLogin> user)
+	public ResponseEntity<ClienteLogin> Autentication(@RequestBody Optional<ClienteLogin> cliente)
 	{
-		return clienteService.Logar(user).map(resp -> ResponseEntity.ok(resp))
+		return clienteService.Logar(cliente).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 	

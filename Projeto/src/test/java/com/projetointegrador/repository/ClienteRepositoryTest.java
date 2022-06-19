@@ -35,10 +35,10 @@ public class ClienteRepositoryTest {
 		
 		
 		clienteRepository.deleteAll();
-		clienteRepository.save(new Cliente(0L,"testt@gmail.com","123456789","testt","1122223333", dataFormatada));
-		clienteRepository.save(new Cliente(0L,"teste1@gmail.com","1234567891","Teste1","1122223333", dataFormatada));
-		clienteRepository.save(new Cliente(0L,"teste2@gmail.com","1234567892","Teste2","1122223333", dataFormatada));
-		clienteRepository.save(new Cliente(0L,"teste3@gmail.com","1234567893","Teste3","1122223333", dataFormatada));
+		clienteRepository.save(new Cliente(0L,"testt@gmail.com","123456789","testt", dataFormatada));
+		clienteRepository.save(new Cliente(0L,"teste1@gmail.com","1234567891","Teste1", dataFormatada));
+		clienteRepository.save(new Cliente(0L,"teste2@gmail.com","1234567892","Teste2", dataFormatada));
+		clienteRepository.save(new Cliente(0L,"teste3@gmail.com","1234567893","Teste3", dataFormatada));
 		
 	}
 	
