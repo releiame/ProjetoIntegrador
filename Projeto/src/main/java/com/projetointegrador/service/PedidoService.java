@@ -31,11 +31,13 @@ public class PedidoService {
 		List<Livros> carrinho = new ArrayList<Livros>();
 		List<Pedido> p = new ArrayList<Pedido>();
 		p.add(pedido);
+		pedido.setValorTotal(0.);
 		
 		for(int i = 0; i<pedido.getLivros().size(); i++) {
 			livro = livroRepository.getById(pedido.getLivros().get(i).getId_livros());
 			carrinho.add(livro);
 			livro.setQtdeEstoque(livro.getQtdeEstoque() - 1);
+			pedido.setValorTotal(livro.getValorUnitario() + pedido.getValorTotal());
 		}
 		
 		livro.setPedido(p);
@@ -43,21 +45,5 @@ public class PedidoService {
 		
 		
 	}
-	/*
-	public void RemovendoLivro(Pedido pedido, Livros livro) {
-		
-		for(int i = 0; i<pedido.getLivros().size(); i++) {
-			if(pedido.getLivros().get(i).equals(livro)) {
-				pedido.getLivros().remove(i);
-				livro.setQtdeEstoque(livro.getQtdeEstoque() + 1);
-				break;
-			}
-		}
-	}
-	
-	public void adicionarLivro(Livros livro, Pedido pedido) {
-		pedido.getLivros().add(livro);
-		livro.getPedido().add(pedido);
-	}*/
 	
 }

@@ -61,22 +61,16 @@ public class LivroService {
 		Optional<Livros> livro = livroRepository.findById(id_livros);
 		Optional<Pedido> pedido = pedidoRepository.findById(id_pedido);
 		
-		System.out.println("Passo 1 - OK");
-		
 		//Verificando se o Optional Livro e Pedido não estão vazios
 		if(livro.isPresent() && pedido.isPresent() && livro.get().getQtdeEstoque() >= 0 && !(pedido.get().getLivros().isEmpty())) {
 			
 			//Adicionando o Pedido ao Livro
 			livro.get().getPedido().add(pedido.get());
 			
-			System.out.println("Passo 2 - OK");
-			
 			int qtde = 0;
 			
 			//Criando um vetor com o tamanho da lista de Livros na classe Pedido
 			long[] vetor = new long[pedido.get().getLivros().size()];
-			
-			System.out.println("Passo 3 - OK");
 			
 			//Fazendo um for até o tamanho da Lista de Livros na classe Pedido
 			for(int i = 0; i< pedido.get().getLivros().size(); i++) {
@@ -90,25 +84,35 @@ public class LivroService {
 					qtde++;
 				}
 			}
-			
-			System.out.println("Passo 4 - OK");
 			pedido.get().setValorTotal(pedido.get().getValorTotal() - (livro.get().getValorUnitario() * qtde));
 			
 			qtde++;
-			pedido.get().setQtdeLivrosPedido(qtde);
+			livro.get().setQtdePedidoLivro(qtde);
 			livro.get().setQtdeEstoque(livro.get().getQtdeEstoque() - 1);
 			
-			pedido.get().setValorTotal(pedido.get().getValorTotal() + (livro.get().getValorUnitario() * pedido.get().getQtdeLivrosPedido()));
-			
-			System.out.println("Passo 5 - OK");
-			
-			System.out.println("RECALCULANDO VALOR - OK / " + pedido.get().getValorTotal());
+			pedido.get().setValorTotal(pedido.get().getValorTotal() + (livro.get().getValorUnitario() * livro.get().getQtdePedidoLivro()));
 			
 			livroRepository.save(livro.get());
 			pedidoRepository.save(pedido.get());
+			pedidoRepository.save(pedido.get()).getValorTotal();
 			
 			return livroRepository.save(livro.get());
 			
+		}else if(livro.isPresent() && pedido.isPresent()) {
+			
+			livro.get().getPedido().add(pedido.get());
+			
+			livro.get().setQtdePedidoLivro(1);
+			
+			livro.get().setQtdeEstoque(livro.get().getQtdeEstoque() - 1);
+			
+			pedido.get().setValorTotal(pedido.get().getValorTotal() + (livro.get().getValorUnitario() * livro.get().getQtdePedidoLivro()));
+		
+			livroRepository.save(livro.get());
+			pedidoRepository.save(pedido.get());
+			pedidoRepository.save(pedido.get()).getValorTotal();
+			
+			return livroRepository.save(livro.get());
 		}
 		
 		return null;
@@ -137,7 +141,7 @@ public class LivroService {
 				}
 			}
 			
-			pedido.get().setQtdeLivrosPedido(qtde - 1);
+			livro.get().setQtdePedidoLivro(qtde - 1);
 			
 			pedido.get().setValorTotal(pedido.get().getValorTotal() - livro.get().getValorUnitario());
 			

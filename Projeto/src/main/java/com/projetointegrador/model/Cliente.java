@@ -51,7 +51,7 @@ public class Cliente {
 	private List<Endereco> endereco;
 	
 	@OneToMany(mappedBy = "cliente")
-	@JsonIgnoreProperties("cliente")
+	@JsonIgnoreProperties({"cliente"})
 	private List<Pedido> pedido;
 	
 	//CRIANDO OS CONSTRUTORES

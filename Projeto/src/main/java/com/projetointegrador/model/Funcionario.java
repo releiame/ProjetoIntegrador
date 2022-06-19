@@ -38,7 +38,7 @@ public class Funcionario{
 	private String nome;
 	
 	@OneToMany(mappedBy = "funcionario", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("funcionario")
+	@JsonIgnoreProperties({"funcionario", "capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", "valorUnitario", "qtdePedidoLivro", "tag", "pedido"})
 	private List<Livros> livros;
 	
 	//CRIANDO OS CONSTRUTORES

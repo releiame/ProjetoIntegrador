@@ -28,17 +28,19 @@ public class Pedido {
 	private Long id_pedido;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("pedido")
+	@JsonIgnoreProperties({"pedido", "endereco", "dataNascimento", "senha"})
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 	
 	@ManyToMany(mappedBy = "pedido")
-	@JsonIgnoreProperties("livros")
+	@JsonIgnoreProperties({"capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", "valorUnitario", "qtdePedidoLivro", "tag", "pedido", "funcionario"})
 	private List<Livros> livros;
 	
 	private Double valorTotal;
 	
 	private int qtdeLivrosPedido;
+	
+	private Double frete;
 	
 	@UpdateTimestamp
 	private LocalDateTime data;
@@ -89,6 +91,14 @@ public class Pedido {
 
 	public void setQtdeLivrosPedido(int qtdeLivrosPedido) {
 		this.qtdeLivrosPedido = qtdeLivrosPedido;
+	}
+
+	public Double getFrete() {
+		return frete;
+	}
+
+	public void setFrete(Double frete) {
+		this.frete = frete;
 	}
 	
 }

@@ -28,7 +28,7 @@ public class Tag {
 	private String nome;
 	
 	@ManyToMany
-	@JsonIgnoreProperties("livros")
+	@JsonIgnoreProperties({"capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", "valorUnitario", "qtdePedidoLivro", "tag", "pedido", "funcionario"})
 	@JoinTable(
 			name = "tag_livros", 
 			uniqueConstraints = @UniqueConstraint(columnNames = {"tag_fk", "livros_fk"}),

@@ -43,13 +43,6 @@ public class LivrosController {
 	
 	@GetMapping
 	public ResponseEntity<List<Livros>>GetAll(){
-		/*Livros livro = new Livros();
-		for(int i = 1; i<=repositoryLivros.count(); i++) {
-			livro = repositoryLivros.getById((long) i);
-			if(livro.getQtdeEstoque() <= 0) {
-				livro.setTemEstoque(false);
-			}
-		}*/
 		return ResponseEntity.ok(repositoryLivros.findAll());
 	}
 	
@@ -85,7 +78,6 @@ public class LivrosController {
 	
 	@PutMapping("/livro_pedido/livros/{id_livros}/pedido/{id_pedido}")
 	public ResponseEntity<Livros> putLivros(@PathVariable long id_livros, @PathVariable long id_pedido){
-		System.out.println("INICIO - OK");
 		return ResponseEntity.ok(service.AdicionarMais(id_pedido, id_livros));
 	}
 

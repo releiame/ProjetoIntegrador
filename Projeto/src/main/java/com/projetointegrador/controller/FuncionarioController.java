@@ -31,7 +31,7 @@ public class FuncionarioController {
 	@Autowired
 	private FuncionarioService funcionarioService;
 	
-	@GetMapping("/listartodos_funcionarios") //Vai dizer que sempre que vier uma requisição externa
+	@GetMapping //Vai dizer que sempre que vier uma requisição externa
 	public ResponseEntity<List<Funcionario>>GetAll(){
 		return ResponseEntity.ok(repository.findAll());
 	} //Metodo para retornar todos o funcionarios cadastrados

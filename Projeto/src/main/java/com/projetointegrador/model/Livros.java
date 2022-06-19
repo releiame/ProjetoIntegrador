@@ -15,6 +15,8 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.URL;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -47,14 +49,14 @@ public class Livros {
 	@NotNull
 	private Double valorUnitario;
 	
-	private Double valorTotal;
+	private int qtdePedidoLivro;
 	
 	@ManyToMany(mappedBy = "livros")
-	@JsonIgnoreProperties("livros")
+	@JsonIgnoreProperties({"livros"})
 	private List<Tag> tag;
 	
 	@ManyToMany
-	@JsonIgnoreProperties("livros")
+	@JsonIgnoreProperties({"livros", "cliente"})
 	@JoinTable(
 			name = "pedido_livros", 
 			uniqueConstraints = @UniqueConstraint(columnNames = {"livros_fk", "pedido_fk"}),
@@ -63,7 +65,7 @@ public class Livros {
 	private List<Pedido> pedido;
 	
 	@ManyToOne
-	@JsonIgnoreProperties("livros")
+	@JsonIgnoreProperties({"livros", "senha", "codf"})
 	@JoinColumn(name = "id_funcionario")
 	private Funcionario funcionario;
 
@@ -155,12 +157,12 @@ public class Livros {
 		this.pedido = pedido;
 	}
 
-	public Double getValorTotal() {
-		return valorTotal;
+	public int getQtdePedidoLivro() {
+		return qtdePedidoLivro;
 	}
 
-	public void setValorTotal(Double valorTotal) {
-		this.valorTotal = valorTotal;
+	public void setQtdePedidoLivro(int qtdePedidoLivro) {
+		this.qtdePedidoLivro = qtdePedidoLivro;
 	}
 
 	public int getQtdeEstoque() {
