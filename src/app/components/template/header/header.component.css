@@ -1,0 +1,10 @@
+#barraDePesquisa::placeholder {
+    background-image: url('../../../../assets/img/livros.png');
+    background-repeat: no-repeat;
+}
+.color{
+    background-color: #000;
+}
+.wid {
+    width: 80vh!important;
+}
