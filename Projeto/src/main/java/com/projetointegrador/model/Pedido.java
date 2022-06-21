@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,13 +33,11 @@ public class Pedido {
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 	
-	@ManyToMany(mappedBy = "pedido")
+	@ManyToMany(mappedBy = "pedido", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", "valorUnitario", "qtdePedidoLivro", "tag", "pedido", "funcionario"})
 	private List<Livros> livros;
 	
 	private Double valorTotal;
-	
-	private int qtdeLivrosPedido;
 	
 	private Double frete;
 	
@@ -83,14 +82,6 @@ public class Pedido {
 
 	public void setLivros(List<Livros> livros) {
 		this.livros = livros;
-	}
-
-	public int getQtdeLivrosPedido() {
-		return qtdeLivrosPedido;
-	}
-
-	public void setQtdeLivrosPedido(int qtdeLivrosPedido) {
-		this.qtdeLivrosPedido = qtdeLivrosPedido;
 	}
 
 	public Double getFrete() {

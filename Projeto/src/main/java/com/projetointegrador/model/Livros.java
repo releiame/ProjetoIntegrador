@@ -2,7 +2,9 @@ package com.projetointegrador.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -55,11 +57,10 @@ public class Livros {
 	@JsonIgnoreProperties({"livros"})
 	private List<Tag> tag;
 	
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"livros", "cliente"})
 	@JoinTable(
-			name = "pedido_livros", 
-			uniqueConstraints = @UniqueConstraint(columnNames = {"livros_fk", "pedido_fk"}),
+			name = "pedido_livros",
 			joinColumns = {@JoinColumn(name = "livros_fk")}, 
 			inverseJoinColumns = {@JoinColumn(name = "pedido_fk")})
 	private List<Pedido> pedido;
