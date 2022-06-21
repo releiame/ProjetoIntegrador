@@ -1,7 +1,8 @@
 <!--Header se o cliente estiver logado-->
-<section ngIf="auth.logado(), else deslogado">
+<section *ngIf="authService.logado(); then Logado else Deslogado"></section>
 
-    <!--header 1 (opções de navegação)-->
+    <ng-template #Logado>
+        <!--header 1 (opções de navegação)-->
     <header class="navbar color-header bg-dark">
         <ul class="nav nav-pills">
             <li class="nav-item">
@@ -12,12 +13,12 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#fale-conosco"
-                    routerLink="/fale-conosco">Fale Conosco</a>
+                    href="/fale-conosco">Fale Conosco</a>
             </li>
-        </ul>
+        </ul>   
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/header-inicio-deslog" (click)="sair()">Sair <i
+                <a class="nav-link text-light" routerLink="#" (click)="sair()">Sair <i
                         class="fa fa-sign-out"></i></a>
             </li>
         </ul>
@@ -59,7 +60,7 @@
                                 Minha Conta
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" routerLink="/header-inicio-deslog"
+                                <li><a class="dropdown-item" routerLink="#"
                                         (click)="sair()">Sair</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -119,10 +120,10 @@
             </li>
         </ul>
     </nav>
-</section>
+</ng-template>
 
 <!--Header se o cliente estiver deslogado-->
-<ng-template deslogado>
+<ng-template #Deslogado>
     <!--header 1 (opções de navegação)-->
     <header class="navbar color-header bg-dark">
         <ul class="nav nav-pills">
@@ -134,17 +135,17 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#fale-conosco"
-                    routerLink="/fale-conosco">Fale Conosco</a>
+                    routerLink="#">Fale Conosco</a>
             </li>
         </ul>
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#loginModal"
-                    routerLink="/login">Entrar</a>
+                >Entrar</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#modalCadastro"
-                    routerLink="/cadastro">Fazer Cadastro</a>
+                    >Fazer Cadastro</a>
             </li>
         </ul>
     </header>
@@ -186,9 +187,9 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#loginModal"
-                                        routerLink="/login">Entrar</a></li>
+                                        >Entrar</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCadastro"
-                                        routerLink="/cadastro">Fazer
+                                        >Fazer
                                         Cadastro</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -242,3 +243,121 @@
         </ul>
     </nav>
 </ng-template>
+
+<!-- Modal fazer cadastro -->
+<div class="modal" id="modalCadastro">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Cadastre-se</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <form class="row p-4 g-3 needs-validation" novalidate>
+          <div class="col-12">
+            <label for="nomeCompleto" class="form-label">Nome Completo</label>
+            <input [(ngModel)]="cliente.nome" type="text" class="form-control" id="nomeCompleto" placeholder="Maria da Silva" required>
+            <div class="invalid-feedback">
+              Por favor, preencha seu nome completo.
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="emailCadastro" class="form-label">Email</label>
+            <input [(ngModel)]="cliente.email" type="text" class="form-control" id="emailCadastro" placeholder="maria@mail.com" required>
+            <div class="invalid-feedback">
+              Por favor, preencha seu email para continuar.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="passwordCadastro" class="form-label">Senha</label>
+            <input [(ngModel)]="cliente.senha" type="password" class="form-control" placeholder="Senha@123" id="passwordCadastro" required>
+            <div class="invalid-feedback">
+              Por favor, escolha uma senha com no mínimo 6 dígitos para continuar.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="dataNasc" class="form-label">Data de Nascimento</label>
+            <input [(ngModel)]="cliente.dataNascimento" type="date" class="form-control" id="dataNasc" required>
+            <div class="invalid-feedback">
+              Por favor, preencha sua data de nascimento para continuar.
+            </div>
+          </div>
+  
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Desejo receber emails promocionais e informativos da Releia.me
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck" required>
+              <label class="form-check-label" for="gridCheck">
+                Concordo com os termos e condições de uso.
+                <div class="invalid-feedback">
+                  Você deve concordar, antes de continuar.
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" (click)="cadastrar()">Criar Cadastro</button>
+            <br><br>
+            <p> Já é cadastrado? <a class="text-dark" data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Acesse
+                sua conta.</a></p>
+          </div>
+        </form>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- login Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Faça login para continuar</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <form class="needs-validation" novalidate>
+          <div class="p-4">
+            <div class="mb-3">
+              <label for="emailLogin" class="form-label">Email</label>
+              <input [(ngModel)]="clienteLogin.email" type="email" class="form-control" placeholder="seuemail@mail.com" id="emailLogin"
+                aria-describedby="email">
+            </div>
+            <div class="mb-3">
+              <label for="passwordLogin" class="form-label">Senha</label>
+              <input [(ngModel)]="clienteLogin.senha" type="password" placeholder="Senha@123" class="form-control" id="passwordLogin">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="checkConect">
+              <label class="form-check-label" for="checkConect">Me manter conectado</label>
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="entrar()">Entrar</button>
+            <br><br>
+            <p>Primeira compra? <a class="text-dark" data-bs-toggle="modal" data-bs-target="#modalCadastro" routerLink="#">Criar
+                Conta.</a></p>
+          </div>
+        </form>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>

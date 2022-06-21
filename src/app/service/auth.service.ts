@@ -36,4 +36,13 @@ export class AuthService {
     } 
     return ok
   }
+
+  deslogado(){
+    let deslog: boolean = false //ou apenas 'let ok: false', ou apenas 'ok: false'
+
+    if(environment.token == ''){
+      deslog: true
+    } 
+    return deslog
+  }
 }
