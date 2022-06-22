@@ -18,6 +18,8 @@ import { HomeComponent } from './components/template/home/home.component';
 import { CarrinhoComponent } from './components/template/carrinho/carrinho.component';
 import { DevsComponent } from './components/modal/devs/devs.component';
 import { HeaderComponent } from './components/template/header/header.component';
+import { FuncionarioLoginComponent } from './components/modal/funcionariologin/funcionariologin.component';
+import { Funcionario } from './model/Funcionario';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { HeaderComponent } from './components/template/header/header.component';
     HomeComponent,
     CarrinhoComponent,
     DevsComponent,
-    HeaderComponent
+    HeaderComponent,
+    FuncionarioLoginComponent
 
   ],
   imports: [

@@ -9,6 +9,8 @@ import { HeaderInicioDeslogComponent } from "./components/template/header-inicio
 import { HomeComponent } from "./components/template/home/home.component";
 import { CarrinhoComponent } from "./components/template/carrinho/carrinho.component";
 import { DevsComponent } from "./components/modal/devs/devs.component";
+import { Funcionario } from "./model/Funcionario";
+import { FuncionarioLoginComponent } from "./components/modal/funcionariologin/funcionariologin.component"
 
 // --------------Substituir # por nome das respectivas classes-------------
 
@@ -23,6 +25,7 @@ const routes: Routes = [
     {path: 'fale-conosco', component:FaleConoscoComponent},
     {path: 'carrinho', component:CarrinhoComponent},
     {path: 'devs', component:DevsComponent},
+    {path: 'funcionariologin', component:FuncionarioLoginComponent},
     // {path: 'minha-conta', component:#}, 
     // {path: 'meus-pedidos', component:#},
     // {path: 'trocar-devolver', component:#},

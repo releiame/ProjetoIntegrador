@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Cliente } from '../model/Cliente';
 import { ClienteLogin } from '../model/ClienteLogin';
+import { Funcionario } from '../model/Funcionario';
+import { FuncionarioLogin } from '../model/FuncionarioLogin';
 
 
 
@@ -11,16 +13,29 @@ import { ClienteLogin } from '../model/ClienteLogin';
   providedIn: 'root'
 })
 export class AuthService {
+  
 
   constructor(
     private http:HttpClient
   ) { }
+
+  entrarfunc(funcionarioLogin: FuncionarioLogin): Observable<FuncionarioLogin> {
+    return this.http.post<FuncionarioLogin>('http://localhost:8080/funcionario/logar', funcionarioLogin)
+
+  }
+
+  cadastrarfunc(funcionario:Funcionario):Observable<Funcionario> {
+
+    return this.http.post<Funcionario>('http://localhost:8080/funcionario/cadastrar', funcionario)
+
+  }
 
   entrar(clienteLogin:ClienteLogin): Observable<ClienteLogin> {
 
     return this.http.post<ClienteLogin>('http://localhost:8080/cliente/logar', clienteLogin)
 
   }
+
 
   cadastrar(cliente:Cliente):Observable<Cliente> {
 
