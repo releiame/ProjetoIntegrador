@@ -20,7 +20,11 @@ import { DevsComponent } from './components/modal/devs/devs.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FuncionarioLoginComponent } from './components/modal/funcionariologin/funcionariologin.component';
 import { Funcionario } from './model/Funcionario';
+<<<<<<< HEAD
 import { CadastrofuncionarioComponent } from './components/modal/cadastrofuncionario/cadastrofuncionario.component';
+=======
+import { MinhaContaComponent } from './components/template/minha-conta/minha-conta.component';
+>>>>>>> 30a0f31c8f0666a68a894161a9eeed7e6327ef9b
 
 
 @NgModule({
@@ -39,7 +43,11 @@ import { CadastrofuncionarioComponent } from './components/modal/cadastrofuncion
     DevsComponent,
     HeaderComponent,
     FuncionarioLoginComponent,
+<<<<<<< HEAD
     CadastrofuncionarioComponent
+=======
+    MinhaContaComponent
+>>>>>>> 30a0f31c8f0666a68a894161a9eeed7e6327ef9b
 
   ],
   imports: [
