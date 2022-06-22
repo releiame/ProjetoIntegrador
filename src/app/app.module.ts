@@ -16,6 +16,7 @@ import { CadastroComponent } from './components/modal/cadastro/cadastro.componen
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
 import { HomeComponent } from './components/template/home/home.component';
 import { CarrinhoComponent } from './components/template/carrinho/carrinho.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -39,7 +40,10 @@ import { CarrinhoComponent } from './components/template/carrinho/carrinho.compo
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

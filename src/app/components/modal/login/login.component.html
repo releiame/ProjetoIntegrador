@@ -14,12 +14,12 @@
         <div class="p-4">
           <div class="mb-3">
             <label for="emailLogin" class="form-label">Email</label>
-            <input [(ngModel)]="clienteLogin.email" type="email" class="form-control" placeholder="seuemail@mail.com" id="emailLogin"
+            <input [(ngModel)]='clienteLogin.email' name="email" type="email" class="form-control" placeholder="seuemail@mail.com" id="emailLogin"
               aria-describedby="email">
           </div>
           <div class="mb-3">
             <label for="passwordLogin" class="form-label">Senha</label>
-            <input [(ngModel)]="clienteLogin.senha" type="password" placeholder="Senha@123" class="form-control" id="passwordLogin">
+            <input [(ngModel)]='clienteLogin.senha' name="senha" type="password" placeholder="Senha@123" class="form-control" id="passwordLogin">
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="checkConect">

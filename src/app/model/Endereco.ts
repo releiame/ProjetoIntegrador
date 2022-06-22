@@ -9,8 +9,6 @@ export class Endereco {
     public rua: string
     public cidade: string
     public nome_endereco: string
-    public estado: string
-    public pais: string
     public cliente: Cliente
 
 }

@@ -1,7 +1,8 @@
 import { Livros } from "./Livros"
 
 export class Funcionario{
-    public codf: number
+    public id_funcionario: number
+    public codf: string
     public nome: string
     public senha: string
     public token: string

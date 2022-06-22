@@ -27,11 +27,15 @@ export class LoginComponent implements OnInit {
 
       environment.token = this.clienteLogin.token
       environment.id_cliente = this.clienteLogin.id_cliente
+      environment.nome = this.clienteLogin.nome
+      
 
-      this.router.navigate(['/header-inicio-log', '/carousel', '/page1'])
+      //this.router.navigate(['/header-inicio-log', '/carousel', '/page1'])
     }, erro => {
       if(erro.status==500) {
         alert('Usuário ou senha incorretos.')
+      }else{
+        alert('Usuário logado com sucesso')
       }
     }
     )

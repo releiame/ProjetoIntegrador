@@ -11,30 +11,30 @@
 
       <!-- Modal body -->
       <form class="row p-4 g-3 needs-validation" novalidate>
-        <div class="col-12">
+        <div class="form-group col-12">
           <label for="nomeCompleto" class="form-label">Nome Completo</label>
-          <input [(ngModel)]="cliente.nome" type="text" class="form-control" id="nomeCompleto" placeholder="Maria da Silva" required>
+          <input [(ngModel)]='cliente.nome' type="text" name="nome" class="form-control" id="nomeCompleto" placeholder="Maria da Silva" required>
           <div class="invalid-feedback">
             Por favor, preencha seu nome completo.
           </div>
         </div>
-        <div class="col-12">
+        <div class="form-group col-12">
           <label for="emailCadastro" class="form-label">Email</label>
-          <input [(ngModel)]="cliente.email" type="text" class="form-control" id="emailCadastro" placeholder="maria@mail.com" required>
+          <input [(ngModel)]='cliente.email' type="text" name="senha" class="form-control" id="emailCadastro" placeholder="maria@mail.com" required>
           <div class="invalid-feedback">
             Por favor, preencha seu email para continuar.
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="form-group col-md-6">
           <label for="passwordCadastro" class="form-label">Senha</label>
-          <input [(ngModel)]="cliente.senha" type="password" class="form-control" placeholder="Senha@123" id="passwordCadastro" required>
+          <input [(ngModel)]='cliente.senha' type="password" name="senha" class="form-control" placeholder="Senha@123" id="passwordCadastro" required>
           <div class="invalid-feedback">
             Por favor, escolha uma senha com no mínimo 6 dígitos para continuar.
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="form-group col-md-6">
           <label for="dataNasc" class="form-label">Data de Nascimento</label>
-          <input [(ngModel)]="cliente.dataNascimento" type="date" class="form-control" id="dataNasc" required>
+          <input [(ngModel)]='cliente.dataNascimento' type="date" name="data" class="form-control" id="dataNasc" required>
           <div class="invalid-feedback">
             Por favor, preencha sua data de nascimento para continuar.
           </div>
@@ -60,7 +60,7 @@
           </div>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary" (click)="cadastrar()">Criar Cadastro</button>
+          <button type="submit" class="btn btn-primary" (click)='cadastrar()'>Criar Cadastro</button>
           <br><br>
           <p> Já é cadastrado? <a class="text-dark" data-bs-toggle="modal" data-bs-target="#loginModal" routerLink="/login">Acesse
               sua conta.</a></p>

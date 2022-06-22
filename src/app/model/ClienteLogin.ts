@@ -3,6 +3,6 @@ export class ClienteLogin{
     public email: string
     public senha: string
     public nome: string
-    public dataNascimento: Date
     public token: string
+    public dataNascimento: Date
 }
