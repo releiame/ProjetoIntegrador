@@ -3,6 +3,7 @@ import { FuncionarioLogin } from 'src/app/model/FuncionarioLogin'
 import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-funcionariologin',
@@ -11,18 +12,19 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class FuncionarioLoginComponent implements OnInit {
 
-  funcionarioLogin:FuncionarioLogin = new FuncionarioLogin
+  funcionarioLogin: FuncionarioLogin = new FuncionarioLogin
+
   constructor(
     private auth: AuthService,
-    private router:Router
+    private router: Router
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
-
+    window.scroll(0, 0)
   }
-  entrarfunc(){
-    this.auth.entrarfunc(this.funcionarioLogin).subscribe((resp:FuncionarioLogin)=>{
+
+  entrarfunc() {
+    this.auth.entrarfunc(this.funcionarioLogin).subscribe((resp: FuncionarioLogin) => {
       this.funcionarioLogin = resp
 
       environment.token = this.funcionarioLogin.token
@@ -30,7 +32,7 @@ export class FuncionarioLoginComponent implements OnInit {
 
       this.router.navigate(['/header-inicio-log', '/carousel', '/page1'])
     }, erro => {
-      if(erro.status==500) {
+      if (erro.status == 500) {
         alert('Matrícula ou senha incorretos.')
       }
     }

@@ -20,13 +20,13 @@ export class AuthService {
   ) { }
 
   entrarfunc(funcionarioLogin: FuncionarioLogin): Observable<FuncionarioLogin> {
-    return this.http.post<FuncionarioLogin>('http://localhost:8080/funcionario/logar', funcionarioLogin)
+    return this.http.post<FuncionarioLogin>('http://localhost:8080/funcionario/logar_funcionario', funcionarioLogin)
 
   }
 
-  cadastrarfunc(funcionario:Funcionario):Observable<Funcionario> {
+  cadastrarfuncionario(funcionario:Funcionario):Observable<Funcionario> {
 
-    return this.http.post<Funcionario>('http://localhost:8080/funcionario/cadastrar', funcionario)
+    return this.http.post<Funcionario>('http://localhost:8080/funcionario/cadastrar_funcionario', funcionario)
 
   }
 

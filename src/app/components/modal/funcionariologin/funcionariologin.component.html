@@ -12,12 +12,12 @@
         <!-- Modal body -->
         <form class="needs-validation" novalidate>
           <div class="p-4">
-            <div class="mb-3">
+            <div class="mb-3 form-group">
               <label for="funcionarioLogin" class="form-label">Matrícula</label>
-              <input [(ngModel)]="funcionarioLogin.id_funcionarios" type="number" class="form-control" placeholder="número de matrícula" id="matriculaLogin"
+              <input [(ngModel)]="funcionarioLogin.codf" type="text" class="form-control" placeholder="número de matrícula" id="matriculaLogin"
                 aria-describedby="matricula">
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-group">
               <label for="passwordLogin" class="form-label">Senha</label>
               <input [(ngModel)]="funcionarioLogin.senha" type="password" placeholder="Senha@123" class="form-control" id="passwordLogin">
             </div>

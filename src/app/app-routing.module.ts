@@ -10,7 +10,8 @@ import { HomeComponent } from "./components/template/home/home.component";
 import { CarrinhoComponent } from "./components/template/carrinho/carrinho.component";
 import { DevsComponent } from "./components/modal/devs/devs.component";
 import { Funcionario } from "./model/Funcionario";
-import { FuncionarioLoginComponent } from "./components/modal/funcionariologin/funcionariologin.component"
+import { FuncionarioLoginComponent } from "./components/modal/funcionariologin/funcionariologin.component";
+import { CadastroFuncionarioComponent } from "./components/modal/cadastrofuncionario/cadastrofuncionario.component";
 
 // --------------Substituir # por nome das respectivas classes-------------
 
@@ -26,6 +27,7 @@ const routes: Routes = [
     {path: 'carrinho', component:CarrinhoComponent},
     {path: 'devs', component:DevsComponent},
     {path: 'funcionariologin', component:FuncionarioLoginComponent},
+    {path: 'cadastrofuncionario', component:CadastroFuncionarioComponent},
     // {path: 'minha-conta', component:#}, 
     // {path: 'meus-pedidos', component:#},
     // {path: 'trocar-devolver', component:#},
