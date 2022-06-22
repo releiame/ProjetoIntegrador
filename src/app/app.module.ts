@@ -16,7 +16,19 @@ import { CadastroComponent } from './components/modal/cadastro/cadastro.componen
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
 import { HomeComponent } from './components/template/home/home.component';
 import { CarrinhoComponent } from './components/template/carrinho/carrinho.component';
+<<<<<<< HEAD
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+=======
+import { DevsComponent } from './components/modal/devs/devs.component';
+import { HeaderComponent } from './components/template/header/header.component';
+import { FuncionarioLoginComponent } from './components/modal/funcionariologin/funcionariologin.component';
+import { Funcionario } from './model/Funcionario';
+<<<<<<< HEAD
+import { CadastrofuncionarioComponent } from './components/modal/cadastrofuncionario/cadastrofuncionario.component';
+=======
+import { MinhaContaComponent } from './components/template/minha-conta/minha-conta.component';
+>>>>>>> 30a0f31c8f0666a68a894161a9eeed7e6327ef9b
+>>>>>>> 4707967e2fea746d8063f0430adde9c8da0b2aa3
 
 
 @NgModule({
@@ -31,7 +43,15 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     RodapeComponent,
     DetalhesLivrosComponent,
     HomeComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    DevsComponent,
+    HeaderComponent,
+    FuncionarioLoginComponent,
+<<<<<<< HEAD
+    CadastrofuncionarioComponent
+=======
+    MinhaContaComponent
+>>>>>>> 30a0f31c8f0666a68a894161a9eeed7e6327ef9b
 
   ],
   imports: [
