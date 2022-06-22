@@ -20,6 +20,7 @@ import { DevsComponent } from './components/modal/devs/devs.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { FuncionarioLoginComponent } from './components/modal/funcionariologin/funcionariologin.component';
 import { Funcionario } from './model/Funcionario';
+import { MinhaContaComponent } from './components/template/minha-conta/minha-conta.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { Funcionario } from './model/Funcionario';
     CarrinhoComponent,
     DevsComponent,
     HeaderComponent,
-    FuncionarioLoginComponent
+    FuncionarioLoginComponent,
+    MinhaContaComponent
 
   ],
   imports: [
