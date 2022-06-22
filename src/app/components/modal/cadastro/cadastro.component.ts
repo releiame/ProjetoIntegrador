@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class CadastroComponent implements OnInit {
 
   cliente: Cliente = new Cliente
-  clienteLogin: ClienteLogin = new ClienteLogin
 
   constructor(
     private authService:AuthService,

@@ -28,7 +28,7 @@ export class FuncionarioLoginComponent implements OnInit {
       this.funcionarioLogin = resp
 
       environment.token = this.funcionarioLogin.token
-      environment.id_funcionarios = this.funcionarioLogin.id_funcionarios
+      environment.codf = this.funcionarioLogin.codf
 
       this.router.navigate(['/header-inicio-log', '/carousel', '/page1'])
     }, erro => {
