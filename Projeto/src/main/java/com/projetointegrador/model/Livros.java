@@ -13,6 +13,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
@@ -43,8 +44,6 @@ public class Livros {
 	@NotNull
 	private int qtdeEstoque;
 	
-	private boolean temEstoque = true;
-	
 	@NotNull
 	private int isbn;
 	
@@ -53,9 +52,10 @@ public class Livros {
 	
 	private int qtdePedidoLivro;
 	
-	@ManyToMany(mappedBy = "livros")
+	//@ManyToMany(mappedBy = "livros", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"livros"})
-	private List<Tag> tag;
+	@OneToMany
+	private Tag tag;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"livros", "cliente"})
@@ -65,7 +65,7 @@ public class Livros {
 			inverseJoinColumns = {@JoinColumn(name = "pedido_fk")})
 	private List<Pedido> pedido;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"livros", "senha", "codf"})
 	@JoinColumn(name = "id_funcionario")
 	private Funcionario funcionario;
@@ -110,14 +110,6 @@ public class Livros {
 		this.autor = autor;
 	}
 
-	public boolean isTemEstoque() {
-		return temEstoque;
-	}
-
-	public void setTemEstoque(boolean temEstoque) {
-		this.temEstoque = temEstoque;
-	}
-
 	public Double getValorUnitario() {
 		return valorUnitario;
 	}
@@ -142,11 +134,11 @@ public class Livros {
 		this.isbn = isbn;
 	}
 
-	public List<Tag> getTag() {
+	public Tag getTag() {
 		return tag;
 	}
 
-	public void setTag(List<Tag> tag) {
+	public void setTag(Tag tag) {
 		this.tag = tag;
 	}
 

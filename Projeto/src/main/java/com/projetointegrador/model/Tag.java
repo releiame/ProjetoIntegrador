@@ -2,13 +2,17 @@ package com.projetointegrador.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
@@ -27,13 +31,15 @@ public class Tag {
 	@NotNull
 	private String nome;
 	
-	@ManyToMany
+	//@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", "valorUnitario", "qtdePedidoLivro", "tag", "pedido", "funcionario"})
-	@JoinTable(
+	@ManyToOne
+	/*@JoinTable(
 			name = "tag_livros", 
 			uniqueConstraints = @UniqueConstraint(columnNames = {"tag_fk", "livros_fk"}),
 			joinColumns = {@JoinColumn(name = "tag_fk")}, 
 			inverseJoinColumns = {@JoinColumn(name = "livros_fk")})
+	*/
 	private List<Livros> livros;
 
 	public Long getId_tag() {

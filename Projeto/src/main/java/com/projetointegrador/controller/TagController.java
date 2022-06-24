@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.projetointegrador.model.Tag;
 import com.projetointegrador.repository.TagRepository;
+import com.projetointegrador.service.TagService;
 
 @RestController
 @RequestMapping("/tag")
@@ -25,6 +26,9 @@ public class TagController {
 	
 	@Autowired
 	private TagRepository repository;
+	
+	@Autowired
+	private TagService service;
 	
 	@GetMapping
 	public ResponseEntity<List<Tag>>GetAll(){
@@ -56,5 +60,10 @@ public class TagController {
 	@DeleteMapping("/{id_tag}")
 	public void delete(@PathVariable long id_tag) {
 		repository.deleteById(id_tag);
+	}
+	
+	@DeleteMapping("/remover_tag/{id_tag}/livros/{id_livros}")
+	public void PutLivro (@PathVariable long id_tag, @PathVariable long id_livros) {
+		service.DeletarTag(id_tag, id_livros);
 	}
 }

@@ -21,6 +21,7 @@ import com.projetointegrador.model.Pedido;
 import com.projetointegrador.repository.FuncionarioRepository;
 import com.projetointegrador.repository.LivrosRepository;
 import com.projetointegrador.repository.PedidoRepository;
+import com.projetointegrador.repository.TagRepository;
 import com.projetointegrador.service.LivroService;
 import com.projetointegrador.service.PedidoService;
 
@@ -37,6 +38,9 @@ public class LivrosController {
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
+	
+	@Autowired
+	private TagRepository tagRepository;
 	
 	@Autowired
 	private LivroService service;
@@ -60,9 +64,6 @@ public class LivrosController {
 	
 	@PostMapping
 	public ResponseEntity<Livros> post (@RequestBody Livros livros){
-		Funcionario funcionario = funcionarioRepository.getById(livros.getFuncionario().getId_funcionario());
-		livros.setFuncionario(funcionario);
-		service.AdicionarTag(livros);
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryLivros.save(livros));
 	}
 	
@@ -79,6 +80,11 @@ public class LivrosController {
 	@PutMapping("/livro_pedido/livros/{id_livros}/pedido/{id_pedido}")
 	public ResponseEntity<Livros> putLivros(@PathVariable long id_livros, @PathVariable long id_pedido){
 		return ResponseEntity.ok(service.AdicionarMais(id_pedido, id_livros));
+	}
+	
+	@PutMapping("adicionar_tag/{id_tag}/livro/{id_livro}")
+	public ResponseEntity<Livros> putTag(@PathVariable long id_livros, @PathVariable long id_tag){
+		return ResponseEntity.ok(service.AdicionarTag(id_livros, id_tag));
 	}
 
 }

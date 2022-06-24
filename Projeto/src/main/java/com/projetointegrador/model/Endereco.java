@@ -1,5 +1,6 @@
 package com.projetointegrador.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,8 +27,7 @@ public class Endereco {
 	
 	@NotNull
 	private int numero;
-	
-	@NotNull
+
 	private String complemento;
 	
 	@NotNull
@@ -46,8 +46,8 @@ public class Endereco {
 	@Size(min = 4, max = 15)
 	private String nome_endereco;
 	
-	@ManyToOne //Indicando que é um relacionamento "muitos para um"
-	@JsonIgnoreProperties("endereco")
+	@ManyToOne//Indicando que é um relacionamento "muitos para um"
+	@JsonIgnoreProperties({"id_cliente","senha","pedido","endereco"})
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 	

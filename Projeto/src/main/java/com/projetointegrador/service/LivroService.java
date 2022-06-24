@@ -39,19 +39,17 @@ public class LivroService {
 
 	double a = 0;
 	
-	public void AdicionarTag(Livros livro) {
+	public Livros AdicionarTag(long id_livros, long id_tag) {
 		
-		List<Tag> t = new ArrayList<Tag>();
-		List<Livros> l = new ArrayList<Livros>();
-		l.add(livro);
+		Optional<Livros> livro = livroRepository.findById(id_livros);
+		Optional<Tag> tag = repository.findById(id_tag);
 		
-		for(int i = 0; i<livro.getTag().size(); i++) {
-			tag = repository.getById(livro.getTag().get(i).getId_tag());
-			t.add(tag);
-		}
+		livro.get().getTag().add(tag.get());
 		
-		tag.setLivros(l);
-		livro.setTag(t);
+		livroRepository.save(livro.get());
+		repository.save(tag.get());
+		
+		return livroRepository.save(livro.get());
 		
 	}
 	
@@ -60,6 +58,10 @@ public class LivroService {
 		//Fazendo a busca pelos ID's recebidos e adicionando os respectivos objetos em Optionals
 		Optional<Livros> livro = livroRepository.findById(id_livros);
 		Optional<Pedido> pedido = pedidoRepository.findById(id_pedido);
+		
+		if(livro.isPresent() && pedido.isPresent() && livro.get().getQtdeEstoque() == 0) {
+			livro.get().setQtdeEstoque(50);
+		}
 		
 		//Verificando se o Optional Livro e Pedido não estão vazios
 		if(livro.isPresent() && pedido.isPresent() && livro.get().getQtdeEstoque() >= 0 && !(pedido.get().getLivros().isEmpty())) {

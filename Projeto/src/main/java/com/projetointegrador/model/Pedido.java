@@ -39,8 +39,6 @@ public class Pedido {
 	
 	private Double valorTotal;
 	
-	private Double frete;
-	
 	@UpdateTimestamp
 	private LocalDateTime data;
 
@@ -82,14 +80,6 @@ public class Pedido {
 
 	public void setLivros(List<Livros> livros) {
 		this.livros = livros;
-	}
-
-	public Double getFrete() {
-		return frete;
-	}
-
-	public void setFrete(Double frete) {
-		this.frete = frete;
 	}
 	
 }

@@ -43,12 +43,12 @@ public class Cliente {
 	@NotNull
 	private Date dataNascimento;
 
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("cliente") //Indicando que deve ignorar campos desconhecidos
 	private List<Endereco> endereco;
 	
-	@OneToMany(mappedBy = "cliente")
-	@JsonIgnoreProperties({"cliente"})
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("cliente")
 	private List<Pedido> pedido;
 	
 	//CRIANDO OS CONSTRUTORES
