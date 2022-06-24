@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -33,7 +34,7 @@ public class Tag {
 	
 	//@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", "valorUnitario", "qtdePedidoLivro", "tag", "pedido", "funcionario"})
-	@ManyToOne
+	@OneToMany(mappedBy = "tag")
 	/*@JoinTable(
 			name = "tag_livros", 
 			uniqueConstraints = @UniqueConstraint(columnNames = {"tag_fk", "livros_fk"}),

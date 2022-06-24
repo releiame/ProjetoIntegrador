@@ -53,8 +53,9 @@ public class Livros {
 	private int qtdePedidoLivro;
 	
 	//@ManyToMany(mappedBy = "livros", cascade = CascadeType.ALL)
+	@ManyToOne
 	@JsonIgnoreProperties({"livros"})
-	@OneToMany
+	@JoinColumn(name = "id_tag")
 	private Tag tag;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

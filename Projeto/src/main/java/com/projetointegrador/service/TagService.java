@@ -22,7 +22,7 @@ public class TagService {
 	@Autowired
 	private TagRepository tagRepository;
 	
-	public void DeletarTag(long id_tag, long id_livros) {
+	/*public void DeletarTag(long id_tag, long id_livros) {
 		
 		Optional<Livros> livro = livroRepository.findById(id_livros);
 		Optional<Tag> tag = tagRepository.findById(id_tag);
@@ -35,6 +35,6 @@ public class TagService {
 		tagRepository.save(tag.get());
 		
 		
-	}
+	}*/
 
 }

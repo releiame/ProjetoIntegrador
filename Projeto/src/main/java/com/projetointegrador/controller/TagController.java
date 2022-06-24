@@ -61,9 +61,4 @@ public class TagController {
 	public void delete(@PathVariable long id_tag) {
 		repository.deleteById(id_tag);
 	}
-	
-	@DeleteMapping("/remover_tag/{id_tag}/livros/{id_livros}")
-	public void PutLivro (@PathVariable long id_tag, @PathVariable long id_livros) {
-		service.DeletarTag(id_tag, id_livros);
-	}
 }

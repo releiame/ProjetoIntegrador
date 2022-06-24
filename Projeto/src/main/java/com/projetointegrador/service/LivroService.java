@@ -44,7 +44,7 @@ public class LivroService {
 		Optional<Livros> livro = livroRepository.findById(id_livros);
 		Optional<Tag> tag = repository.findById(id_tag);
 		
-		livro.get().getTag().add(tag.get());
+		livro.get().setTag(tag.get());
 		
 		livroRepository.save(livro.get());
 		repository.save(tag.get());
