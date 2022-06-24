@@ -7,13 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.projetointegrador.model.Tag;
+import com.projetointegrador.model.Etiqueta;
 
 @Repository
-public interface TagRepository extends JpaRepository<Tag, Long>{
+public interface EtiquetaRepository extends JpaRepository<Etiqueta, Long>{
 	
-	public Optional<Tag> findByNome(String nome);
+	public Optional<Etiqueta> findByNome(String nome);
 	
-	public List<Tag>findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
+	public List<Etiqueta>findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
 
 }

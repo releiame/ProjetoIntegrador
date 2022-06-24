@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,10 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.projetointegrador.model.Funcionario;
 import com.projetointegrador.model.Livros;
 import com.projetointegrador.model.Pedido;
+import com.projetointegrador.model.Etiqueta;
 import com.projetointegrador.repository.FuncionarioRepository;
 import com.projetointegrador.repository.LivrosRepository;
 import com.projetointegrador.repository.PedidoRepository;
-import com.projetointegrador.repository.TagRepository;
+import com.projetointegrador.repository.EtiquetaRepository;
 import com.projetointegrador.service.LivroService;
 import com.projetointegrador.service.PedidoService;
 
@@ -40,7 +42,7 @@ public class LivrosController {
 	private PedidoRepository pedidoRepository;
 	
 	@Autowired
-	private TagRepository tagRepository;
+	private EtiquetaRepository etiquetaRepository;
 	
 	@Autowired
 	private LivroService service;
@@ -61,7 +63,7 @@ public class LivrosController {
 	public ResponseEntity<List<Livros>> GetByTitulo(@PathVariable String titulo){
 		return ResponseEntity.ok(repositoryLivros.findAllByTituloContainingIgnoreCase(titulo));
 	}
-	
+
 	@PostMapping
 	public ResponseEntity<Livros> post (@RequestBody Livros livros){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryLivros.save(livros));
@@ -82,9 +84,8 @@ public class LivrosController {
 		return ResponseEntity.ok(service.AdicionarMais(id_pedido, id_livros));
 	}
 	
-	@PutMapping("adicionar_tag/{id_tag}/livro/{id_livro}")
-	public ResponseEntity<Livros> putTag(@PathVariable long id_livros, @PathVariable long id_tag){
-		return ResponseEntity.ok(service.AdicionarTag(id_livros, id_tag));
+	@PutMapping("adicionar_etiqueta/livros/{id_livros}/etiqueta/{id_etiqueta}")
+	public ResponseEntity<Livros> putTag(@PathVariable long id_livros, @PathVariable long id_etiqueta){
+		return ResponseEntity.ok(service.AdicionarTag(id_livros, id_etiqueta));
 	}
-
 }

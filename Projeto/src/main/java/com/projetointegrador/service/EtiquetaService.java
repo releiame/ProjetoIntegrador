@@ -8,33 +8,33 @@ import org.springframework.stereotype.Service;
 
 import com.projetointegrador.model.Livros;
 import com.projetointegrador.model.Pedido;
-import com.projetointegrador.model.Tag;
+import com.projetointegrador.model.Etiqueta;
 import com.projetointegrador.repository.LivrosRepository;
-import com.projetointegrador.repository.TagRepository;
+import com.projetointegrador.repository.EtiquetaRepository;
 
 @Service
 @Component
-public class TagService {
+public class EtiquetaService {
 	
 	@Autowired
 	private LivrosRepository livroRepository;
 	
 	@Autowired
-	private TagRepository tagRepository;
+	private EtiquetaRepository etiquetaRepository;
 	
-	/*public void DeletarTag(long id_tag, long id_livros) {
+	public void DeletarTag(long id_tag, long id_livros) {
 		
 		Optional<Livros> livro = livroRepository.findById(id_livros);
-		Optional<Tag> tag = tagRepository.findById(id_tag);
+		Optional<Etiqueta> etiqueta = etiquetaRepository.findById(id_tag);
 		
-		if(livro.get().getTag().contains(tag.get())) {
-			livro.get().getTag().remove(tag.get());
+		if(livro.get().getEtiqueta().contains(etiqueta.get())) {
+			livro.get().getEtiqueta().remove(etiqueta.get());
 		}
 		
 		livroRepository.save(livro.get());
-		tagRepository.save(tag.get());
+		etiquetaRepository.save(etiqueta.get());
 		
 		
-	}*/
+	}
 
 }

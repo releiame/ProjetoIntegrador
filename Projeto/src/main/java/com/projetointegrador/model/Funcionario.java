@@ -37,7 +37,7 @@ public class Funcionario{
 	@Size(min = 4, max = 100)
 	private String nome;
 	
-	@OneToMany(mappedBy = "funcionario", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "funcionario", cascade = CascadeType.MERGE)
 	@JsonIgnoreProperties({"funcionario", "capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", "valorUnitario", "qtdePedidoLivro", "tag", "pedido"})
 	private List<Livros> livros;
 	

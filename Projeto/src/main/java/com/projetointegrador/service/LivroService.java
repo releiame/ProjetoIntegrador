@@ -14,10 +14,10 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.projetointegrador.model.Livros;
 import com.projetointegrador.model.Pedido;
-import com.projetointegrador.model.Tag;
+import com.projetointegrador.model.Etiqueta;
 import com.projetointegrador.repository.LivrosRepository;
 import com.projetointegrador.repository.PedidoRepository;
-import com.projetointegrador.repository.TagRepository;
+import com.projetointegrador.repository.EtiquetaRepository;
 
 @Service
 @Component
@@ -33,21 +33,21 @@ public class LivroService {
 	private PedidoService pedidoService;
 	
 	@Autowired
-	private TagRepository repository;
+	private EtiquetaRepository repository;
 	
-	private Tag tag = new Tag();
+	private Etiqueta etiqueta = new Etiqueta();
 
 	double a = 0;
 	
 	public Livros AdicionarTag(long id_livros, long id_tag) {
 		
 		Optional<Livros> livro = livroRepository.findById(id_livros);
-		Optional<Tag> tag = repository.findById(id_tag);
+		Optional<Etiqueta> etiqueta = repository.findById(id_tag);
 		
-		livro.get().setTag(tag.get());
+		livro.get().getEtiqueta().add(etiqueta.get());
 		
 		livroRepository.save(livro.get());
-		repository.save(tag.get());
+		repository.save(etiqueta.get());
 		
 		return livroRepository.save(livro.get());
 		

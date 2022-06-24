@@ -28,10 +28,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Livros {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_livros;
 	
 	@NotNull
+	@URL
 	private String capa;
 
 	@NotNull
@@ -52,11 +53,14 @@ public class Livros {
 	
 	private int qtdePedidoLivro;
 	
-	//@ManyToMany(mappedBy = "livros", cascade = CascadeType.ALL)
-	@ManyToOne
+	@ManyToMany(cascade = CascadeType.MERGE)
 	@JsonIgnoreProperties({"livros"})
-	@JoinColumn(name = "id_tag")
-	private Tag tag;
+	@JoinTable(
+			name = "etiqueta_livros", 
+			uniqueConstraints = @UniqueConstraint(columnNames = {"etiqueta_fk", "livros_fk"}),
+			joinColumns = {@JoinColumn(name = "etiqueta_fk")}, 
+			inverseJoinColumns = {@JoinColumn(name = "livros_fk")})
+	private List<Etiqueta> etiqueta;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"livros", "cliente"})
@@ -66,7 +70,7 @@ public class Livros {
 			inverseJoinColumns = {@JoinColumn(name = "pedido_fk")})
 	private List<Pedido> pedido;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JsonIgnoreProperties({"livros", "senha", "codf"})
 	@JoinColumn(name = "id_funcionario")
 	private Funcionario funcionario;
@@ -135,12 +139,12 @@ public class Livros {
 		this.isbn = isbn;
 	}
 
-	public Tag getTag() {
-		return tag;
+	public List<Etiqueta> getEtiqueta() {
+		return etiqueta;
 	}
 
-	public void setTag(Tag tag) {
-		this.tag = tag;
+	public void setEtiqueta(List<Etiqueta> etiqueta) {
+		this.etiqueta = etiqueta;
 	}
 
 	public List<Pedido> getPedido() {

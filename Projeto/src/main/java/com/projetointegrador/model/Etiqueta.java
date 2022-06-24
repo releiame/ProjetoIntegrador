@@ -21,34 +21,29 @@ import javax.validation.constraints.NotNull;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table(name = "tb_tag")
+@Table(name = "tb_etiqueta")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Tag {
+public class Etiqueta {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_tag;
+	private Long id_etiqueta;
 	
 	@NotNull
 	private String nome;
 	
-	//@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JsonIgnoreProperties({"capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", "valorUnitario", "qtdePedidoLivro", "tag", "pedido", "funcionario"})
-	@OneToMany(mappedBy = "tag")
-	/*@JoinTable(
-			name = "tag_livros", 
-			uniqueConstraints = @UniqueConstraint(columnNames = {"tag_fk", "livros_fk"}),
-			joinColumns = {@JoinColumn(name = "tag_fk")}, 
-			inverseJoinColumns = {@JoinColumn(name = "livros_fk")})
-	*/
+	
+	@ManyToMany(mappedBy = "etiqueta", cascade = CascadeType.MERGE)
+	@JsonIgnoreProperties({"capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", 
+		"valorUnitario", "qtdePedidoLivro", "etiqueta", "pedido", "funcionario"})
 	private List<Livros> livros;
 
-	public Long getId_tag() {
-		return id_tag;
+	public Long getId_etiqueta() {
+		return id_etiqueta;
 	}
 
-	public void setId_tag(Long id_tag) {
-		this.id_tag = id_tag;
+	public void setId_etiqueta(Long id_etiqueta) {
+		this.id_etiqueta = id_etiqueta;
 	}
 
 	public String getNome() {
