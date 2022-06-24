@@ -5,6 +5,7 @@ export const environment = {
   email: '',
   id_cliente: 0,
   id_funcionarios: 0,
-  codf: ''
+  codf: '',
+  carrinho: [0]
 };
 // aqui vão as variáveis globais

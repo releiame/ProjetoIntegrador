@@ -23,6 +23,8 @@ import { FuncionarioLoginComponent } from './components/modal/funcionariologin/f
 import { Funcionario } from './model/Funcionario';
 import { CadastroFuncionarioComponent } from './components/modal/cadastrofuncionario/cadastrofuncionario.component';
 import { MinhaContaComponent } from './components/template/minha-conta/minha-conta.component';
+import { LivrosComponent } from './livros/livros.component';
+import { CardComponent } from './card/card.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { MinhaContaComponent } from './components/template/minha-conta/minha-con
     HeaderComponent,
     FuncionarioLoginComponent,
     CadastroFuncionarioComponent,
-    MinhaContaComponent
+    MinhaContaComponent,
+    LivrosComponent,
+    CardComponent
 
   ],
   imports: [

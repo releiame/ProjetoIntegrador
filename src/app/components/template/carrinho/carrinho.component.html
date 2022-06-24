@@ -39,6 +39,41 @@
             </tr>
         </thead>
         <tbody>
+            <tr *ngFor="let livro of listaLivros">
+                <th class="d-flex align-items-center">
+                    <img class="img-thumbnail tam me-4" src={{livro.capa}} />
+                </th>
+                <td>{{livro.valorUnitario}}</td>
+                <td><input type="number" class="form-control" id="qtdItem" value="1"></td>
+                <td><a (click)="delete()"><img class="lixo" src="../../../../assets/img/lata-de-lixo.png"></a></td>
+            </tr>
+        </tbody>
+    </table>
+  
+  <!-- AQUI VAI SER O PESQUISAR CEP E PREÇO TOTAL E BOTÃO DE FINALIZAR PEDIDO
+    <div class="d-flex justify-content-between">
+  
+            <div class="card tam-card">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+          <div class="card tam-card">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+    </div> -->
+
+    <!--<tbody>
             <tr>
                 <th class="d-flex align-items-center">
                     <img class="img-thumbnail tam me-4" src="../../../../assets/img/a-cabana.jpg" />
@@ -74,29 +109,5 @@
                     <button class="btn btn-outline-secondary">Escolher mais produtos</button>
                 </th>
             </tr>
-        </tbody>
-    </table>
-  
-  <!-- AQUI VAI SER O PESQUISAR CEP E PREÇO TOTAL E BOTÃO DE FINALIZAR PEDIDO
-    <div class="d-flex justify-content-between">
-  
-            <div class="card tam-card">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-          <div class="card tam-card">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-    </div> -->
+        </tbody>-->
   </div>

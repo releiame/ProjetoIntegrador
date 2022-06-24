@@ -1,0 +1,120 @@
+<section class="livro ml-5 mr-5">
+    <div class="container py-5">
+      <div class="row py-5 ">
+        <div id="acao" class="col-lg-5 m-auto text-center">
+          <h1>Ação</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 text-center" *ngFor="let item of listaLivros">
+        <div class="card border-0 bg-light mb-2" *ngIf="item.tag.id_tag == 1">
+          <a [routerLink]="['/tela-produto', item.id_livros]" class="btn p-0">
+            <div class="card-body">
+              <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.capa}}" alt="not found"></a>
+            </div>
+    
+            <div class="card-footer">
+              <h6>{{item.titulo}}</h6>
+    
+              <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+              <s>
+                <p>{{item.descricao}}</p>
+              </s>
+              <p class="textPrice">{{item.valorUnitario | currency : 'BRL'}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="livro ml-5 mr-5">
+    <div class="container py-5">
+      <div class="row py-5 ">
+        <div id="didatico" class="col-lg-5 m-auto text-center">
+          <h1>Didatico</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 text-center" *ngFor="let item of listaLivros">
+        <div class="card border-0 bg-light mb-2" *ngIf="item.tag.id_tag == 2">
+          <a [routerLink]="['/tela-produto', item.id_livros]" class="btn p-0">
+            <div class="card-body">
+              <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.capa}}" alt="not found"></a>
+            </div>
+    
+            <div class="card-footer">
+              <h6>{{item.titulo}}</h6>
+    
+              <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+              <s>
+                <p>{{item.descricao}}</p>
+              </s>
+              <p class="textPrice">{{item.valorUnitario | currency : 'BRL'}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="livro ml-5 mr-5">
+    <div class="container py-5">
+      <div class="row py-5 ">
+        <div id="aventura" class="col-lg-5 m-auto text-center">
+          <h1>Aventura</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 text-center" *ngFor="let item of listaLivros">
+        <div class="card border-0 bg-light mb-2" *ngIf="item.tag.id_tag == 3">
+          <a [routerLink]="['/tela-produto', item.id_livros]" class="btn p-0">
+            <div class="card-body">
+              <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.capa}}" alt="not found"></a>
+            </div>
+    
+            <div class="card-footer">
+              <h6>{{item.titulo}}</h6>
+    
+              <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+              <s>
+                <p>{{item.descricao}}</p>
+              </s>
+              <p class="textPrice">{{item.valorUnitario | currency : 'BRL'}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="livro ml-5 mr-5">
+    <div class="container py-5">
+      <div class="row py-5 ">
+        <div id="infantil" class="col-lg-5 m-auto text-center">
+          <h1>Infantil</h1>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 text-center" *ngFor="let item of listaLivros">
+        <div class="card border-0 bg-light mb-2" *ngIf="item.tag.id_tag == 4">
+          <a [routerLink]="['/tela-produto', item.id_livros]" class="btn p-0">
+            <div class="card-body">
+              <a routerlink="/produto"><img class="img-card img-fluid rounded" src="{{item.capa}}" alt="not found"></a>
+            </div>
+    
+            <div class="card-footer">
+              <h6>{{item.titulo}}</h6>
+    
+              <img class="imgStar" src="https://i.imgur.com/lqQP21r.png" alt="">
+              <s>
+                <p>{{item.descricao}}</p>
+              </s>
+              <p class="textPrice">{{item.valorUnitario | currency : 'BRL'}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
