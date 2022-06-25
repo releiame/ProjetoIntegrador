@@ -39,7 +39,7 @@ public class LivroService {
 
 	double a = 0;
 	
-	public Livros AdicionarTag(long id_livros, long id_tag) {
+	/*public Livros AdicionarTag(long id_livros, long id_tag) {
 		
 		Optional<Livros> livro = livroRepository.findById(id_livros);
 		Optional<Etiqueta> etiqueta = repository.findById(id_tag);
@@ -51,7 +51,7 @@ public class LivroService {
 		
 		return livroRepository.save(livro.get());
 		
-	}
+	}*/
 	
 	public Livros AdicionarMais(long id_pedido, long id_livros) {
 		

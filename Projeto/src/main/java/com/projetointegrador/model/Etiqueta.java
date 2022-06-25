@@ -33,7 +33,7 @@ public class Etiqueta {
 	private String nome;
 	
 	
-	@ManyToMany(mappedBy = "etiqueta", cascade = CascadeType.MERGE)
+	@OneToMany(mappedBy = "etiqueta", cascade = CascadeType.MERGE)
 	@JsonIgnoreProperties({"capa", "descricao", "autor", "qtdeEstoque", "temEstoque", "isbn", 
 		"valorUnitario", "qtdePedidoLivro", "etiqueta", "pedido", "funcionario"})
 	private List<Livros> livros;

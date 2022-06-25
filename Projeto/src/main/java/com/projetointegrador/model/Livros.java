@@ -53,14 +53,17 @@ public class Livros {
 	
 	private int qtdePedidoLivro;
 	
-	@ManyToMany(cascade = CascadeType.MERGE)
-	@JsonIgnoreProperties({"livros"})
+	/*@ManyToMany(cascade = CascadeType.MERGE)
+	
 	@JoinTable(
 			name = "etiqueta_livros", 
 			uniqueConstraints = @UniqueConstraint(columnNames = {"etiqueta_fk", "livros_fk"}),
 			joinColumns = {@JoinColumn(name = "etiqueta_fk")}, 
 			inverseJoinColumns = {@JoinColumn(name = "livros_fk")})
-	private List<Etiqueta> etiqueta;
+			*/
+	@ManyToOne
+	@JsonIgnoreProperties({"livros"})
+	private Etiqueta etiqueta;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"livros", "cliente"})
@@ -139,11 +142,11 @@ public class Livros {
 		this.isbn = isbn;
 	}
 
-	public List<Etiqueta> getEtiqueta() {
+	public Etiqueta getEtiqueta() {
 		return etiqueta;
 	}
 
-	public void setEtiqueta(List<Etiqueta> etiqueta) {
+	public void setEtiqueta(Etiqueta etiqueta) {
 		this.etiqueta = etiqueta;
 	}
 

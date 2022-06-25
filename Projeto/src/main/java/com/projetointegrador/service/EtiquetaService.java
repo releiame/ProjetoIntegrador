@@ -22,7 +22,7 @@ public class EtiquetaService {
 	@Autowired
 	private EtiquetaRepository etiquetaRepository;
 	
-	public void DeletarTag(long id_tag, long id_livros) {
+	/*public void DeletarTag(long id_tag, long id_livros) {
 		
 		Optional<Livros> livro = livroRepository.findById(id_livros);
 		Optional<Etiqueta> etiqueta = etiquetaRepository.findById(id_tag);
@@ -35,6 +35,6 @@ public class EtiquetaService {
 		etiquetaRepository.save(etiqueta.get());
 		
 		
-	}
+	}*/
 
 }

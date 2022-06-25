@@ -47,7 +47,7 @@ public class LivrosController {
 	@Autowired
 	private LivroService service;
 	
-	@GetMapping
+	@GetMapping("/listartodos")
 	public ResponseEntity<List<Livros>>GetAll(){
 		return ResponseEntity.ok(repositoryLivros.findAll());
 	}
@@ -84,8 +84,8 @@ public class LivrosController {
 		return ResponseEntity.ok(service.AdicionarMais(id_pedido, id_livros));
 	}
 	
-	@PutMapping("adicionar_etiqueta/livros/{id_livros}/etiqueta/{id_etiqueta}")
+	/*@PutMapping("adicionar_etiqueta/livros/{id_livros}/etiqueta/{id_etiqueta}")
 	public ResponseEntity<Livros> putTag(@PathVariable long id_livros, @PathVariable long id_etiqueta){
 		return ResponseEntity.ok(service.AdicionarTag(id_livros, id_etiqueta));
-	}
+	}*/
 }

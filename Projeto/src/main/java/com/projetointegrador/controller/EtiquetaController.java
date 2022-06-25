@@ -30,7 +30,7 @@ public class EtiquetaController {
 	@Autowired
 	private EtiquetaService service;
 	
-	@GetMapping
+	@GetMapping("/listartodos")
 	public ResponseEntity<List<Etiqueta>>GetAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
@@ -62,9 +62,9 @@ public class EtiquetaController {
 		repository.deleteById(id_etiqueta);
 	}
 	
-	@DeleteMapping("remover_etiqueta/{id_etiqueta}/livro/{id_livros}")
+	/*@DeleteMapping("remover_etiqueta/{id_etiqueta}/livro/{id_livros}")
 	public void putTag(@PathVariable long id_etiqueta, @PathVariable long id_livros) {
 		service.DeletarTag(id_etiqueta, id_livros);
-	}
+	}*/
 	
 }
