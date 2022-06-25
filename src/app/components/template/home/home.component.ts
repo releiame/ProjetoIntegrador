@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Etiqueta } from 'src/app/model/Etiqueta';
+import { Livros } from 'src/app/model/Livros';
+import { EtiquetaService } from 'src/app/service/etiqueta.service';
+import { LivrosService } from 'src/app/service/livros.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +12,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  listaLivros: Livros[]
+  listaTags: Etiqueta[]  
+  etiquetaNum: number
 
-  ngOnInit(): void {
+  constructor(
+    private livrosService: LivrosService,
+    private etiquetaService: EtiquetaService
+  ) { }
+
+  ngOnInit() {
+    this.getAllLivros()
+    this.getAllEtiquetas()
+    window.scroll(0,0)
   }
 
+  getAllLivros(){
+    this.livrosService.getAllLivros().subscribe((resp: Livros[]) =>{
+      this.listaLivros = resp
+    })
+  }
+
+  getAllEtiquetas(){
+    this.etiquetaService.getAllEtiquetas().subscribe((resp: Etiqueta[]) =>{
+      this.listaTags = resp
+    })
+  }
 }

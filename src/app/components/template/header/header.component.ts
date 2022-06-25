@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/model/Cliente';
 import { ClienteLogin } from 'src/app/model/ClienteLogin';
+import { Etiqueta } from 'src/app/model/Etiqueta';
 import { AuthService } from 'src/app/service/auth.service';
+import { EtiquetaService } from 'src/app/service/etiqueta.service';
 import { environment } from 'src/environments/environment.prod';
 
 
@@ -15,15 +17,25 @@ export class HeaderComponent implements OnInit {
 
   cliente: Cliente = new Cliente
   clienteLogin: ClienteLogin = new ClienteLogin
+  tituloLivro: string
 
+  listaTags: Etiqueta[] 
 
   constructor(
     private router: Router,
-    public authService: AuthService
+    public authService: AuthService,
+    private etiquetaService: EtiquetaService
   ) { }
 
   ngOnInit() {
+    this.getAllEtiquetas()
     window.scroll(0, 0)
+  }
+
+  getAllEtiquetas(){
+    this.etiquetaService.getAllEtiquetas().subscribe((resp: Etiqueta[]) =>{
+      this.listaTags = resp
+    })
   }
 
   sair() {

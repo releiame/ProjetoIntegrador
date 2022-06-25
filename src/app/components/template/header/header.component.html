@@ -107,14 +107,14 @@
 </nav>
 
 
-    <!--header3 (mais opções de navegação)-->
+    <!--header3 (mais opções de navegação)
     <nav class="navbar navbar-expand-sm color justify-content-center">
         <ul class="nav justify-content-center">
             <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Lançamentos</a>
+                <a class="nav-link text-light" routerLink="/#">{{item.nome}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Ofertas</a>
+                <a class="nav-link text-light" routerLink="/#">Ofertassss</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-light" routerLink="/#">Infantis</a>
@@ -144,7 +144,7 @@
                 <a class="nav-link text-light" routerLink="/#">Coleções</a>
             </li>
         </ul>
-    </nav>
+    </nav>-->
 </ng-template>
 
 <!--Header se o cliente estiver deslogado-->
@@ -190,9 +190,9 @@
             <li class="nav-item">
                 <div class="nav-link">
                     <div class="input-group">
-                        <input type="text" class="form-control wid" id="barraDePesquisa"
-                            placeholder="        Pesquise aqui seu livro" aria-label="true">
-                        <button class="btn btn-outline-light" type="button" id="button-addon2"><i class="fa fa-search"
+                        <input type="search" [(ngModel)]="tituloLivro" class="form-control wid tm-busca" name="tituloLivro"
+                            placeholder="         Pesquise aqui seu livro" aria-label="true">
+                        <button [routerLink]="['busca-livro', tituloLivro]" class="btn btn-outline-light" type="button" id="button-addon2"><i class="fa fa-search"
                                 style="margin: 0 2px;"></i></button>
                     </div>
                 </div>
@@ -226,38 +226,8 @@
     <!--header3 (mais opções de navegação)-->
     <nav class="navbar navbar-expand-sm color justify-content-center">
         <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Lançamentos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Ofertas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Infantis</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Mais vendidos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Literatura Nacional</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Didáticos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Autoajuda</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Direito</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Medicina</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Administração</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="/#">Coleções</a>
+            <li class="nav-item" *ngFor="let item of listaTags">
+                <a class="nav-link text-light" [routerLink]="['/busca-etiqueta', item.id_etiqueta]">{{item.nome}}</a>
             </li>
         </ul>
     </nav>

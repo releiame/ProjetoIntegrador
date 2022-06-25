@@ -1,6 +1,6 @@
 import { Funcionario } from "./Funcionario"
 import { Pedido } from "./Pedido"
-import { Tag } from "./Tag"
+import { Etiqueta } from "./Etiqueta"
 
 export class Livros{
     public id_livros: number
@@ -13,6 +13,6 @@ export class Livros{
     public qtdeEstoque: number
     public qtdePedidoLivro: number
     public pedido: Pedido[]
-    public tag: Tag
+    public etiqueta: Etiqueta
     public funcionario: Funcionario
     }

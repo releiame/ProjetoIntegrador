@@ -1,7 +1,7 @@
 import { Livros } from "./Livros"
 
-export class Tag{
-    public id_tag: number
+export class Etiqueta{
+    public id_etiqueta: number
     public nome: string
     public livro: Livros[]
 }

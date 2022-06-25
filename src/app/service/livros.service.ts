@@ -18,7 +18,7 @@ export class LivrosService {
   }
 
   getAllLivros():Observable<Livros[]> {
-    return this.http.get<Livros[]>('http://localhost:8080/livros', this.token)
+    return this.http.get<Livros[]>('http://localhost:8080/livros/listartodos', this.token)
 
   }
 

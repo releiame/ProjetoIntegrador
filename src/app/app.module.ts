@@ -18,9 +18,10 @@ import { HeaderComponent } from './components/template/header/header.component';
 import { FuncionarioLoginComponent } from './components/modal/funcionariologin/funcionariologin.component';
 import { CadastroFuncionarioComponent } from './components/modal/cadastrofuncionario/cadastrofuncionario.component';
 import { MinhaContaComponent } from './components/template/minha-conta/minha-conta.component';
-import { LivrosComponent } from './livros/livros.component';
-import { CardComponent } from './card/card.component';
 import { FooterComponent } from './components/template/footer/footer.component';
+import { BuscaLivroComponent } from './components/template/busca-livro/busca-livro.component';
+import { LivroComponent } from './components/template/livro/livro.component';
+import { BuscaEtiquetaComponent } from './components/template/busca-etiqueta/busca-etiqueta.component';
 
 
 @NgModule({
@@ -37,9 +38,10 @@ import { FooterComponent } from './components/template/footer/footer.component';
     FuncionarioLoginComponent,
     CadastroFuncionarioComponent,
     MinhaContaComponent,
-    LivrosComponent,
-    CardComponent,
-    FooterComponent
+    FooterComponent,
+    BuscaLivroComponent,
+    LivroComponent,
+    BuscaEtiquetaComponent
 
   ],
   imports: [
