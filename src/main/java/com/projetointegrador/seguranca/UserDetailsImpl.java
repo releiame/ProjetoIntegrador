@@ -34,8 +34,8 @@ public class UserDetailsImpl implements UserDetails {
 
 	private String userName;
 	private String password;
-	private String userFunc;
-	private boolean admin;
+	//private String userFunc;
+	//private boolean admin;
 
 	private List<GrantedAuthority> authorities;
 
@@ -47,11 +47,11 @@ public class UserDetailsImpl implements UserDetails {
 
 	}
 
-	public UserDetailsImpl(Funcionario userFuncionario) {
+	/*public UserDetailsImpl(Funcionario userFuncionario) {
 		this.userFunc = userFuncionario.getCodf();
 		this.password = userFuncionario.getSenha();
 
-	}
+	}*/
 	
 	//Método construtor sem parâmetros 
 
@@ -75,10 +75,10 @@ public class UserDetailsImpl implements UserDetails {
 
 	}
 
-	public String getUserFunc() {
+	/*public String getUserFunc() {
 		return userFunc;
 
-	}
+	}*/
 
 	/**
 	 *  Sobrescreve (@Override) o método que Indica se a conta do usuário 

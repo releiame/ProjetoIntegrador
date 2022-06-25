@@ -41,15 +41,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	 */
 
 	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
 		//Busca o cliente no Banco de dados
 		
-		Optional<Cliente> user = userRepository.findByEmail(email);
+		Optional<Cliente> user = userRepository.findByEmail(username);
 		
 		//Se não existir o método lança uma Exception do tipo UsernameNotFoundException
 		
-		user.orElseThrow(() -> new UsernameNotFoundException(email+": not found"));
+		user.orElseThrow(() -> new UsernameNotFoundException(username+": not found"));
 		
 		/**
 		 * Retorna um objeto do tipo UserDetailsImpl criado com os dados recuperados do
@@ -62,11 +62,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		return user.map(UserDetailsImpl::new).get();
 		}
 	
-	public UserDetails loadByUserFunc(String codf) throws UsernameNotFoundException {
+	/*public UserDetails loadByUserFunc(String codf) throws UsernameNotFoundException {
 		Optional<Funcionario> userFunc = Optional.ofNullable(funcionarioRepository.findByCodf(codf))
 				.orElseThrow(() -> new UsernameNotFoundException(codf + " not found!"));
 		return userFunc.map(UserDetailsImpl::new).get();
-	}
+	}*/
 	
 	}
 	

@@ -11,16 +11,6 @@ public class ClienteLogin {
 	private String token;
 	private Date dataNascimento;
 	
-	public ClienteLogin(Long id_cliente, String email, String senha, String nome, String token,
-			Date dataNascimento) {
-		this.id_cliente = id_cliente;
-		this.email = email;
-		this.senha = senha;
-		this.nome = nome;
-		this.token = token;
-		this.dataNascimento = dataNascimento;
-	}
-	
 	public String getToken() {
 		return token;
 	}

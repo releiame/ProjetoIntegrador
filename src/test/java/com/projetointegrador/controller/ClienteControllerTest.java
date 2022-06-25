@@ -181,7 +181,7 @@ public class ClienteControllerTest {
 		}
 	}
 	
-	@Test
+	/*@Test
 	@Order(6)
 	@DisplayName("Deve logar um Cliente")
 	public void deveLogarCliente() throws ParseException
@@ -194,7 +194,7 @@ public class ClienteControllerTest {
 				.exchange("/cliente/logar", HttpMethod.POST, corpoRequisicao, ClienteLogin.class);
 		assertEquals(HttpStatus.OK, corpoResposta.getStatusCode());
 		
-	}
+	}*/
 	
 	@Test
 	@Order(7)
