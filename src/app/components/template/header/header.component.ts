@@ -18,12 +18,12 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(
-    private router:Router,
-    public authService:AuthService
+    private router: Router,
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
   }
 
   sair() {
@@ -33,24 +33,27 @@ export class HeaderComponent implements OnInit {
   }
 
   cadastrar() {
-    this.authService.cadastrar(this.cliente).subscribe((resp: Cliente)=>{
+    this.authService.cadastrar(this.cliente).subscribe((resp: Cliente) => {
       this.cliente = resp
       this.router.navigate(['/login'])
       alert('Cliente cadastrado com sucesso!!!')
     })
   }
 
-  entrar(){
-    this.authService.entrar(this.clienteLogin).subscribe((resp:ClienteLogin)=>{
+  entrar() {
+    this.authService.entrar(this.clienteLogin).subscribe((resp: ClienteLogin) => {
       this.clienteLogin = resp
 
       environment.token = this.clienteLogin.token
       environment.id_cliente = this.clienteLogin.id_cliente
+      environment.nome = this.clienteLogin.nome
 
-      this.router.navigate(['/header-inicio-log', '/carousel', '/page1'])
+      // this.router.navigate(['/header-inicio-log', '/carousel', '/page1'])
     }, erro => {
-      if(erro.status==500) {
+      if (erro.status == 500) {
         alert('Usuário ou senha incorretos.')
+      } else {
+        alert('Usuário logado com sucesso')
       }
     }
     )
