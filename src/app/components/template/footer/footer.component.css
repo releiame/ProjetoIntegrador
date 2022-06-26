@@ -85,3 +85,10 @@ h6 {
   .cor {
     background-color: #d0d0d0;
   }
+  ul li {
+    list-style: none;
+  }
+
+  .corr {
+    color:#7E7E7E;
+  }
