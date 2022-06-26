@@ -24,6 +24,7 @@ import { LivroComponent } from './components/template/livro/livro.component';
 import { BuscaEtiquetaComponent } from './components/template/busca-etiqueta/busca-etiqueta.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
