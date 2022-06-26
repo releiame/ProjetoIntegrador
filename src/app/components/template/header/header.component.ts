@@ -15,10 +15,12 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() isHeader: boolean
   cliente: Cliente = new Cliente
   clienteLogin: ClienteLogin = new ClienteLogin
   tituloLivro: string
-
+  nome: String
+  id_cliente: number
   listaTags: Etiqueta[] 
 
   constructor(
@@ -39,7 +41,7 @@ export class HeaderComponent implements OnInit {
   }
 
   sair() {
-    this.router.navigate(['/header'])
+    this.router.navigate(['/home'])
     environment.token = ''
     environment.id_cliente = 0
   }
@@ -51,21 +53,25 @@ export class HeaderComponent implements OnInit {
       alert('Cliente cadastrado com sucesso!!!')
     })
   }
+  ngAfterContentChecked() {
+    this.nome = environment.nome
+    this.id_cliente = environment.id_cliente
+  }
 
-  entrar() {
-    this.authService.entrar(this.clienteLogin).subscribe((resp: ClienteLogin) => {
+  logar(){
+    this.authService.entrar(this.clienteLogin).subscribe((resp:ClienteLogin) =>{
       this.clienteLogin = resp
 
-      environment.token = this.clienteLogin.token
-      environment.id_cliente = this.clienteLogin.id_cliente
-      environment.nome = this.clienteLogin.nome
-
-      // this.router.navigate(['/header-inicio-log', '/carousel', '/page1'])
+    environment.token = this.clienteLogin.token
+    environment.nome = this.clienteLogin.nome
+    environment.id_cliente = this.clienteLogin.id_cliente
+    environment.email = this.clienteLogin.email
+    
+    this.router.navigate(['/home'])
     }, erro => {
-      if (erro.status == 500) {
-        alert('Usuário ou senha incorretos.')
-      } else {
-        alert('Usuário logado com sucesso')
+      if(erro.status==500)
+      {
+        alert('E-mail ou senha incorretos!')
       }
     }
     )

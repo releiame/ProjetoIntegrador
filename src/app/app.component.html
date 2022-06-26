@@ -1,9 +1,9 @@
 <!-- <app-header-inicio-log ngIf="auth.logado()"></app-header-inicio-log> -->
-<app-header></app-header>
+<app-header [isHeader]="isShowHeader"></app-header>
 
 <router-outlet></router-outlet>>
-            
-<app-footer></app-footer>                                                                                           
+   
+<app-footer [isHeader]="isShowHeader"></app-footer>                                                                                       
 
 
 

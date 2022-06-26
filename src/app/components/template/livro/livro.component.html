@@ -1,47 +1,51 @@
-<body>
-    <div class="container-fluid col-md-12 mt-5 d-flex justify-content-center"
-      with="100%" height="100%" id="img-bg">
-  
-      <div class="row">
-  
-        <div class="col-md-8">
-          <div class="row d-flex">
-            <div class="card text-center ml-5 mr-5 card-tm">
-  
-              <div class="card-body">
-                <h5 class="card-title text-center mt-5">{{livro.titulo}}</h5>
-  
-                <img src="{{livro.capa}}" class="text-center img-fluid" alt="">
-              </div>
-            </div>
-          </div>
-  
-        </div>
-        <!--lado direito abaixo-->
-        <div class="col-md-4">
-  
-          <div class="row d-flex mr-10">
-            <div class=" text-center">
-  
-              <div class="card text-center ml-5 mr-5">
-  
-                <div class="card-body">
-                  <h5>{{livro.titulo}}</h5>
-                  <p class="justify">{{livro.descricao}}</p>
-                  <div>
-                    <h4 class="text-center mt-5" id="colorRed">
-                      <s>{{livro.valorUnitario/2 | currency :
-                        'BRL'}}</s></h4>
-                    <h5 class="text-center" id="fontmax"><b>{{livro.valorUnitario |
-                        currency : 'BRL'}}</b>
-                    </h5>
+<div class="container-fluid">
+  <!--aqui a casinha apontando para qual livro está mostrando os detalhes -->
+  <a href="/home"><i class="fa fa-home my-3"></i></a>
+  <i class="fa fa-angle-right mx-2"></i>
+  <small>{{livro.titulo}}</small>
+  <div class="row ms-4">
+      <div class="col-md-6 my-3 border d-flex justify-content-center"><img
+              src="{{livro.capa}}" /></div>
+
+      <!--livro e compra-->
+      <div class="col-md-6 mt-5 mb-5">
+          <div class="row d-flex justify-content-center">
+              <div class="col-md-10">
+                  <h4>{{livro.titulo}}</h4>
+                  <p>{{livro.isbn}}</p>
+                  <!--filtros coloridos indicando a qual categoria pertence um livro-->
+                  <a [routerLink]="['/busca-etiqueta', livro.etiqueta.id_etiqueta]" class="badge bg-success text-white filtro-badge mx-1">{{livro.etiqueta.nome}}</a>
+                  <div class="my-4">
+                      <h4><em><small><del class="del">{{livro.valorUnitario*2 | currency : 'BRL'}}</del></small></em><strong>{{livro.valorUnitario | currency : 'BRL'}}</strong>
+                      </h4>
+                      <p>Em até 10x de {{livro.valorUnitario/10 | currency : 'BRL'}} sem juros</p>
                   </div>
-                </div>
+                  <div class="d-flex justify-content-start">
+                      <input type="number" class="form-control tam-qtd-item" id="qtdItem" value="1">
+                      <a href="#" class="btn btn-danger comprar-qtd mx-3">Comprar</a>
+                  </div>
+                  <div class="d-flex pt-4 frete">
+                      <img class="caminhao" src="../../../../assets/img/caminhao-de-entrega.png" />
+                      <h3 class="mx-2">
+                          Calcular Frete</h3>
+                  </div>
+                  <div class="input d-flex">
+                      <input type="text" class="form-control tamanho_input_cep" placeholder="00000-000"
+                          aria-label="cepConsulta" aria-describedby="button-addon2">
+                      <button class="btn btn-outline-dark ms-2" type="button" id="cepConsulta">Calcular</button>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
       </div>
-  
-    </div>
-  </body>
+  </div>
+</div>
+<!--Descrição e detalhes-->
+<div class="container pt-3">
+  <h2>Descrição</h2>
+  <p>{{livro.descricao}}</p>
+      <h4 class="py-4">Mais Informações </h4>
+      <p>Autor(a): {{livro.autor}}</p>
+      <p>Qtde. Estoque: {{livro.qtdeEstoque}}</p>
+      <p>ISBN: {{livro.isbn}}</p>
+      <p>Tags: <a [routerLink]="['/busca-etiqueta', livro.etiqueta.id_etiqueta]" class="badge bg-success text-white filtro-badge mx-1">{{livro.etiqueta.nome}}</a></p>
+</div>

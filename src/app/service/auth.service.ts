@@ -44,20 +44,10 @@ export class AuthService {
   }
 
   logado(){
-    let ok: boolean = false //ou apenas 'let ok: false', ou apenas 'ok: false'
-
+    let ok: boolean = false
     if(environment.token != ''){
-      ok: true
-    } 
+      ok = true
+    }
     return ok
-  }
-
-  deslogado(){
-    let deslog: boolean = false //ou apenas 'let ok: false', ou apenas 'ok: false'
-
-    if(environment.token == ''){
-      deslog: true
-    } 
-    return deslog
   }
 }

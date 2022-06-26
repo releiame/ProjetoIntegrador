@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Etiqueta } from 'src/app/model/Etiqueta';
 import { Livros } from 'src/app/model/Livros';
 import { EtiquetaService } from 'src/app/service/etiqueta.service';
@@ -18,7 +19,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private livrosService: LivrosService,
-    private etiquetaService: EtiquetaService
+    private etiquetaService: EtiquetaService,
+    private router: Router
   ) { }
 
   ngOnInit() {

@@ -1,8 +1,6 @@
+<div *ngIf="isHeader">
 <!--Header se o cliente estiver logado-->
-<section *ngIf="authService.logado(); then Logado else Deslogado"></section>
-
-<ng-template #Logado>
-    <!--header 1 (opções de navegação)-->
+    <!--header 1 (opções de navegação)
     <header class="navbar color-header bg-dark">
         <ul class="nav nav-pills">
             <li class="nav-item">
@@ -21,12 +19,12 @@
                 <a class="nav-link text-light" routerLink="#" (click)="sair()">Sair <i class="fa fa-sign-out"></i></a>
             </li>
         </ul>
-    </header>
+    </header>-->
 
-    <!--header2 (logo, barra de pesquisa, opções de navegação e carrinho )-->
+    <!--header2 (logo, barra de pesquisa, opções de navegação e carrinho )
 
     <nav class="navbar navbar-expand-lg d-flex justify-content-between color">
-        <!--logo-->
+        logo
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <div class="nav-link">
@@ -34,7 +32,7 @@
                 </div>
             </li>
         </ul>
-        <!--barra de pesquisa-->
+        barra de pesquisa
         <ul class="nav justify-content-center">
             <li class="nav-item">
                 <div class="nav-link">
@@ -47,8 +45,8 @@
                 </div>
             </li>
         </ul>
-        <!--menu e carrinho-->
-        <!--<ul class="nav justify-content-end">
+        menu e carrinho
+        <ul class="nav justify-content-end">
             <li class="nav-item">
                 <div class="collapse navbar-collapse nav-link" id="collapsibleNavbar">
                     <img src="assets/img/user32.png">
@@ -78,7 +76,7 @@
                     </ul>
                 </div>
         </ul>
-    </nav>-->
+    </nav>
     <ul class="nav justify-content-end pe-2 ">
         <div class="navbar-collapse">
             <img src="assets/img/user32.png" />
@@ -104,7 +102,7 @@
             <a routerLink="/carrinho" class="carrinho"><img src="assets/img/carrinho.png"></a>
         </div>
     </ul>
-</nav>
+</nav>-->
 
 
     <!--header3 (mais opções de navegação)
@@ -145,35 +143,9 @@
             </li>
         </ul>
     </nav>-->
-</ng-template>
 
 <!--Header se o cliente estiver deslogado-->
-<ng-template #Deslogado>
     <!--header 1 (opções de navegação)-->
-    <header class="navbar color-header bg-dark">
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="#">Início</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" routerLink="#">Meus Pedidos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#fale-conosco" href="">Fale
-                    Conosco</a>
-            </li>
-        </ul>
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#loginModal" href="">Entrar</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#modalCadastro" href="">Fazer
-                    Cadastro</a>
-            </li>
-        </ul>
-    </header>
-
     <!--header2 (logo, barra de pesquisa, opções de navegação e carrinho )-->
 
     <nav class="navbar navbar-expand-sm d-flex justify-content-between color">
@@ -181,7 +153,7 @@
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <div class="nav-link">
-                    <a routerLink=""><img src="assets/img/logo.png" /></a>
+                    <a routerLink="/home"><img src="assets/img/logo.png" /></a>
                 </div>
             </li>
         </ul>
@@ -199,22 +171,27 @@
             </li>
         </ul>
         <!--menu e carrinho-->
-        <ul class="nav justify-content-end pe-2">
-            <div class="navbar-collapse">
+        <ul class="nav justify-content-end pe-2 mr-5">
+            <div class="navbar-collapse ">
+                <!--<a class="nav-link dropdown-toggle text-light" href="#"
+                    id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Olá, {{nome}}
+                </a>-->
                 <img src="assets/img/user32.png" />
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button"
-                        aria-expanded="false">Minha Conta</a>
+                        aria-expanded="false" *ngIf="authService.logado() == false">Minha Conta</a>
+                        <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false" *ngIf="authService.logado()">Olá, {{nome}}</a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" data-bs-toggle="modal"
-                            data-bs-target="#loginModal" href="">Entrar</a></li>
-                        <li><a class="dropdown-item" data-bs-toggle="modal"
-                            data-bs-target="#modalCadastro" href="">Fazer Cadastro</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" routerLink="#">Minha Conta</a></li>
-                        <li><a class="dropdown-item" routerLink="#">Meus Pedidos</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" *ngIf="authService.logado() == false"
+                            data-bs-target="#loginModal">Entrar</a></li>
+                        <li><a class="dropdown-item" data-bs-toggle="modal" *ngIf="authService.logado() == false"
+                            data-bs-target="#modalCadastro">Fazer Cadastro</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="#">Minha Conta</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="#">Meus Pedidos</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logado()" (click)="sair()" routerLink="#">Sair</a></li>
                     </ul>
                     
                 </li>
@@ -231,7 +208,7 @@
             </li>
         </ul>
     </nav>
-</ng-template>
+</div>
 
 <!-- Modal fazer cadastro -->
 <div class="modal" id="modalCadastro">
@@ -315,24 +292,24 @@
     </div>
 </div>
 
-<!-- login Modal -->
+<!-- login Modal-->
 <div class="modal" id="loginModal">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
-            <!-- Modal Header -->
+            <!--Modal Header-->
             <div class="modal-header">
                 <h4 class="modal-title">Faça login para continuar</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
-            <!-- Modal body -->
+            <!--Modal Body-->
             <form class="needs-validation" novalidate>
                 <div class="p-4">
                     <div class="mb-3">
                         <label for="emailLogin" class="form-label">Email</label>
                         <input [(ngModel)]='clienteLogin.email' name="email" type="email" class="form-control"
-                            placeholder="seuemail@mail.com" id="emailLogin" aria-describedby="email">
+                            placeholder="seuemail@mail.com" id="email" aria-describedby="email">
                     </div>
                     <div class="mb-3">
                         <label for="passwordLogin" class="form-label">Senha</label>
@@ -343,14 +320,14 @@
                         <input type="checkbox" class="form-check-input" id="checkConect">
                         <label class="form-check-label" for="checkConect">Me manter conectado</label>
                     </div>
-                    <button type="submit" class="btn btn-primary" (click)="entrar()">Entrar</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="#loginModal" (click)="logar()">Entrar</button>
                     <br><br>
                     <p>Primeira compra? <a class="text-dark" data-bs-toggle="modal" data-bs-target="#modalCadastro"
                             href="">Criar
                             Conta.</a></p>
                 </div>
             </form>
-            <!-- Modal footer -->
+             <!--Modal Footer-->
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
             </div>
