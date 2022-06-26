@@ -56,6 +56,7 @@ export class HeaderComponent implements OnInit {
   ngAfterContentChecked() {
     this.nome = environment.nome
     this.id_cliente = environment.id_cliente
+    this.nome = this.nome.split(" ")[0]
   }
 
   logar(){

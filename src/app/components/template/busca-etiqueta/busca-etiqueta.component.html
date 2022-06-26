@@ -23,8 +23,8 @@
                     <small>{{i.titulo}}</small>
                 </div>
                 <div class="d-flex justify-content-center">
-                    <p><small><em><del class="del">{{i.valorUnitario | currency : 'BRL'}}</del></em></small>
-                        <strong>{{i.valorUnitario/2 | currency : 'BRL'}}</strong>
+                    <p><small><em><del class="del">{{i.valorUnitario*2 | currency : 'BRL'}}</del></em></small>
+                        <strong>{{i.valorUnitario | currency : 'BRL'}}</strong>
                     </p>
                 </div>
             </div>
