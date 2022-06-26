@@ -9,6 +9,7 @@ export const environment = {
   carrinho: [0],
   id_livros: 0,
   id_etiqueta: 0,
-  titulo: ''
+  titulo: '',
+  valorArrecadado: 504.95
 };
 // aqui vão as variáveis globais

@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Etiqueta } from 'src/app/model/Etiqueta';
+import { EtiquetaService } from 'src/app/service/etiqueta.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-footer',
@@ -8,10 +11,25 @@ import { Component, Input, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
 
   @Input() isHeader: boolean;
+  valorArrecadado: number
+  listaTags: Etiqueta[]
+  
+  constructor(
+    private etiquetaService: EtiquetaService
+    ) { }
 
-  constructor() { }
+  ngOnInit() {
+    this.getAllEtiquetas()
+  }
 
-  ngOnInit(): void {
+  getAllEtiquetas(){
+    this.etiquetaService.getAllEtiquetas().subscribe((resp: Etiqueta[]) =>{
+      this.listaTags = resp
+    })
+  }
+
+  ngAfterContentChecked() {
+    this.valorArrecadado = environment.valorArrecadado
   }
 
 }
