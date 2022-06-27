@@ -14,8 +14,6 @@ import { CarrinhoComponent } from './components/template/carrinho/carrinho.compo
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { DevsComponent } from './components/modal/devs/devs.component';
 import { HeaderComponent } from './components/template/header/header.component';
-import { FuncionarioLoginComponent } from './components/modal/funcionariologin/funcionariologin.component';
-import { CadastroFuncionarioComponent } from './components/modal/cadastrofuncionario/cadastrofuncionario.component';
 import { MinhaContaComponent } from './components/template/minha-conta/minha-conta.component';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { BuscaLivroComponent } from './components/template/busca-livro/busca-livro.component';
@@ -35,8 +33,6 @@ import { FuncionarioComponent } from './components/template/funcionario/funciona
     CarrinhoComponent,
     DevsComponent,
     HeaderComponent,
-    FuncionarioLoginComponent,
-    CadastroFuncionarioComponent,
     MinhaContaComponent,
     FooterComponent,
     BuscaLivroComponent,

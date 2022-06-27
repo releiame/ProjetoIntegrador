@@ -95,6 +95,9 @@
                     <li>
                         <a class="text-light" href="#">Pedidos e Devoluções</a>
                     </li>
+                    <li>
+                        <a class="text-light" data-bs-toggle="modal" data-bs-target="#cadastroFuncModal" href="#">Cadastrar</a>
+                    </li>
                 </ul>
 
             </div>
@@ -180,6 +183,55 @@
         </div>
     </div>
 </footer>
+
+<div class="modal" id="cadastroFuncModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Cadastre-se</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <form class="row p-4 g-3 needs-validation" novalidate>
+                <div class="form-group col-12">
+                    <label for="nomeCompleto" class="form-label">Nome do Funcionario</label>
+                    <input [(ngModel)]='funcionario.nome' type="text" name="nome" class="form-control" id="nomeCompleto"
+                        placeholder="Maria da Silva" required>
+                    <div class="invalid-feedback">
+                        Por favor, preencha seu nome completo.
+                    </div>
+                </div>
+                <div class="form-group col-12">
+                    <label for="emailCadastro" class="form-label">Código do Funcionario</label>
+                    <input [(ngModel)]='funcionario.codf' type="text" name="codf" class="form-control" id="emailCadastro"
+                        placeholder="12345" required>
+                    <div class="invalid-feedback">
+                        Por favor, preencha seu email para continuar.
+                    </div>
+                </div>
+                <div class="form-group col-12">
+                    <label for="passwordCadastro" class="form-label">Senha do Funcionario</label>
+                    <input [(ngModel)]='funcionario.senha' type="password" name="senha" class="form-control"
+                        placeholder="Senha@123" id="passwordCadastro" required>
+                    <div class="invalid-feedback">
+                        Por favor, escolha uma senha com no mínimo 6 dígitos para continuar.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" (click)='cadastrarFuncionario()'>Criar Cadastro</button>
+                </div>
+            </form>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!--Modal-->
@@ -720,3 +772,46 @@
             </div>
         </div>
     </div>
+</div>
+
+    <!--<div class="modal" id="modalCadastroFuncionario">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+      
+            <div class="modal-header">
+              <h4 class="modal-title">Cadastro de Colaborador</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal">Fechar</button>
+            </div>
+
+            <form class="row p-4 g-3 needs-validation" novalidate>
+              <div class="col-12">
+                <label for="nomeCompleto" class="form-label">Nome Completo</label>
+                <input [(ngModel)]="funcionario.nome" type="text" class="form-control" id="nomeCompleto" placeholder="Maria da Silva" required/>
+                <div class="invalid-feedback">
+                  Por favor, preencha seu nome completo.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="codf" class="form-label">Código do funcionario</label>
+                <input [(ngModel)]="funcionario.codf" type="text" class="form-control" id="codf" placeholder="12345" required/>
+                <div class="invalid-feedback">
+                  Por favor, preencha sua matrícula de colaborador para continuar.
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="senha" class="form-label">Senha</label>
+                <input [(ngModel)]="funcionario.senha" type="text" class="form-control" id="senha" placeholder="Minimo 9 digitos" required/>
+                <div class="invalid-feedback">
+                  Por favor, preencha sua matrícula de colaborador para continuar.
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary" (click)="cadastrarFuncionario()">Cadastro</button>
+              </div>
+            </form>
+      
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>-->

@@ -6,8 +6,6 @@ import { CarouselInicioComponent } from "./components/template/carousel-inicio/c
 import { HomeComponent } from "./components/template/home/home.component";
 import { CarrinhoComponent } from "./components/template/carrinho/carrinho.component";
 import { DevsComponent } from "./components/modal/devs/devs.component";
-import { FuncionarioLoginComponent } from "./components/modal/funcionariologin/funcionariologin.component";
-import { CadastroFuncionarioComponent } from "./components/modal/cadastrofuncionario/cadastrofuncionario.component";
 import { BuscaLivroComponent } from "./components/template/busca-livro/busca-livro.component";
 import { LivroComponent } from "./components/template/livro/livro.component";
 import { BuscaEtiquetaComponent } from "./components/template/busca-etiqueta/busca-etiqueta.component";
@@ -24,8 +22,6 @@ const routes: Routes = [
     {path: 'fale-conosco', component:FaleConoscoComponent},
     {path: 'carrinho', component:CarrinhoComponent, data: {isHeader: true}},
     {path: 'devs', component:DevsComponent},
-    {path: 'funcionariologin', component:FuncionarioLoginComponent},
-    {path: 'cadastrofuncionario', component:CadastroFuncionarioComponent},
     {path: 'busca-livro/:titulo', component:BuscaLivroComponent, data: {isHeader: true}},
     {path: 'livro/:id_livros', component:LivroComponent, data: {isHeader: true}},
     {path: 'busca-etiqueta/:id_etiqueta', component:BuscaEtiquetaComponent, data: {isHeader: true}},

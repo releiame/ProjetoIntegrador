@@ -30,12 +30,6 @@ export class AuthService {
 
   }
 
-  cadastrarfuncionario(funcionario:Funcionario):Observable<Funcionario> {
-
-    return this.http.post<Funcionario>('http://localhost:8080/funcionario/cadastrar_funcionario', funcionario)
-
-  }
-
   entrar(clienteLogin:ClienteLogin): Observable<ClienteLogin> {
 
     return this.http.post<ClienteLogin>('http://localhost:8080/cliente/logar', clienteLogin)
@@ -50,6 +44,10 @@ export class AuthService {
     console.log(environment.token)
     return this.http.post<Cliente>('http://localhost:8080/cliente/cadastrar', cliente)
 
+  }
+
+  cadastrarfuncionario(funcionario: Funcionario):Observable<Funcionario>{
+    return this.http.post<Funcionario>('http://localhost:8080/funcionario/cadastrar_funcionario', funcionario)
   }
 
   logado(){
