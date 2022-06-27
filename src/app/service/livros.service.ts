@@ -30,4 +30,8 @@ export class LivrosService {
     return this.http.get<Livros[]>(`http://localhost:8080/livros/titulo/${titulo}`, this.token)
   }
 
+  cadastrar(livros:Livros):Observable<Livros>{
+    console.log('Chegou no método o service')
+    return this.http.post<Livros>('http://localhost:8080/livros/cadastrar', livros, this.token)
+  }
 }

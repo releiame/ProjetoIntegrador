@@ -4,7 +4,7 @@ export const environment = {
   nome: '',
   email: '',
   id_cliente: 0,
-  id_funcionarios: 0,
+  id_funcionario: 0,
   codf: '',
   carrinho: [0],
   id_livros: 0,

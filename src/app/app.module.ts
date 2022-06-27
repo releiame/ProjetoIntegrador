@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { CarouselInicioComponent } from './components/template/carousel-inicio/carousel-inicio.component';
 import { RodapeComponent } from './components/template/rodape/rodape.component';
-import { DetalhesLivrosComponent } from './components/template/detalhes-livros/detalhes-livros.component';
 
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
 import { HomeComponent } from './components/template/home/home.component';
@@ -22,6 +21,7 @@ import { FooterComponent } from './components/template/footer/footer.component';
 import { BuscaLivroComponent } from './components/template/busca-livro/busca-livro.component';
 import { LivroComponent } from './components/template/livro/livro.component';
 import { BuscaEtiquetaComponent } from './components/template/busca-etiqueta/busca-etiqueta.component';
+import { FuncionarioComponent } from './components/template/funcionario/funcionario.component';
 
 
 
@@ -31,7 +31,6 @@ import { BuscaEtiquetaComponent } from './components/template/busca-etiqueta/bus
     CarouselInicioComponent,
     FaleConoscoComponent,
     RodapeComponent,
-    DetalhesLivrosComponent,
     HomeComponent,
     CarrinhoComponent,
     DevsComponent,
@@ -42,7 +41,8 @@ import { BuscaEtiquetaComponent } from './components/template/busca-etiqueta/bus
     FooterComponent,
     BuscaLivroComponent,
     LivroComponent,
-    BuscaEtiquetaComponent
+    BuscaEtiquetaComponent,
+    FuncionarioComponent
 
   ],
   imports: [

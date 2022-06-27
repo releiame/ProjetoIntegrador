@@ -28,4 +28,8 @@ export class EtiquetaService {
   getByNome(nome: string): Observable<Etiqueta[]>{
     return this.http.get<Etiqueta[]>(`http://localhost:8080/etiqueta/nome/${nome}`, this.token)
   }
+
+  cadastrar(etiqueta:Etiqueta):Observable<Etiqueta>{
+    return this.http.post<Etiqueta>('http://localhost:8080/etiqueta/cadastrar', etiqueta, this.token)
+  }
 }

@@ -184,13 +184,14 @@
                         aria-expanded="false" *ngIf="authService.logado() == false">Minha Conta</a>
                         <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button"
                         aria-expanded="false" *ngIf="authService.logado()">Olá, {{nome}}</a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu mr-5">
                         <li><a class="dropdown-item" data-bs-toggle="modal" *ngIf="authService.logado() == false"
                             data-bs-target="#loginModal">Entrar</a></li>
                         <li><a class="dropdown-item" data-bs-toggle="modal" *ngIf="authService.logado() == false"
                             data-bs-target="#modalCadastro">Fazer Cadastro</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="#">Minha Conta</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="/minha-conta">Minha Conta</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="#">Meus Pedidos</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logadoFuncionario()" routerLink="/funcionario">Livros</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" (click)="sair()" routerLink="#">Sair</a></li>
                     </ul>
                     
@@ -308,19 +309,25 @@
                 <div class="p-4">
                     <div class="mb-3">
                         <label for="emailLogin" class="form-label">Email</label>
-                        <input [(ngModel)]='clienteLogin.email' name="email" type="email" class="form-control"
+                        <input [(ngModel)]='clienteLogin.email' [(ngModel)]="funcionarioLogin.codf" name="email" type="email" class="form-control"
                             placeholder="seuemail@mail.com" id="email" aria-describedby="email">
                     </div>
                     <div class="mb-3">
                         <label for="passwordLogin" class="form-label">Senha</label>
-                        <input [(ngModel)]='clienteLogin.senha' name="senha" type="password" placeholder="Senha@123"
+                        <input [(ngModel)]='clienteLogin.senha' [(ngModel)]="funcionarioLogin.senha" name="senha" type="password" placeholder="Senha@123"
                             class="form-control" id="passwordLogin">
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="checkConect">
-                        <label class="form-check-label" for="checkConect">Me manter conectado</label>
+                    <div class="mb-3 row d-flex form-check">
+                        <div class="col-md-6">
+                            <input type="checkbox" class="form-check-input" id="checkConect">
+                            <label class="form-check-label" for="checkConect">Me manter conectado</label>
+                        </div> 
+                        <div class="col-md-6">
+                            <input type="checkbox" class="form-check-input" name="funcionario" (change)="tipoUsuario($event)" value="funcionario" id="checkFuncionario">
+                            <label class="form-check-label" for="checkConect">Funcionario?</label>
+                        </div>                       
                     </div>
-                    <button type="submit" class="btn btn-primary" data-bs-dismiss="#loginModal" (click)="logar()">Entrar</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)="logar()">Entrar</button>
                     <br><br>
                     <p>Primeira compra? <a class="text-dark" data-bs-toggle="modal" data-bs-target="#modalCadastro"
                             href="">Criar

@@ -1,6 +1,6 @@
 export class FuncionarioLogin {
     
-    public id_funcionarios: number
+    public id_funcionario: number
     public codf: string
     public nome: string
     public senha: string

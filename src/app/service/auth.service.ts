@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
@@ -19,6 +19,12 @@ export class AuthService {
     private http:HttpClient
   ) { }
 
+  token = {
+
+    headers: new HttpHeaders().set('Authorization', environment.token)
+
+  }
+
   entrarfunc(funcionarioLogin: FuncionarioLogin): Observable<FuncionarioLogin> {
     return this.http.post<FuncionarioLogin>('http://localhost:8080/funcionario/logar_funcionario', funcionarioLogin)
 
@@ -36,9 +42,12 @@ export class AuthService {
 
   }
 
+  getByIdFuncionario(id_funcionario: number): Observable<Funcionario> {
+    return this.http.get<Funcionario>(`http://localhost:8080/funcionario/${id_funcionario}`, this.token)
+  }
 
   cadastrar(cliente:Cliente):Observable<Cliente> {
-
+    console.log(environment.token)
     return this.http.post<Cliente>('http://localhost:8080/cliente/cadastrar', cliente)
 
   }
@@ -46,6 +55,14 @@ export class AuthService {
   logado(){
     let ok: boolean = false
     if(environment.token != ''){
+      ok = true
+    }
+    return ok
+  }
+
+  logadoFuncionario(){
+    let ok: boolean = false
+    if(environment.codf != ''){
       ok = true
     }
     return ok
