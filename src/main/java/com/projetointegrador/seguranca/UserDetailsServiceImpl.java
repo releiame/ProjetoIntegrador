@@ -46,10 +46,17 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		//Busca o cliente no Banco de dados
 		
 		Optional<Cliente> user = userRepository.findByEmail(username);
+		Optional<Funcionario> userFunc = funcionarioRepository.findByCodf(username);
 		
 		//Se não existir o método lança uma Exception do tipo UsernameNotFoundException
 		
-		user.orElseThrow(() -> new UsernameNotFoundException(username+": not found"));
+		if(userFunc.isEmpty()) {
+			user.orElseThrow(() -> new UsernameNotFoundException(username+": not found"));
+			return user.map(UserDetailsImpl::new).get();
+		}else {
+			userFunc.orElseThrow(() -> new UsernameNotFoundException(username+": not found"));
+			return userFunc.map(UserDetailsImpl::new).get();
+		}
 		
 		/**
 		 * Retorna um objeto do tipo UserDetailsImpl criado com os dados recuperados do
@@ -59,16 +66,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		 * uma função lambda. Neste exemplo, o operador faz referência ao construtor da 
 		 * Classe UserDetailsImpl. 
 		 */
-		return user.map(UserDetailsImpl::new).get();
 		}
-	
-	/*public UserDetails loadByUserFunc(String codf) throws UsernameNotFoundException {
-		Optional<Funcionario> userFunc = Optional.ofNullable(funcionarioRepository.findByCodf(codf))
-				.orElseThrow(() -> new UsernameNotFoundException(codf + " not found!"));
-		return userFunc.map(UserDetailsImpl::new).get();
-	}*/
-	
-	}
+}
 	
 
 

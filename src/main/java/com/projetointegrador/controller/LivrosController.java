@@ -64,7 +64,7 @@ public class LivrosController {
 		return ResponseEntity.ok(repositoryLivros.findAllByTituloContainingIgnoreCase(titulo));
 	}
 
-	@PostMapping
+	@PostMapping("/cadastrar")
 	public ResponseEntity<Livros> post (@RequestBody Livros livros){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryLivros.save(livros));
 	}

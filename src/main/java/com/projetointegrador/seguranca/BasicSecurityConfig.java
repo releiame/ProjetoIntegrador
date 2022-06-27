@@ -54,7 +54,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 		auth.inMemoryAuthentication()
 		.withUser("root")
 		.password(passwordEncoder().encode("root"))
-		.authorities("ROLE_USER");
+		.authorities("ROLE_USER", "ROLE_ADMIN");
 
 	}
 	
@@ -135,6 +135,8 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/etiqueta/listartodos").permitAll()
 		.antMatchers("/livros/titulo/{titulo}").permitAll()
 		.antMatchers("/livros/{id_livros}").permitAll()
+		.antMatchers("/funcionario/logar_funcionario").permitAll()
+		.antMatchers("/funcionario/cadastrar_funcionario").permitAll()
 		.antMatchers("/etiqueta/{id_etiqueta}").permitAll()
 		.antMatchers(HttpMethod.OPTIONS).permitAll()
 		.anyRequest().authenticated()

@@ -61,10 +61,11 @@ public class FuncionarioService {
 			if(compararSenhas(FuncionarioLogin.get().getSenha(), funcionario.get().getSenha())) {
 				
 				
-				FuncionarioLogin.get().setCodf(funcionario.get().getCodf());
-				FuncionarioLogin.get().setSenha(funcionario.get().getSenha());
+				FuncionarioLogin.get().setId_funcionario(funcionario.get().getId_funcionario());
 				FuncionarioLogin.get().setNome(funcionario.get().getNome());
 				FuncionarioLogin.get().setToken(gerarBasicToken(FuncionarioLogin.get().getCodf(), FuncionarioLogin.get().getSenha()));
+				FuncionarioLogin.get().setCodf(funcionario.get().getCodf());
+				FuncionarioLogin.get().setSenha(funcionario.get().getSenha());
 				
 				return FuncionarioLogin;
 				

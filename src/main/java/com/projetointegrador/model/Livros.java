@@ -17,6 +17,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
@@ -38,6 +39,7 @@ public class Livros {
 	@NotNull
 	private String titulo;
 	
+	@Size(max=5000)
 	private String descricao;
 	
 	private String autor;
