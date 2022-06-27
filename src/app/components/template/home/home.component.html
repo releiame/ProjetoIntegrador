@@ -17,13 +17,12 @@
             <!--card-->
             <div class="card cartao border-0 espaco p-3" *ngFor="let item of listaLivros">
                 <a [routerLink]="['/livro', item.id_livros]">
-                    <img src="{{item.capa}}"
-                        alt="{{item.descricao}}"
-                        class="card-img-top">
+                    <img src="{{item.capa}}" alt="{{item.descricao}}" class="card-img-top">
                 </a>
                 <div class="my-2">
                     <div class="d-flex justify-content-around">
-                        <a [routerLink]="['/busca-etiqueta', item.etiqueta.id_etiqueta]" name="etiquetaNum" class="badge bg-success filtro-badge">{{item.etiqueta.nome}}</a>
+                        <a [routerLink]="['/busca-etiqueta', item.etiqueta.id_etiqueta]" name="etiquetaNum"
+                            class="badge bg-success filtro-badge">{{item.etiqueta.nome}}</a>
                     </div>
                 </div>
                 <div class="py-3">

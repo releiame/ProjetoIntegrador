@@ -1,817 +1,869 @@
 <footer *ngIf="isHeader">
-    <div class="page-footer font-small text-center align-items-center bg-black">
-
-        <div class="container-fluid">
-            <div class="row g-4">
-                <footer>
-    <div class="container-fluid page-footer font-small cor py-2">
-        <div class="d-flex justify-content-around ">
-            <div class="d-flex align-items-center">
-                <div>
-                    <img class="pe-2" src="../../../../assets/img/caminhao-de-entrega (2).png" />
+    <footer>
+        <div class="container-fluid page-footer font-small cor py-2">
+            <div class="d-flex justify-content-around ">
+                <div class="d-flex align-items-center">
+                    <div>
+                        <img class="pe-2" src="../../../../assets/img/caminhao-de-entrega (2).png" />
+                    </div>
+                    <div>
+                        <div class="corr">Entrega</div>
+                        <div class="small corr">Enviamos para todo o Brasil</div>
+                    </div>
                 </div>
-                <div>
-                    <div class="corr">Entrega</div>
-                    <div class="small corr">Enviamos para todo o Brasil</div>
+                <!-- Troca de produtos -->
+                <div class="d-flex align-items-center">
+                    <div>
+                        <img src="../../../../assets/img/troca.png" />
+                    </div>
+                    <div>
+                        <div class="corr">Troca de Produtos</div>
+                        <div class="small corr">Fale conosco</div>
+                    </div>
+                </div>
+
+                <!-- Parcelas -->
+                <div class="d-flex align-items-center">
+                    <div>
+                        <img class="pe-2" src="../../../../assets/img/cartao-do-banco.png" />
+                    </div>
+                    <div>
+                        <div class="corr">Até 12x nos cartões</div>
+                        <div class="small corr">Parcele suas compras</div>
+                    </div>
+                </div>
+
+                <!-- Boleto -->
+                <div class="d-flex align-items-center">
+                    <div>
+                        <img class="pe-2" src="../../../../assets/img/codigo-de-barras.png" />
+                    </div>
+                    <div>
+                        <div class="corr">Boleto</div>
+                        <div class="small corr">Compras no boleto</div>
+                    </div>
                 </div>
             </div>
-            <!-- Troca de produtos -->
-            <div class="d-flex align-items-center">
-                <div>
-                    <img src="../../../../assets/img/troca.png" />
-                </div>
-                <div>
-                    <div class="corr">Troca de Produtos</div>
-                    <div class="small corr">Fale conosco</div>
-                </div>
-            </div>
 
-            <!-- Parcelas -->
-            <div class="d-flex align-items-center">
-                <div>
-                    <img class="pe-2" src="../../../../assets/img/cartao-do-banco.png" />
+        </div>
+        <div class="container-fluid bg-black">
+            <div class="d-flex justify-content-around ">
+                <div class="mt-2">
+                    <ul>
+                        <li class="h5">
+                            <a class="text-light">Informções</a>
+                        </li>
+                        <li>
+                            <a class="text-light" data-bs-toggle="modal" data-bs-target="#sobrenosModal" href="">Sobre
+                                nós</a>
+                        </li>
+                        <li>
+                            <a class="text-light" data-bs-toggle="modal" data-bs-target="#politicaprivacidadeModal"
+                                href="">Política de Privacidade</a>
+                        </li>
+                        <li>
+                            <a class="text-light" data-bs-toggle="modal" data-bs-target="#politicatrocaModal"
+                                href="">Política de Troca</a>
+                        </li>
+                        <li>
+                            <a class="text-light" data-bs-toggle="modal" data-bs-target="#politicaentregaModal"
+                                href="">Política de Entrega</a>
+                        </li>
+                        <li>
+                            <a class="text-light" data-bs-toggle="modal" data-bs-target="#politicapagamentoModal"
+                                href="">Política de Pagamento</a>
+                        </li>
+                        <li>
+                            <a class="text-light" data-bs-toggle="modal" data-bs-target="#fale-conosco" href="">Fale
+                                Conosco</a>
+                        </li>
+                    </ul>
                 </div>
-                <div>
-                    <div class="corr">Até 12x nos cartões</div>
-                    <div class="small corr">Parcele suas compras</div>
-                </div>
-            </div>
+                <!-- Minha Conta -->
+                <div class="text-light mt-2">
+                    <ul>
+                        <li class="h5">
+                            <a class="text-light">Conta</a>
+                        </li>
+                        <li>
+                            <a class="tips-link text-light" routerLink="">Minha conta</a>
+                        </li>
+                        <li>
+                            <a class="text-light" href="#">Pedidos e Devoluções</a>
+                        </li>
+                        <li>
+                            <a class="text-light" data-bs-toggle="modal" data-bs-target="#cadastroFuncModal"
+                                href="#">Cadastrar</a>
+                        </li>
+                    </ul>
 
-            <!-- Boleto -->
-            <div class="d-flex align-items-center">
-                <div>
-                    <img class="pe-2" src="../../../../assets/img/codigo-de-barras.png" />
                 </div>
-                <div>
-                    <div class="corr">Boleto</div>
-                    <div class="small corr">Compras no boleto</div>
+                <!-- Coluna de Dicas de Livros -->
+                <div class="text-start text-light mt-2">
+                    <ul>
+                        <li class="h5">
+                            <a class="text-light">Links Rápidos</a>
+                        </li>
+                        <li *ngFor="let item of listaTags">
+                            <a class="tips-link text-light"
+                                [routerLink]="['/busca-etiqueta', item.id_etiqueta]">{{item.nome}}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Redes Sociais -->
+                <div class="social-network text-light text-center mt-2">
+                    <ul>
+                        <li class="h5">
+                            <a class="text-light">Redes Sociais</a>
+                        </li>
+                        <li>
+                            <div class="social-network-icons">
+                                <a href="" target="_blank" class="social-network-icon">
+                                    <img src="../../../../assets/img/facebook.png" alt="Facebook do Releia-me">
+                                </a>
+
+                                <a href="" target="_blank" class="social-network-icon">
+                                    <img src="../../../../assets/img/instagram.png" alt="Instagram do Releia-me">
+                                </a>
+
+                                <a href="" target="_blank" class="social-network-icon">
+                                    <img src="../../../../assets/img/twitter.png" alt="Twitter do Releia-me">
+                                </a>
+
+                                <a href="" target="_blank" class="social-network-icon">
+                                    <img src="../../../../assets/img/linkedin.png" alt="Linkedin do Releia-me">
+                                </a>
+
+                                <a href="https://github.com/ProjetoIntegrador-DH" target="_blank"
+                                    class="social-network-icon">
+                                    <img src="../../../../assets/img/github.png" alt="Github do Releia-me">
+                                </a>
+
+                                <a href="https://github.com/ProjetoIntegrador-DH" target="_blank"
+                                    class="social-network-icon">
+                                    <img src="../../../../assets/img/youtube.png" alt="Youtube do Releia-me">
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <div class="bg-black d-flex align-items-center d-flex justify-content-between">
 
-    </div>
-    <div class="container-fluid bg-black">
-        <div class="d-flex justify-content-around ">
-            <div class="mt-2">
-                <ul>
-                    <li class="h5">
-                        <a class="text-light">Informções</a>
-                    </li>
-                    <li>
-                        <a class="text-light" data-bs-toggle="modal" data-bs-target="#sobrenosModal" href="">Sobre
-                            nós</a>
-                    </li>
-                    <li>
-                        <a class="text-light" data-bs-toggle="modal" data-bs-target="#politicaprivacidadeModal"
-                            href="">Política de Privacidade</a>
-                    </li>
-                    <li>
-                        <a class="text-light" data-bs-toggle="modal" data-bs-target="#politicatrocaModal"
-                            href="">Política de Troca</a>
-                    </li>
-                    <li>
-                        <a class="text-light" data-bs-toggle="modal" data-bs-target="#politicaentregaModal"
-                            href="">Política de Entrega</a>
-                    </li>
-                    <li>
-                        <a class="text-light" data-bs-toggle="modal" data-bs-target="#politicapagamentoModal"
-                            href="">Política de Pagamento</a>
-                    </li>
-                    <li>
-                        <a class="text-light" data-bs-toggle="modal" data-bs-target="#fale-conosco" href="">Fale
-                            Conosco</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- Minha Conta -->
-            <div class="text-light mt-2">
-                <ul>
-                    <li class="h5">
-                        <a class="text-light">Conta</a>
-                    </li>
-                    <li>
-                        <a class="tips-link text-light" routerLink="">Minha conta</a>
-                    </li>
-                    <li>
-                        <a class="text-light" href="#">Pedidos e Devoluções</a>
-                    </li>
-                    <li>
-                        <a class="text-light" data-bs-toggle="modal" data-bs-target="#cadastroFuncModal" href="#">Cadastrar</a>
-                    </li>
-                </ul>
-
-            </div>
-            <!-- Coluna de Dicas de Livros -->
-            <div class="text-start text-light mt-2">
-                <ul>
-                    <li class="h5">
-                        <a class="text-light">Links Rápidos</a>
-                    </li>
-                    <li *ngFor="let item of listaTags">
-                        <a class="tips-link text-light" [routerLink]="['/busca-etiqueta', item.id_etiqueta]">{{item.nome}}</a>
-                    </li>
-                </ul>
+            <div class="text-start text-light ms-3">
+                <h5 class="mb-3">Gateways e formas de pagamento</h5>
+                <img src="../../../../assets/img/formas.png" />
             </div>
 
-            <!-- Redes Sociais -->
-            <div class="social-network text-light text-center mt-2">
-                <ul>
-                    <li class="h5">
-                        <a class="text-light">Redes Sociais</a>
-                    </li>
-                    <li>
-                        <div class="social-network-icons">
-                            <a href="" target="_blank" class="social-network-icon">
-                                <img src="../../../../assets/img/facebook.png" alt="Facebook do Releia-me">
-                            </a>
 
-                            <a href="" target="_blank" class="social-network-icon">
-                                <img src="../../../../assets/img/instagram.png" alt="Instagram do Releia-me">
-                            </a>
+            <div class="text-end text-light me-3">
+                <h5>Selos e certificações</h5>
+                <img src="../../../../assets/img/site-seguro.png" />
+            </div>
+        </div>
 
-                            <a href="" target="_blank" class="social-network-icon">
-                                <img src="../../../../assets/img/twitter.png" alt="Twitter do Releia-me">
-                            </a>
+        <!-- Barra Final do Footer -->
+        <div class="footer-last-bar bg-light">
+            <div class="footer-copyright d-flex align-items-center justify-content-between">
+                <div class="me-2">
+                    <img src="../../../../assets/img/logo_teste.png" />
+                </div>
+                <div>
+                    <small>Todos os direitos reservados. © 2022 Copyright: <a target="_blank"
+                            href="https://github.com/ProjetoIntegrador-DH/ProjetoIntegrador">Releia.me</a></small>
+                </div>
+                <div>
+                    <small>Plataforma <a href="" data-bs-toggle="modal" data-bs-target="#modalDevs"><img
+                                src="../../../../assets/img/grupo.png" /></a></small>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-                            <a href="" target="_blank" class="social-network-icon">
-                                <img src="../../../../assets/img/linkedin.png" alt="Linkedin do Releia-me">
-                            </a>
+    <!--Modal Cadastro Funcionario-->
+    <div class="modal" id="cadastroFuncModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
 
-                            <a href="https://github.com/ProjetoIntegrador-DH" target="_blank"
-                                class="social-network-icon">
-                                <img src="../../../../assets/img/github.png" alt="Github do Releia-me">
-                            </a>
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastre-se funcionário</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
 
-                            <a href="https://github.com/ProjetoIntegrador-DH" target="_blank"
-                                class="social-network-icon">
-                                <img src="../../../../assets/img/youtube.png" alt="Youtube do Releia-me">
-                            </a>
+                <!-- Modal body -->
+                <form class="row p-4 g-3 needs-validation" novalidate>
+                    <div class="form-group col-12">
+                        <label for="nomeCompleto" class="form-label">Nome do Funcionario</label>
+                        <input [(ngModel)]='funcionario.nome' type="text" name="nome" class="form-control"
+                            id="nomeCompleto" placeholder="Maria da Silva" required>
+                        <div class="invalid-feedback">
+                            Por favor, preencha seu nome completo.
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="emailCadastro" class="form-label">Código do Funcionario</label>
+                        <input [(ngModel)]='funcionario.codf' type="text" name="codf" class="form-control"
+                            id="emailCadastro" placeholder="12345" required>
+                        <div class="invalid-feedback">
+                            Por favor, preencha seu email para continuar.
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="passwordCadastro" class="form-label">Senha do Funcionario</label>
+                        <input [(ngModel)]='funcionario.senha' type="password" name="senha" class="form-control"
+                            placeholder="Senha@123" id="passwordCadastro" required>
+                        <div class="invalid-feedback">
+                            Por favor, escolha uma senha com no mínimo 6 dígitos para continuar.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)='cadastrarFuncionario()'>Criar
+                            Cadastro</button>
+                    </div>
+                </form>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="bg-black d-flex align-items-center d-flex justify-content-between">
-
-        <div class="text-start text-light ms-3">
-            <h5 class="mb-3">Gateways e formas de pagamento</h5>
-            <img src="../../../../assets/img/formas.png" />
-        </div>
 
 
-        <div class="text-end text-light me-3">
-            <h5>Selos e certificações</h5>
-            <img src="../../../../assets/img/site-seguro.png" />
+    <!-- Modal Devs-->
+    <div class="modal" id="modalDevs" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Desenvolvido com <img class="blue-heart" src="../../../../assets/img/blue-heart.jpg"
+                            alt="Coração Azul"> pelo grupo6</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Início da Seção Devs -->
+                    <div class="developed-by col-md-12 col-lg-12 col-xl-12 mx-auto text-dark">
+                        <ul class="developed-by  text-center">
+                            <li>
+                                <p>Aline Gabriela Tiburcio</p>
+                                <a href="https://www.linkedin.com/in/alinetiburcio" target="_blank"
+                                    class="icone-linkedin">
+                                    <img src="../../../../assets/img/linkedin.png" alt="Linkedin da Aline">
+                                </a>
+                                <a href="https://github.com/AlinneTiburcio" target="_blank" class="icone-linkedin">
+                                    <img src="../../../../assets/img/github.png" alt="Github da Aline">
+                                </a>
+                            </li>
+                            <li>
+                                <p>Ana Paula Menici</p>
+                                <a href="https://www.linkedin.com/in/anamenici" target="_blank" class="icone-linkedin">
+                                    <img src="../../../../assets/img/linkedin.png" alt="Linkedin da Ana">
+                                </a>
+                                <a href="https://github.com/anamenici" target="_blank" class="icone-linkedin">
+                                    <img src="../../../../assets/img/github.png" alt="Github da Ana">
+                                </a>
+                            </li>
+
+                            <li>
+                                <p>Aneska Karina Souza Da Silva</p>
+                                <a href="https://www.linkedin.com/in/aneska" target="_blank" class="icone-linkedin">
+                                    <img src="../../../../assets/img/linkedin.png" alt="Linkedin da Aneska">
+                                </a>
+                                <a href="https://github.com/aneskak" target="_blank" class="icone-linkedin">
+                                    <img src="../../../../assets/img/github.png" alt="Github da Aneska">
+                                </a>
+                            </li>
+
+                            <li>
+                                <p>Carlos Roberto De Oliveira Junior</p>
+                                <a href="https://www.linkedin.com/in/karlinhos987" target="_blank"
+                                    class="icone-linkedin">
+                                    <img src="../../../../assets/img/linkedin.png" alt="Linkedin do Carlos Roberto">
+                                </a>
+                                <a href="https://github.com/karlinhos987" target="_blank" class="icone-linkedin">
+                                    <img src="../../../../assets/img/github.png" alt="Github do Carlos Roberto">
+                                </a>
+                            </li>
+
+                            <li>
+                                <p>João Victor Almeida Da Conceição</p>
+                                <a href="https://www.linkedin.com/in/joaow-victor" target="_blank"
+                                    class="icone-linkedin">
+                                    <img src="../../../../assets/img/linkedin.png" alt="Linkedin do João Victor">
+                                </a>
+                                <a href="https://github.com/joaow12" target="_blank" class="icone-linkedin">
+                                    <img src="../../../../assets/img/github.png" alt="Github do João Victor">
+                                </a>
+                            </li>
+
+                            <li>
+                                <p>Rejane da Silva Santos</p>
+                                <a href="https://www.linkedin.com/in/rejane-ssantos" target="_blank"
+                                    class="icone-linkedin">
+                                    <img src="../../../../assets/img/linkedin.png" alt="Linkedin da Rejane">
+                                </a>
+                                <a href="https://github.com/ssrejane" target="_blank" class="icone-linkedin">
+                                    <img src="../../../../assets/img/github.png" alt="Github da Rejane">
+                                </a>
+                            </li>
+
+                            <li>
+                                <p>Wesley Zanelatto</p>
+                                <a href="https://www.linkedin.com/in/wesley-zanelatto-53862628" target="_blank"
+                                    class="icone-linkedin">
+                                    <img src="../../../../assets/img/linkedin.png" alt="Linkedin do Wesley">
+                                </a>
+                                <a href="https://github.com/WesleyZanelatto" target="_blank" class="icone-linkedin">
+                                    <img src="../../../../assets/img/github.png" alt="Github do Weslley">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Fim da Seção Devs-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Barra Final do Footer -->
-    <div class="footer-last-bar bg-light">
-        <div class="footer-copyright d-flex align-items-center justify-content-between">
-            <div class="me-2">
-                <img src="../../../../assets/img/logo_teste.png" />
+
+    <!-- Modal Politica de Pagamento-->
+    <div class="modal" id="politicapagamentoModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Política de Pagamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="text-dark justify px-4">
+                    <p>
+                        As compras efetuadas em nossa loja online, podem ser pagas por meio de cartão de crédito e
+                        boleto
+                        bancário. Podem ser parceladas em Até 12x nos cartões de crédito.</p>
+                    <p>
+                        Você pode optar por realizar o pagamento de seu pedido em várias parcelas. No entanto, é
+                        necessário
+                        que o valor total da compra esteja dentro do limite de crédito disponível em seu cartão. Caso o
+                        limite seja ultrapassado, o pedido não será aprovado pela administradora do seu cartão e você
+                        será
+                        comunicado por nossa equipe via e-mail. Sugerimos que, caso isso aconteça, você entre em contato
+                        com
+                        a sua administradora de cartão de crédito para solicitar um novo limite ou que refaça seu pedido
+                        utilizando de outro cartão.</p>
+                    <p>
+                        Vale lembrar que o prazo de entrega da sua compra começará a contar somente após a sua
+                        administradora de cartão de crédito aprovar o pagamento e o seu pedido for confirmado pela nossa
+                        equipe.</p>
+
+                    <h5>Métodos de Pagamento</h5>
+                    <h6>Cartão de Crédito</h6>
+                    <p>
+                        Para usar seu cartão de crédito, basta escolher esta forma de pagamento no momento do fechamento
+                        do
+                        seu pedido de compra. Na sequência você deverá informar os dados de seu cartão que forem
+                        solicitados. Para sua segurança, caso haja qualquer divergência entre as informações cadastrais
+                        e de
+                        pagamento, nós nos reservamos o direito de não aprovar o seu pedido, ou de entrar em contato
+                        para
+                        confirmar seus dados.</p>
+
+                    <h6>Boleto Bancário</h6>
+                    <p>
+                        As compras em que a modalidade de pagamento escolhida será o boleto bancário deverão ter a
+                        condição
+                        de pagamento à vista. Sendo assim, o pagamento do boleto será realizado em uma única parcela, no
+                        valor total de sua compra, e deverá ocorrer até a data de vencimento informada no boleto.
+                        Para agilizar o processo, lembre-se de imprimir o boleto bancário assim que finalizar sua compra
+                        em
+                        nosso site. Informamos que a Releia.me não enviará o boleto impresso para sua residência e, caso
+                        seu
+                        pagamento não seja confirmado até a data de vencimento do boleto, o seu pedido será
+                        automaticamente
+                        cancelado. Quando isto ocorrer o usuário será informado por e-mail por nossa equipe.</p>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
             </div>
-            <div>
-                <small>Todos os direitos reservados. © 2022 Copyright: <a target="_blank"
-                        href="https://github.com/ProjetoIntegrador-DH/ProjetoIntegrador">Releia.me</a></small>
+        </div>
+    </div>
+
+
+    <!-- Modal Política de Entrega-->
+    <div class="modal" id="politicaentregaModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Política de Entrega</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="text-dark justify px-4">
+
+                    <h6>Prazo</h6>
+                    <p>O prazo de entrega de produtos pode variar de acordo com a região de entrega, local de
+                        disponibilidade do produto e forma de pagamento. O cálculo do frete e prazo de entrega pode ser
+                        simulado após adicionar os produtos de interesse no carrinho de compras e clicar em CALCULAR
+                        VALOR
+                        DO FRETE E O PRAZO DE ENTREGA. Em seguida, você deve informar o CEP que o sistema
+                        automaticamente
+                        irá informar o prazo estimado para entrega e o valor do frete. Você também poderá acessar o
+                        campo
+                        acompanhe seu pedido, após realizar login e senha no site. Atente-se às nossas promoções de
+                        frete
+                        grátis pois nestes casos a simulação não irá considerar o valor do frete para estes itens do
+                        carrinho.</p>
+                    <p> Atenção: Sob qualquer circunstância, o prazo de entrega passa a valer após a confirmação de
+                        pagamento de seu pedido e aprovação do mesmo pela instituição financeira. Na compra de mais de
+                        um
+                        item por pedido, as entregas podem ser realizadas separadamente em datas diferentes, variando de
+                        acordo com a modalidade de entrega da transportadora e disponibilidade do produto. O prazo de
+                        cálculo do frete já leva em consideração esta possibilidade, informando a você apenas o maior
+                        prazo.
+                    </p>
+                    <p>Nossas entregas são realizadas entre às 8 e 18 horas, de segunda a sábado, em todo território
+                        nacional, por transportadoras contratadas ou pelos Correios.</p>
+
+                    <h5>Sobre as Entregas</h5>
+                    <h6>Dicas Importantes:</h6>
+                    <p>Atente-se para descrição e ficha técnica do produto (cor, dimensão, etc.);</p>
+                    <p>Guarde sempre a Nota Fiscal recebida no momento da entrega (ela é a garantia de seu produto);</p>
+                    <p>Conserve em boas condições a embalagem original do produto, manuais, itens e acessórios que
+                        acompanham seu produto, em caso de troca ou devolução, estes itens serão fiscalizados;</p>
+                    <p>Faça sempre a conferência dos itens do pedido no momento da entrega e da nota fiscal. Jamais
+                        aceite
+                        um produto com o lacre rompido;</p>
+                    <p>Caso haja algum problema (lacre rompido, avaria, ausência de algum item ou divergência entre nota
+                        e
+                        conteúdo, recuse a entrega e não assine o canhoto. Informe no verso da nota fiscal e do
+                        comprovante
+                        de entrega o motivo da recusa e entre em contato imediatamente com o SAC pelo e-mail
+                        ecommerce@releiame.com.br ou pelo formulário de contato;</p>
+                    <p>É necessário ter alguém para receber a sua entrega, caso não seja você, informe a pessoa
+                        responsável
+                        como deve proceder;</p>
+                    <p>Após a conferência positiva, deve haver a assinatura por extenso do responsável pelo recebimento
+                        e
+                        número de RG no canhoto da nota.</p>
+
+                    <h6>Status do pedido e acompanhamento de entrega</h6>
+                    <p>Para saber o status de seu pedido de compra (se o mesmo já foi aprovado) ou entrega, você pode
+                        acessar o campo Acompanhe seu pedido, dentro do seu perfil, após efetuar login. Basta clicar no
+                        número do pedido para ver o detalhamento de sua compra.</p>
+                    <p>Você também receberá por e-mail todos os principais status de entrega, para que possa se
+                        programar
+                        para o recebimento.</p>
+                    <p>Atenção: Não é possível alterar nenhum dado do endereço de entrega após a realização de seu
+                        pedido,
+                        em virtude do cálculo do frete e da variação na alíquota dos impostos envolvidos na transação.
+                    </p>
+
+                    <h6>"Ainda não recebi o produto"</h6>
+                    <p>Antes de entrar em contato com o nosso SAC, verifique todas as possibilidades descritas abaixo:
+                        Data de entrega: Você pode rever sempre que quiser o prazo estipulado para entrega acessando a
+                        sua
+                        conta, após efetuar seu login.
+                        Dados do endereço: Confirme os dados informados para o endereço de entrega, na sua conta, após
+                        efetuar seu login.</p>
+                    <p>Pagamento: Confira também se o seu pedido foi aprovado e se seu pagamento já foi confirmado pela
+                        instituição financeira (banco ou operadora do cartão), na sua conta, após efetuar seu login.
+                        Atenção: Para pagamentos feitos por meio de cartão de crédito, o prazo para entrega deve ser
+                        considerado a partir da aprovação do pedido e confirmação do pagamento. Caso haja atraso neste
+                        processo, o prazo de entrega deve ser revisto proporcionalmente, levando em consideração o tempo
+                        de
+                        aprovação.
+                        Para pagamentos realizados por boleto bancário, o pedido é liberado mediante a confirmação do
+                        pagamento pela instituição financeira, que pode ser feito em até 2 (dias) úteis a partir da data
+                        do
+                        pagamento, desde que dentro do horário de funcionamento dos bancos.</p>
+                    <p>Ausência de um recebedor: Verifique, ainda, no status do seu pedido, se nós da Releia.me fizemos
+                        alguma tentativa de entrega. É importante ressaltar que é indispensável a presença de uma pessoa
+                        para conferência dos produtos, recebimento e assinatura por extenso com RG no canhoto da nota.
+                        Nossas transportadoras realizam até 3 (três) tentativas de entrega no endereço determinado e são
+                        orientadas a deixar um aviso no caso da ausência de um recebedor. Caso a entrega não seja
+                        realizada,
+                        seu produto irá voltar para nosso Centro de Distribuição e você será notificado, sob o risco de
+                        ter
+                        o pedido cancelado.</p>
+                    <p>Lembre-se que você será informado no e-mail cadastrado em seu perfil. Portanto, se você não puder
+                        receber pessoalmente sua compra, deixe uma pessoa responsável nesta data e a instrua em como
+                        proceder. Se você mora em prédio ou condomínio, avise o porteiro e veja também se a pessoa
+                        responsável pelo recebimento não recusou a entrega.</p>
+                    <p></p>Outros fatores: uma entrega pode sofrer atraso por diversos fatores como os já citados acima,
+                    como demora na liberação do pedido por parte da administradora do cartão de crédito, demora na
+                    confirmação do pagamento pela instituição financeira, divergência nos dados cadastrais fornecidos e
+                    os
+                    analisados, ausência no local de entrega e recusa no recebimento por terceiros, fenômenos naturais e
+                    fatores exógenos, dentre outros. Nós da Releia.me possuímos uma equipe de profissionais altamente
+                    treinados para instruir nossos clientes, sempre que necessário. Em caso de dúvidas, entre em contato
+                    com
+                    nosso SAC pelo e-mail ecommerce@releiame.com.br
+
+                    <h6>TRANSPORTE</h6>
+                    <p>No intuito de atender todas as suas expectativas, todas as mercadorias serão etiquetadas e
+                        transportadas em embalagens especialmente preparadas, evitando qualquer avaria.</p>
+
+                    <h6>Nota fiscal eletrônica</h6>
+                    <p>A Nota Fiscal Eletrônica é um documento digital, com validade jurídica reconhecida por meio da
+                        assinatura digital do remetente, emitido e armazenado eletronicamente pelo Ministério da
+                        Fazenda,
+                        que serve para documentar, para fins fiscais, uma operação de circulação de mercadorias ou
+                        prestação
+                        de serviços.
+                        A Danfe, Documento Auxiliar da Nota Fiscal Eletrônica, é a versão impressa da Nota Fiscal
+                        Eletrônica, ou seja, aquela que acompanha o seu produto. Ela não substitui a Nota Fiscal
+                        Eletrônica,
+                        mas contém a chave de acesso para a mesma.</p>
+                    <p>Para acessar este documento, entre no site do Ministério da Fazenda, clique em Consultas, no menu
+                        superior, e na sequência, em Nota Fiscal Eletrônica.</p>
+
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
             </div>
-            <div>
-                <small>Plataforma <a href="" data-bs-toggle="modal" data-bs-target="#modalDevs"><img
-                            src="../../../../assets/img/grupo.png" /></a></small>
+        </div>
+    </div>
+
+    <!-- Modal Política de Troca-->
+    <div class="modal" id="politicatrocaModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Política de Troca</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="text-dark justify px-4">
+
+                    <h6>Devolução por arrependimento</h6>
+                    <p>Para a realização de uma devolução em caso de arrependimento ou desistência, oferecemos o prazo
+                        de 07
+                        (sete) dias corridos após o recebimento do produto no local de entrega.
+                        O produto devolvido deve estar em sua embalagem original, em perfeito estado de conservação e
+                        apresentado junto ao cupom original ou 1ª via da nota fiscal. Reservamos o direito de recusar a
+                        devolução e retornar o produto para o cliente, caso algum dos itens não esteja dentro dos
+                        padrões
+                        informados. Neste caso, o frete de retorno será por conta do cliente.
+                        Caso o produto esteja em perfeito estado, o valor será integralmente reembolsado, após o
+                        recebimento
+                        e análise do produto em nosso Centro de Distribuição.</p>
+
+                    <h6>Produto com defeito</h6>
+                    <p>Oferecemos aos nossos clientes até 30 (trinta) dias corridos, após o recebimento do produto, para
+                        realizar a troca de produtos com defeito, seguindo as normas do Código de Defesa do Consumidor,
+                        mediante apresentação do cupom original ou da 1ª via da nota fiscal, e estando o produto na
+                        embalagem original e sem indício de mau uso.
+                        O produto devolvido passará por uma análise e, se constatado defeito de fabricação, um novo
+                        produto,
+                        igual ou similar ao adquirido, será enviado ao cliente. O custo do envio será de nossa
+                        responsabilidade.
+                        Reservamos o direito de recusar a devolução e retornar o produto para o cliente, caso algum dos
+                        itens não esteja dentro dos padrões informados. Neste caso, o frete de retorno será por conta do
+                        cliente.</p>
+
+                    <h6>Troca por tamanho ou cor do mesmo produto</h6>
+                    <p>Para realizar uma troca de um mesmo produto por outra cor ou tamanho, entre em contato com o
+                        nosso
+                        atendimento pelo e-mail ecommerce@releiame.com.br, em até 30 dias corridos do recebimento do
+                        produto. O prazo para envio do novo produto é de até 7 dias úteis após o recebimento e análise
+                        do
+                        item em nosso departamento de logística, mediante recebimento do cupom original ou da 1ª via da
+                        nota
+                        fiscal, desde que estejam o produto e a embalagem em perfeito estado.</p>
+
+                    <p>Em caso de primeira troca, os envios serão por nossa conta. O cliente receberá um código de
+                        postagem
+                        para que possa enviar pelos Correios o(s) produto(s) a ser(em) trocado(s), sem custo, ou será
+                        indicada a coleta no endereço de entrega pelo transportador. Caso o cliente opte por realizar
+                        outras
+                        trocas de um mesmo pedido, os valores de envio/frete serão cobrados.</p>
+
+                    <h6>Troca por outro produto</h6>
+                    <p>Para realizar uma troca por outro produto ou modelo, entre em contato com o nosso atendimento
+                        pelo
+                        e-mail ecommerce@releiame.com.br, Em até 07 dias corridos após o recebimento do produto.
+                        O produto anterior deverá ser enviado, mediante apresentação da 1ª via da Nota Fiscal e estar,
+                        assim
+                        como sua embalagem, em perfeito estado.</p>
+                    <p>Após o retorno do produto e a aprovação da análise em nosso departamento de logística, o valor
+                        pago
+                        pelo produto será restituído através de um Vale Trocas e o consumidor poderá efetuar uma nova
+                        compra.
+                        Reservamos o direito de recusar a devolução e retornar o produto, caso algum dos itens não
+                        esteja
+                        dentro dos padrões informados. Neste caso, o frete de retorno será cobrado do consumidor.</p>
+                    <p>Após a liberação do Vale-Troca, você receberá um e-mail informando a numeração e a validade.</p>
+
+                    <h6>Importante:</h6>
+                    <p>Para utilizar seu Vale-Troca, basta estar logado em sua conta. No momento do fechamento de sua
+                        nova
+                        compra ele aparecerá como uma das opções de pagamento disponíveis;
+                        O Vale-Troca possui prazo de validade de 90 dias após a data de recebimento;
+                        O Vale-Troca é identificado com o CPF do (a) comprador (a), o que impede seu uso por terceiros;
+                        Se o valor do Vale-Troca for menor que o da nova compra, você poderá pagar a diferença com
+                        qualquer
+                        uma das opções de pagamento disponíveis na Loja Virtual Releia.me.</p>
+                    <p>Se o valor do Vale-Troca for maior que o da compra, você poderá utilizar a diferença em outras
+                        compras na Loja Virtual Releia.me.
+                        Se a compra foi paga integralmente com o Vale-Troca a confirmação de pagamento ocorrerá em até 3
+                        (três) dias úteis;
+                        Em caso de cancelamento do Vale-Troca, o reembolso será realizado na mesma forma de pagamento
+                        escolhida no processo de compra inicial. Caso o pedido original tenha sido pago com cartão e a
+                        compra tenha sido feita há mais de seis meses, a restituição será realizada por depósito
+                        bancário ou
+                        ordem de pagamento;
+                        Se você utilizou seu Vale-Troca em um pedido e teve que cancelá-lo, entre em contato conosco
+                        para
+                        reativarmos o vale. O prazo para reativação é de até 4 dias úteis. O cancelamento do Vale-Troca
+                        poderá ser solicitado em até 90 dias após sua liberação.</p>
+
+                    <h6>Restituição de valores</h6>
+                    <p>Pagamento realizado por boleto bancário: O reembolso do valor integral ou parcial da compra será
+                        efetuado via DOC na conta corrente de mesma titularidade do responsável pelo pedido. Portanto, é
+                        necessário ficar atento ao CPF utilizado no ato da compra. O prazo da restituição em conta pode
+                        levar entre 7 (sete) e 10 (dez) dias úteis após a chegada e conferência do produto em nosso
+                        Centro
+                        de Distribuição.</p>
+                    <p>Pagamento realizado por cartão de crédito: Os cancelamentos e reembolso/estornos seguirão as
+                        regras
+                        da administradora do cartão utilizado na compra. O valor da restituição pode levar até 2 (duas)
+                        faturas para constar no cartão, dependendo da data de vencimento ou fechamento da fatura, após a
+                        devolução do produto conferência em nosso Centro de Distribuição.</p>
+
+                    <h6>Devoçução involuntária transportadora</h6>
+                    <p>Caso o pedido seja devolvido pelos Correios com status de "endereço inválido", "destinatário
+                        desconhecido", "mudou-se", "proprietário não encontrado" ou situação semelhante, o valor de
+                        reenvio
+                        será por conta do cliente.</p>
+
+                    <h6>Informações gerais:</h6>
+                    <p>O prazo para solicitação de troca é de 30 (trinta) dias corridos, a partir da data de recebimento
+                        do
+                        produto no local de entrega.</p>
+                    <p>O prazo para solicitação de devolução/cancelamento é de 07 (sete) dias corridos, a partir da data
+                        de
+                        recebimento do produto no local de entrega.</p>
+                    <p>Toda e qualquer solicitação de troca ou devolução/cancelamento das compras realizadas online
+                        devem
+                        ser feitas através do nosso Serviço de Atendimento ao Cliente. Entre em contato e solicite este
+                        procedimento, informando o número do pedido e/ou número de CPF do comprador; produtos
+                        envolvidos.
+                    </p>
+
+                    <p>Para maiores informações, acesse o <a
+                            href="http://www.planalto.gov.br/ccivil_03/Leis/L8078.htm">Código de Defesa do
+                            Consumidor</a>.
+                    </p>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Política de Privacidade-->
+    <div class="modal" id="politicaprivacidadeModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Política de Privacidade</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="text-dark justify px-4">
+
+                    <h5>Informações Gerais</h5>
+                    <p>Nós da Releia.me nos preocupamos e zelamos pela privacidade dos nossos usuários, tendo como uma
+                        das
+                        nossas diretrizes o respeito ao indivíduo.</p>
+
+                    <p>Possuímos uma política de privacidade que é o conjunto de regras que determinam o tratamento
+                        destinado a todas as informações que o usuário fornece quando preenche dados cadastrais em nosso
+                        site.</p>
+
+                    <h6>Endereço de IP:</h6>
+                    <p>Nós da Releia.me utilizamos do endereço IP (Internet Protocol) e de outros dados obtidos da
+                        conexão
+                        com nosso site, para reunir informações que serão utilizadas para melhorarmos a navegação de
+                        nossos
+                        usuários.</p>
+
+                    <h6>Cookies:</h6>
+                    <p>Nosso site utiliza de cookies, arquivos armazenados no navegador, para identificar melhor o
+                        perfil de
+                        nossos usuários e otimizar nosso relacionamento com eles, assim como sua experiência de compra.
+                        Os
+                        cookies não capturam informações pessoais identificáveis e nós nos comprometemos a não
+                        compartilhar
+                        tais informações com terceiros.</p>
+
+                    <p>Caso deseje, você pode apagar os cookies existentes em seu computador, através do browser, quando
+                        quiser.</p>
+
+                    <h6>Obtenção e uso das informações</h6>
+                    <p>Todos os dados que o usuário informar no site Releia.me serão sigilosos e só serão utilizados
+                        para o
+                        processo de entrega, cobrança ou para participação em promoções solicitadas pelo cliente.</p>
+
+                    <p>Os dados solicitados no momento do cadastro dentro do site são necessários para pagamentos e para
+                        que
+                        a encomenda seja entregue com segurança no local desejado, dentro do prazo estabelecido.</p>
+
+                    <p>O usuário declara concordar com nossa política de obtenção e uso das informações e ter ciência de
+                        que
+                        os mesmos poderão ser utilizados para comunicação, de qualquer espécie da empresa, entre nós.
+                    </p>
+
+                    <p>Nosso site garante a privacidade dos dados pessoais de nossos usuários armazenados em sua base,
+                        comprometendo-se a utilizar tecnologia que seja suficientemente adequada para a proteção de tais
+                        dados, procurando manter o ambiente seguro, com uso de ferramentas apropriadas.</p>
+
+                    <p>Nosso site garante a privacidade dos dados pessoais de nossos usuários armazenados em sua base,
+                        comprometendo-se a utilizar tecnologia que seja suficientemente adequada para a proteção de tais
+                        dados, procurando manter o ambiente seguro, com uso de ferramentas apropriadas.</p>
+
+                    <p>Nossas empresas parceiras poderão confirmar os dados pessoais informados por você, usuário,
+                        consultando entidades públicas, companhias especializadas, banco de dados, e estão expressamente
+                        autorizados para tal. Contudo, isso não cessa, nem diminui, a sua responsabilidade quanto à
+                        exatidão
+                        e veracidade dos dados que fornece, motivo pelo qual nós da Releia.me poderemos, a nosso
+                        exclusivo
+                        critério, suspender e/ou cancelar seu cadastro de usuário, a qualquer momento, caso detectemos
+                        qualquer inexatidão.</p>
+
+                    <p>O usuário compromete-se a utilizar os conteúdos disponibilizados no site Releia.me conforme a
+                        lei, o
+                        presente termo e demais avisos, regulamentos de uso e instruções colocadas em seu conhecimento.
+                        Em
+                        particular, compromete-se a não reproduzir, copiar, distribuir, transformar ou modificar os
+                        conteúdos de nosso site, a menos que possua nossa prévia autorização ou que obtenha permissão
+                        legal.
+                        Do mesmo modo, assume o compromisso de não suprimir, manipular ou de qualquer forma alterar o
+                        copyright e demais dados de identificação dos direitos da Releia.me assim como os dispositivos
+                        técnicos de proteção, as marcas digitais ou quaisquer mecanismos de informação que nosso site
+                        possa
+                        conter.</p>
+
+                    <h6>Envio de comunicados e mensagens publicitárias</h6>
+                    <p>Nós da Releia.me poderemos enviar comunicados e mensagens publicitárias aos usuários cadastrados
+                        em
+                        nosso site, ou nossos clientes em geral, fazendo uso de todos os tipos de tecnologias e meios de
+                        comunicação disponíveis, seja por e-mail, SMS, MMS, mala-direta (e) outros.</p>
+
+                    <p>Os comunicados, newsletters, avisos de ofertas e mensagens publicitárias enviadas por e-mail
+                        trarão,
+                        obrigatoriamente, a opção de cancelamento do recebimento deste tipo de mensagem. A solicitação
+                        será
+                        atendida no tempo mínimo necessário para realização desta execução.</p>
+
+                    <p>O opt-out é feito através do e-mail do usuário. Portanto, usuários que possuem mais de um
+                        cadastro
+                        poderão continuar a receber os comunicados ou as mensagens publicitárias, no e-mail que não foi
+                        desativado.</p>
+
+                    <p>Lembramos que o endereço de e-mail informado no momento do cadastro será utilizado para envio de
+                        comunicados durante todo processo de compra, como, por exemplo, para informar sobre todos os
+                        dados
+                        de seu pedido, status do pedido, de entrega, além de cupons de descontos e promoções exclusivas.
+                        Portanto, recomendamos que você adicione nossa loja como um remetente confiável para evitar que
+                        tais
+                        mensagens sejam interceptadas pelo Anti-Spam.</p>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Sobre Nós-->
+    <div class="modal" id="sobrenosModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Sobre nós</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="text-dark justify px-4">
+                    <h5>Projeto final do bootcamp oferecido pela Porto Seguro em parceria com a Digital House Brasil
+                    </h5>
+
+                    <h6>📚 Introdução</h6>
+                    <p>Com o mundo cada vez mais tecnológico, podemos utilizar de diversas alternativas para ter acesso
+                        a um
+                        livro, uma delas é de forma online, mas por outro lado, muitas pessoas não abrem mão de ter seu
+                        livro físico.</p>
+
+                    <p>Pensando no consumo consciente e na diversidade cultural aplicada no mundo do livro e das
+                        editoras,
+                        vamos conectar amantes por livros de todo o país.</p>
+
+                    <p>Quanto mais livros seminovos e usados forem reutilizados, conseguimos possibilitar o maior acesso
+                        à
+                        cultura por um valor acessível.</p>
+
+                    <h6>🧩 Problema</h6>
+                    <p>O problema que esperamos resolver é diminuir o consumo de matéria-prima destinada a produção de
+                        novos
+                        livros, e por consequência, diminuir o impacto ambiental.</p>
+
+                    <h6>🎯 Objetivo</h6>
+                    <p>Criar uma plataforma intuitiva que possibilite a compra de livros seminovos ou usados.</p>
+
+                    <h6>📢 Justificativa</h6>
+                    <p>Nos baseamos na ODS 12 – Consumo e Produção:</p>
+
+                    <p>12.7 – Promover práticas de compras pública sustentáveis, de acordo com as políticas e
+                        prioridades
+                        nacionais.</p>
+
+                    <p>Diante disso, percebemos a necessidade em desenvolver uma plataforma com intuito de expandir o
+                        reuso
+                        e consumo consciente dos livro</p>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
             </div>
         </div>
     </div>
 </footer>
-
-<div class="modal" id="cadastroFuncModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Cadastre-se</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <form class="row p-4 g-3 needs-validation" novalidate>
-                <div class="form-group col-12">
-                    <label for="nomeCompleto" class="form-label">Nome do Funcionario</label>
-                    <input [(ngModel)]='funcionario.nome' type="text" name="nome" class="form-control" id="nomeCompleto"
-                        placeholder="Maria da Silva" required>
-                    <div class="invalid-feedback">
-                        Por favor, preencha seu nome completo.
-                    </div>
-                </div>
-                <div class="form-group col-12">
-                    <label for="emailCadastro" class="form-label">Código do Funcionario</label>
-                    <input [(ngModel)]='funcionario.codf' type="text" name="codf" class="form-control" id="emailCadastro"
-                        placeholder="12345" required>
-                    <div class="invalid-feedback">
-                        Por favor, preencha seu email para continuar.
-                    </div>
-                </div>
-                <div class="form-group col-12">
-                    <label for="passwordCadastro" class="form-label">Senha do Funcionario</label>
-                    <input [(ngModel)]='funcionario.senha' type="password" name="senha" class="form-control"
-                        placeholder="Senha@123" id="passwordCadastro" required>
-                    <div class="invalid-feedback">
-                        Por favor, escolha uma senha com no mínimo 6 dígitos para continuar.
-                    </div>
-                </div>
-                <div class="col-12">
-                    <button type="submit" class="btn btn-primary" (click)='cadastrarFuncionario()'>Criar Cadastro</button>
-                </div>
-            </form>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!--Modal-->
-<div class="modal" id="modalDevs" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5>Desenvolvido com <img class="blue-heart" src="../../../../assets/img/blue-heart.jpg"
-                        alt="Coração Azul"> pelo grupo6</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Início da Seção Devs -->
-                <div class="developed-by col-md-12 col-lg-12 col-xl-12 mx-auto text-dark">
-                    <ul class="developed-by  text-center">
-                        <li>
-                            <p>Aline Gabriela Tiburcio</p>
-                            <a href="https://www.linkedin.com/in/alinetiburcio" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/linkedin.png" alt="Linkedin da Aline">
-                            </a>
-                            <a href="https://github.com/AlinneTiburcio" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/github.png" alt="Github da Aline">
-                            </a>
-                        </li>
-                        <li>
-                            <p>Ana Paula Menici</p>
-                            <a href="https://www.linkedin.com/in/anamenici" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/linkedin.png" alt="Linkedin da Ana">
-                            </a>
-                            <a href="https://github.com/anamenici" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/github.png" alt="Github da Ana">
-                            </a>
-                        </li>
-
-                        <li>
-                            <p>Aneska Karina Souza Da Silva</p>
-                            <a href="https://www.linkedin.com/in/aneska" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/linkedin.png" alt="Linkedin da Aneska">
-                            </a>
-                            <a href="https://github.com/aneskak" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/github.png" alt="Github da Aneska">
-                            </a>
-                        </li>
-
-                        <li>
-                            <p>Carlos Roberto De Oliveira Junior</p>
-                            <a href="https://www.linkedin.com/in/karlinhos987" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/linkedin.png" alt="Linkedin do Carlos Roberto">
-                            </a>
-                            <a href="https://github.com/karlinhos987" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/github.png" alt="Github do Carlos Roberto">
-                            </a>
-                        </li>
-
-                        <li>
-                            <p>João Victor Almeida Da Conceição</p>
-                            <a href="https://www.linkedin.com/in/joaow-victor" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/linkedin.png" alt="Linkedin do João Victor">
-                            </a>
-                            <a href="https://github.com/joaow12" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/github.png" alt="Github do João Victor">
-                            </a>
-                        </li>
-
-                        <li>
-                            <p>Rejane da Silva Santos</p>
-                            <a href="https://www.linkedin.com/in/rejane-ssantos" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/linkedin.png" alt="Linkedin da Rejane">
-                            </a>
-                            <a href="https://github.com/ssrejane" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/github.png" alt="Github da Rejane">
-                            </a>
-                        </li>
-
-                        <li>
-                            <p>Wesley Zanelatto</p>
-                            <a href="https://www.linkedin.com/in/wesley-zanelatto-53862628" target="_blank"
-                                class="icone-linkedin">
-                                <img src="../../../../assets/img/linkedin.png" alt="Linkedin do Wesley">
-                            </a>
-                            <a href="https://github.com/WesleyZanelatto" target="_blank" class="icone-linkedin">
-                                <img src="../../../../assets/img/github.png" alt="Github do Weslley">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Fim da Seção Devs-->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal Politica de Pagamento-->
-<div class="modal" id="politicapagamentoModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title">Política de Pagamento</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="text-dark justify px-4">
-                <p>
-                    As compras efetuadas em nossa loja online, podem ser pagas por meio de cartão de crédito e boleto
-                    bancário. Podem ser parceladas em Até 12x nos cartões de crédito.</p>
-                <p>
-                    Você pode optar por realizar o pagamento de seu pedido em várias parcelas. No entanto, é necessário
-                    que o valor total da compra esteja dentro do limite de crédito disponível em seu cartão. Caso o
-                    limite seja ultrapassado, o pedido não será aprovado pela administradora do seu cartão e você será
-                    comunicado por nossa equipe via e-mail. Sugerimos que, caso isso aconteça, você entre em contato com
-                    a sua administradora de cartão de crédito para solicitar um novo limite ou que refaça seu pedido
-                    utilizando de outro cartão.</p>
-                <p>
-                    Vale lembrar que o prazo de entrega da sua compra começará a contar somente após a sua
-                    administradora de cartão de crédito aprovar o pagamento e o seu pedido for confirmado pela nossa
-                    equipe.</p>
-
-                <h5>Métodos de Pagamento</h5>
-                <h6>Cartão de Crédito</h6>
-                <p>
-                    Para usar seu cartão de crédito, basta escolher esta forma de pagamento no momento do fechamento do
-                    seu pedido de compra. Na sequência você deverá informar os dados de seu cartão que forem
-                    solicitados. Para sua segurança, caso haja qualquer divergência entre as informações cadastrais e de
-                    pagamento, nós nos reservamos o direito de não aprovar o seu pedido, ou de entrar em contato para
-                    confirmar seus dados.</p>
-
-                <h6>Boleto Bancário</h6>
-                <p>
-                    As compras em que a modalidade de pagamento escolhida será o boleto bancário deverão ter a condição
-                    de pagamento à vista. Sendo assim, o pagamento do boleto será realizado em uma única parcela, no
-                    valor total de sua compra, e deverá ocorrer até a data de vencimento informada no boleto.
-                    Para agilizar o processo, lembre-se de imprimir o boleto bancário assim que finalizar sua compra em
-                    nosso site. Informamos que a Releia.me não enviará o boleto impresso para sua residência e, caso seu
-                    pagamento não seja confirmado até a data de vencimento do boleto, o seu pedido será automaticamente
-                    cancelado. Quando isto ocorrer o usuário será informado por e-mail por nossa equipe.</p>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal Política de Entrega-->
-<div class="modal" id="politicaentregaModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title">Política de Entrega</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="text-dark justify px-4">
-
-                <h6>Prazo</h6>
-                <p>O prazo de entrega de produtos pode variar de acordo com a região de entrega, local de
-                    disponibilidade do produto e forma de pagamento. O cálculo do frete e prazo de entrega pode ser
-                    simulado após adicionar os produtos de interesse no carrinho de compras e clicar em CALCULAR VALOR
-                    DO FRETE E O PRAZO DE ENTREGA. Em seguida, você deve informar o CEP que o sistema automaticamente
-                    irá informar o prazo estimado para entrega e o valor do frete. Você também poderá acessar o campo
-                    acompanhe seu pedido, após realizar login e senha no site. Atente-se às nossas promoções de frete
-                    grátis pois nestes casos a simulação não irá considerar o valor do frete para estes itens do
-                    carrinho.</p>
-                <p> Atenção: Sob qualquer circunstância, o prazo de entrega passa a valer após a confirmação de
-                    pagamento de seu pedido e aprovação do mesmo pela instituição financeira. Na compra de mais de um
-                    item por pedido, as entregas podem ser realizadas separadamente em datas diferentes, variando de
-                    acordo com a modalidade de entrega da transportadora e disponibilidade do produto. O prazo de
-                    cálculo do frete já leva em consideração esta possibilidade, informando a você apenas o maior prazo.
-                </p>
-                <p>Nossas entregas são realizadas entre às 8 e 18 horas, de segunda a sábado, em todo território
-                    nacional, por transportadoras contratadas ou pelos Correios.</p>
-
-                <h5>Sobre as Entregas</h5>
-                <h6>Dicas Importantes:</h6>
-                <p>Atente-se para descrição e ficha técnica do produto (cor, dimensão, etc.);</p>
-                <p>Guarde sempre a Nota Fiscal recebida no momento da entrega (ela é a garantia de seu produto);</p>
-                <p>Conserve em boas condições a embalagem original do produto, manuais, itens e acessórios que
-                    acompanham seu produto, em caso de troca ou devolução, estes itens serão fiscalizados;</p>
-                <p>Faça sempre a conferência dos itens do pedido no momento da entrega e da nota fiscal. Jamais aceite
-                    um produto com o lacre rompido;</p>
-                <p>Caso haja algum problema (lacre rompido, avaria, ausência de algum item ou divergência entre nota e
-                    conteúdo, recuse a entrega e não assine o canhoto. Informe no verso da nota fiscal e do comprovante
-                    de entrega o motivo da recusa e entre em contato imediatamente com o SAC pelo e-mail
-                    ecommerce@releiame.com.br ou pelo formulário de contato;</p>
-                <p>É necessário ter alguém para receber a sua entrega, caso não seja você, informe a pessoa responsável
-                    como deve proceder;</p>
-                <p>Após a conferência positiva, deve haver a assinatura por extenso do responsável pelo recebimento e
-                    número de RG no canhoto da nota.</p>
-
-                <h6>Status do pedido e acompanhamento de entrega</h6>
-                <p>Para saber o status de seu pedido de compra (se o mesmo já foi aprovado) ou entrega, você pode
-                    acessar o campo Acompanhe seu pedido, dentro do seu perfil, após efetuar login. Basta clicar no
-                    número do pedido para ver o detalhamento de sua compra.</p>
-                <p>Você também receberá por e-mail todos os principais status de entrega, para que possa se programar
-                    para o recebimento.</p>
-                <p>Atenção: Não é possível alterar nenhum dado do endereço de entrega após a realização de seu pedido,
-                    em virtude do cálculo do frete e da variação na alíquota dos impostos envolvidos na transação.</p>
-
-                <h6>"Ainda não recebi o produto"</h6>
-                <p>Antes de entrar em contato com o nosso SAC, verifique todas as possibilidades descritas abaixo:
-                    Data de entrega: Você pode rever sempre que quiser o prazo estipulado para entrega acessando a sua
-                    conta, após efetuar seu login.
-                    Dados do endereço: Confirme os dados informados para o endereço de entrega, na sua conta, após
-                    efetuar seu login.</p>
-                <p>Pagamento: Confira também se o seu pedido foi aprovado e se seu pagamento já foi confirmado pela
-                    instituição financeira (banco ou operadora do cartão), na sua conta, após efetuar seu login.
-                    Atenção: Para pagamentos feitos por meio de cartão de crédito, o prazo para entrega deve ser
-                    considerado a partir da aprovação do pedido e confirmação do pagamento. Caso haja atraso neste
-                    processo, o prazo de entrega deve ser revisto proporcionalmente, levando em consideração o tempo de
-                    aprovação.
-                    Para pagamentos realizados por boleto bancário, o pedido é liberado mediante a confirmação do
-                    pagamento pela instituição financeira, que pode ser feito em até 2 (dias) úteis a partir da data do
-                    pagamento, desde que dentro do horário de funcionamento dos bancos.</p>
-                <p>Ausência de um recebedor: Verifique, ainda, no status do seu pedido, se nós da Releia.me fizemos
-                    alguma tentativa de entrega. É importante ressaltar que é indispensável a presença de uma pessoa
-                    para conferência dos produtos, recebimento e assinatura por extenso com RG no canhoto da nota.
-                    Nossas transportadoras realizam até 3 (três) tentativas de entrega no endereço determinado e são
-                    orientadas a deixar um aviso no caso da ausência de um recebedor. Caso a entrega não seja realizada,
-                    seu produto irá voltar para nosso Centro de Distribuição e você será notificado, sob o risco de ter
-                    o pedido cancelado.</p>
-                <p>Lembre-se que você será informado no e-mail cadastrado em seu perfil. Portanto, se você não puder
-                    receber pessoalmente sua compra, deixe uma pessoa responsável nesta data e a instrua em como
-                    proceder. Se você mora em prédio ou condomínio, avise o porteiro e veja também se a pessoa
-                    responsável pelo recebimento não recusou a entrega.</p>
-                <p></p>Outros fatores: uma entrega pode sofrer atraso por diversos fatores como os já citados acima,
-                como demora na liberação do pedido por parte da administradora do cartão de crédito, demora na
-                confirmação do pagamento pela instituição financeira, divergência nos dados cadastrais fornecidos e os
-                analisados, ausência no local de entrega e recusa no recebimento por terceiros, fenômenos naturais e
-                fatores exógenos, dentre outros. Nós da Releia.me possuímos uma equipe de profissionais altamente
-                treinados para instruir nossos clientes, sempre que necessário. Em caso de dúvidas, entre em contato com
-                nosso SAC pelo e-mail ecommerce@releiame.com.br
-
-                <h6>TRANSPORTE</h6>
-                <p>No intuito de atender todas as suas expectativas, todas as mercadorias serão etiquetadas e
-                    transportadas em embalagens especialmente preparadas, evitando qualquer avaria.</p>
-
-                <h6>Nota fiscal eletrônica</h6>
-                <p>A Nota Fiscal Eletrônica é um documento digital, com validade jurídica reconhecida por meio da
-                    assinatura digital do remetente, emitido e armazenado eletronicamente pelo Ministério da Fazenda,
-                    que serve para documentar, para fins fiscais, uma operação de circulação de mercadorias ou prestação
-                    de serviços.
-                    A Danfe, Documento Auxiliar da Nota Fiscal Eletrônica, é a versão impressa da Nota Fiscal
-                    Eletrônica, ou seja, aquela que acompanha o seu produto. Ela não substitui a Nota Fiscal Eletrônica,
-                    mas contém a chave de acesso para a mesma.</p>
-                <p>Para acessar este documento, entre no site do Ministério da Fazenda, clique em Consultas, no menu
-                    superior, e na sequência, em Nota Fiscal Eletrônica.</p>
-
-
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal Política de Troca-->
-<div class="modal" id="politicatrocaModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title">Política de Troca</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="text-dark justify px-4">
-
-                <h6>Devolução por arrependimento</h6>
-                <p>Para a realização de uma devolução em caso de arrependimento ou desistência, oferecemos o prazo de 07
-                    (sete) dias corridos após o recebimento do produto no local de entrega.
-                    O produto devolvido deve estar em sua embalagem original, em perfeito estado de conservação e
-                    apresentado junto ao cupom original ou 1ª via da nota fiscal. Reservamos o direito de recusar a
-                    devolução e retornar o produto para o cliente, caso algum dos itens não esteja dentro dos padrões
-                    informados. Neste caso, o frete de retorno será por conta do cliente.
-                    Caso o produto esteja em perfeito estado, o valor será integralmente reembolsado, após o recebimento
-                    e análise do produto em nosso Centro de Distribuição.</p>
-
-                <h6>Produto com defeito</h6>
-                <p>Oferecemos aos nossos clientes até 30 (trinta) dias corridos, após o recebimento do produto, para
-                    realizar a troca de produtos com defeito, seguindo as normas do Código de Defesa do Consumidor,
-                    mediante apresentação do cupom original ou da 1ª via da nota fiscal, e estando o produto na
-                    embalagem original e sem indício de mau uso.
-                    O produto devolvido passará por uma análise e, se constatado defeito de fabricação, um novo produto,
-                    igual ou similar ao adquirido, será enviado ao cliente. O custo do envio será de nossa
-                    responsabilidade.
-                    Reservamos o direito de recusar a devolução e retornar o produto para o cliente, caso algum dos
-                    itens não esteja dentro dos padrões informados. Neste caso, o frete de retorno será por conta do
-                    cliente.</p>
-
-                <h6>Troca por tamanho ou cor do mesmo produto</h6>
-                <p>Para realizar uma troca de um mesmo produto por outra cor ou tamanho, entre em contato com o nosso
-                    atendimento pelo e-mail ecommerce@releiame.com.br, em até 30 dias corridos do recebimento do
-                    produto. O prazo para envio do novo produto é de até 7 dias úteis após o recebimento e análise do
-                    item em nosso departamento de logística, mediante recebimento do cupom original ou da 1ª via da nota
-                    fiscal, desde que estejam o produto e a embalagem em perfeito estado.</p>
-
-                <p>Em caso de primeira troca, os envios serão por nossa conta. O cliente receberá um código de postagem
-                    para que possa enviar pelos Correios o(s) produto(s) a ser(em) trocado(s), sem custo, ou será
-                    indicada a coleta no endereço de entrega pelo transportador. Caso o cliente opte por realizar outras
-                    trocas de um mesmo pedido, os valores de envio/frete serão cobrados.</p>
-
-                <h6>Troca por outro produto</h6>
-                <p>Para realizar uma troca por outro produto ou modelo, entre em contato com o nosso atendimento pelo
-                    e-mail ecommerce@releiame.com.br, Em até 07 dias corridos após o recebimento do produto.
-                    O produto anterior deverá ser enviado, mediante apresentação da 1ª via da Nota Fiscal e estar, assim
-                    como sua embalagem, em perfeito estado.</p>
-                <p>Após o retorno do produto e a aprovação da análise em nosso departamento de logística, o valor pago
-                    pelo produto será restituído através de um Vale Trocas e o consumidor poderá efetuar uma nova
-                    compra.
-                    Reservamos o direito de recusar a devolução e retornar o produto, caso algum dos itens não esteja
-                    dentro dos padrões informados. Neste caso, o frete de retorno será cobrado do consumidor.</p>
-                <p>Após a liberação do Vale-Troca, você receberá um e-mail informando a numeração e a validade.</p>
-
-                <h6>Importante:</h6>
-                <p>Para utilizar seu Vale-Troca, basta estar logado em sua conta. No momento do fechamento de sua nova
-                    compra ele aparecerá como uma das opções de pagamento disponíveis;
-                    O Vale-Troca possui prazo de validade de 90 dias após a data de recebimento;
-                    O Vale-Troca é identificado com o CPF do (a) comprador (a), o que impede seu uso por terceiros;
-                    Se o valor do Vale-Troca for menor que o da nova compra, você poderá pagar a diferença com qualquer
-                    uma das opções de pagamento disponíveis na Loja Virtual Releia.me.</p>
-                <p>Se o valor do Vale-Troca for maior que o da compra, você poderá utilizar a diferença em outras
-                    compras na Loja Virtual Releia.me.
-                    Se a compra foi paga integralmente com o Vale-Troca a confirmação de pagamento ocorrerá em até 3
-                    (três) dias úteis;
-                    Em caso de cancelamento do Vale-Troca, o reembolso será realizado na mesma forma de pagamento
-                    escolhida no processo de compra inicial. Caso o pedido original tenha sido pago com cartão e a
-                    compra tenha sido feita há mais de seis meses, a restituição será realizada por depósito bancário ou
-                    ordem de pagamento;
-                    Se você utilizou seu Vale-Troca em um pedido e teve que cancelá-lo, entre em contato conosco para
-                    reativarmos o vale. O prazo para reativação é de até 4 dias úteis. O cancelamento do Vale-Troca
-                    poderá ser solicitado em até 90 dias após sua liberação.</p>
-
-                <h6>Restituição de valores</h6>
-                <p>Pagamento realizado por boleto bancário: O reembolso do valor integral ou parcial da compra será
-                    efetuado via DOC na conta corrente de mesma titularidade do responsável pelo pedido. Portanto, é
-                    necessário ficar atento ao CPF utilizado no ato da compra. O prazo da restituição em conta pode
-                    levar entre 7 (sete) e 10 (dez) dias úteis após a chegada e conferência do produto em nosso Centro
-                    de Distribuição.</p>
-                <p>Pagamento realizado por cartão de crédito: Os cancelamentos e reembolso/estornos seguirão as regras
-                    da administradora do cartão utilizado na compra. O valor da restituição pode levar até 2 (duas)
-                    faturas para constar no cartão, dependendo da data de vencimento ou fechamento da fatura, após a
-                    devolução do produto conferência em nosso Centro de Distribuição.</p>
-
-                <h6>Devoçução involuntária transportadora</h6>
-                <p>Caso o pedido seja devolvido pelos Correios com status de "endereço inválido", "destinatário
-                    desconhecido", "mudou-se", "proprietário não encontrado" ou situação semelhante, o valor de reenvio
-                    será por conta do cliente.</p>
-
-                <h6>Informações gerais:</h6>
-                <p>O prazo para solicitação de troca é de 30 (trinta) dias corridos, a partir da data de recebimento do
-                    produto no local de entrega.</p>
-                <p>O prazo para solicitação de devolução/cancelamento é de 07 (sete) dias corridos, a partir da data de
-                    recebimento do produto no local de entrega.</p>
-                <p>Toda e qualquer solicitação de troca ou devolução/cancelamento das compras realizadas online devem
-                    ser feitas através do nosso Serviço de Atendimento ao Cliente. Entre em contato e solicite este
-                    procedimento, informando o número do pedido e/ou número de CPF do comprador; produtos envolvidos.
-                </p>
-
-                <p>Para maiores informações, acesse o <a
-                        href="http://www.planalto.gov.br/ccivil_03/Leis/L8078.htm">Código de Defesa do Consumidor</a>.
-                </p>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal Política de Privacidade-->
-<div class="modal" id="politicaprivacidadeModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title">Política de Privacidade</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="text-dark justify px-4">
-
-                <h5>Informações Gerais</h5>
-                <p>Nós da Releia.me nos preocupamos e zelamos pela privacidade dos nossos usuários, tendo como uma das
-                    nossas diretrizes o respeito ao indivíduo.</p>
-
-                <p>Possuímos uma política de privacidade que é o conjunto de regras que determinam o tratamento
-                    destinado a todas as informações que o usuário fornece quando preenche dados cadastrais em nosso
-                    site.</p>
-
-                <h6>Endereço de IP:</h6>
-                <p>Nós da Releia.me utilizamos do endereço IP (Internet Protocol) e de outros dados obtidos da conexão
-                    com nosso site, para reunir informações que serão utilizadas para melhorarmos a navegação de nossos
-                    usuários.</p>
-
-                <h6>Cookies:</h6>
-                <p>Nosso site utiliza de cookies, arquivos armazenados no navegador, para identificar melhor o perfil de
-                    nossos usuários e otimizar nosso relacionamento com eles, assim como sua experiência de compra. Os
-                    cookies não capturam informações pessoais identificáveis e nós nos comprometemos a não compartilhar
-                    tais informações com terceiros.</p>
-
-                <p>Caso deseje, você pode apagar os cookies existentes em seu computador, através do browser, quando
-                    quiser.</p>
-
-                <h6>Obtenção e uso das informações</h6>
-                <p>Todos os dados que o usuário informar no site Releia.me serão sigilosos e só serão utilizados para o
-                    processo de entrega, cobrança ou para participação em promoções solicitadas pelo cliente.</p>
-
-                <p>Os dados solicitados no momento do cadastro dentro do site são necessários para pagamentos e para que
-                    a encomenda seja entregue com segurança no local desejado, dentro do prazo estabelecido.</p>
-
-                <p>O usuário declara concordar com nossa política de obtenção e uso das informações e ter ciência de que
-                    os mesmos poderão ser utilizados para comunicação, de qualquer espécie da empresa, entre nós.</p>
-
-                <p>Nosso site garante a privacidade dos dados pessoais de nossos usuários armazenados em sua base,
-                    comprometendo-se a utilizar tecnologia que seja suficientemente adequada para a proteção de tais
-                    dados, procurando manter o ambiente seguro, com uso de ferramentas apropriadas.</p>
-
-                <p>Nosso site garante a privacidade dos dados pessoais de nossos usuários armazenados em sua base,
-                    comprometendo-se a utilizar tecnologia que seja suficientemente adequada para a proteção de tais
-                    dados, procurando manter o ambiente seguro, com uso de ferramentas apropriadas.</p>
-
-                <p>Nossas empresas parceiras poderão confirmar os dados pessoais informados por você, usuário,
-                    consultando entidades públicas, companhias especializadas, banco de dados, e estão expressamente
-                    autorizados para tal. Contudo, isso não cessa, nem diminui, a sua responsabilidade quanto à exatidão
-                    e veracidade dos dados que fornece, motivo pelo qual nós da Releia.me poderemos, a nosso exclusivo
-                    critério, suspender e/ou cancelar seu cadastro de usuário, a qualquer momento, caso detectemos
-                    qualquer inexatidão.</p>
-
-                <p>O usuário compromete-se a utilizar os conteúdos disponibilizados no site Releia.me conforme a lei, o
-                    presente termo e demais avisos, regulamentos de uso e instruções colocadas em seu conhecimento. Em
-                    particular, compromete-se a não reproduzir, copiar, distribuir, transformar ou modificar os
-                    conteúdos de nosso site, a menos que possua nossa prévia autorização ou que obtenha permissão legal.
-                    Do mesmo modo, assume o compromisso de não suprimir, manipular ou de qualquer forma alterar o
-                    copyright e demais dados de identificação dos direitos da Releia.me assim como os dispositivos
-                    técnicos de proteção, as marcas digitais ou quaisquer mecanismos de informação que nosso site possa
-                    conter.</p>
-
-                <h6>Envio de comunicados e mensagens publicitárias</h6>
-                <p>Nós da Releia.me poderemos enviar comunicados e mensagens publicitárias aos usuários cadastrados em
-                    nosso site, ou nossos clientes em geral, fazendo uso de todos os tipos de tecnologias e meios de
-                    comunicação disponíveis, seja por e-mail, SMS, MMS, mala-direta (e) outros.</p>
-
-                <p>Os comunicados, newsletters, avisos de ofertas e mensagens publicitárias enviadas por e-mail trarão,
-                    obrigatoriamente, a opção de cancelamento do recebimento deste tipo de mensagem. A solicitação será
-                    atendida no tempo mínimo necessário para realização desta execução.</p>
-
-                <p>O opt-out é feito através do e-mail do usuário. Portanto, usuários que possuem mais de um cadastro
-                    poderão continuar a receber os comunicados ou as mensagens publicitárias, no e-mail que não foi
-                    desativado.</p>
-
-                <p>Lembramos que o endereço de e-mail informado no momento do cadastro será utilizado para envio de
-                    comunicados durante todo processo de compra, como, por exemplo, para informar sobre todos os dados
-                    de seu pedido, status do pedido, de entrega, além de cupons de descontos e promoções exclusivas.
-                    Portanto, recomendamos que você adicione nossa loja como um remetente confiável para evitar que tais
-                    mensagens sejam interceptadas pelo Anti-Spam.</p>
-
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal Sobre Nós-->
-<div class="modal" id="sobrenosModal">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title">Sobre nós</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="text-dark justify px-4">
-                <h5>Projeto final do bootcamp oferecido pela Porto Seguro em parceria com a Digital House Brasil</h5>
-
-                <h6>📚 Introdução</h6>
-                <p>Com o mundo cada vez mais tecnológico, podemos utilizar de diversas alternativas para ter acesso a um
-                    livro, uma delas é de forma online, mas por outro lado, muitas pessoas não abrem mão de ter seu
-                    livro físico.</p>
-
-                <p>Pensando no consumo consciente e na diversidade cultural aplicada no mundo do livro e das editoras,
-                    vamos conectar amantes por livros de todo o país.</p>
-
-                <p>Quanto mais livros seminovos e usados forem reutilizados, conseguimos possibilitar o maior acesso à
-                    cultura por um valor acessível.</p>
-
-                <h6>🧩 Problema</h6>
-                <p>O problema que esperamos resolver é diminuir o consumo de matéria-prima destinada a produção de novos
-                    livros, e por consequência, diminuir o impacto ambiental.</p>
-
-                <h6>🎯 Objetivo</h6>
-                <p>Criar uma plataforma intuitiva que possibilite a compra de livros seminovos ou usados.</p>
-
-                <h6>📢 Justificativa</h6>
-                <p>Nos baseamos na ODS 12 – Consumo e Produção:</p>
-
-                <p>12.7 – Promover práticas de compras pública sustentáveis, de acordo com as políticas e prioridades
-                    nacionais.</p>
-
-                <p>Diante disso, percebemos a necessidade em desenvolver uma plataforma com intuito de expandir o reuso
-                    e consumo consciente dos livro</p>
-
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <!--<div class="modal" id="modalCadastroFuncionario">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-      
-            <div class="modal-header">
-              <h4 class="modal-title">Cadastro de Colaborador</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal">Fechar</button>
-            </div>
-
-            <form class="row p-4 g-3 needs-validation" novalidate>
-              <div class="col-12">
-                <label for="nomeCompleto" class="form-label">Nome Completo</label>
-                <input [(ngModel)]="funcionario.nome" type="text" class="form-control" id="nomeCompleto" placeholder="Maria da Silva" required/>
-                <div class="invalid-feedback">
-                  Por favor, preencha seu nome completo.
-                </div>
-              </div>
-              <div class="col-12">
-                <label for="codf" class="form-label">Código do funcionario</label>
-                <input [(ngModel)]="funcionario.codf" type="text" class="form-control" id="codf" placeholder="12345" required/>
-                <div class="invalid-feedback">
-                  Por favor, preencha sua matrícula de colaborador para continuar.
-                </div>
-              </div>
-              <div class="col-12">
-                <label for="senha" class="form-label">Senha</label>
-                <input [(ngModel)]="funcionario.senha" type="text" class="form-control" id="senha" placeholder="Minimo 9 digitos" required/>
-                <div class="invalid-feedback">
-                  Por favor, preencha sua matrícula de colaborador para continuar.
-                </div>
-              </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary" (click)="cadastrarFuncionario()">Cadastro</button>
-              </div>
-            </form>
-      
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-            </div>
-          </div>
-        </div>-->

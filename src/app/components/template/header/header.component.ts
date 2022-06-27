@@ -61,7 +61,7 @@ export class HeaderComponent implements OnInit {
     this.authService.cadastrar(this.cliente).subscribe((resp: Cliente) => {
       this.cliente = resp
       this.router.navigate(['/login'])
-      alert('Cliente cadastrado com sucesso!!!')
+      //alert('Cliente cadastrado com sucesso!!!')
     })
   }
 
