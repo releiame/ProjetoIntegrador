@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Livros } from 'src/app/model/Livros';
 import { LivrosService } from 'src/app/service/livros.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-livro',
@@ -10,6 +11,7 @@ import { LivrosService } from 'src/app/service/livros.service';
 })
 export class LivroComponent implements OnInit {
 
+  carrinho = environment.carrinho
 
   livro: Livros
 
@@ -21,13 +23,17 @@ export class LivroComponent implements OnInit {
   ngOnInit(){
     let id_livros = this.route.snapshot.params['id_livros']
     this.findByIdLivro(id_livros)
-    console.log(this.findByIdLivro(id_livros))
   }
 
   findByIdLivro(id_livros: number){
-    this.livrosService.getByIdLivros(id_livros).subscribe((resp: Livros) =>{
+    this.livrosService.getLivrosById(id_livros).subscribe((resp: Livros) =>{
       this.livro = resp
     })
+  }
+
+  adicionarCarrinho(id_livros: number){
+    this.carrinho.push(id_livros)
+    alert('Livro adicionado ao carrinho')
   }
 
 

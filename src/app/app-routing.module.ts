@@ -10,6 +10,11 @@ import { BuscaLivroComponent } from "./components/template/busca-livro/busca-liv
 import { LivroComponent } from "./components/template/livro/livro.component";
 import { BuscaEtiquetaComponent } from "./components/template/busca-etiqueta/busca-etiqueta.component";
 import { FuncionarioComponent } from "./components/template/funcionario/funcionario.component";
+import { MinhaContaComponent } from "./components/template/minha-conta/minha-conta.component";
+import { EditarLivroComponent } from "./components/template/editar-livro/editar-livro.component";
+import { CadastrarLivroComponent } from "./components/template/cadastrar-livro/cadastrar-livro.component";
+import { DeletarLivroComponent } from "./components/template/deletar-livro/deletar-livro.component";
+import { EnderecoComponent } from "./components/template/endereco/endereco.component";
 
 // --------------Substituir # por nome das respectivas classes-------------
 
@@ -25,9 +30,12 @@ const routes: Routes = [
     {path: 'busca-livro/:titulo', component:BuscaLivroComponent, data: {isHeader: true}},
     {path: 'livro/:id_livros', component:LivroComponent, data: {isHeader: true}},
     {path: 'busca-etiqueta/:id_etiqueta', component:BuscaEtiquetaComponent, data: {isHeader: true}},
-    {path: 'funcionario', component:FuncionarioComponent}
-    // {path: 'minha-conta', component:#}, 
-    // {path: 'meus-pedidos', component:#},
+    {path: 'funcionario', component:FuncionarioComponent},
+    {path: 'minha-conta/:id_cliente', component:MinhaContaComponent, data: {isHeader: true}},
+    {path: 'editar-livro/:id_livros', component:EditarLivroComponent},
+    {path: 'cadastrar-livro', component:CadastrarLivroComponent},
+    {path: 'deletar-livro/:id_livros', component:DeletarLivroComponent},
+    {path: 'endereco/:id_cliente', component:EnderecoComponent},
     // {path: 'trocar-devolver', component:#},
     
 ];

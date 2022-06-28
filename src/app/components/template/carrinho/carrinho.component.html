@@ -32,10 +32,8 @@
         <thead class="vermelho text-light">
             <tr>
                 <th scope="col">Produto(s)</th>
-                <th scope="col">Valor Unitário</th>
-                <th scope="col">Quantidade</th>
-                <th scope="col">Valor Total</th>
-                <th scope="col"></th>
+                <th scope="col">Valor do Produto</th>
+                <th scope="col">Titulo</th>
             </tr>
         </thead>
         <tbody>
@@ -43,10 +41,10 @@
                 <th class="d-flex align-items-center">
                     <img class="img-thumbnail tam me-4" src={{livro.capa}} />
                 </th>
-                <td>{{livro.valorUnitario}}</td>
-                <td><input type="number" class="form-control" id="qtdItem" value="1"></td>
-                <td><a (click)="delete()"><img class="lixo" src="../../../../assets/img/lata-de-lixo.png"></a></td>
+                <td>{{livro.valorUnitario |  currency : 'BRL'}}</td>
+                <td>{{livro.titulo}}</td>
             </tr>
+            <p>VALOR TOTAL: {{soma |  currency : 'BRL'}}</p>
         </tbody>
     </table>
   

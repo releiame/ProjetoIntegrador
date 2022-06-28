@@ -21,8 +21,7 @@
                       <p>Em até 10x de {{livro.valorUnitario/10 | currency : 'BRL'}} sem juros</p>
                   </div>
                   <div class="d-flex justify-content-start">
-                      <input type="number" class="form-control tam-qtd-item" id="qtdItem" value="1">
-                      <a href="#" class="btn btn-danger comprar-qtd mx-3">Comprar</a>
+                      <a (click)="adicionarCarrinho(livro.id_livros)" class="btn btn-danger comprar-qtd mx-3">Comprar</a>
                   </div>
                   <div class="d-flex pt-4 frete">
                       <img class="caminhao" src="../../../../assets/img/caminhao-de-entrega.png" />

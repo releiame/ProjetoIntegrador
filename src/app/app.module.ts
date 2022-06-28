@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { CarouselInicioComponent } from './components/template/carousel-inicio/carousel-inicio.component';
@@ -11,7 +12,7 @@ import { RodapeComponent } from './components/template/rodape/rodape.component';
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
 import { HomeComponent } from './components/template/home/home.component';
 import { CarrinhoComponent } from './components/template/carrinho/carrinho.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 import { DevsComponent } from './components/modal/devs/devs.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { MinhaContaComponent } from './components/template/minha-conta/minha-conta.component';
@@ -20,6 +21,11 @@ import { BuscaLivroComponent } from './components/template/busca-livro/busca-liv
 import { LivroComponent } from './components/template/livro/livro.component';
 import { BuscaEtiquetaComponent } from './components/template/busca-etiqueta/busca-etiqueta.component';
 import { FuncionarioComponent } from './components/template/funcionario/funcionario.component';
+import { EditarLivroComponent } from './components/template/editar-livro/editar-livro.component';
+import { CadastrarLivroComponent } from './components/template/cadastrar-livro/cadastrar-livro.component';
+import { DeletarLivroComponent } from './components/template/deletar-livro/deletar-livro.component';
+import { OrderModule } from 'ngx-order-pipe';
+import { EnderecoComponent } from './components/template/endereco/endereco.component';
 
 
 
@@ -38,14 +44,19 @@ import { FuncionarioComponent } from './components/template/funcionario/funciona
     BuscaLivroComponent,
     LivroComponent,
     BuscaEtiquetaComponent,
-    FuncionarioComponent
+    FuncionarioComponent,
+    EditarLivroComponent,
+    CadastrarLivroComponent,
+    DeletarLivroComponent,
+    EnderecoComponent
 
   ],
   imports: [
     BrowserModule, 
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,

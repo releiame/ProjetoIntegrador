@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Etiqueta } from 'src/app/model/Etiqueta';
 import { Funcionario } from 'src/app/model/Funcionario';
 import { Livros } from 'src/app/model/Livros';
@@ -9,11 +9,11 @@ import { LivrosService } from 'src/app/service/livros.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
-  selector: 'app-funcionario',
-  templateUrl: './funcionario.component.html',
-  styleUrls: ['./funcionario.component.css']
+  selector: 'app-cadastrar-livro',
+  templateUrl: './cadastrar-livro.component.html',
+  styleUrls: ['./cadastrar-livro.component.css']
 })
-export class FuncionarioComponent implements OnInit {
+export class CadastrarLivroComponent implements OnInit {
 
   idLivro: number
   listaLivros: Livros[]
@@ -31,7 +31,6 @@ export class FuncionarioComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private livrosService: LivrosService,
     private etiquetaService: EtiquetaService,
     public authService: AuthService
@@ -44,9 +43,10 @@ export class FuncionarioComponent implements OnInit {
       this.router.navigate(['/home'])
     }
 
-    let id = this.route.snapshot.params['id_funcionario']
+    console.log(environment.token)
+    console.log(environment.id_funcionario)
 
-    this.findByFuncionarioId(id)
+
     this.getAllLivros()
     this.getAllEtiquetas()
     
@@ -63,24 +63,8 @@ export class FuncionarioComponent implements OnInit {
   }
 
   findByIdLivros(id_livros: number){
-    this.livrosService.getLivrosById(this.idLivro).subscribe((resp: Livros) =>{
+    this.livrosService.getLivrosById(id_livros).subscribe((resp: Livros) =>{
       this.livro = resp
-    })
-  }
-
-  findByTituloLivro(){
-    if(this.tituloLivro == ''){
-      this.getAllLivros()
-    }else{
-      this.livrosService.getByTitulo(this.tituloLivro).subscribe((resp: Livros[]) =>{
-        this.listaLivros = resp
-      })
-    }
-  }
-
-  getAllEtiquetas(){
-    this.etiquetaService.getAllEtiquetas().subscribe((resp: Etiqueta[]) =>{
-      this.listaEtiquetas = resp
     })
   }
 
@@ -90,29 +74,27 @@ export class FuncionarioComponent implements OnInit {
     })
   }
 
-  findByNomeEtiqueta(){
-    if(this.nomeEtiqueta == ''){
-      this.getAllEtiquetas()
-    }else{
-      this.etiquetaService.getByNome(this.nomeEtiqueta).subscribe((resp: Etiqueta[]) =>{
-        this.listaEtiquetas = resp
-      })
-    }
-  }
-
-  findByFuncionarioId(id: number){
-    this.authService.getByIdFuncionario(id).subscribe((resp: Funcionario) =>{
-      this.funcionario = resp
+  getAllEtiquetas(){
+    this.etiquetaService.getAllEtiquetas().subscribe((resp: Etiqueta[]) =>{
+      this.listaEtiquetas = resp
     })
   }
 
-  cadastrarTag(){
-    this.etiquetaService.cadastrar(this.etiqueta).subscribe((resp: Etiqueta) => {
-      this.etiqueta = resp
+  cadastrar(){
+
+    this.etiqueta.id_etiqueta = this.idEtiqueta
+    this.livro.etiqueta = this.etiqueta
+
+    this.funcionario.id_funcionario = this.idFuncionario
+    this.livro.funcionario = this.funcionario
+
+    this.livrosService.cadastrar(this.livro).subscribe((resp: Livros) =>{
+      this.livro = resp
       this.router.navigate(['/funcionario'])
-      alert('Tag cadastrada com sucesso')
-      this.etiqueta = new Etiqueta()
-      this.getAllEtiquetas()
+      alert('Livro cadastrado com sucesso')
+      this.livro = new Livros()
+      this.getAllLivros()
     })
   }
+
 }

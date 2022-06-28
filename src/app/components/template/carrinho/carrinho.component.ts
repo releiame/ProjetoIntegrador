@@ -14,9 +14,11 @@ export class CarrinhoComponent implements OnInit {
 
   carrinho = environment.carrinho
 
-  livros: Livros = new Livros()
+  livro: Livros = new Livros
 
-  listaLivros: Livros[]
+  listaLivros: Array<Livros> = []
+
+  teste = environment.carrinho[1]
 
   soma = 0
 
@@ -30,18 +32,44 @@ export class CarrinhoComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/home'])
     }
-
-    this.findAllLivros()
+    this.carrinhoAtt()
+    console.log("CARRINHO DO ENVIRONMENT (somente pegando o ID do Livro): " + environment.carrinho)
+    console.log("CARRINHO DO COMPONENT: " + this.carrinho)
+    console.log("CARRINHO APÓS USAR O GETBYID: " + this.listaLivros)
+    console.log(this.teste)
   }
 
-  findAllLivros(){
-    this.livrosService.getAllLivros().subscribe((resp: Livros[]) =>{
-      this.listaLivros = resp
+  findLivrosById(id_livros: number){
+    this.livrosService.getLivrosById(id_livros).subscribe((resp: Livros) =>{
+      this.livro = resp
+      this.soma += this.livro.valorUnitario
+      console.log("LIVRO ENCONTRADO: " + this.livro.titulo)
+      this.listaLivros.push(this.livro)
     })
   }
 
-  delete() {
-    //delete funcion here
+  carrinhoAtt(){
+    for(let item of environment.carrinho){
+      if(this.carrinho[item]>0){
+        let id = this.carrinho[item]
+        this.findLivrosById(id)
+        console.log("LIVRO ENCONTRADO carrinhoAtt(): " + this.livro.titulo)
+      }
+    }
+  }
+
+  finalizarCompra(){
+    if(environment.token == ''){
+      alert('Faça o login para terminar a compra')
+      this.router.navigate(['/home'])
+    }else if(this.listaLivros.length>0){
+      alert('Compra finalizada')
+      this.listaLivros = []
+      environment.carrinho = [0]
+      this.router.navigate(['/home'])
+    }else{
+      alert('Carrinho vazio')
+    }
   }
 
   valorTotal() {

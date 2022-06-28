@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
   funcionarioLogin: FuncionarioLogin = new FuncionarioLogin
   tituloLivro: string
   nome: String
-  id_cliente: number
+  idCliente = environment.id_cliente
   listaTags: Etiqueta[]
   funcionario: boolean
   nomeFuncionario: string
@@ -55,6 +55,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/home'])
     environment.token = ''
     environment.id_cliente = 0
+    environment.codf = ''
+    this.funcionario == false
   }
 
   cadastrar() {
@@ -67,7 +69,7 @@ export class HeaderComponent implements OnInit {
 
   ngAfterContentChecked() {
     this.nome = environment.nome
-    this.id_cliente = environment.id_cliente
+    this.idCliente = environment.id_cliente
     this.nome = this.nome.split(" ")[0]
     this.id_funcionario = environment.id_funcionario
     this.codf = environment.codf
@@ -83,6 +85,7 @@ export class HeaderComponent implements OnInit {
         environment.nome = this.funcionarioLogin.nome
         environment.token = this.funcionarioLogin.token
         environment.id_funcionario = this.funcionarioLogin.id_funcionario
+        environment.senha = this.funcionarioLogin.senha
         
         this.router.navigate(['/home'])
       },erro => {
@@ -105,6 +108,7 @@ export class HeaderComponent implements OnInit {
         environment.nome = this.clienteLogin.nome
         environment.id_cliente = this.clienteLogin.id_cliente
         environment.email = this.clienteLogin.email
+        environment.senha = this.clienteLogin.senha
         
         this.router.navigate(['/home'])
       }, erro => {

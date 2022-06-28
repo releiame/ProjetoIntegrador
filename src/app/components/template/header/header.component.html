@@ -190,7 +190,8 @@
                         <li><a class="dropdown-item" data-bs-toggle="modal" *ngIf="authService.logado() == false"
                             data-bs-target="#modalCadastro">Fazer Cadastro</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="/minha-conta">Minha Conta</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="#">Meus Pedidos</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logado()" [routerLink]="['/endereco', clienteLogin.id_cliente]" >Meus Endereços</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logado()" [routerLink]="['/minha-conta', idCliente]" >Meus Cadastro</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logadoFuncionario()" routerLink="/funcionario">Livros</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" (click)="sair()" routerLink="#">Sair</a></li>
                     </ul>

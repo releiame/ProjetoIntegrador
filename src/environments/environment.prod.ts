@@ -5,6 +5,7 @@ export const environment = {
   email: '',
   id_cliente: 0,
   id_funcionario: 0,
+  senha: '',
   codf: '',
   carrinho: [0],
   id_livros: 0,

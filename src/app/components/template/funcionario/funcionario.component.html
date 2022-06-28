@@ -17,8 +17,7 @@
           <a
             class="btn btn-outline-secondary"
             id="novoLivro"
-            data-bs-toggle="modal"
-            data-bs-target="#modalLivro"
+            routerLink="/cadastrar-livro"
             >Novo Livro</a
           >
           <a
@@ -34,7 +33,7 @@
 
     <div class="col-md-7 d-flex justify-content-center mb-5">
       <img
-        src="https://i.imgur.com/jQpEMH0.png"
+        src="https://i0.wp.com/www.olivroaberto.com.br/wp-content/uploads/2015/11/livro-sonho.jpg?fit=1125%2C916&ssl=1"
         alt=""
         width="600px"
         height="600px"
@@ -47,7 +46,7 @@
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Todos os Livros</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button (click)="findByFuncionarioId()" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Meus Livros Cadastrados</button>
+    <button (click)="findByFuncionarioId(funcionario.id_funcionario)" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Meus Livros Cadastrados</button>
   </li>
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Livros por titulo</button>
@@ -63,6 +62,7 @@
       *ngFor='let item of listaLivros'>
         <div class="card-body">
           <h5 class="card-title m-0">{{item.titulo}}</h5>
+          <small class="text-muted"> ID: {{item.id_livros}}</small>
           <small class="text-muted"> Tema: {{item.autor}}</small>
           <p class="card-text mt-3">Valor: {{item.valorUnitario | currency : 'BRL'}}</p>
           <p class="card-text">ISBN: {{item.isbn}}</p>
@@ -84,8 +84,8 @@
           <p class="card-text mt-3">Valor: {{item.valorUnitario | currency : 'BRL'}}</p>
           <p class="card-text">ISBN: {{item.isbn}}</p>
           <p class="card-text">Estoque: {{item.qtdeEstoque}}</p>
-          <a class="text-info mr-3" href="">Editar</a>
-          <a class="text-danger" href="">Deletar</a>
+          <a class="btn btn-success text-light mr-5" [routerLink]="['/editar-livro', item.id_livros]" href="">Editar</a>
+          <a class="btn btn-danger text-light" [routerLink]="['/deletar-livro', item.id_livros]" href="">Deletar</a>
         </div>
       </div>
     </div>
@@ -123,136 +123,6 @@
   </div>
 </div>
 
-<!-- Modal-->
-<div
-  class="modal"
-  id="modalLivro"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="TituloModalCentralizado"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Novo Livro</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Fechar"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="titulo">Capa</label>
-          <input
-            [(ngModel)]="livro.capa"
-            type="text"
-            class="form-control"
-            id="capa"
-            placeholder="Digite a URL da capa do livro"
-          />
-        </div>
-        <div class="form-group">
-          <label for="titulo">Título</label>
-          <input
-            [(ngModel)]="livro.titulo"
-            type="text"
-            class="form-control"
-            id="titulo"
-            placeholder="Digite o título"
-          />
-        </div>
-        <div class="form-group">
-          <label for="texto">Descrição</label>
-          <textarea
-            [(ngModel)]="livro.descricao"
-            class="form-control"
-            name="descricao"
-            id="descricao"
-            rows="3"
-          ></textarea>
-        </div>
-        <div class="form-group">
-          <label for="titulo">Autor</label>
-          <input
-            [(ngModel)]="livro.autor"
-            type="text"
-            class="form-control"
-            id="autor"
-            placeholder="Digite o autor do livro"
-          />
-        </div>
-        <div class="form-group">
-          <label for="titulo">Quantidade disponivel de estoque</label>
-          <input
-            [(ngModel)]="livro.qtdeEstoque"
-            type="number"
-            class="form-control"
-            id="qtdeEstoque"
-            placeholder="Digite a quantidade de estoque"
-          />
-        </div>
-        <div class="form-group">
-          <label for="titulo">ISBN</label>
-          <input
-            [(ngModel)]="livro.isbn"
-            type="number"
-            class="form-control"
-            id="isbn"
-            placeholder="Digite o ISBN"
-          />
-        </div>
-        <div class="form-group">
-          <label for="titulo">Valor do Livro</label>
-          <input
-            [(ngModel)]="livro.valorUnitario"
-            type="number"
-            class="form-control"
-            id="valorUnitario"
-            placeholder="Digite o valor do livro"
-          />
-        </div>
-        <div class="form-group">
-          <label for="texto"
-            >Escolha uma Tag ou
-            <a data-dismiss="modal" routerLink="/etiqueta">cadastre um novo</a>:
-          </label>
-          <select
-            name="etiqueta"
-            id="etiqueta"
-            class="form-control"
-            [(ngModel)]="idEtiqueta"
-            (change)="findByIdEtiqueta()"
-          >
-            <option
-              *ngFor="let item of listaEtiquetas"
-              value="{{ item.id_etiqueta }}"
-            >
-              {{ item.nome }}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-          Fechar
-        </button>
-        <button
-          type="button"
-          class="btn btn-success"
-          (click)="cadastrar()"
-          data-bs-dismiss="modal"
-        >
-          Publicar
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
 <!--Modal Tag-->
 <div class="modal" id="modalTag">
   <div class="modal-dialog modal-lg">
