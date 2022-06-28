@@ -2,6 +2,7 @@ package com.projetointegrador.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,28 +23,28 @@ public class PedidoService {
 	@Autowired
 	private PedidoRepository pedidoRepository;
 	
-	private Livros livro = new Livros();
-	
-	private List<Livros> livros = new ArrayList<Livros>();
-	
-	public void AdicionarLivroPedido(Pedido pedido) {
+	public Pedido AdicionarLivroPedido(Pedido pedido) {
 		
 		List<Livros> carrinho = new ArrayList<Livros>();
-		List<Pedido> p = new ArrayList<Pedido>();
-		p.add(pedido);
 		pedido.setValorTotal(0.);
 		
 		for(int i = 0; i<pedido.getLivros().size(); i++) {
-			livro = livroRepository.getById(pedido.getLivros().get(i).getId_livros());
-			carrinho.add(livro);
-			livro.setQtdeEstoque(livro.getQtdeEstoque() - 1);
-			pedido.setValorTotal(livro.getValorUnitario() + pedido.getValorTotal());
+			Optional<Livros> livro = livroRepository.findById(pedido.getLivros().get(i).getId_livros());
+			if(livro.get().getQtdeEstoque() <= 0) {
+				livro.get().setQtdeEstoque(50);
+			}
+			carrinho.add(livro.get());
+			livro.get().setQtdeEstoque(livro.get().getQtdeEstoque() - 1);
+			pedido.setValorTotal(livro.get().getValorUnitario() + pedido.getValorTotal());
+			livro.get().getPedido().add(pedido);
 		}
 		
-		livro.setPedido(p);
 		pedido.setLivros(carrinho);
 		
+		return pedidoRepository.save(pedido);		
 		
 	}
+	
+	
 	
 }

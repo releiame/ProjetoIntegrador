@@ -67,7 +67,7 @@ public class Livros {
 	@JsonIgnoreProperties({"livros"})
 	private Etiqueta etiqueta;
 	
-	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"livros", "cliente"})
 	@JoinTable(
 			name = "pedido_livros",
