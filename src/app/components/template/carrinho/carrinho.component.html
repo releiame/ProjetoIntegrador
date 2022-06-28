@@ -34,6 +34,7 @@
                 <th scope="col">Produto(s)</th>
                 <th scope="col">Valor do Produto</th>
                 <th scope="col">Titulo</th>
+                <th scope="col">Remover</th>
             </tr>
         </thead>
         <tbody>
@@ -43,10 +44,10 @@
                 </th>
                 <td>{{livro.valorUnitario |  currency : 'BRL'}}</td>
                 <td>{{livro.titulo}}</td>
+                <td><a (click)="removerLivro(livro)">Remover</a></td>
             </tr>
-            <p>VALOR TOTAL: {{soma |  currency : 'BRL'}}</p>
             <th>
-                <button class="btn btn-outline-secondary">Escolher mais produtos</button>
+                <button class="btn btn-outline-secondary" (click)="criarPedido()">Finalizar Pedido</button>
             </th>
         </tbody>
     </table>

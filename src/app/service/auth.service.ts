@@ -25,17 +25,14 @@ export class AuthService {
   }
 
   putCliente(cliente: Cliente):Observable<Cliente>{
-    console.log("AO INICIAR O MÉTODO PUT NO SERVICE")
-    return this.http.put<Cliente>('http://localhost:8080/cliente/atualizar', cliente, this.token)
+    return this.http.put<Cliente>('http://localhost:8080/cliente/atualizar', cliente)
   }
 
   getClienteById(id_cliente: number){
-    console.log("AO INICIAR O MÉTODO GET BY ID NO SERVICE / TOKEN: " + environment.token)
-    return this.http.get<Cliente>(`http://localhost:8080/cliente/${id_cliente}`, this.token)
+    return this.http.get<Cliente>(`http://localhost:8080/cliente/${id_cliente}`)
   }
 
   cadastrar(cliente:Cliente):Observable<Cliente> {
-    console.log(environment.token)
     return this.http.post<Cliente>('http://localhost:8080/cliente/cadastrar', cliente)
 
   }

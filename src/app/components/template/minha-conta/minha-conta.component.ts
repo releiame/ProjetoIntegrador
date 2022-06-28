@@ -28,17 +28,19 @@ export class MinhaContaComponent implements OnInit {
     }
     this.idCliente = this.route.snapshot.params['id_cliente']
     this.findClienteById()
+    
   }
 
   findClienteById(){
     this.authService.getClienteById(environment.id_cliente).subscribe((resp: Cliente) => {
       this.cliente = resp
       this.cliente.senha = ''
+      console.log(this.cliente.nome)
     })
   }
 
   atualizar(){
-    console.log("AO INICIAR O MÉTODO PUT NO COMPONENT / TOKEN: " + environment.token)
+    this.cliente.id_cliente = environment.id_cliente
     this.authService.putCliente(this.cliente).subscribe((resp: Cliente)=>{
       this.cliente = resp
       alert('Cadastro atualizado com sucesso')

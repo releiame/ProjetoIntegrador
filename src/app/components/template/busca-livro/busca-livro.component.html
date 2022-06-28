@@ -7,7 +7,7 @@
 <div class="row d-flex justify-content-around">
     <!--card-->
     <div class="card cartao border-0 espaco p-3" *ngFor="let item of listaLivros">
-        <a routerLink="#">
+        <a [routerLink]="['/livro', item.id_livros]">
             <img src="{{item.capa}}"
                 alt="{{item.descricao}}"
                 class="card-img-top">
@@ -27,14 +27,9 @@
                 </p>
             </div>
         </div>
-<<<<<<< HEAD
         <div class="d-flex justify-content-center">
             <p><small>Qtde. Estoque: <strong>{{item.qtdeEstoque}}</strong></small></p>
-=======
         <div class="d-flex mb-3">
-            <input type="number" class="form-control tam-qtd-item comprar-qtd" id="qtdItem" value="1" max="5">
-            <a href="#" class="btn btn-danger comprar-qtd text-align justify-content-center">Comprar</a>
->>>>>>> f1c92b1c410419487396eaed54ffb3cc1e2881ab
         </div>
     </div>
     <!--fim card-->

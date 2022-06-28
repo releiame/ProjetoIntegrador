@@ -38,8 +38,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.funcionario = false
-    this.getAllEtiquetas()
     window.scroll(0, 0)
+    this.getAllEtiquetas()
   }
 
   getAllEtiquetas(){

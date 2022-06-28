@@ -35,11 +35,15 @@ export class LivrosService {
     return this.http.post<Livros>('http://localhost:8080/livros/cadastrar', livros, this.token)
   }
 
-  putLivros(livros: Livros):Observable<Livros>{
+  put(livros: Livros):Observable<Livros>{
     return this.http.put<Livros>('http://localhost:8080/livros/atualizar', livros, this.token)
   }
 
   deleteLivros(id_livros: number){
     return this.http.delete(`http://localhost:8080/livros/${id_livros}`, this.token)
+  }
+
+  putLivros(id_livros: number, id_pedido: number){
+    return this.http.put<Livros>(`http://localhost:8080/livros/livro_pedido/livros/${id_livros}/pedido/${id_pedido}`, this.token)
   }
 }

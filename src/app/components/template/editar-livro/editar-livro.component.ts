@@ -72,7 +72,7 @@ export class EditarLivroComponent implements OnInit {
     this.funcionario.id_funcionario = this.idFuncionario
     this.livro.funcionario = this.funcionario
 
-    this.livrosService.putLivros(this.livro).subscribe((resp: Livros)=>{
+    this.livrosService.put(this.livro).subscribe((resp: Livros)=>{
       this.livro = resp
       alert('Livro atualizado com sucesso')
       this.router.navigate(['/funcionario'])
