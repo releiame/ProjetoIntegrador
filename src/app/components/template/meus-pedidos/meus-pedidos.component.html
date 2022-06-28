@@ -1,0 +1,29 @@
+<table class="table">
+    <thead class="bg-primary text-light">
+      <tr>
+        <th scope="col">Data do Pedido</th>
+        <th scope="col">Pedido</th>
+        <th scope="col">Livros do Pedido</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Data prevista de Entrega</th>
+        <th scope="col">Situação do Pedido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listaPedidos">
+        <th scope="row">{{item.data | date:'dd/MM/yyyy'}}</th>
+        <td>{{item.id_pedido}}</td>
+        <td>
+            <ng-container *ngFor="let i of item.livros">
+                {{i.titulo}}
+            </ng-container>
+        </td>
+        <td>{{item.valorTotal |  currency : 'BRL'}}</td>
+        <td>{{item.data | date:'dd/MM/yyyy'}}</td>
+        <td class="bg-success text-light">PEDIDO FINALIZADO</td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <a routerLink="/home">VOLTAR</a>
+  </div>

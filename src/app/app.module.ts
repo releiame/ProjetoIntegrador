@@ -27,6 +27,7 @@ import { CadastrarLivroComponent } from './components/template/cadastrar-livro/c
 import { DeletarLivroComponent } from './components/template/deletar-livro/deletar-livro.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { EnderecoComponent } from './components/template/endereco/endereco.component';
+import { MeusPedidosComponent } from './components/template/meus-pedidos/meus-pedidos.component';
 
 
 
@@ -49,7 +50,8 @@ import { EnderecoComponent } from './components/template/endereco/endereco.compo
     EditarLivroComponent,
     CadastrarLivroComponent,
     DeletarLivroComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    MeusPedidosComponent
 
   ],
   imports: [

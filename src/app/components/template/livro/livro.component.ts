@@ -17,9 +17,6 @@ import Swal from 'sweetalert2';
 export class LivroComponent implements OnInit {
 
   carrinho = environment.carrinho
-
-  pedido: Pedido = new Pedido
-  cliente: Cliente = new Cliente
   livro: Livros = new Livros
 
   constructor(
@@ -33,6 +30,9 @@ export class LivroComponent implements OnInit {
     let id_livros = this.route.snapshot.params['id_livros']
     this.findByIdLivro(id_livros)
     
+    console.log("ID DO LIVRO NA BUSCA: " + id_livros)
+    console.log("TAMANHO DO CARRINHO ATUALMENTE: " + this.carrinho)
+    console.log("TAMANHO DO ENVIRONMENT CARRINHO: " + environment.carrinho)
   }
 
   findByIdLivro(id_livros: number){
@@ -44,7 +44,7 @@ export class LivroComponent implements OnInit {
   adicionarCarrinho(id_livros: number){
     this.carrinho.push(id_livros)
     alert('Livro adicionado ao carrinho')
-    console.log(this.carrinho.length)
-    console.log(environment.carrinho.length)
+    console.log("TAMANHO DO CARRINHO DEPOIS DE ADICIONAR UM LIVRO NELE: " + this.carrinho.length)
+    console.log("TAMANHO DO ENVIRONMENT CARRINHO DEPOIS DE ADICIONAR UM CARRINHO NELE: " + environment.carrinho.length)
   }
 }

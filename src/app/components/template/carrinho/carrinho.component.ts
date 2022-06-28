@@ -17,14 +17,13 @@ import Swal from 'sweetalert2';
 export class CarrinhoComponent implements OnInit {
 
   carrinho = environment.carrinho
+  livro: Livros = new Livros()
+  listaLivros:  Array<Livros> = []
 
-  livro: Livros = new Livros
+  pedido: Pedido = new Pedido()
 
-  pedido: Pedido = new Pedido
+  cliente: Cliente = new Cliente()
 
-  cliente: Cliente = new Cliente
-
-  listaLivros: Array<Livros> = []
   soma = 0
 
   constructor(
@@ -35,14 +34,12 @@ export class CarrinhoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    if(environment.token == ''){
-      this.router.navigate(['/home'])
-    }
-
-    this.carrinhoAtt()
+    console.log("TAMANHO DO ENVIRONMENT CARRINHO: " + environment.carrinho)
+    console.log("TAMANHO DO LISTALIVROS: " + this.listaLivros.length)
+    console.log("TAMANHO DO CARRINHO NO PEDIDO: " + this.carrinho)
     this.findClienteById(environment.id_cliente)
-    console.log(environment.carrinho)
+    this.carrinhoAtt()
+
   }
 
   findLivrosById(id_livros: number){
@@ -50,15 +47,10 @@ export class CarrinhoComponent implements OnInit {
       this.livro = resp
       this.soma += this.livro.valorUnitario
       this.listaLivros.push(this.livro)
+      console.log("LISTA LIVROS DEPOIS DO METODO FINDBYID: " + this.listaLivros)
+      console.log("TAMANHO DO LISTA LIVROS DEPOIS DO METODO FINDBYID: " + this.listaLivros.length)
     })
   }
-
-  findClienteById(id_cliente: number){
-    this.authService.getClienteById(id_cliente).subscribe((resp: Cliente) => {
-      this.cliente = resp
-    })
-  }
-  
 
   carrinhoAtt(){
     for(let item of environment.carrinho){
@@ -69,6 +61,12 @@ export class CarrinhoComponent implements OnInit {
     }
   }
 
+  findClienteById(id_cliente: number){
+    this.authService.getClienteById(id_cliente).subscribe((resp: Cliente) => {
+      this.cliente = resp
+    })
+  }
+
   criarPedido(){
 
     this.pedido.cliente = this.cliente
@@ -77,16 +75,16 @@ export class CarrinhoComponent implements OnInit {
 
     if(this.listaLivros.length == 0){
       alert('Seu carrinho está vazio')
+    }else if(environment.token == '' || environment.codf != ''){
+      alert('Você deve logar como cliente para poder finalizar o pedido')
+      this.router.navigate(['/home'])
     }else if(this.listaLivros.length > 0){
       this.pedidoService.post(this.pedido).subscribe((resp: Pedido) =>{
         this.pedido = resp
         alert('Pedido Feito')
-        this.listaLivros.length = 0
-        this.carrinho.length = 0
-        environment.carrinho.length = 0
-        environment.carrinho[0]
-        console.log(this.listaLivros.length)
-        console.log(environment.carrinho.length)
+        this.listaLivros = []
+        environment.carrinho = [0]
+        this.router.navigate(['/home'])
       }
       )
     }
@@ -95,6 +93,8 @@ export class CarrinhoComponent implements OnInit {
   removerLivro(livro: Livros){
     const index = this.listaLivros.indexOf(livro)
     this.listaLivros.splice(index, 1)
+    environment.carrinho.splice(index, 1)
+    this.carrinho.splice(index, 1)
     alert('Livro removido')
   }
 }

@@ -58,6 +58,7 @@ export class HeaderComponent implements OnInit {
     environment.id_cliente = 0
     environment.codf = ''
     this.funcionario == false
+    window.location.reload()
   }
 
   cadastrar() {

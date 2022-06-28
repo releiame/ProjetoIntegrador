@@ -7,4 +7,5 @@ export class Pedido{
     public livros:Livros[]
     public valorTotal: number
     public frete: number
+    public data: Date
 }
