@@ -19,6 +19,7 @@ import com.projetointegrador.model.Cliente;
 import com.projetointegrador.model.Endereco;
 import com.projetointegrador.repository.ClienteRepository;
 import com.projetointegrador.repository.EnderecoRepository;
+import com.projetointegrador.service.EtiquetaService;
 
 @RestController
 @RequestMapping("/endereco")
@@ -36,9 +37,9 @@ public class EnderecoController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
-	@GetMapping("/{id_endereco}")
-	public ResponseEntity<Endereco> GetById(@PathVariable long id_endereco){
-		return repository.findById(id_endereco)
+	@GetMapping("/{id}")
+	public ResponseEntity<Endereco> GetById(@PathVariable long id){
+		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
@@ -60,9 +61,9 @@ public class EnderecoController {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(endereco));
 	}
 	
-	@DeleteMapping("/deletarendereco/{id_endereco}")
-	public void delete(@PathVariable long id_endereco) {
-		repository.deleteById(id_endereco);
+	@DeleteMapping("/deletar/{id}")
+	public void delete(@PathVariable long id) {
+		repository.deleteById(id);
 	}
 	
 }

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,16 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.projetointegrador.model.Funcionario;
 import com.projetointegrador.model.Livros;
-import com.projetointegrador.model.Pedido;
-import com.projetointegrador.model.Etiqueta;
-import com.projetointegrador.repository.FuncionarioRepository;
 import com.projetointegrador.repository.LivrosRepository;
-import com.projetointegrador.repository.PedidoRepository;
-import com.projetointegrador.repository.EtiquetaRepository;
 import com.projetointegrador.service.LivroService;
-import com.projetointegrador.service.PedidoService;
 
 @RestController
 @RequestMapping("/livros")
@@ -36,15 +28,6 @@ public class LivrosController {
 	private LivrosRepository repositoryLivros;
 	
 	@Autowired
-	private FuncionarioRepository funcionarioRepository;
-	
-	@Autowired
-	private PedidoRepository pedidoRepository;
-	
-	@Autowired
-	private EtiquetaRepository etiquetaRepository;
-	
-	@Autowired
 	private LivroService service;
 	
 	@GetMapping("/listartodos")
@@ -53,7 +36,7 @@ public class LivrosController {
 	}
 	
 	@GetMapping("/{id_livros}")
-	public ResponseEntity<Livros> GetById(@PathVariable long id_livros){
+	public ResponseEntity<Livros> GetLivrosById(@PathVariable Long id_livros){
 		return repositoryLivros.findById(id_livros)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
@@ -74,7 +57,7 @@ public class LivrosController {
 		repositoryLivros.deleteById(id_livros);
 	}
 	
-	@PutMapping
+	@PutMapping("/atualizar")
 	public ResponseEntity<Livros> put (@RequestBody Livros livros){
 		return ResponseEntity.status(HttpStatus.OK).body(repositoryLivros.save(livros));
 	}
@@ -83,9 +66,4 @@ public class LivrosController {
 	public ResponseEntity<Livros> putLivros(@PathVariable long id_livros, @PathVariable long id_pedido){
 		return ResponseEntity.ok(service.AdicionarMais(id_pedido, id_livros));
 	}
-	
-	/*@PutMapping("adicionar_etiqueta/livros/{id_livros}/etiqueta/{id_etiqueta}")
-	public ResponseEntity<Livros> putTag(@PathVariable long id_livros, @PathVariable long id_etiqueta){
-		return ResponseEntity.ok(service.AdicionarTag(id_livros, id_etiqueta));
-	}*/
 }

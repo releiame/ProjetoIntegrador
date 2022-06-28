@@ -41,7 +41,7 @@ public class ClienteController {
 	}
 	
 	@GetMapping("/{id_cliente}")
-	public ResponseEntity<Cliente> getById(@PathVariable Long id_cliente) {
+	public ResponseEntity<Cliente> getClienteById(@PathVariable Long id_cliente) {
 		return repository.findById(id_cliente)
 			.map(resposta -> ResponseEntity.ok(resposta))
 			.orElse(ResponseEntity.notFound().build());

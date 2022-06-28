@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity //Indicando ao SPRING a classe é uma entidade
 @Table(name = "tb_cliente") //Nome que vai ser dado a tabela no banco de dados
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
 public class Cliente {
 	
 	@Id //Indicando que é a chave primaria
@@ -43,11 +43,11 @@ public class Cliente {
 	@NotNull
 	private Date dataNascimento;
 
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("cliente") //Indicando que deve ignorar campos desconhecidos
 	private List<Endereco> endereco;
 	
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.MERGE)
 	@JsonIgnoreProperties("cliente")
 	private List<Pedido> pedido;
 	

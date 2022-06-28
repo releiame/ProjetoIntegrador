@@ -25,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table (name = "tb_livros", uniqueConstraints={@UniqueConstraint(columnNames={"isbn"})})
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
 public class Livros {
 	
 	@Id
@@ -67,7 +67,7 @@ public class Livros {
 	@JsonIgnoreProperties({"livros"})
 	private Etiqueta etiqueta;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"livros", "cliente"})
 	@JoinTable(
 			name = "pedido_livros",

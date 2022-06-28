@@ -131,13 +131,21 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests()
 		.antMatchers("/cliente/cadastrar").permitAll()
 		.antMatchers("/cliente/logar").permitAll()
-		.antMatchers("/livros/listartodos").permitAll()
+		.antMatchers("/cliente/atualizar").permitAll()
+		.antMatchers("/cliente/{id_cliente}").permitAll()
+		
 		.antMatchers("/etiqueta/listartodos").permitAll()
+		.antMatchers("/etiqueta/{id_etiqueta}").permitAll()
+		
+		.antMatchers("/livros/listartodos").permitAll()
 		.antMatchers("/livros/titulo/{titulo}").permitAll()
 		.antMatchers("/livros/{id_livros}").permitAll()
+		
 		.antMatchers("/funcionario/logar_funcionario").permitAll()
 		.antMatchers("/funcionario/cadastrar_funcionario").permitAll()
-		.antMatchers("/etiqueta/{id_etiqueta}").permitAll()
+		
+		.antMatchers("/pedidos").permitAll()
+		
 		.antMatchers(HttpMethod.OPTIONS).permitAll()
 		.anyRequest().authenticated()
 		.and().httpBasic()

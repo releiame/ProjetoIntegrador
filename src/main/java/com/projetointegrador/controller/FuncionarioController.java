@@ -22,7 +22,7 @@ import com.projetointegrador.service.FuncionarioService;
 
 @RestController //Indicando ao Spring que essa classe é um controller
 @RequestMapping("/funcionario") //O parametro o qual devo usar para acessar a classe
-@CrossOrigin("*") //Para aceitar solicitações de qualquer origem
+@CrossOrigin(origins = "*",allowedHeaders = "*") //Para aceitar solicitações de qualquer origem
 public class FuncionarioController {
 	
 	@Autowired //Injeção de dependencia

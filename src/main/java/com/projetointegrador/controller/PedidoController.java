@@ -76,7 +76,7 @@ public class PedidoController {
 	}
 	
 	@DeleteMapping("livros_pedido/livros/{id_livros}/pedido/{id_pedido}")
-	public void putLivro(@PathVariable long id_livros, @PathVariable long id_pedido) {
+	public void delete(@PathVariable long id_livros, @PathVariable long id_pedido) {
 		service.deletarLivro(id_livros, id_pedido);
 	}
 	

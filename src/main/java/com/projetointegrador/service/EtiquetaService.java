@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.projetointegrador.model.Livros;
 import com.projetointegrador.model.Pedido;
+import com.projetointegrador.model.Endereco;
 import com.projetointegrador.model.Etiqueta;
 import com.projetointegrador.repository.LivrosRepository;
+import com.projetointegrador.repository.EnderecoRepository;
 import com.projetointegrador.repository.EtiquetaRepository;
 
 @Service
@@ -22,19 +24,18 @@ public class EtiquetaService {
 	@Autowired
 	private EtiquetaRepository etiquetaRepository;
 	
-	/*public void DeletarTag(long id_tag, long id_livros) {
+	@Autowired
+	private EnderecoRepository repository;
+	
+	public Optional<Endereco> cadastrar(Endereco endereco){
+		System.out.println("endereco: " + endereco.getId());
+		Optional<Endereco> end = repository.findById(endereco.getId());
 		
-		Optional<Livros> livro = livroRepository.findById(id_livros);
-		Optional<Etiqueta> etiqueta = etiquetaRepository.findById(id_tag);
-		
-		if(livro.get().getEtiqueta().contains(etiqueta.get())) {
-			livro.get().getEtiqueta().remove(etiqueta.get());
+		if(end.isPresent()) {
+			repository.save(end.get());
 		}
 		
-		livroRepository.save(livro.get());
-		etiquetaRepository.save(etiqueta.get());
-		
-		
-	}*/
+		return null;
+	}
 
 }
