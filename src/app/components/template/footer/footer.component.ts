@@ -5,6 +5,7 @@ import { Funcionario } from 'src/app/model/Funcionario';
 import { AuthService } from 'src/app/service/auth.service';
 import { EtiquetaService } from 'src/app/service/etiqueta.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-footer',
@@ -46,7 +47,12 @@ export class FooterComponent implements OnInit {
     this.authService.cadastrarfuncionario(this.funcionario).subscribe((resp: Funcionario) => {
       this.funcionario = resp
       this.router.navigate(['/home'])
-      alert('Funcionario cadastrado com sucesso!!!')
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Funcionario cadastrado com sucesso!',
+        showConfirmButton: true
+      })
     })
   }
 
