@@ -26,19 +26,15 @@ export class MinhaContaComponent implements OnInit {
     if(environment.token == ''){
       this.router.navigate(['/home'])
     }
-    console.log("TOKEN NO ENVIRONMENT: " + environment.token)
-    console.log("AO ABRIR A PAGINA / TOKEN: " + environment.token)
     this.idCliente = this.route.snapshot.params['id_cliente']
     this.findClienteById()
   }
 
   findClienteById(){
-    console.log("AO INICIAR O MÉTODO GET BY ID NO COMPONENT / TOKEN: " + environment.token)
-    this.authService.getClienteById(this.idCliente).subscribe((resp: Cliente) => {
+    this.authService.getClienteById(environment.id_cliente).subscribe((resp: Cliente) => {
       this.cliente = resp
       this.cliente.senha = ''
     })
-    console.log("APÓS TERMINAR O MÉTODO GET BY ID NO COMPONENT: " + this.cliente.nome + " / TOKEN: " + environment.token)
   }
 
   atualizar(){

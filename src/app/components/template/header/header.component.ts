@@ -7,6 +7,7 @@ import { FuncionarioLogin } from 'src/app/model/FuncionarioLogin';
 import { AuthService } from 'src/app/service/auth.service';
 import { EtiquetaService } from 'src/app/service/etiqueta.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -63,7 +64,6 @@ export class HeaderComponent implements OnInit {
     this.authService.cadastrar(this.cliente).subscribe((resp: Cliente) => {
       this.cliente = resp
       this.router.navigate(['/login'])
-      alert('Cliente cadastrado com sucesso!!!')
     })
   }
 
@@ -91,11 +91,26 @@ export class HeaderComponent implements OnInit {
       },erro => {
         if(erro.status == 500)
         {
-          alert('CODF ou senha incorretos!')
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title: 'CODF ou senha incorretos!',
+            showConfirmButton: true
+          })
         }else if(erro.status == 401){
-          alert('CODF ou senha incorretos!')
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title: 'CODF ou senha incorretos!',
+            showConfirmButton: true
+          })
         }else if(erro.status == 200){
-          alert('OK')
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'OK',
+            showConfirmButton: true
+          })
         }
       }      
       )
@@ -114,9 +129,19 @@ export class HeaderComponent implements OnInit {
       }, erro => {
         if(erro.status==500)
         {
-          alert('E-mail ou senha incorretos!')
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title: 'E-mail ou senha incorretos!',
+            showConfirmButton: true
+          })
         }else if(erro.status == 401){
-          alert('E-mail ou senha incorretos!')
+          Swal.fire({
+            position: 'top',
+            icon: 'error',
+            title: 'E-mail ou senha incorretos!',
+            showConfirmButton: true
+          })
         }
       }
       )

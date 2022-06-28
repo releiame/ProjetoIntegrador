@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
+
 import { AppComponent } from './app.component';
 import { CarouselInicioComponent } from './components/template/carousel-inicio/carousel-inicio.component';
 import { RodapeComponent } from './components/template/rodape/rodape.component';

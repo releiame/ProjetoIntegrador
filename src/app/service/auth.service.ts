@@ -29,7 +29,7 @@ export class AuthService {
     return this.http.put<Cliente>('http://localhost:8080/cliente/atualizar', cliente, this.token)
   }
 
-  getClienteById(id_cliente: number): Observable<Cliente>{
+  getClienteById(id_cliente: number){
     console.log("AO INICIAR O MÉTODO GET BY ID NO SERVICE / TOKEN: " + environment.token)
     return this.http.get<Cliente>(`http://localhost:8080/cliente/${id_cliente}`, this.token)
   }

@@ -162,7 +162,7 @@
             <li class="nav-item">
                 <div class="nav-link">
                     <div class="input-group">
-                        <input type="search" [(ngModel)]="tituloLivro" class="form-control wid tm-busca" name="tituloLivro"
+                        <input id="barraDePesquisa" type="search" [(ngModel)]="tituloLivro" class="form-control wid tm-busca" name="tituloLivro"
                             placeholder="         Pesquise aqui seu livro" aria-label="true">
                         <button [routerLink]="['busca-livro', tituloLivro]" class="btn btn-outline-light" type="button" id="button-addon2"><i class="fa fa-search"
                                 style="margin: 0 2px;"></i></button>
@@ -278,13 +278,14 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary" (click)='cadastrar()'>Criar Cadastro</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" (click)='cadastrar()'>Criar Cadastro</button>
                     <br><br>
                     <p> Já é cadastrado? <a class="text-dark" data-bs-toggle="modal" data-bs-target="#loginModal"
                             href="">Acesse
                             sua conta.</a></p>
                 </div>
             </form>
+
 
             <!-- Modal footer -->
             <div class="modal-footer">
