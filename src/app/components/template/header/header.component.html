@@ -181,23 +181,23 @@
                 <img src="assets/img/user32.png" />
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button"
-                        aria-expanded="false" *ngIf="authService.logado() == false">Minha Conta</a>
+                        aria-expanded="false" *ngIf="authService.logado() == false && authService.logadoFuncionario() == false">Minha Conta</a>
                         <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button"
-                        aria-expanded="false" *ngIf="authService.logado()">Olá, {{nome}}</a>
+                        aria-expanded="false" *ngIf="authService.logado() || authService.logadoFuncionario()">Olá, {{nome}}</a>
                     <ul class="dropdown-menu mr-5">
-                        <li><a class="dropdown-item" data-bs-toggle="modal" *ngIf="authService.logado() == false"
+                        <li><a class="dropdown-item" data-bs-toggle="modal" *ngIf="authService.logado() == false && authService.logadoFuncionario() == false"
                             data-bs-target="#loginModal">Entrar</a></li>
-                        <li><a class="dropdown-item" data-bs-toggle="modal" *ngIf="authService.logado() == false"
+                        <li><a class="dropdown-item" data-bs-toggle="modal" *ngIf="authService.logado() == false && authService.logadoFuncionario() == false"
                             data-bs-target="#modalCadastro">Fazer Cadastro</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" [routerLink]="['/endereco', clienteLogin.id_cliente]" >Meus Endereços</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" [routerLink]="['/minha-conta', idCliente]" >Atualizar Cadastro</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logadoFuncionario()" routerLink="/funcionario">Livros</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logadoFuncionario()" routerLink="/funcionario">Tela do Funcionario</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="/meus-pedidos">Meus Pedidos</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logado()" (click)="sair()" routerLink="/home">Sair</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logado() || authService.logadoFuncionario()" (click)="sair()" routerLink="/home">Sair</a></li>
                     </ul>
                     
                 </li>
-                <a routerLink="/carrinho" class="carrinho"><img src="assets/img/carrinho.png"></a>
+                <a *ngIf="authService.logadoFuncionario() == false" routerLink="/carrinho" class="carrinho"><img src="assets/img/carrinho.png"></a>
             </div>
         </ul>
     </nav>

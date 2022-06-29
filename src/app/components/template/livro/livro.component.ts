@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Livros } from 'src/app/model/Livros';
+import { AuthService } from 'src/app/service/auth.service';
 import { LivrosService } from 'src/app/service/livros.service';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
@@ -17,7 +18,8 @@ export class LivroComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private livrosService: LivrosService
+    private livrosService: LivrosService,
+    public authService: AuthService
     ) { }
 
   ngOnInit(){

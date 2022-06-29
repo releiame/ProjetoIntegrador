@@ -5,6 +5,7 @@ import { Livros } from 'src/app/model/Livros';
 import { EtiquetaService } from 'src/app/service/etiqueta.service';
 import { LivrosService } from 'src/app/service/livros.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',

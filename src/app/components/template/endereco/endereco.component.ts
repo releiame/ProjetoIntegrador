@@ -5,6 +5,7 @@ import { Endereco } from 'src/app/model/Endereco';
 import { AuthService } from 'src/app/service/auth.service';
 import { EnderecoService } from 'src/app/service/endereco.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-endereco',
@@ -28,18 +29,19 @@ export class EnderecoComponent implements OnInit {
 
   ngOnInit() {
     this.idCliente = this.route.snapshot.params['id_cliente']
-    console.log(this.idCliente)
-    console.log(environment.id_cliente)
-    this.findByIdCliente()
+    
+    this.getAllEndereco()
+    this.findClienteById(environment.id_cliente)
   }
 
-  findByIdCliente(){
-    this.authService.getClienteById(this.idCliente).subscribe((resp: Cliente) =>{
+  findClienteById(id_cliente: number){
+    this.authService.getClienteById(id_cliente).subscribe((resp: Cliente) => {
       this.cliente = resp
     })
   }
 
   getAllEndereco(){
+
     this.enderecoService.getAllLivros().subscribe((resp: Endereco[]) =>{
       this.listaEndereco = resp
     })
@@ -52,7 +54,21 @@ export class EnderecoComponent implements OnInit {
     this.enderecoService.adicionar(this.endereco).subscribe((resp: Endereco) =>{
       this.endereco = resp
       this.router.navigate(['/minha-conta'])
-      alert('Endereço cadastrado com sucesso')
+      Swal.fire({
+        title: ' Endereço cadastrado!',
+        icon: 'success'
+      })
+      this.getAllEndereco()
+    })
+  }
+
+  apagar(id_endereco: number){
+    this.enderecoService.delete(id_endereco).subscribe(() =>{
+      Swal.fire({
+        title: ' Endereço apagado!',
+        icon: 'success'
+      })
+      this.getAllEndereco()
     })
   }
 
