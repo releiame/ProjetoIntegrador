@@ -26,10 +26,10 @@
     <div class="row g-3 mt-3 d-flex justify-content-around">
         <div class="col-md-3">
             <label for="pagamento" class="form-label">Selecione a forma de pagamento:</label>
-            <select id="pagamento" class="form-select" (change)='tipoPagamento($event)'>
-                <option value="boleto">Boleto</option>
-                <option value="credito">Cartão de Crédito</option>
-                <option value="debito">Cartão de Débito</option>
+            <select id="pagamento" name="pagamento" class="form-control" (change)='tipoPagamento($event)'>
+                <option value="Boleto">Boleto</option>
+                <option value="Cartão de Crédito">Cartão de Crédito</option>
+                <option value="Cartão de Débito">Cartão de Débito</option>
             </select>
             <div>
                 <h3>Valor total: {{soma | currency:  'BRL'}}</h3>

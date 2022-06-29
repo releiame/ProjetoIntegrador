@@ -32,6 +32,8 @@
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Obrigado pela sua preferencia, seu pedido acaba de ser concluido</li>
           <li class="list-group-item">Pedido N°: {{pedido.id_pedido}}</li>
+          <li class="list-group-item">Valor Total: {{pedido.valorTotal | currency: 'BRL'}</li>
+          <li class="list-group-item">Tipo de Pagamento: {{pedido.tipo}</li>
           <li class="list-group-item">Local de entrega: {{endereco.rua}}, n° {{endereco.numero}}</li>
           <li class="list-group-item">Total do frete: GRÁTIS</li>
         </ul>
