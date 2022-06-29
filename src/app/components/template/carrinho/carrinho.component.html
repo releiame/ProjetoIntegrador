@@ -26,8 +26,8 @@
     <div class="d-flex justify-content-center">
         <h2 class="my-4">Meu Carrinho</h2>
     </div>
-  
-  
+
+
     <table class="table table-borderless borda align-middle">
         <thead class="vermelho text-light">
             <tr>
@@ -42,17 +42,22 @@
                 <th class="d-flex align-items-center">
                     <img class="img-thumbnail tam me-4" src={{livro.capa}} />
                 </th>
-                <td>{{livro.valorUnitario |  currency : 'BRL'}}</td>
+                <td>{{livro.valorUnitario | currency : 'BRL'}}</td>
                 <td>{{livro.titulo}}</td>
-                <td><a (click)="removerLivro(livro)">Remover</a></td>
+                <td><a (click)="removerLivro(livro)" href=""><img src="../../../../assets/img/lata-de-lixo.png" /></a>
+                </td>
             </tr>
             <th>
-                <button class="btn btn-outline-secondary" (click)="criarPedido()">Finalizar Pedido</button>
+                <button class="btn btn-sm btn-outline-secondary m-1" routerLink="/home">Adicionar mais itens ao
+                    carrinho</button>
             </th>
         </tbody>
     </table>
-  
-  <!-- AQUI VAI SER O PESQUISAR CEP E PREÇO TOTAL E BOTÃO DE FINALIZAR PEDIDO
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-success btn-lg" (click)="criarPedido()">Finalizar Pedido</button>
+    </div>
+
+    <!-- AQUI VAI SER O PESQUISAR CEP E PREÇO TOTAL E BOTÃO DE FINALIZAR PEDIDO
     <div class="d-flex justify-content-between">
   
             <div class="card tam-card">
@@ -112,4 +117,4 @@
                 </th>
             </tr>
         </tbody>-->
-  </div>
+</div>
