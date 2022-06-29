@@ -134,6 +134,9 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/cliente/atualizar").permitAll()
 		.antMatchers("/cliente/{id_cliente}").permitAll()
 		
+		.antMatchers("/endereco").permitAll()
+		.antMatchers("/endereco/adicionar").permitAll()
+		
 		.antMatchers("/etiqueta/listartodos").permitAll()
 		.antMatchers("/etiqueta/{id_etiqueta}").permitAll()
 		

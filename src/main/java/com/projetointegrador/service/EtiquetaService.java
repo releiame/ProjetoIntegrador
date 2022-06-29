@@ -23,19 +23,5 @@ public class EtiquetaService {
 	
 	@Autowired
 	private EtiquetaRepository etiquetaRepository;
-	
-	@Autowired
-	private EnderecoRepository repository;
-	
-	public Optional<Endereco> cadastrar(Endereco endereco){
-		System.out.println("endereco: " + endereco.getId());
-		Optional<Endereco> end = repository.findById(endereco.getId());
-		
-		if(end.isPresent()) {
-			repository.save(end.get());
-		}
-		
-		return null;
-	}
 
 }

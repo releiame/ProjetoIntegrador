@@ -8,6 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -15,45 +16,50 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table (name = "tb_endereco")
 public class Endereco {
 	
-	@Id //Indicando que é a chave primaria
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private long id_endereco;
 	
 	@NotNull
+	@Size(min = 5, max = 15)
 	private String cep;
 	
 	@NotNull
 	private int numero;
-
+	
+	@NotNull
 	private String complemento;
 	
 	@NotNull
+	@Size(min = 5, max = 50)
 	private String bairro;
 	
 	@NotNull
+	@Size(min = 5, max = 50)
 	private String rua;
 	
 	@NotNull
+	@Size(min = 5, max = 50)
 	private String cidade;
 	
 	@NotNull
-	private String apelido;
+	private String nome_endereco;
 	
-	@ManyToOne
-	@JsonIgnoreProperties({"id_cliente","senha","pedido","endereco"})
+	@ManyToOne //Indicando que é um relacionamento "muitos para um"
+	@JsonIgnoreProperties("endereco")
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 	
 	//CRIANDO OS GETTERS E SETTERS
 
-	public Long getId() {
-		return id;
+	public long getId_endereco() {
+		return id_endereco;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId_endereco(long id_endereco) {
+		this.id_endereco = id_endereco;
 	}
-	
+
 	public String getCep() {
 		return cep;
 	}
@@ -102,12 +108,12 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 
-	public String getApelido() {
-		return apelido;
+	public String getNome_endereco() {
+		return nome_endereco;
 	}
 
-	public void setApelido(String apelido) {
-		this.apelido = apelido;
+	public void setNome_endereco(String nome_endereco) {
+		this.nome_endereco = nome_endereco;
 	}
 
 	public Cliente getCliente() {

@@ -15,11 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.projetointegrador.model.Cliente;
 import com.projetointegrador.model.Endereco;
-import com.projetointegrador.repository.ClienteRepository;
 import com.projetointegrador.repository.EnderecoRepository;
-import com.projetointegrador.service.EtiquetaService;
 
 @RestController
 @RequestMapping("/endereco")
@@ -29,17 +26,14 @@ public class EnderecoController {
 	@Autowired
 	private EnderecoRepository repository;
 	
-	@Autowired
-	private ClienteRepository repositoryCliente;
-	
 	@GetMapping
 	public ResponseEntity<List<Endereco>>GetAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
-	@GetMapping("/{id}")
-	public ResponseEntity<Endereco> GetById(@PathVariable long id){
-		return repository.findById(id)
+	@GetMapping("/{id_endereco}")
+	public ResponseEntity<Endereco> GetById(@PathVariable long id_endereco){
+		return repository.findById(id_endereco)
 				.map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.notFound().build());
 	}
@@ -51,19 +45,17 @@ public class EnderecoController {
 	
 	@PostMapping("/adicionar")
 	public ResponseEntity<Endereco> post (@RequestBody Endereco endereco){
-		Cliente cliente = repositoryCliente.getById(endereco.getCliente().getId_cliente());
-		endereco.setCliente(cliente);
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(endereco));
 	}
 	
-	@PutMapping("/alterar")
+	@PutMapping
 	public ResponseEntity<Endereco> put (@RequestBody Endereco endereco){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(endereco));
 	}
 	
-	@DeleteMapping("/deletar/{id}")
-	public void delete(@PathVariable long id) {
-		repository.deleteById(id);
+	@DeleteMapping("/{id_endereco}")
+	public void delete(@PathVariable long id_endereco) {
+		repository.deleteById(id_endereco);
 	}
 	
 }
