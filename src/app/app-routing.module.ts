@@ -15,6 +15,8 @@ import { CadastrarLivroComponent } from "./components/template/cadastrar-livro/c
 import { DeletarLivroComponent } from "./components/template/deletar-livro/deletar-livro.component";
 import { EnderecoComponent } from "./components/template/endereco/endereco.component";
 import { MeusPedidosComponent } from "./components/template/meus-pedidos/meus-pedidos.component";
+import { CadEnderecoComponent } from "./components/template/cad-endereco/cad-endereco.component";
+import { PagamentoComponent } from "./components/template/pagamento/pagamento.component";
 
 // --------------Substituir # por nome das respectivas classes-------------
 
@@ -35,7 +37,9 @@ const routes: Routes = [
     {path: 'cadastrar-livro', component:CadastrarLivroComponent},
     {path: 'deletar-livro/:id_livros', component:DeletarLivroComponent},
     {path: 'endereco/:id_cliente', component:EnderecoComponent},
-    {path: 'meus-pedidos', component:MeusPedidosComponent}
+    {path: 'meus-pedidos', component:MeusPedidosComponent},
+    {path: 'cad-endereco', component:CadEnderecoComponent},
+    {path: 'pagamento', component:PagamentoComponent}
     // {path: 'trocar-devolver', component:#},
     
 ];

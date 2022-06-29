@@ -47,12 +47,7 @@ export class FooterComponent implements OnInit {
     this.authService.cadastrarfuncionario(this.funcionario).subscribe((resp: Funcionario) => {
       this.funcionario = resp
       this.router.navigate(['/home'])
-      Swal.fire({
-        position: 'top',
-        icon: 'success',
-        title: 'Funcionario cadastrado com sucesso!',
-        showConfirmButton: true
-      })
+      Swal.fire('Funcionario cadastrado com sucesso!')
     })
   }
 

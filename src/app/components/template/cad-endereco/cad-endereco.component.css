@@ -1,0 +1,37 @@
+a {
+    text-decoration: none;
+}
+
+* {
+    list-style: none;
+}
+
+.carrinho {
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, transparent 0%, #c10000, transparent 100%) 1 100%; 
+}
+
+.traco {
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.borda {
+    border: 1px solid #ccc;
+    width: 300px;
+}
+.tam {
+    width: auto;
+    height: 90px;
+}
+
+#qtdItem {
+    width: 9vh;
+  }
+.lixo:hover {
+    opacity: 40%;
+}
+
+.tam-card {
+    width: 39rem;
+    background-color: beige;
+}

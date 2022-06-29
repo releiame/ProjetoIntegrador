@@ -1,0 +1,131 @@
+<div class="container">
+    <!--menu-->
+    <div class="nav justify-content-evenly h5 py-3 traco">
+        <div class="nav-item">
+            <ul class="nav-link text-center opacity-25 " aria-current="page" href="#">
+                <a routerLink="#">
+                    <li><img src="../../../../assets/img/carrinho_preto.png" /></li>
+                    <li class="text-dark">Carrinho</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav-item text-center carrinho">
+            <ul class="nav-link text-dark">
+                <li><img src="../../../../assets/img/caminhao-bau.png" /></li>
+                <li>Entrega</li>
+            </ul>
+        </div>
+        <div class="nav-item opacity-25 text-center">
+            <ul class="nav-link text-dark">
+                <li><img src="../../../../assets/img/conta.png" /></li>
+                <li>Pagamento</li>
+            </ul>
+        </div>
+    </div>
+    <!--conteúdo-->
+    <div class="row g-3 mt-3 d-flex justify-content-around">
+        <div class="col-md-6"><h4>Cadastro de endereço</h4>
+            <form class="row g-3">
+                <div class="col-12">
+                    <label for="tituloEndereco" class="form-label"><h6>Título</h6></label>
+                    <input type="text" class="form-control" id="tituloEndereco" placeholder="Ex: Casa, Trabalho...">
+                </div>
+                <div class="col-md-12">
+                    <label for="nomeEndereco" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control" id="nomeEndereco" placeholder="Maria da Silva">
+                </div>
+                <div class="col-10">
+                    <label for="logradouroEndereco" class="form-label">Logradouro</label>
+                    <input type="text" class="form-control" id="logradouroEndereco" placeholder="Rua das Rosas">
+                </div>
+                <div class="col-2">
+                    <label for="numeroEndereco" class="form-label">Número</label>
+                    <input type="text" class="form-control" id="numeroEndereco" placeholder="123">
+                </div>
+                <div class="col-6">
+                    <label for="complementoEndereco" class="form-label">Complemento</label>
+                    <input type="text" class="form-control" id="complementoEndereco"
+                        placeholder="Apartamento, Torre, Casa C">
+                </div>
+                <div class="col-md-6">
+                    <label for="bairroEndereco" class="form-label">Bairro</label>
+                    <input type="text" class="form-control" id="bairroEndereco" placeholder="Jardim das Flores">
+                </div>
+                <div class="col-md-5">
+                    <label for="cidadeEndereco" class="form-label">Cidade</label>
+                    <input type="text" class="form-control" id="cidadeEndereco" placeholder="São Paulo">
+                </div>
+                <div class="col-md-2">
+                    <label for="estadoEndereco" class="form-label">Estado</label>
+                    <select id="estadoEndereco" class="form-select">
+                        <option selected>SP</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <label for="cepEndereco" class="form-label">CEP</label>
+                    <input type="text" class="form-control" id="cepEndereco">
+                </div>
+                
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary">Cadastrar Endereço</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-5 ms-2">
+            <h4>Meus Endereços</h4>
+            <div class="form-check py-2">
+                <input class="form-check-input" type="radio" id="address">
+                <h6>Casa</h6>
+                <label class="form-check-label borda p-2" for="address">
+                    <div>Maria da Silva</div>
+                    <div>Rua Coronel Euclides Machado, 235</div>
+                    <div>Ap 37 Torre 3, Jardim das Graças</div>
+                    <div> São Paulo - SP - 02713-000</div>
+                </label>
+            </div>
+
+            <div class="form-check py-2">
+                <input class="form-check-input" type="radio" id="address">
+                <h6>Trabalho</h6>
+                <label class="form-check-label borda p-2" for="address">
+                    <div>Maria da Silva</div>
+                    <div>Rua Coronel Euclides Machado, 235</div>
+                    <div>Ap 37 Torre 3, Jardim das Graças</div>
+                    <div> São Paulo - SP - 02713-000</div>
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-success btn-lg" routerLink="/pagamento">Pagamento</button> <!--(click)="criarPedido()"-->
+    </div>
+
+</div>

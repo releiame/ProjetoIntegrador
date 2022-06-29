@@ -79,10 +79,7 @@ export class CarrinhoComponent implements OnInit {
     }else if(this.listaLivros.length > 0){
       this.pedidoService.post(this.pedido).subscribe((resp: Pedido) =>{
         this.pedido = resp
-        Swal.fire({
-          title: 'Pedido feito!',
-          icon: 'success'
-        })
+        Swal.fire('Pedido feito!')
         this.listaLivros = []
         environment.carrinho = [0]
         this.router.navigate(['/home'])
@@ -96,6 +93,6 @@ export class CarrinhoComponent implements OnInit {
     this.listaLivros.splice(index, 1)
     environment.carrinho.splice(index, 1)
     this.carrinho.splice(index, 1)
-    alert('Livro removido')
+    Swal.fire('Livro removido')
   }
 }

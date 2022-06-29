@@ -54,20 +54,14 @@ export class EnderecoComponent implements OnInit {
     this.enderecoService.adicionar(this.endereco).subscribe((resp: Endereco) =>{
       this.endereco = resp
       this.router.navigate(['/minha-conta'])
-      Swal.fire({
-        title: ' Endereço cadastrado!',
-        icon: 'success'
-      })
+      Swal.fire('Endereço cadastrado!')
       this.getAllEndereco()
     })
   }
 
   apagar(id_endereco: number){
     this.enderecoService.delete(id_endereco).subscribe(() =>{
-      Swal.fire({
-        title: ' Endereço apagado!',
-        icon: 'success'
-      })
+      Swal.fire('Endereço apagado!')
       this.getAllEndereco()
     })
   }
