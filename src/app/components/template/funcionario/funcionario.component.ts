@@ -113,7 +113,6 @@ export class FuncionarioComponent implements OnInit {
       alert('Tag cadastrada com sucesso')
       this.etiqueta = new Etiqueta()
       this.getAllEtiquetas()
-      window.location.reload()
     })
   }
 }
