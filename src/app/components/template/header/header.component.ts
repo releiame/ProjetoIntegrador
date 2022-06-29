@@ -71,6 +71,10 @@ export class HeaderComponent implements OnInit {
         title: 'Cadastro realizado com sucesso!',
         showConfirmButton: true
       })
+      this.cliente.senha = ''
+      this.cliente.dataNascimento = new Date()
+      this.cliente.email = ''
+      this.cliente.nome = ''
     })
   }
 

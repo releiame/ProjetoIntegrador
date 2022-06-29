@@ -3,11 +3,10 @@
     <div class="d-flex justify-content-end pt-5">
         <div class="col-md-3">
             <select id="ordenarPor" class="form-select">
-                <option disabled selected>Ordenar por</option>
-                <option>Todos</option>
-                <option>Data de lançamento</option>
-                <option>Maior preço</option>
-                <option>Menor preço</option>
+                <option>Ordenar por</option>
+                <option ng-selected="sortBy('titulo')" ng-show="propertyName === 'titulo'" >Ordem alfabética</option>
+                <option value="maiorPreco">Maior preço</option>
+                <option value="menorPreco" >Menor preço</option>
             </select>
         </div>
     </div>
@@ -15,7 +14,7 @@
         <!--Cards-->
         <div class="row d-flex justify-content-around">
             <!--card-->
-            <div class="card cartao border-0 espaco p-3" *ngFor="let item of listaLivros">
+            <div class="card cartao border-0 espaco p-3" *ngFor="let item of listaLivros" ng-repeat="let item of listaLivros | orderBy:propertyName:reverse">
                 <a [routerLink]="['/livro', item.id_livros]">
                     <img src="{{item.capa}}" alt="{{item.descricao}}" class="card-img-top">
                 </a>

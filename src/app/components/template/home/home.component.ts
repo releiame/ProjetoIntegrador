@@ -41,4 +41,8 @@ export class HomeComponent implements OnInit {
       this.listaTags = resp
     })
   }
+
+  ordenar(){
+
+  }
 }
