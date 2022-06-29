@@ -39,6 +39,8 @@ public class Pedido {
 	
 	private Double valorTotal;
 	
+	private String tipo;
+	
 	@UpdateTimestamp
 	private LocalDateTime data;
 
@@ -80,6 +82,14 @@ public class Pedido {
 
 	public void setLivros(List<Livros> livros) {
 		this.livros = livros;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	
 }

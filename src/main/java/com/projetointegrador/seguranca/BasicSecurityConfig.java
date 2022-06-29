@@ -136,6 +136,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		.antMatchers("/endereco").permitAll()
 		.antMatchers("/endereco/adicionar").permitAll()
+		.antMatchers("/endereco/{id_endereco}").permitAll()
 		
 		.antMatchers("/etiqueta/listartodos").permitAll()
 		.antMatchers("/etiqueta/{id_etiqueta}").permitAll()
@@ -148,6 +149,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 		.antMatchers("/funcionario/cadastrar_funcionario").permitAll()
 		
 		.antMatchers("/pedidos").permitAll()
+		.antMatchers("/pedidos/{id_pedido}").permitAll()
 		
 		.antMatchers(HttpMethod.OPTIONS).permitAll()
 		.anyRequest().authenticated()
