@@ -10,22 +10,15 @@
   <!--card-->
   <ng-container *ngFor="let i of listaLivros">
     <div class="card border-0 espaco p-3" *ngIf="i.etiqueta.id_etiqueta == etiqueta.id_etiqueta">
-      <div
-        class="card cartao border-0 espaco p-3"
-        
-      >
+      <div class="card cartao border-0 espaco p-3">
         <a [routerLink]="['/livro', i.id_livros]">
-          <img
-            src="{{ i.capa }}"
-            alt="{{ i.descricao }}"
-            class="card-img-top"
-          />
+          <img src="{{ i.capa }}" alt="{{ i.descricao }}" class="card-img-top" />
         </a>
         <div class="my-2">
           <div class="d-flex justify-content-around">
             <a href="#" name="eti" class="badge bg-success filtro-badge">{{
               i.etiqueta.nome
-            }}</a>
+              }}</a>
           </div>
         </div>
         <div class="py-3">
@@ -34,24 +27,12 @@
           </div>
           <div class="d-flex justify-content-center">
             <p>
-              <small
-                ><em
-                  ><del class="del">{{
+              <small><em><del class="del">{{
                     i.valorUnitario * 2 | currency: "BRL"
-                  }}</del></em
-                ></small
-              >
+                    }}</del></em></small>
               <strong>{{ i.valorUnitario | currency: "BRL" }}</strong>
             </p>
           </div>
-        </div>
-        <div class="d-flex justify-content-center">
-          <p>
-            <small
-              >Qtde. Estoque: <strong>{{ i.qtdeEstoque }}</strong></small
-            >
-          </p>
-          <div class="d-flex mb-3"></div>
         </div>
       </div>
     </div>

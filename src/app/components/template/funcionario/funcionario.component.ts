@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/service/auth.service';
 import { EtiquetaService } from 'src/app/service/etiqueta.service';
 import { LivrosService } from 'src/app/service/livros.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-funcionario',
@@ -110,7 +111,12 @@ export class FuncionarioComponent implements OnInit {
     this.etiquetaService.cadastrar(this.etiqueta).subscribe((resp: Etiqueta) => {
       this.etiqueta = resp
       this.router.navigate(['/funcionario'])
-      alert('Tag cadastrada com sucesso')
+      Swal.fire({
+        position: 'top',
+        icon: 'success',
+        title: 'Livro cadastrado com sucesso!',
+        showConfirmButton: true
+      })
       this.etiqueta = new Etiqueta()
       this.getAllEtiquetas()
       window.location.reload()

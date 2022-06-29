@@ -14,7 +14,6 @@ import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conos
 import { HomeComponent } from './components/template/home/home.component';
 import { CarrinhoComponent } from './components/template/carrinho/carrinho.component';
 
-import { DevsComponent } from './components/modal/devs/devs.component';
 import { HeaderComponent } from './components/template/header/header.component';
 import { MinhaContaComponent } from './components/template/minha-conta/minha-conta.component';
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -39,7 +38,6 @@ import { MeusPedidosComponent } from './components/template/meus-pedidos/meus-pe
     RodapeComponent,
     HomeComponent,
     CarrinhoComponent,
-    DevsComponent,
     HeaderComponent,
     MinhaContaComponent,
     FooterComponent,

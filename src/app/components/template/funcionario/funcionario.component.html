@@ -1,32 +1,22 @@
 <div class="container-fluid">
   <div class="mt-1">
-    <a class="btn btn-outline-secondary" routerLink="/home">Voltar</a>
+    <a routerLink="/home"><i class="fa fa-home my-3"></i></a>
+    <i class="fa fa-angle-right mx-2"></i>
+    <small>Página de funcionários</small>
   </div>
-  <div class="row bg-light text-secondary d-flex align-items-center">
+  <div class="text-secondary d-flex align-items-center">
     <div class="col-md-5">
-      <div class="row d-flex justify-content-center">
+      <div class="d-flex justify-content-center">
         <div class="col-md-12 text-center ml-7">
-          <h1 class="fs-54">Olá, {{ nomeFuncionario }}</h1>
-          <h5 class="fs-18">Pagina dos funcionarios</h5>
+          <h1 class="fs-54">Olá, {{ nomeFuncionario }}.</h1>
         </div>
       </div>
 
-      <div class="row d-flex justify-content-center mt-3 mb-5">
-        <div class="col-md-6">
-          <a class="btn btn-outline-secondary" href="#livro">Ver Livros</a>
-          <a
-            class="btn btn-outline-secondary"
-            id="novoLivro"
-            routerLink="/cadastrar-livro"
-            >Novo Livro</a
-          >
-          <a
-            class="btn btn-outline-secondary"
-            id="novaTag"
-            data-bs-toggle="modal"
-            data-bs-target="#modalTag"
-            >Nova Tag</a
-          >
+      <div class="d-flex justify-content-center my-3 ">
+        <div class="d-flex justify-content-center mx-2">
+          <a class="btn btn-outline-secondary" id="novoLivro" routerLink="/cadastrar-livro">Novo Livro</a>
+          <a class="btn btn-outline-secondary" id="novaTag" data-bs-toggle="modal" data-bs-target="#modalTag">Nova
+            Tag</a>
         </div>
       </div>
     </div>
@@ -34,53 +24,84 @@
     <div class="col-md-7 d-flex justify-content-center mb-5">
       <img
         src="https://i0.wp.com/www.olivroaberto.com.br/wp-content/uploads/2015/11/livro-sonho.jpg?fit=1125%2C916&ssl=1"
-        alt=""
-        width="600px"
-        height="600px"
-      />
+        alt="" width="600px" height="600px" />
     </div>
   </div>
 </div>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Todos os Livros</button>
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
+      aria-controls="home" aria-selected="true">Todos os Livros</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button (click)="findByFuncionarioId(funcionario.id_funcionario)" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Meus Livros Cadastrados</button>
+    <button (click)="findByFuncionarioId(funcionario.id_funcionario)" class="nav-link" id="profile-tab"
+      data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+      aria-selected="false">Meus Livros Cadastrados</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Livros por titulo</button>
+    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
+      aria-controls="contact" aria-selected="false">Livros por titulo</button>
   </li>
   <li class="nav-item" role="tags">
-    <button class="nav-link" id="tag-tab" data-bs-toggle="tab" data-bs-target="#tags" type="button" role="tab" aria-controls="contact" aria-selected="false">Tags cadastradas</button>
+    <button class="nav-link" id="tag-tab" data-bs-toggle="tab" data-bs-target="#tags" type="button" role="tab"
+      aria-controls="contact" aria-selected="false">Tags cadastradas</button>
   </li>
 </ul>
+
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <div class="card-columns">
-      <div class="card text-center"
-      *ngFor='let item of listaLivros'>
+      <table class="table">
+        <thead class="table-dark">
+          <tr >
+            <th scope="col">Título</th>
+            <th scope="col">ID</th>
+            <th scope="col">Autor(a)</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Tag</th>
+            <th scope="col">Estoque</th>
+            <th scope="col">Funcionário</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let item of listaLivros'>
+            <th>{{item.titulo}}</th>
+            <td>{{item.id_livros}}</td>
+            <td>{{item.autor}}</td>
+            <td>{{item.isbn}}</td>
+            <td>{{item.valorUnitario | currency : 'BRL'}}</td>
+            <td>{{item.etiqueta.nome}}</td>
+            <td>{{item.qtdeEstoque}}</td>
+            <td>{{item.funcionario.nome}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--<div class="card text-center" *ngFor='let item of listaLivros'>
         <div class="card-body">
           <h5 class="card-title m-0">{{item.titulo}}</h5>
           <small class="text-muted"> ID: {{item.id_livros}}</small>
-          <small class="text-muted"> Tema: {{item.autor}}</small>
+          <small class="text-muted"> Autor(a): {{item.autor}}</small>
           <p class="card-text mt-3">Valor: {{item.valorUnitario | currency : 'BRL'}}</p>
           <p class="card-text">ISBN: {{item.isbn}}</p>
           <p class="card-text">Estoque: {{item.qtdeEstoque}}</p>
           <p class="card-text"><small class="text-muted">
-            by: {{item.funcionario.nome}}
-          </small></p>
+              by: {{item.funcionario.nome}}
+            </small></p>
           <p class="card-text"><small class="text-muted">Tag: {{item.etiqueta.nome}}</small></p>
         </div>
-      </div>
+      </div>-->
+      
     </div>
   </div>
+
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="card-columns">
       <div class="card text-center" *ngFor='let item of listaLivros'>
         <div class="card-body" *ngIf="item.funcionario.id_funcionario == idFuncionario">
           <h5 class="card-title m-0">{{item.titulo}}</h5>
-          <small class="text-muted"> Tema: {{item.autor}}</small>
+          <small class="text-muted"> Autor(a): {{item.autor}}</small>
           <p class="card-text mt-3">Valor: {{item.valorUnitario | currency : 'BRL'}}</p>
           <p class="card-text">ISBN: {{item.isbn}}</p>
           <p class="card-text">Estoque: {{item.qtdeEstoque}}</p>
@@ -90,31 +111,32 @@
       </div>
     </div>
   </div>
+
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-      <div class="row d-flex justify-content-center mt-5 mb-5">
-        <div class="col-md-4">
-          <div class="form-group">
-            <input type="text" class="form-control" id="titulo" placeholder="Digite um nome para pesquisar" [(ngModel)]='tituloLivro' (keyup)='findByTituloLivro()'>
-          </div>
+    <div class="row d-flex justify-content-center mt-5 mb-5">
+      <div class="col-md-4">
+        <div class="form-group">
+          <input type="text" class="form-control" id="titulo" placeholder="Digite um nome para pesquisar"
+            [(ngModel)]='tituloLivro' (keyup)='findByTituloLivro()'>
         </div>
       </div>
-      <div class="card-columns" *ngFor='let item of listaLivros'>
-        <div class="card text-center">
-          <div class="card-body">
-            <h5 class="card-title m-0">{{item.titulo}}</h5>
-            <small class="text-muted"> Tema: {{item.autor}}</small>
-            <p class="card-text mt-3">Valor: {{item.valorUnitario | currency : 'BRL'}}</p>
-            <p class="card-text">ISBN: {{item.isbn}}</p>
-            <p class="card-text">Estoque: {{item.qtdeEstoque}}</p>
-            <p class="card-text">Tag: {{item.etiqueta.nome}}</p>
-          </div>
+    </div>
+    <div class="card-columns" *ngFor='let item of listaLivros'>
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title m-0">{{item.titulo}}</h5>
+          <small class="text-muted"> Autor(a): {{item.autor}}</small>
+          <p class="card-text mt-3">Valor: {{item.valorUnitario | currency : 'BRL'}}</p>
+          <p class="card-text">ISBN: {{item.isbn}}</p>
+          <p class="card-text">Estoque: {{item.qtdeEstoque}}</p>
+          <p class="card-text">Tag: {{item.etiqueta.nome}}</p>
         </div>
       </div>
+    </div>
   </div>
   <div class="tab-pane fade" id="tags" role="tabpanel" aria-labelledby="tag-tab">
     <div class="card-columns">
-      <div class="card text-center"
-      *ngFor='let item of listaEtiquetas'>
+      <div class="card text-center" *ngFor='let item of listaEtiquetas'>
         <div class="card-body">
           <h5 class="card-title m-0">{{item.nome}}</h5>
         </div>
@@ -126,33 +148,30 @@
 <!--Modal Tag-->
 <div class="modal" id="modalTag">
   <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+    <div class="modal-content">
 
-          <!--Modal Header-->
-          <div class="modal-header">
-              <h4 class="modal-title">Cadastre uma Etiqueta nova</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-
-          <!--Modal Body-->
-          <form class="needs-validation" novalidate>
-              <div class="p-4">
-                  <div class="mb-3">
-                      <label for="emailLogin" class="form-label">Nome</label>
-                      <input [(ngModel)]='etiqueta.nome' name="nome" type="name" class="form-control"
-                          placeholder="Digite o nome da tag" id="nome" aria-describedby="nome">
-                  </div>
-              </div>
-          </form>
-           <!--Modal Footer-->
-          <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
-              <button
-            type="button"
-            class="btn btn-success"
-            (click)="cadastrarTag()"
-            data-bs-dismiss="modal">Cadastrar</button>
-          </div>
+      <!--Modal Header-->
+      <div class="modal-header">
+        <h4 class="modal-title">Cadastre uma Etiqueta nova</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
+
+      <!--Modal Body-->
+      <form class="needs-validation" novalidate>
+        <div class="p-4">
+          <div class="mb-3">
+            <label for="emailLogin" class="form-label">Nome</label>
+            <input [(ngModel)]='etiqueta.nome' name="nome" type="name" class="form-control"
+              placeholder="Digite o nome da tag" id="nome" aria-describedby="nome">
+          </div>
+        </div>
+      </form>
+      <!--Modal Footer-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success" (click)="cadastrarTag()"
+          data-bs-dismiss="modal">Cadastrar</button>
+      </div>
+    </div>
   </div>
 </div>
