@@ -22,7 +22,12 @@ export class PedidoService {
   }
 
   post(pedido: Pedido):Observable<Pedido>{
-    console.log("CHEGOU NO SERVICE")
     return this.http.post<Pedido>('http://localhost:8080/pedidos', pedido)
   }
+
+  getPedidoById(id_pedido: number):Observable<Pedido>{
+    return this.http.get<Pedido>(`http://localhost:8080/pedidos/${id_pedido}`, this.token)
+  }
+
+
 }

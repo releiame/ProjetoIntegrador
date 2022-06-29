@@ -8,4 +8,5 @@ export class Pedido{
     public valorTotal: number
     public frete: number
     public data: Date
+    public tipo: String
 }

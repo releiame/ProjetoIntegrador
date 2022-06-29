@@ -11,14 +11,14 @@
         </div>
         <div class="nav-item opacity-25 text-center">
             <ul class="nav-link text-dark">
-                <li><img src="../../../../assets/img/forma-de-pagamento.png" /></li>
-                <li>Pagamento e Endereço</li>
+                <li><img src="../../../../assets/img/caminhao-bau.png" /></li>
+                <li>Entrega e Pagamento</li>
             </ul>
         </div>
         <div class="nav-item opacity-25 text-center">
             <ul class="nav-link text-dark">
                 <li><img src="../../../../assets/img/conta.png" /></li>
-                <li>Compra Finalizada</li>
+                <li>Finalização</li>
             </ul>
         </div>
     </div>
@@ -44,7 +44,7 @@
                 </th>
                 <td>{{livro.valorUnitario | currency : 'BRL'}}</td>
                 <td>{{livro.titulo}}</td>
-                <td><a (click)="removerLivro(livro)" href=""><img src="../../../../assets/img/lata-de-lixo.png" /></a>
+                <td><a (click)="removerLivro(livro)"><img src="../../../../assets/img/lata-de-lixo.png" /></a>
                 </td>
             </tr>
             <th>
@@ -54,7 +54,7 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-end">
-        <button class="btn btn-success btn-lg" (click)="criarPedido()">Finalizar Pedido</button>
+        <button class="btn btn-success btn-lg" (click)="entrega()">Entrega</button> <!--(click)="criarPedido()"-->
     </div>
 
     <!-- AQUI VAI SER O PESQUISAR CEP E PREÇO TOTAL E BOTÃO DE FINALIZAR PEDIDO

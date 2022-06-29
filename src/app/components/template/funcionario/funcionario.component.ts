@@ -111,12 +111,7 @@ export class FuncionarioComponent implements OnInit {
     this.etiquetaService.cadastrar(this.etiqueta).subscribe((resp: Etiqueta) => {
       this.etiqueta = resp
       this.router.navigate(['/funcionario'])
-      Swal.fire({
-        position: 'top',
-        icon: 'success',
-        title: 'Livro cadastrado com sucesso!',
-        showConfirmButton: true
-      })
+      Swal.fire('Livro cadastrado com sucesso!')
       this.etiqueta = new Etiqueta()
       this.getAllEtiquetas()
     })

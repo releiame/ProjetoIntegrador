@@ -1,3 +1,4 @@
+import { Livros } from "src/app/model/Livros";
 
 
 export const environment = {
@@ -13,6 +14,9 @@ export const environment = {
   id_livros: 0,
   id_etiqueta: 0,
   titulo: '',
-  valorArrecadado: 504.95
+  soma: 0,
+  divisao: 0,
+  id_endereco: 0,
+  id_pedido: 0
 };
 // aqui vão as variáveis globais

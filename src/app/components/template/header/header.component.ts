@@ -75,6 +75,7 @@ export class HeaderComponent implements OnInit {
       this.cliente.dataNascimento = new Date()
       this.cliente.email = ''
       this.cliente.nome = ''
+      Swal.fire('Cadastro realizado com sucesso!')
     })
   }
 
@@ -102,26 +103,11 @@ export class HeaderComponent implements OnInit {
       },erro => {
         if(erro.status == 500)
         {
-          Swal.fire({
-            position: 'top',
-            icon: 'error',
-            title: 'CODF ou senha incorretos!',
-            showConfirmButton: true
-          })
+          Swal.fire('CODF ou senha incorretos!')
         }else if(erro.status == 401){
-          Swal.fire({
-            position: 'top',
-            icon: 'error',
-            title: 'CODF ou senha incorretos!',
-            showConfirmButton: true
-          })
+          Swal.fire('CODF ou senha incorretos!')
         }else if(erro.status == 200){
-          Swal.fire({
-            position: 'top',
-            icon: 'success',
-            title: 'OK',
-            showConfirmButton: true
-          })
+          Swal.fire('OK')
         }
       }      
       )
@@ -140,19 +126,9 @@ export class HeaderComponent implements OnInit {
       }, erro => {
         if(erro.status==500)
         {
-          Swal.fire({
-            position: 'top',
-            icon: 'error',
-            title: 'E-mail ou senha incorretos!',
-            showConfirmButton: true
-          })
+          Swal.fire('E-mail ou senha incorretos!')
         }else if(erro.status == 401){
-          Swal.fire({
-            position: 'top',
-            icon: 'error',
-            title: 'E-mail ou senha incorretos!',
-            showConfirmButton: true
-          })
+          Swal.fire('E-mail ou senha incorretos!')
         }
       }
       )

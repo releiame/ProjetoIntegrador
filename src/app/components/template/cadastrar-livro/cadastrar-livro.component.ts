@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/service/auth.service';
 import { EtiquetaService } from 'src/app/service/etiqueta.service';
 import { LivrosService } from 'src/app/service/livros.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cadastrar-livro',
@@ -91,10 +92,9 @@ export class CadastrarLivroComponent implements OnInit {
     this.livrosService.cadastrar(this.livro).subscribe((resp: Livros) =>{
       this.livro = resp
       this.router.navigate(['/funcionario'])
-      alert('Livro cadastrado com sucesso')
+      Swal.fire('Livro cadastrado com sucesso')
       this.livro = new Livros()
       this.getAllLivros()
     })
   }
-
 }

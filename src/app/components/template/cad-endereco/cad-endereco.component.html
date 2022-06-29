@@ -1,0 +1,81 @@
+<div class="container">
+    <!--menu-->
+    <div class="nav justify-content-evenly h5 py-3 traco">
+        <div class="nav-item">
+            <ul class="nav-link text-center opacity-25 " aria-current="page" href="#">
+                <a routerLink="/carrinho">
+                    <li><img src="../../../../assets/img/carrinho_preto.png" /></li>
+                    <li class="text-dark">Carrinho</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav-item text-center carrinho">
+            <ul class="nav-link text-dark">
+                <li><img src="../../../../assets/img/caminhao-bau.png" /></li>
+                <li>Entrega e Pagamento</li>
+            </ul>
+        </div>
+        <div class="nav-item opacity-25 text-center">
+            <ul class="nav-link text-dark">
+                <li><img src="../../../../assets/img/conta.png" /></li>
+                <li>Finalização</li>
+            </ul>
+        </div>
+    </div>
+    <!--conteúdo-->
+    <div class="row g-3 mt-3 d-flex justify-content-around">
+        <div class="col-md-3">
+            <label for="pagamento" class="form-label">Selecione a forma de pagamento:</label>
+            <select id="pagamento" class="form-select" (change)='tipoPagamento($event)'>
+                <option value="boleto">Boleto</option>
+                <option value="credito">Cartão de Crédito</option>
+                <option value="debito">Cartão de Débito</option>
+            </select>
+            <div>
+                <h3>Valor total: {{soma | currency:  'BRL'}}</h3>
+            </div>
+            <ng-container *ngIf="pagamento == 'credito'">
+                <label for="dividir" class="form-label">Quantas vezes deseja dividir?</label>
+                <select id="dividir" class="form-select" (change)='dividido($event)'>
+                    <option value=1>1x de {{soma | currency:  'BRL'}} sem juros</option>
+                    <option value=2>2x de {{soma/2 | currency:  'BRL'}} sem juros</option>
+                    <option value=3>3x de {{soma/3 | currency:  'BRL'}} sem juros</option>
+                    <option value=4>4x de {{soma/4 | currency:  'BRL'}} sem juros</option>
+                    <option value=5>5x de {{soma/5 | currency:  'BRL'}} sem juros</option>
+                </select>
+            </ng-container>
+        </div>
+        <div class="col-md-6 ms-2">
+            <h4>Selecione o endereço de entrega ou <a [routerLink]="['/endereco', idCliente]">cadastre um novo</a></h4>
+            <ng-container *ngFor="let item of listaEndereco">
+                <div class="form-check py-2" *ngIf="item.cliente.id_cliente == idCliente">
+                    <input class="form-check-input" type="radio" id="address" (change)='escolherEndereco($event)'  value="{{item.id_endereco}}">
+                    <h6>{{item.nome_endereco}}</h6>
+                    <label class="form-check-label borda p-2" for="address">
+                        <div>{{item.cliente.nome}}</div>
+                        <div>{{item.rua}}, {{item.numero}}</div>
+                        <div>{{item.complemento}}, {{item.bairro}}</div>
+                        <div>{{item.cidade}} - SP - {{item.cep}}</div>
+                    </label>
+                </div>
+            </ng-container>
+
+            <!--<div class="form-check py-2">
+                <input class="form-check-input" type="radio" id="address">
+                <h6>Trabalho</h6>
+                <label class="form-check-label borda p-2" for="address">
+                    <div>Maria da Silva</div>
+                    <div>Rua Coronel Euclides Machado, 235</div>
+                    <div>Ap 37 Torre 3, Jardim das Graças</div>
+                    <div> São Paulo - SP - 02713-000</div>
+                </label>
+            </div>-->
+
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-success btn-lg" (click)="criarPedido()">Finalizar Pedido</button> <!--(click)="criarPedido()"-->
+    </div>
+
+</div>

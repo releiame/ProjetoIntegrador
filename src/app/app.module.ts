@@ -8,7 +8,6 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { CarouselInicioComponent } from './components/template/carousel-inicio/carousel-inicio.component';
-import { RodapeComponent } from './components/template/rodape/rodape.component';
 
 import { FaleConoscoComponent } from './components/modal/fale-conosco/fale-conosco.component';
 import { HomeComponent } from './components/template/home/home.component';
@@ -27,6 +26,8 @@ import { DeletarLivroComponent } from './components/template/deletar-livro/delet
 import { OrderModule } from 'ngx-order-pipe';
 import { EnderecoComponent } from './components/template/endereco/endereco.component';
 import { MeusPedidosComponent } from './components/template/meus-pedidos/meus-pedidos.component';
+import { CadEnderecoComponent } from './components/template/cad-endereco/cad-endereco.component';
+import { PagamentoComponent } from './components/template/pagamento/pagamento.component';
 
 
 
@@ -35,7 +36,6 @@ import { MeusPedidosComponent } from './components/template/meus-pedidos/meus-pe
     AppComponent,
     CarouselInicioComponent,
     FaleConoscoComponent,
-    RodapeComponent,
     HomeComponent,
     CarrinhoComponent,
     HeaderComponent,
@@ -49,7 +49,9 @@ import { MeusPedidosComponent } from './components/template/meus-pedidos/meus-pe
     CadastrarLivroComponent,
     DeletarLivroComponent,
     EnderecoComponent,
-    MeusPedidosComponent
+    MeusPedidosComponent,
+    CadEnderecoComponent,
+    PagamentoComponent
 
   ],
   imports: [

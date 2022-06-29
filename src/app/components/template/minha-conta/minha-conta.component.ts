@@ -4,6 +4,7 @@ import { Cliente } from 'src/app/model/Cliente';
 import { Endereco } from 'src/app/model/Endereco';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-minha-conta',
@@ -43,7 +44,7 @@ export class MinhaContaComponent implements OnInit {
     this.cliente.id_cliente = environment.id_cliente
     this.authService.putCliente(this.cliente).subscribe((resp: Cliente)=>{
       this.cliente = resp
-      alert('Cadastro atualizado com sucesso')
+      Swal.fire('Cadastro atualizado com sucesso')
       this.router.navigate(['/home'])
     })
     

@@ -1,0 +1,40 @@
+<div class="container">
+    <!--menu-->
+    <div class="nav justify-content-evenly h5 py-3 traco">
+        <div class="nav-item">
+            <ul class="nav-link text-center opacity-25 " aria-current="page" href="#">
+                <a routerLink="/carrinho">
+                    <li><img src="../../../../assets/img/carrinho_preto.png" /></li>
+                    <li class="text-dark">Carrinho</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav-item text-center opacity-25">
+            <ul class="nav-link text-dark">
+                <a routerLink="/cad-endereco">
+                    <li><img src="../../../../assets/img/caminhao-bau.png" /></li>
+                    <li>Entrega e Pagamento</li>
+                </a>
+            </ul>
+        </div>
+        <div class="nav-item text-center carrinho">
+            <ul class="nav-link text-dark">
+                <li><img src="../../../../assets/img/conta.png" /></li>
+                <li>Finalização</li>
+            </ul>
+        </div>
+    </div>
+    <!--conteúdo-->
+    <div class="card justify-content-center" style="width: 18rem;">
+        <div class="card-header">
+          OBRIGADO
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Obrigado pela sua preferencia, seu pedido acaba de ser concluido</li>
+          <li class="list-group-item">Pedido N°: {{pedido.id_pedido}}</li>
+          <li class="list-group-item">Local de entrega: {{endereco.rua}}, n° {{endereco.numero}}</li>
+          <li class="list-group-item">Total do frete: GRÁTIS</li>
+        </ul>
+      </div>
+
+</div>

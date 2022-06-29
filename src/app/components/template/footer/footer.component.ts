@@ -15,7 +15,6 @@ import Swal from 'sweetalert2';
 export class FooterComponent implements OnInit {
 
   @Input() isHeader: boolean;
-  valorArrecadado: number
   listaTags: Etiqueta[]
 
   funcionario: Funcionario = new Funcionario
@@ -36,10 +35,6 @@ export class FooterComponent implements OnInit {
     })
   }
 
-  ngAfterContentChecked() {
-    this.valorArrecadado = environment.valorArrecadado
-  }
-
   cadastrarFuncionario() {
     console.log(this.funcionario.nome)
     console.log(this.funcionario.codf)
@@ -47,12 +42,7 @@ export class FooterComponent implements OnInit {
     this.authService.cadastrarfuncionario(this.funcionario).subscribe((resp: Funcionario) => {
       this.funcionario = resp
       this.router.navigate(['/home'])
-      Swal.fire({
-        position: 'top',
-        icon: 'success',
-        title: 'Funcionario cadastrado com sucesso!',
-        showConfirmButton: true
-      })
+      Swal.fire('Funcionario cadastrado com sucesso!')
     })
   }
 

@@ -5,6 +5,7 @@ import { Livros } from 'src/app/model/Livros';
 import { AuthService } from 'src/app/service/auth.service';
 import { LivrosService } from 'src/app/service/livros.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-deletar-livro',
@@ -42,7 +43,7 @@ export class DeletarLivroComponent implements OnInit {
 
   apagar(){
     this.livrosService.deleteLivros(this.idLivro).subscribe(() =>{
-      alert('Livro apagado!')
+      Swal.fire('Livro apagado!')
       this.router.navigate(['/cadastrar-livro'])
     })
   }
