@@ -119,7 +119,6 @@ export class FuncionarioComponent implements OnInit {
       })
       this.etiqueta = new Etiqueta()
       this.getAllEtiquetas()
-      window.location.reload()
     })
   }
 }

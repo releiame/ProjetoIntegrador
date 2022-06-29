@@ -15,16 +15,16 @@ import Swal from 'sweetalert2';
   styleUrls: ['./carrinho.component.css']
 })
 export class CarrinhoComponent implements OnInit {
-
   carrinho = environment.carrinho
   livro: Livros = new Livros()
   listaLivros:  Array<Livros> = []
+  
+  soma = 0
 
   pedido: Pedido = new Pedido()
 
   cliente: Cliente = new Cliente()
 
-  soma = 0
 
   constructor(
     private livrosService: LivrosService,
@@ -37,9 +37,10 @@ export class CarrinhoComponent implements OnInit {
     console.log("TAMANHO DO ENVIRONMENT CARRINHO: " + environment.carrinho)
     console.log("TAMANHO DO LISTALIVROS: " + this.listaLivros.length)
     console.log("TAMANHO DO CARRINHO NO PEDIDO: " + this.carrinho)
-    this.findClienteById(environment.id_cliente)
-    this.carrinhoAtt()
 
+    this.carrinhoAtt()
+    
+    this.findClienteById(environment.id_cliente)
   }
 
   findLivrosById(id_livros: number){
@@ -47,13 +48,11 @@ export class CarrinhoComponent implements OnInit {
       this.livro = resp
       this.soma += this.livro.valorUnitario
       this.listaLivros.push(this.livro)
-      console.log("LISTA LIVROS DEPOIS DO METODO FINDBYID: " + this.listaLivros)
-      console.log("TAMANHO DO LISTA LIVROS DEPOIS DO METODO FINDBYID: " + this.listaLivros.length)
     })
   }
 
   carrinhoAtt(){
-    for(let item of environment.carrinho){
+    for(let item in this.carrinho){
       if(this.carrinho[item]>0){
         let id = this.carrinho[item]
         this.findLivrosById(id)
@@ -81,7 +80,10 @@ export class CarrinhoComponent implements OnInit {
     }else if(this.listaLivros.length > 0){
       this.pedidoService.post(this.pedido).subscribe((resp: Pedido) =>{
         this.pedido = resp
-        alert('Pedido Feito')
+        Swal.fire({
+          title: 'Pedido feito!',
+          icon: 'success'
+        })
         this.listaLivros = []
         environment.carrinho = [0]
         this.router.navigate(['/home'])
