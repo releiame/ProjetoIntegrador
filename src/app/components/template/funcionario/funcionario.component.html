@@ -40,20 +40,20 @@
 </div>
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
+    <button class="nav-link active text-dark" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab"
       aria-controls="home" aria-selected="true">Todos os Livros</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button (click)="findByFuncionarioId(funcionario.id_funcionario)" class="nav-link" id="profile-tab"
+    <button (click)="findByFuncionarioId(funcionario.id_funcionario)" class="nav-link text-dark" id="profile-tab"
       data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
       aria-selected="false">Meus Livros Cadastrados</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
+    <button class="nav-link text-dark" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
       aria-controls="contact" aria-selected="false">Livros por titulo</button>
   </li>
   <li class="nav-item" role="tags">
-    <button class="nav-link" id="tag-tab" data-bs-toggle="tab" data-bs-target="#tags" type="button" role="tab"
+    <button class="nav-link text-dark" id="tag-tab" data-bs-toggle="tab" data-bs-target="#tags" type="button" role="tab"
       aria-controls="contact" aria-selected="false">Tags cadastradas</button>
   </li>
 </ul>
@@ -108,7 +108,33 @@
 
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="card-columns">
-      <div class="card text-center" *ngFor='let item of listaLivros'>
+      <table class="table">
+        <thead class="table-dark">
+          <tr >
+            <th scope="col">Título</th>
+            <th scope="col">ID</th>
+            <th scope="col">Autor(a)</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Estoque</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Deletar</th>
+          </tr>
+        </thead>
+        <tbody *ngFor='let item of listaLivros'>
+          <tr *ngIf="item.funcionario.id_funcionario == idFuncionario">
+            <th>{{item.titulo}}</th>
+            <td>{{item.id_livros}}</td>
+            <td>{{item.autor}}</td>
+            <td>{{item.isbn}}</td>
+            <td>{{item.valorUnitario | currency : 'BRL'}}</td>
+            <td>{{item.qtdeEstoque}}</td>
+            <td><a class="btn btn-success text-light mr-5" [routerLink]="['/editar-livro', item.id_livros]" href="">Editar</a></td>
+            <td><a class="btn btn-danger text-light" [routerLink]="['/deletar-livro', item.id_livros]" href="">Deletar</a></td>
+          </tr>
+        </tbody>
+      </table>
+     <!-- <div class="card text-center" *ngFor='let item of listaLivros'>
         <div class="card-body" *ngIf="item.funcionario.id_funcionario == idFuncionario">
           <h5 class="card-title m-0">{{item.titulo}}</h5>
           <small class="text-muted"> Autor(a): {{item.autor}}</small>
@@ -118,7 +144,8 @@
           <a class="btn btn-success text-light mr-5" [routerLink]="['/editar-livro', item.id_livros]" href="">Editar</a>
           <a class="btn btn-danger text-light" [routerLink]="['/deletar-livro', item.id_livros]" href="">Deletar</a>
         </div>
-      </div>
+      </div>-->
+
     </div>
   </div>
 
@@ -131,7 +158,30 @@
         </div>
       </div>
     </div>
-    <div class="card-columns" *ngFor='let item of listaLivros'>
+    <table class="table">
+      <thead class="table-dark">
+        <tr >
+          <th scope="col">Título</th>
+          <th scope="col">Autor(a)</th>
+          <th scope="col">ISBN</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Etiqueta</th>
+          <th scope="col">Estoque</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of listaLivros'>
+          <th>{{item.titulo}}</th>
+          <td>{{item.autor}}</td>
+          <td>{{item.isbn}}</td>
+          <td>{{item.valorUnitario | currency : 'BRL'}}</td>
+          <td>{{item.etiqueta.nome}}</td>
+          <td>{{item.qtdeEstoque}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--<div class="card-columns" *ngFor='let item of listaLivros'>
       <div class="card text-center">
         <div class="card-body">
           <h5 class="card-title m-0">{{item.titulo}}</h5>
@@ -142,7 +192,8 @@
           <p class="card-text">Tag: {{item.etiqueta.nome}}</p>
         </div>
       </div>
-    </div>
+    </div>-->
+
   </div>
   <div class="tab-pane fade" id="tags" role="tabpanel" aria-labelledby="tag-tab">
     <div class="card-columns">
