@@ -51,7 +51,7 @@ export class AuthService {
 
   logado(){
     let ok: boolean = false
-    if(environment.token != ''){
+    if(environment.token != '' && environment.codf == ''){
       ok = true
     }
     return ok
@@ -59,7 +59,7 @@ export class AuthService {
 
   logadoFuncionario(){
     let ok: boolean = false
-    if(environment.codf != ''){
+    if(environment.codf != '' && environment.token != ''){
       ok = true
     }
     return ok

@@ -12,22 +12,28 @@
           <div class="row d-flex justify-content-center">
               <div class="col-md-10">
                   <h4>{{livro.titulo}}</h4>
-                  <p>{{livro.isbn}}</p>
+                  <p><strong>ISBN:</strong> {{livro.isbn}}</p>
+                  <p *ngIf="authService.logadoFuncionario()"><strong>Id:</strong> {{livro.id_livros}}</p>
+                  <p *ngIf="authService.logadoFuncionario()"><strong>Quem cadastrou: </strong>{{livro.funcionario.nome}}</p>
+                  <p><strong>Qtde. Estoque: </strong>{{livro.qtdeEstoque}}</p>
                   <!--filtros coloridos indicando a qual categoria pertence um livro-->
                   <a [routerLink]="['/busca-etiqueta', livro.etiqueta.id_etiqueta]" class="badge bg-success text-white filtro-badge mx-1">{{livro.etiqueta.nome}}</a>
                   <div class="my-4">
-                      <h4><em><small><del class="del">{{livro.valorUnitario*2 | currency : 'BRL'}}</del></small></em><strong>{{livro.valorUnitario | currency : 'BRL'}}</strong>
+                      <h4><em><small><del *ngIf="authService.logadoFuncionario() == false" class="del">{{livro.valorUnitario*2 | currency : 'BRL'}}</del></small></em><strong>{{livro.valorUnitario | currency : 'BRL'}}</strong>
                       </h4>
-                      <p>Em até 10x de {{livro.valorUnitario/10 | currency : 'BRL'}} sem juros</p>
+                      <p *ngIf="authService.logadoFuncionario() == false">Em até 10x de {{livro.valorUnitario/10 | currency : 'BRL'}} sem juros</p>
                   </div>
                   <div class="d-flex justify-content-start">
-                      <a (click)="adicionarCarrinho(livro.id_livros)" class="btn btn-danger comprar-qtd mx-3">Comprar</a>
+                      <a *ngIf="authService.logadoFuncionario() == false" (click)="adicionarCarrinho(livro.id_livros)" class="btn btn-danger comprar-qtd mx-3">Comprar</a>
                   </div>
-                  <div class="d-flex pt-4 frete">
+                  <div class="d-flex pt-4 frete " *ngIf="authService.logadoFuncionario() == false">
                       <img class="caminhao" src="../../../../assets/img/caminhao-de-entrega.png" />
                       <h3 class="mx-2">Calcular Frete</h3>
                   </div>
-                  <div class="input d-flex">
+                  <div class="d-flex justify-content-start">
+                    <h1 class="text-align-center text-danger" *ngIf="authService.logadoFuncionario() && livro.qtdeEstoque<=0">LIVRO SEM ESTOQUE</h1>
+                  </div>
+                  <div class="input d-flex " *ngIf="authService.logadoFuncionario() == false">
                       <input type="text" class="form-control tamanho_input_cep" placeholder="00000-000"
                           aria-label="cepConsulta" aria-describedby="button-addon2">
                       <button class="btn btn-outline-dark ms-2" type="button" id="cepConsulta">Calcular</button>

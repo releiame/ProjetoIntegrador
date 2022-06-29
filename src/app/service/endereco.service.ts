@@ -27,4 +27,8 @@ export class EnderecoService {
     return this.http.post<Endereco>('http://localhost:8080/endereco/adicionar', endereco, this.token)
   }
 
+  delete(id_endereco: number){
+    return this.http.delete(`http://localhost:8080/endereco/${id_endereco}`, this.token)
+  }
+
 }
