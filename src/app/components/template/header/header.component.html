@@ -205,7 +205,7 @@
     <!--header3 (mais opções de navegação)-->
     <nav class="navbar navbar-expand-sm color justify-content-center">
         <ul class="nav justify-content-center">
-            <li class="nav-item" *ngFor="let item of listaTags">
+            <li class="nav-item" (focus)="getAllEtiquetas()" *ngFor="let item of listaTags">
                 <a class="nav-link text-light" [routerLink]="['/busca-etiqueta', item.id_etiqueta]">{{item.nome}}</a>
             </li>
         </ul>

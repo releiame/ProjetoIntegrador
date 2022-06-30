@@ -30,6 +30,8 @@ export class BuscaEtiquetaComponent implements OnInit {
     this.getAllLivros()
   }
 
+  pegarId(){}
+
   findByIdEtiqueta(id_etiqueta: number){
     this.etiquetaService.getByIdEtiqueta(id_etiqueta).subscribe((resp: Etiqueta) =>{
       this.etiqueta = resp

@@ -29,7 +29,7 @@
     <div class="col-md-5">
         <label for="pagamento" class="form-label">Selecione a forma de pagamento:</label>
         <select id="pagamento" name="pagamento" class="form-control" (change)='tipoPagamento($event)'>
-            <option value="Boleto" selected>Boleto</option>
+            <option value="Boleto">Boleto</option>
             <option value="Cartão de Crédito">Cartão de Crédito</option>
             <option value="Cartão de Débito">Cartão de Débito</option>
         </select>
@@ -37,11 +37,11 @@
         <ng-container *ngIf="pagamento == 'Cartão de Crédito'">
             <label for="dividir" class="form-label">Quantas vezes deseja dividir?</label>
             <select id="dividir" class="form-select" (change)='dividido($event)'>
-                <option value=1>1x de {{soma | currency:  'BRL'}} sem juros</option>
-                <option value=2>2x de {{soma/2 | currency:  'BRL'}} sem juros</option>
-                <option value=3>3x de {{soma/3 | currency:  'BRL'}} sem juros</option>
-                <option value=4>4x de {{soma/4 | currency:  'BRL'}} sem juros</option>
-                <option value=5>5x de {{soma/5 | currency:  'BRL'}} sem juros</option>
+                <option value="em 1x">1x de {{soma | currency:  'BRL'}} sem juros</option>
+                <option value="em 2x">2x de {{soma/2 | currency:  'BRL'}} sem juros</option>
+                <option value="em 3x">3x de {{soma/3 | currency:  'BRL'}} sem juros</option>
+                <option value="em 4x">4x de {{soma/4 | currency:  'BRL'}} sem juros</option>
+                <option value="em 5x">5x de {{soma/5 | currency:  'BRL'}} sem juros</option>
             </select>
         </ng-container>
         </div>

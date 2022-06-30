@@ -1,15 +1,5 @@
 <section>
     <!--Filtro de pesquisa-->
-    <div class="d-flex justify-content-end pt-5">
-        <div class="col-md-3">
-            <select id="ordenarPor" class="form-select">
-                <option>Ordenar por</option>
-                <option ng-selected="sortBy('titulo')" ng-show="propertyName === 'titulo'" >Ordem alfabética</option>
-                <option value="maiorPreco">Maior preço</option>
-                <option value="menorPreco" >Menor preço</option>
-            </select>
-        </div>
-    </div>
     <main class="p-5">
         <!--Cards-->
         <div class="row d-flex justify-content-around">
@@ -39,23 +29,5 @@
             <!--card-->
         </div>
         <hr class="mt-3">
-        <div class="row pb-4">
-            <div class="col-12">
-
-                <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
-                    <div class="btn-toolbar justify-content-between" role="toolbar"
-                        aria-label="Toolbar with button groups">
-                        <div class="btn-group" role="group" aria-label="First group">
-                            <a href="#"><img src="../../../../assets/img/prev.png" /></a>
-                            <button type="button" class="btn btn-outline-secondary" routerLink="/home">1</button>
-                            <button type="button" class="btn btn-outline-secondary">2</button>
-                            <button type="button" class="btn btn-outline-secondary">3</button>
-                            <button type="button" class="btn btn-outline-secondary">4</button>
-                        </div>
-                        <a href="#"><img src="../../../../assets/img/next.png" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
 </section>

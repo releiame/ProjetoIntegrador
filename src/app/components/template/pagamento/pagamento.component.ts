@@ -25,6 +25,8 @@ export class PagamentoComponent implements OnInit {
   listaLivros:  Array<Livros> = []
 
   pagamento: String
+  divisao: String
+  str: String
   
   soma = 0
 
@@ -81,7 +83,7 @@ export class PagamentoComponent implements OnInit {
   }
 
   dividido(event: any){
-    environment.divisao = event.target.value
+    this.divisao = event.target.value
   }
 
   carrinhoAtt(){
@@ -97,7 +99,11 @@ export class PagamentoComponent implements OnInit {
 
     this.pedido.cliente = this.cliente
 
-    this.pedido.tipo = this.pagamento
+    this.str = `${this.pagamento} ${this.divisao}` 
+
+    this.pedido.tipo = this.str
+
+    console.log(this.str)
 
     this.pedido.livros = this.listaLivros
 

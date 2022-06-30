@@ -15,7 +15,6 @@ export const environment = {
   id_etiqueta: 0,
   titulo: '',
   soma: 0,
-  divisao: 0,
   id_endereco: 0,
   id_pedido: 0
 };

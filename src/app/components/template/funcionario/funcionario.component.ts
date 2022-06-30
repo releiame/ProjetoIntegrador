@@ -110,10 +110,12 @@ export class FuncionarioComponent implements OnInit {
   cadastrarTag(){
     this.etiquetaService.cadastrar(this.etiqueta).subscribe((resp: Etiqueta) => {
       this.etiqueta = resp
-      this.router.navigate(['/funcionario'])
-      Swal.fire('Livro cadastrado com sucesso!')
-      this.etiqueta = new Etiqueta()
       this.getAllEtiquetas()
+      this.etiqueta = new Etiqueta()
+      this.router.navigate(['/funcionario'])
+      Swal.fire('Tag cadastrado com sucesso!')
+      
+      
     })
   }
 }

@@ -76,4 +76,17 @@ export class CadEnderecoComponent implements OnInit {
       this.getAllEndereco()
     })
   }
+
+  pagamento(){
+    if(environment.id_endereco == 0 && environment.token != ''){
+      Swal.fire({
+        icon: 'error',
+        text: 'Você deve adicionar um endereço de entrega'
+      })
+    }else if(environment.id_endereco == 0 && environment.token == ''){
+      this.router.navigate(['/home'])
+    }else{
+      this.router.navigate(['/pagamento'])
+    }
+  }
 }
