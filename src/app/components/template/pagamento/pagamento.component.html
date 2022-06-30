@@ -13,7 +13,7 @@
             <ul class="nav-link text-dark">
                 <a routerLink="/cad-endereco">
                     <li><img src="../../../../assets/img/caminhao-bau.png" /></li>
-                    <li>Entrega e Pagamento</li>
+                    <li>Entrega</li>
                 </a>
             </ul>
         </div>
@@ -25,18 +25,61 @@
         </div>
     </div>
     <!--conteúdo-->
-    <div class="card justify-content-center" style="width: 18rem;">
-        <div class="card-header">
-          OBRIGADO
+    <div class="row g-3 mt-3 d-flex justify-content-around">
+    <div class="col-md-5">
+        <label for="pagamento" class="form-label">Selecione a forma de pagamento:</label>
+        <select id="pagamento" name="pagamento" class="form-control" (change)='tipoPagamento($event)'>
+            <option value="Boleto" selected>Boleto</option>
+            <option value="Cartão de Crédito">Cartão de Crédito</option>
+            <option value="Cartão de Débito">Cartão de Débito</option>
+        </select>
+        <div class="mt-3">
+        <ng-container *ngIf="pagamento == 'Cartão de Crédito'">
+            <label for="dividir" class="form-label">Quantas vezes deseja dividir?</label>
+            <select id="dividir" class="form-select" (change)='dividido($event)'>
+                <option value=1>1x de {{soma | currency:  'BRL'}} sem juros</option>
+                <option value=2>2x de {{soma/2 | currency:  'BRL'}} sem juros</option>
+                <option value=3>3x de {{soma/3 | currency:  'BRL'}} sem juros</option>
+                <option value=4>4x de {{soma/4 | currency:  'BRL'}} sem juros</option>
+                <option value=5>5x de {{soma/5 | currency:  'BRL'}} sem juros</option>
+            </select>
+        </ng-container>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Obrigado pela sua preferencia, seu pedido acaba de ser concluido</li>
-          <li class="list-group-item">Pedido N°: {{pedido.id_pedido}}</li>
-          <li class="list-group-item">Valor Total: {{pedido.valorTotal | currency: 'BRL'}</li>
-          <li class="list-group-item">Tipo de Pagamento: {{pedido.tipo}</li>
-          <li class="list-group-item">Local de entrega: {{endereco.rua}}, n° {{endereco.numero}}</li>
-          <li class="list-group-item">Total do frete: GRÁTIS</li>
-        </ul>
-      </div>
-
+        <div class="card mt-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">CEP: {{endereco.cep}}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{endereco.rua}}, {{endereco.numero}}</h6>
+              <p class="card-text">{{endereco.complemento}}, {{endereco.bairro}}</p>
+              <p class="card-text">{{endereco.cidade}} - SP - {{endereco.cep}}</p>
+              <a routerLink="/cad-endereco" class="btn btn-secondary">Mudar</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-5">
+        <table class="table table-striped">
+            <thead>
+              <tr class="text-muted font-weight-light">
+                <th scope="col">N° do Livro</th>
+                <th scope="col">Capa</th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listaLivros">
+                <th scope="row">{{item.isbn}}</th>
+                <td><img class="img-thumbnail tam me-4" src={{item.capa}} /></td>
+                <td>{{item.titulo}}</td>
+                <td>{{item.valorUnitario | currency: 'BRL'}}</td>
+              </tr>
+              <tr>
+                <td colspan="4">Valor total: <strong>{{soma | currency: 'BRL'}}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-success btn-lg" (click)="criarPedido()">Finalizar Pedido</button> <!--(click)="criarPedido()"-->
+    </div>
+</div>
 </div>

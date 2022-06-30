@@ -72,10 +72,14 @@ export class CarrinhoComponent implements OnInit {
 
     this.pedido.livros = this.listaLivros
 
-    if(this.listaLivros.length == 0){
-      Swal.fire('Seu carrinho está vazio')
+    if(this.listaLivros.length == 0 && environment.token == ''){
+      Swal.fire({
+        icon: 'error',
+        text: 'Seu carrinho está vazio'})
     }else if(environment.token == ''){
-      Swal.fire('Você deve logar como cliente para poder finalizar o pedido')
+      Swal.fire({
+        icon: 'error',
+        title: 'Você deve logar como cliente para poder finalizar o pedido'})
     }else if(this.listaLivros.length > 0){
       this.pedidoService.post(this.pedido).subscribe((resp: Pedido) =>{
         this.pedido = resp
