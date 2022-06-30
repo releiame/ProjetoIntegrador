@@ -99,7 +99,11 @@ export class PagamentoComponent implements OnInit {
 
     this.pedido.cliente = this.cliente
 
-    this.str = `${this.pagamento} ${this.divisao}` 
+    if(this.divisao != undefined){
+      this.str = `${this.pagamento} ${this.divisao}`
+    }else{
+      this.str = this.pagamento
+    }
 
     this.pedido.tipo = this.str
 

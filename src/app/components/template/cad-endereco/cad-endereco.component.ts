@@ -18,7 +18,7 @@ import Swal from 'sweetalert2';
 })
 export class CadEnderecoComponent implements OnInit {
 
-  endereco: Endereco = new Endereco
+  endereco: Endereco = new Endereco()
   
   idCliente: number
   cliente: Cliente = new Cliente()
@@ -64,7 +64,6 @@ export class CadEnderecoComponent implements OnInit {
 
     this.enderecoService.adicionar(this.endereco).subscribe((resp: Endereco) =>{
       this.endereco = resp
-      this.router.navigate(['/minha-conta'])
       Swal.fire('Endereço cadastrado!')
       this.getAllEndereco()
     })
