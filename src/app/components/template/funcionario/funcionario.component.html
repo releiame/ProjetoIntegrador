@@ -117,6 +117,7 @@
             <th scope="col">ISBN</th>
             <th scope="col">Valor</th>
             <th scope="col">Estoque</th>
+            <th scope="col">Tag</th>
             <th scope="col">Editar</th>
             <th scope="col">Deletar</th>
           </tr>
@@ -129,6 +130,7 @@
             <td>{{item.isbn}}</td>
             <td>{{item.valorUnitario | currency : 'BRL'}}</td>
             <td>{{item.qtdeEstoque}}</td>
+            <td>{{item.etiqueta.nome}}</td>
             <td><a class="btn btn-success text-light mr-5" [routerLink]="['/editar-livro', item.id_livros]" href="">Editar</a></td>
             <td><a class="btn btn-danger text-light" [routerLink]="['/deletar-livro', item.id_livros]" href="">Deletar</a></td>
           </tr>
@@ -196,13 +198,24 @@
 
   </div>
   <div class="tab-pane fade" id="tags" role="tabpanel" aria-labelledby="tag-tab">
-    <div class="card-columns">
-      <div class="card text-center" *ngFor='let item of listaEtiquetas'>
-        <div class="card-body">
-          <h5 class="card-title m-0">{{item.nome}}</h5>
-        </div>
-      </div>
-    </div>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col-6">#</th>
+          <th scope="col-6">Nome</th>
+          <th scope="col-6">Apagar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of listaEtiquetas'>
+          <th scope="row">{{item.id_etiqueta}}</th>
+          <td>{{item.nome}}</td>
+          <td>
+            <a class="btn btn-danger" (click)="apagarTag(item.id_etiqueta)">Apagar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
 

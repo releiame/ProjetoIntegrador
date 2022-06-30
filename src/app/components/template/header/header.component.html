@@ -191,7 +191,7 @@
                             data-bs-target="#modalCadastro">Fazer Cadastro</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" [routerLink]="['/endereco', clienteLogin.id_cliente]" >Meus Endereços</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" [routerLink]="['/minha-conta', idCliente]" >Atualizar Cadastro</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logadoFuncionario()" routerLink="/funcionario">Tela do Funcionario</a></li>
+                        <li><a class="dropdown-item" *ngIf="authService.logadoFuncionario()" routerLink="/funcionario">Painel</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="/meus-pedidos">Meus Pedidos</a></li>
                         <li><a class="dropdown-item" *ngIf="authService.logado() || authService.logadoFuncionario()" (click)="sair()" routerLink="/home">Sair</a></li>
                     </ul>

@@ -32,4 +32,12 @@ export class EtiquetaService {
   cadastrar(etiqueta:Etiqueta):Observable<Etiqueta>{
     return this.http.post<Etiqueta>('http://localhost:8080/etiqueta/cadastrar', etiqueta, this.token)
   }
+
+  put(etiqueta: Etiqueta):Observable<Etiqueta>{
+    return this.http.put<Etiqueta>('http://localhost:8080/etiqueta/alterar', etiqueta, this.token)
+  }
+
+  deleteTag(id_etiqueta: number){
+    return this.http.delete(`http://localhost:8080/etiqueta/${id_etiqueta}`, this.token)
+  }
 }

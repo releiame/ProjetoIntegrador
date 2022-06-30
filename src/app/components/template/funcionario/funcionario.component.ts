@@ -114,8 +114,38 @@ export class FuncionarioComponent implements OnInit {
       this.etiqueta = new Etiqueta()
       this.router.navigate(['/funcionario'])
       Swal.fire('Tag cadastrado com sucesso!')
-      
-      
+    })
+  }
+
+  apagarTag(id_etiqueta: number){
+    Swal.fire({
+      title: 'Tem certeza?',
+      text: "A tag será apagada",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.etiquetaService.deleteTag(id_etiqueta).subscribe(() =>{
+          Swal.fire(
+            'Apagado!',
+            'A tag foi deletada.',
+            'success'
+          )
+          this.getAllEtiquetas()
+        }, erro =>{
+          if(erro.status == 500){
+              Swal.fire(
+                'A tag não pode ser apagada pois tem livros cadastrados com ela',
+                '',
+                'error'
+              )
+          }
+        })
+      }
     })
   }
 }

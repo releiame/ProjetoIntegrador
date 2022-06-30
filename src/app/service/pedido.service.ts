@@ -28,6 +28,4 @@ export class PedidoService {
   getPedidoById(id_pedido: number):Observable<Pedido>{
     return this.http.get<Pedido>(`http://localhost:8080/pedidos/${id_pedido}`, this.token)
   }
-
-
 }
