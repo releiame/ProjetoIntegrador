@@ -5,7 +5,6 @@
         <th scope="col">Pedido</th>
         <th scope="col">Livros do Pedido</th>
         <th scope="col">Valor</th>
-        <th scope="col">Data prevista de Entrega</th>
         <th scope="col">Tipo de pagamento</th>
         <th scope="col">Situação do Pedido</th>
       </tr>
@@ -20,7 +19,6 @@
             </ng-container>
         </td>
         <td>{{item.valorTotal |  currency : 'BRL'}}</td>
-        <td>{{item.data | date: 'dd/MM/yyyy'}}</td>
         <td>{{item.tipo}}</td>
         <td class="bg-success text-light">PEDIDO FINALIZADO</td>
       </tr>

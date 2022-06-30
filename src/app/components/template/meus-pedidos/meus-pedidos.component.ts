@@ -28,7 +28,6 @@ export class MeusPedidosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.getAllPedidos()
     console.log(this.listaPedidos)
   }
@@ -45,8 +44,4 @@ export class MeusPedidosComponent implements OnInit {
       this.listaLivros = resp
     })
   }
-
-
-
-
 }
