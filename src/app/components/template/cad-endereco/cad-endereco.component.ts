@@ -119,5 +119,23 @@ export class CadEnderecoComponent implements OnInit {
       )
     }
   }
+  
+  adicionar(){
+    this.cliente.id_cliente = this.idCliente
+    this.endereco.cliente = this.cliente
 
+    this.enderecoService.adicionar(this.endereco).subscribe((resp: Endereco) =>{
+      this.endereco = resp
+      this.router.navigate(['/minha-conta'])
+      Swal.fire('Endereço cadastrado!')
+      this.getAllEndereco()
+    })
+  }
+
+  apagar(id_endereco: number){
+    this.enderecoService.delete(id_endereco).subscribe(() =>{
+      Swal.fire('Endereço apagado!')
+      this.getAllEndereco()
+    })
+  }
 }
