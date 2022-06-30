@@ -75,7 +75,7 @@
             <div class="col-md-6 ms-2">
                 <ng-container *ngFor="let item of listaEndereco">
                     <div class="form-check py-2" *ngIf="item.cliente.id_cliente == idCliente">
-                        <input class="form-check-input" type="radio" id="address" (click)='escolherEndereco($event)' value="{{item.id_endereco}}" checked>
+                        <input class="form-check-input" type="radio" id="address" (click)='escolherEndereco($event)' value="{{item.id_endereco}}">
                         <h6>{{item.nome_endereco}}</h6>
                         <label class="form-check-label borda p-2" for="address">
                             <div>{{item.cliente.nome}}</div>

@@ -1,5 +1,10 @@
-<table class="table">
-    <thead class="bg-primary text-light">
+<div class="container-fluid">
+  <!--aqui a casinha apontando para qual livro está mostrando os detalhes -->
+  <a routerLink="/home"><i class="text-dark fa fa-home my-3"></i></a>
+  <i class="fa fa-angle-right mx-2"></i>
+  <small>Meus pedidos</small>
+  <table class="table borda">
+    <thead class="bg-black text-light">
       <tr>
         <th scope="col">Data do Pedido</th>
         <th scope="col">Pedido</th>
@@ -14,16 +19,14 @@
         <th scope="row">{{item.data | date:'dd/MM/yyyy'}}</th>
         <td>{{item.id_pedido}}</td>
         <td>
-            <ng-container *ngFor="let i of item.livros">
-                {{i.titulo}}
-            </ng-container>
+          <ng-container *ngFor="let i of item.livros">
+            {{i.titulo}}
+          </ng-container>
         </td>
-        <td>{{item.valorTotal |  currency : 'BRL'}}</td>
+        <td>{{item.valorTotal | currency : 'BRL'}}</td>
         <td>{{item.tipo}}</td>
         <td class="bg-success text-light">PEDIDO FINALIZADO</td>
       </tr>
     </tbody>
   </table>
-  <div>
-    <a routerLink="/home">VOLTAR</a>
-  </div>
+</div>

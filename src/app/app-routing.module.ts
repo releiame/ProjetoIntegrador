@@ -37,7 +37,7 @@ const routes: Routes = [
     {path: 'cadastrar-livro', component:CadastrarLivroComponent},
     {path: 'deletar-livro/:id_livros', component:DeletarLivroComponent},
     {path: 'endereco/:id_cliente', component:EnderecoComponent},
-    {path: 'meus-pedidos', component:MeusPedidosComponent},
+    {path: 'meus-pedidos', component:MeusPedidosComponent, data: {isHeader: true}},
     {path: 'cad-endereco', component:CadEnderecoComponent, data: {isHeader: true}},
     {path: 'pagamento', component:PagamentoComponent, data: {isHeader: true}}
     // {path: 'trocar-devolver', component:#},
