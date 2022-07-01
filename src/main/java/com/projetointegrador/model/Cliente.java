@@ -44,7 +44,7 @@ public class Cliente {
 	private Date dataNascimento;
 
 	@OneToMany(mappedBy = "cliente")
-	@JsonIgnoreProperties("cliente") //Indicando que deve ignorar campos desconhecidos
+	@JsonIgnoreProperties(value = {"cliente"}, allowSetters = true) //Indicando que deve ignorar campos desconhecidos
 	private List<Endereco> endereco;
 	
 	@OneToMany(mappedBy = "cliente", cascade = CascadeType.MERGE)

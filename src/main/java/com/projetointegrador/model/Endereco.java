@@ -47,7 +47,7 @@ public class Endereco {
 	private String nome_endereco;
 	
 	@ManyToOne //Indicando que é um relacionamento "muitos para um"
-	@JsonIgnoreProperties("endereco")
+	@JsonIgnoreProperties(value = {"endereco"},allowSetters = true)
 	@JoinColumn(name = "id_cliente")
 	private Cliente cliente;
 	
