@@ -52,7 +52,7 @@ public class EtiquetaController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(etiqueta));
 	}
 	
-	@PutMapping("/alterar")
+	@PutMapping
 	public ResponseEntity<Etiqueta> put (@RequestBody Etiqueta etiqueta){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(etiqueta));
 	}

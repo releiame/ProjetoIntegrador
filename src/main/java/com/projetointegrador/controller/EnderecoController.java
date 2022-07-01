@@ -43,7 +43,7 @@ public class EnderecoController {
 		return ResponseEntity.ok(repository.findAllByCepContainingIgnoreCase(cep));
 	}
 	
-	@PostMapping("/adicionar")
+	@PostMapping
 	public ResponseEntity<Endereco> post (@RequestBody Endereco endereco){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(endereco));
 	}

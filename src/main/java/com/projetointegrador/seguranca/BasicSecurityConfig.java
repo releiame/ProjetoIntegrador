@@ -140,6 +140,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 		
 		.antMatchers("/etiqueta/listartodos").permitAll()
 		.antMatchers("/etiqueta/{id_etiqueta}").permitAll()
+		.antMatchers("/etiqueta").permitAll()
 		
 		.antMatchers("/livros/listartodos").permitAll()
 		.antMatchers("/livros/titulo/{titulo}").permitAll()
