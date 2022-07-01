@@ -40,8 +40,14 @@
 .cartao:hover .comprar-qtd {
   visibility: visible;
 }
- 
+
 .espaco {
-    margin-left: 4vh;
-    margin-bottom: 2vh;
+  margin-left: 4vh;
+  margin-bottom: 2vh;
+}
+
+@media (max-width: 420px) {
+  .card {
+    width: 7rem;
+  }
 }
