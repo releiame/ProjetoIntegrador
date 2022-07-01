@@ -1,3 +1,8 @@
 .card {
     width: 13rem;
   }
+  @media (max-width: 420px) {
+    .card {
+      width: 7rem;
+    }
+  }
