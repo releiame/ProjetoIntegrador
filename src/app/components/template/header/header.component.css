@@ -40,7 +40,7 @@
 
 }
 
-/*now, maake it responsive
+
 @media (max-width: 991px)
 {
     .wid {
@@ -48,14 +48,44 @@
     }
 }
 
-@media (max-width: 856px)
+@media (max-width: 1156px)
 {
     .wid {
-        width: 25vh;
+        width: 56vh;
     }
 }
 
-@media (max-width: 448px)
+@media (max-width: 1054px)
 {
-   
-}*/
+    .wid {
+        width: 46vh;
+    }
+}
+
+@media (max-width: 977px)
+{
+    .wid {
+        width: 36vh;
+    }
+}
+
+@media (max-width: 900px)
+{
+    .wid {
+        width: 26vh;
+    }
+}
+
+@media (max-width: 827px)
+{
+    .tam-p {
+        font-size: small;
+    }
+    .tam-logo {
+        width: auto;
+        height: 35px;
+    }
+    .wid {
+        width: 26vh;
+    }
+}
