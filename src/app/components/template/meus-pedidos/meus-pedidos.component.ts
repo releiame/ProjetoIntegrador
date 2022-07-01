@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Cliente } from 'src/app/model/Cliente';
 import { Livros } from 'src/app/model/Livros';
 import { Pedido } from 'src/app/model/Pedido';
 import { AuthService } from 'src/app/service/auth.service';
@@ -15,7 +16,9 @@ import { environment } from 'src/environments/environment.prod';
 export class MeusPedidosComponent implements OnInit {
 
   nome = environment.nome
-  id_cliente = environment.id_cliente
+  idCliente = environment.id_cliente
+
+  cliente: Cliente = new Cliente
 
   listaPedidos: Pedido[]
   listaLivros: Livros[]
@@ -28,8 +31,10 @@ export class MeusPedidosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getClienteById(this.idCliente)
     this.getAllPedidos()
     console.log(this.listaPedidos)
+    console.log(this.idCliente)
   }
 
   getAllPedidos(){
@@ -42,6 +47,12 @@ export class MeusPedidosComponent implements OnInit {
   getAllLivros(){
     this.livrosService.getAllLivros().subscribe((resp: Livros[]) =>{
       this.listaLivros = resp
+    })
+  }
+
+  getClienteById(id_cliente: number){
+    this.authService.getClienteById(id_cliente).subscribe((resp: Cliente) =>{
+      this.cliente = resp
     })
   }
 }

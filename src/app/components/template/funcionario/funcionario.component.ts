@@ -3,9 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Etiqueta } from 'src/app/model/Etiqueta';
 import { Funcionario } from 'src/app/model/Funcionario';
 import { Livros } from 'src/app/model/Livros';
+import { Pedido } from 'src/app/model/Pedido';
 import { AuthService } from 'src/app/service/auth.service';
 import { EtiquetaService } from 'src/app/service/etiqueta.service';
 import { LivrosService } from 'src/app/service/livros.service';
+import { PedidoService } from 'src/app/service/pedido.service';
 import { environment } from 'src/environments/environment.prod';
 import Swal from 'sweetalert2';
 
@@ -21,6 +23,10 @@ export class FuncionarioComponent implements OnInit {
   livro: Livros = new Livros()
   tituloLivro: string
 
+  tentando: Livros[]
+
+  listaPedidos: Pedido[]
+
   listaEtiquetas: Etiqueta[]
   nomeEtiqueta: string
   etiqueta: Etiqueta = new Etiqueta()
@@ -35,7 +41,8 @@ export class FuncionarioComponent implements OnInit {
     private route: ActivatedRoute,
     private livrosService: LivrosService,
     private etiquetaService: EtiquetaService,
-    public authService: AuthService
+    public authService: AuthService,
+    private pedidosService: PedidoService
   ) { }
 
   ngOnInit() {
@@ -50,7 +57,8 @@ export class FuncionarioComponent implements OnInit {
     this.findByFuncionarioId(id)
     this.getAllLivros()
     this.getAllEtiquetas()
-    
+    this.getAllPedidos()
+
   }
 
   ngAfterContentChecked() {
@@ -77,6 +85,13 @@ export class FuncionarioComponent implements OnInit {
         this.listaLivros = resp
       })
     }
+  }
+
+  getAllPedidos(){
+    this.pedidosService.getAllPedidos().subscribe((resp: Pedido[]) =>{
+      this.listaPedidos = resp
+      this.getAllLivros()
+    })
   }
 
   getAllEtiquetas(){
@@ -146,6 +161,32 @@ export class FuncionarioComponent implements OnInit {
           }
         })
       }
+    })
+  }
+
+  editarTag(id_etiqueta: number){
+    this.etiquetaService.getByIdEtiqueta(id_etiqueta).subscribe((resp: Etiqueta) =>{
+      this.etiqueta = resp
+    })
+  }
+
+  buscarTag(id_etiqueta: number){
+    this.etiquetaService.getByIdEtiqueta(id_etiqueta).subscribe((resp: Etiqueta)=>{
+      this.etiqueta = resp
+      this.etiqueta.livros = this.tentando
+    })
+  }
+
+  confirmaEdit(id_etiqueta: number){
+    console.log(this.etiqueta.nome)
+    console.log(this.etiqueta.id_etiqueta)
+    console.log(this.etiqueta.livros)
+    this.etiqueta.livros = this.tentando
+    this.etiquetaService.putTag(this.etiqueta).subscribe((resp: Etiqueta) =>{
+      this.etiqueta = resp
+      Swal.fire('Etiqueta atualizada com sucesso')
+      this.router.navigate(['/funcionario'])
+      this.getAllEtiquetas()
     })
   }
 }

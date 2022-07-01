@@ -29,9 +29,8 @@ export class EnderecoComponent implements OnInit {
 
   ngOnInit() {
     this.idCliente = this.route.snapshot.params['id_cliente']
-    
     this.getAllEndereco()
-    this.findClienteById(environment.id_cliente)
+    this.findClienteById(this.idCliente)
   }
 
   findClienteById(id_cliente: number){
@@ -41,19 +40,20 @@ export class EnderecoComponent implements OnInit {
   }
 
   getAllEndereco(){
-
     this.enderecoService.getAllEndereco().subscribe((resp: Endereco[]) =>{
       this.listaEndereco = resp
     })
   }
 
   adicionar(){
-    this.cliente.id_cliente = this.idCliente
+
     this.endereco.cliente = this.cliente
+
+    console.log(this.endereco.cliente.nome)
 
     this.enderecoService.adicionar(this.endereco).subscribe((resp: Endereco) =>{
       this.endereco = resp
-      this.router.navigate(['/minha-conta'])
+      this.router.navigate(['/home'])
       Swal.fire('Endereço cadastrado!')
       this.getAllEndereco()
     })
@@ -65,5 +65,4 @@ export class EnderecoComponent implements OnInit {
       this.getAllEndereco()
     })
   }
-
 }

@@ -15,18 +15,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of listaPedidos">
-        <th scope="row">{{item.data | date:'dd/MM/yyyy'}}</th>
-        <td>{{item.id_pedido}}</td>
-        <td>
-          <ng-container *ngFor="let i of item.livros">
-            {{i.titulo}}
-          </ng-container>
-        </td>
-        <td>{{item.valorTotal | currency : 'BRL'}}</td>
-        <td>{{item.tipo}}</td>
-        <td class="bg-success text-light">PEDIDO FINALIZADO</td>
-      </tr>
+      <ng-container *ngFor="let item of listaPedidos">
+        <tr *ngIf="item.cliente.id_cliente == this.idCliente">
+          <th scope="row">{{item.data | date:'dd/MM/yyyy'}}</th>
+          <td>{{item.id_pedido}}</td>
+          <td>
+            <ng-container *ngFor="let i of item.livros">
+              {{i.titulo}}
+            </ng-container>
+          </td>
+          <td>{{item.valorTotal | currency : 'BRL'}}</td>
+          <td>{{item.tipo}}</td>
+          <td class="bg-success text-light">PEDIDO FINALIZADO</td>
+        </tr>
+      </ng-container>
     </tbody>
   </table>
 </div>

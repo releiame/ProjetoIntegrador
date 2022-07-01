@@ -52,9 +52,13 @@
     <button class="nav-link text-dark" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab"
       aria-controls="contact" aria-selected="false">Livros por titulo</button>
   </li>
-  <li class="nav-item" role="tags">
+  <li class="nav-item" role="presentation">
     <button class="nav-link text-dark" id="tag-tab" data-bs-toggle="tab" data-bs-target="#tags" type="button" role="tab"
       aria-controls="contact" aria-selected="false">Tags cadastradas</button>
+  </li>
+  <li class="nav-item" role="pedidos">
+    <button class="nav-link text-dark" id="pedidos-tab" data-bs-toggle="tab" data-bs-target="#pedidos" type="button" role="tab"
+      aria-controls="contact" aria-selected="false">Todos os Pedidos</button>
   </li>
 </ul>
 
@@ -204,6 +208,7 @@
           <th scope="col-6">#</th>
           <th scope="col-6">Nome</th>
           <th scope="col-6">Apagar</th>
+          <th scope="col-6">Editar</th>
         </tr>
       </thead>
       <tbody>
@@ -213,10 +218,40 @@
           <td>
             <a class="btn btn-danger" (click)="apagarTag(item.id_etiqueta)">Apagar</a>
           </td>
+          <td>
+            <a class="btn btn-info text-light" data-bs-toggle="modal"
+            data-bs-target="#editarTag" (click)="editarTag(item.id_etiqueta)" (click)="buscarTag(item.id_etiqueta)">Editar</a>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
+  <div class="tab-pane fade show" id="pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">N° pedido</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Livros</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listaPedidos">
+          <th scope="row">{{item.id_pedido}}</th>
+          <td>{{item.cliente.nome}}</td>
+          <td>
+            <ng-container *ngFor="let i of item.livros">
+              {{i.titulo}} / 
+            </ng-container>
+            
+          </td>
+          <td>{{item.valorTotal | currency: 'BRL'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 
 <!--Modal Tag-->
@@ -245,6 +280,35 @@
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
         <button type="button" class="btn btn-success" (click)="cadastrarTag()"
           data-bs-dismiss="modal">Cadastrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="editarTag">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!--Modal Header-->
+      <div class="modal-header">
+        <h4 class="modal-title">Editar a Tag</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <!--Modal Body-->
+      <form>
+        <div class="p-4">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input [(ngModel)]='etiqueta.nome' name="nome" type="name" class="form-control"
+              placeholder="Digite o nome da tag" id="nome">
+          </div>
+        </div>
+      </form>
+      <!--Modal Footer-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-success" (click)="confirmaEdit(etiqueta.id_etiqueta)"
+          data-bs-dismiss="modal">Editar</button>
       </div>
     </div>
   </div>
