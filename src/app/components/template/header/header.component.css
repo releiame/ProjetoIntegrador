@@ -2,11 +2,42 @@
     background-image: url('../../../../assets/img/livros.png');
     background-repeat: no-repeat;
 }
-.color{
+
+.color {
     background-color: #000;
 }
+
 .wid {
     width: 70vh;
+}
+
+@media (max-width: 420px) {
+    .wid {
+        width: 26vh;
+    }
+
+    .tam-logo {
+        margin-right: 40%;
+        margin-left: 40%;
+        width: auto;
+        height: 40px;
+    }
+
+    .none {
+        display: none;
+    }
+    .tam-p {
+        font-size: small;
+    }
+    .tam-carrinho {
+        width: auto;
+        height: 30px;
+    }
+    .tam-row {
+        justify-content: flex-start;
+    }
+
+
 }
 
 /*now, maake it responsive
