@@ -234,6 +234,7 @@
           <th scope="col">Cliente</th>
           <th scope="col">Livros</th>
           <th scope="col">Valor</th>
+          <th scope="col">Enviar Mensagem</th>
         </tr>
       </thead>
       <tbody>
@@ -247,6 +248,7 @@
             
           </td>
           <td>{{item.valorTotal | currency: 'BRL'}}</td>
+          <td><button type="button" data-bs-toggle="modal" (click)="enviarMensagem(item.id_pedido, item.cliente.id_cliente)" data-bs-target="#mensagemCliente" class="btn btn-primary text-light">Envia sua mensagem</button></td>
         </tr>
       </tbody>
     </table>
@@ -309,6 +311,56 @@
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
         <button type="button" class="btn btn-success" (click)="confirmaEdit(etiqueta.id_etiqueta)"
           data-bs-dismiss="modal">Editar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="mensagemCliente">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Envie sua Mensagem</h4>
+        <button type="button"class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <form class="row p-4 g-3 needs-validation" novalidate>
+        <div class="col-12">
+          <label for="nomeCliente" class="form-label">Dados do Cliente <br> Nome: {{cliente.nome}}<br>Email: {{cliente.email}}</label>
+        </div>
+        <div>
+          <label for="emailCliente" class="form-label">Dados do Pedido: <br> N°{{pedido.id_pedido}}
+            <p *ngFor="let item of pedido.livros">{{item.titulo}}</p>
+          </label>
+        </div>
+        <div class="mt-3">
+              <label for="motivo" class="form-label">Qual o motivo?</label>
+              <select id="motivo" class="form-select">
+                <option>Escolha sua opção</option>
+                <option>Problema com o envio</option>
+                <option>Problema com o livro</option>
+                <option>Problema na entrega</option>
+                <option>Problema com o pagamento</option>
+              </select>
+          </div>
+        <div class="mb-3">
+          <label for="mensagemCliente" class="form-label">Mensagem:</label>
+          <textarea class="form-control" id="mensagemCliente" placeholder="Escreva aqui sua mensagem" rows="4" required></textarea>
+          <div class="invalid-feedback">
+            Você deve escrever uma mensagem para enviar.
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary" (click)="envio()" data-bs-dismiss="modal">Enviar mensagem</button>
+        </div>
+      </form>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>

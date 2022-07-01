@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Cliente } from 'src/app/model/Cliente';
 import { Etiqueta } from 'src/app/model/Etiqueta';
 import { Funcionario } from 'src/app/model/Funcionario';
 import { Livros } from 'src/app/model/Livros';
@@ -26,6 +27,8 @@ export class FuncionarioComponent implements OnInit {
   tentando: Livros[]
 
   listaPedidos: Pedido[]
+  pedido: Pedido = new Pedido
+  cliente: Cliente = new Cliente
 
   listaEtiquetas: Etiqueta[]
   nomeEtiqueta: string
@@ -74,6 +77,18 @@ export class FuncionarioComponent implements OnInit {
   findByIdLivros(id_livros: number){
     this.livrosService.getLivrosById(this.idLivro).subscribe((resp: Livros) =>{
       this.livro = resp
+    })
+  }
+
+  findByIdPedido(id_pedido: number){
+    this.pedidosService.getPedidoById(id_pedido).subscribe((resp: Pedido) =>{
+      this.pedido = resp
+    })
+  }
+
+  findByIdCliente(id_cliente: number){
+    this.authService.getClienteById(id_cliente).subscribe((resp: Cliente) =>{
+      this.cliente = resp
     })
   }
 
@@ -187,6 +202,18 @@ export class FuncionarioComponent implements OnInit {
       Swal.fire('Etiqueta atualizada com sucesso')
       this.router.navigate(['/funcionario'])
       this.getAllEtiquetas()
+    })
+  }
+
+  enviarMensagem(id_pedido: number, id_cliente: number){
+    this.findByIdCliente(id_cliente)
+    this.findByIdPedido(id_pedido)
+  }
+
+  envio(){
+    Swal.fire({
+      title: 'Mensagem enviada',
+      icon: 'success'
     })
   }
 }
