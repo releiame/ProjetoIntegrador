@@ -49,3 +49,10 @@ a {
 p {
     text-align: justify;
 }
+
+@media (max-width: 420px) {
+    img {
+        width: 170px;
+        height: auto;
+    }
+}
