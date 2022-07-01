@@ -1,6 +1,5 @@
 <app-carousel-inicio></app-carousel-inicio>
 <section>
-=======
 <div class="container-fluid">
     <section>
     <!--Filtro de pesquisa-->
@@ -11,7 +10,7 @@
                 <div class="card cartao border-0 espaco p-3" *ngFor="let item of listaLivros"
                     ng-repeat="let item of listaLivros | orderBy:propertyName:reverse">
                     <a [routerLink]="['/livro', item.id_livros]">
-                        <img src="{{item.capa}}" alt="{{item.descricao}}" class="card-img-top">
+                        <img class="card-img-top" src="{{item.capa}}" alt="{{item.descricao}}" >
                     </a>
                     <div class="my-2">
                         <div class="d-flex justify-content-around">

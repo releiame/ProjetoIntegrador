@@ -20,11 +20,6 @@
     width: 10vh;
   }
   
-  .comprar-qtd {
-    display: flex;
-    visibility: hidden;
-  }
-  
   .cartao {
     text-decoration: none;
     color: #000;
@@ -37,10 +32,6 @@
     visibility: visible;
   }
   
-  .cartao:hover .comprar-qtd {
-    visibility: visible;
-  }
-   
   .espaco {
       margin-left: 4vh;
       margin-bottom: 2vh;
@@ -48,4 +39,10 @@
   .paginacao{
     width: 12px;
     height: 12px;
+  }
+
+  @media (max-width: 420px) {
+    .card {
+      width: 7rem;
+    }
   }
