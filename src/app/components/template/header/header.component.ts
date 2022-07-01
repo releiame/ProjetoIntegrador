@@ -57,6 +57,7 @@ export class HeaderComponent implements OnInit {
     environment.token = ''
     environment.id_cliente = 0
     environment.codf = ''
+    environment.id_endereco = 0
     this.funcionario == false
     window.location.reload()
   }

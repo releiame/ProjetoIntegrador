@@ -21,7 +21,7 @@
           <td>{{item.id_pedido}}</td>
           <td>
             <ng-container *ngFor="let i of item.livros">
-              {{i.titulo}}
+              {{i.titulo}} /
             </ng-container>
           </td>
           <td>{{item.valorTotal | currency : 'BRL'}}</td>
