@@ -4,7 +4,7 @@
         <ul class="nav nav-pills">
             <li class="nav-item">
                 <div class="nav-link">
-                    <a routerLink="/home"><img src="assets/img/logo.png" /></a>
+                    <a routerLink="/home"><img class="tam-logo" src="assets/img/logo.png" /></a>
                 </div>
             </li>
         </ul>
@@ -25,15 +25,15 @@
         </ul>
         <!--menu e carrinho-->
         <ul class="nav justify-content-end pe-2 mr-5">
-            <div class="navbar-collapse ">
+            <div class=" tam-row navbar-collapse d-flex ">
                 <!--<a class="nav-link dropdown-toggle text-light" href="#"
                     id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     Olá, {{nome}}
                 </a>-->
-                <img src="assets/img/user32.png" />
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" data-bs-toggle="dropdown" href="#" role="button"
+                <div><img class="none" src="assets/img/user32.png" /></div>
+                <div><li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-light tam-p" data-bs-toggle="dropdown" href="" role="button"
                         aria-expanded="false"
                         *ngIf="authService.logado() == false && authService.logadoFuncionario() == false">Minha
                         Conta</a>
@@ -41,27 +41,27 @@
                         aria-expanded="false" *ngIf="authService.logado() || authService.logadoFuncionario()">Olá,
                         {{nome}}</a>
                     <ul class="dropdown-menu mr-5">
-                        <li><a class="dropdown-item" data-bs-toggle="modal"
+                        <li><a class="dropdown-item tam-p" data-bs-toggle="modal"
                                 *ngIf="authService.logado() == false && authService.logadoFuncionario() == false"
                                 data-bs-target="#loginModal">Entrar</a></li>
-                        <li><a class="dropdown-item" data-bs-toggle="modal"
+                        <li><a class="dropdown-item tam-p" data-bs-toggle="modal"
                                 *ngIf="authService.logado() == false && authService.logadoFuncionario() == false"
                                 data-bs-target="#modalCadastro">Fazer Cadastro</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logado()"
+                        <li><a class="dropdown-item tam-p" *ngIf="authService.logado()"
                                 [routerLink]="['/endereco', clienteLogin.id_cliente]">Meus Endereços</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logado()"
+                        <li><a class="dropdown-item tam-p" *ngIf="authService.logado()"
                                 [routerLink]="['/minha-conta', idCliente]">Atualizar Cadastro</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logadoFuncionario()"
+                        <li><a class="dropdown-item tam-p" *ngIf="authService.logadoFuncionario()"
                                 routerLink="/funcionario">Painel</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logado()" routerLink="/meus-pedidos">Meus
+                        <li><a class="dropdown-item tam-p" *ngIf="authService.logado()" routerLink="/meus-pedidos">Meus
                                 Pedidos</a></li>
-                        <li><a class="dropdown-item" *ngIf="authService.logado() || authService.logadoFuncionario()"
+                        <li><a class="dropdown-item tam-p" *ngIf="authService.logado() || authService.logadoFuncionario()"
                                 (click)="sair()" routerLink="/home">Sair</a></li>
                     </ul>
 
-                </li>
-                <a *ngIf="authService.logadoFuncionario() == false" routerLink="/carrinho" class="carrinho"><img
-                        src="assets/img/carrinho.png"></a>
+                </li></div>
+               <div><a *ngIf="authService.logadoFuncionario() == false" routerLink="/carrinho" class="carrinho"><img class="tam-carrinho"
+                        src="assets/img/carrinho.png"></a></div> 
             </div>
         </ul>
     </nav>
@@ -70,7 +70,7 @@
     <nav class="navbar navbar-expand-sm color justify-content-center">
         <ul class="nav justify-content-center">
             <li class="nav-item" (focus)="getAllEtiquetas()" *ngFor="let item of listaTags">
-                <a class="nav-link text-light" [routerLink]="['/busca-etiqueta', item.id_etiqueta]">{{item.nome}}</a>
+                <a class="nav-link text-light tam-p" [routerLink]="['/busca-etiqueta', item.id_etiqueta]">{{item.nome}}</a>
             </li>
         </ul>
     </nav>

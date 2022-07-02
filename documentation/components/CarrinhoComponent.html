@@ -1,0 +1,1233 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  CarrinhoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/template/carrinho/carrinho.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-carrinho</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./carrinho.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./carrinho.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#carrinho" >carrinho</a>
+                            </li>
+                            <li>
+                                <a href="#cliente" >cliente</a>
+                            </li>
+                            <li>
+                                <a href="#listaLivros" >listaLivros</a>
+                            </li>
+                            <li>
+                                <a href="#livro" >livro</a>
+                            </li>
+                            <li>
+                                <a href="#pedido" >pedido</a>
+                            </li>
+                            <li>
+                                <a href="#soma" >soma</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#carrinhoAtt" >carrinhoAtt</a>
+                            </li>
+                            <li>
+                                <a href="#criarPedido" >criarPedido</a>
+                            </li>
+                            <li>
+                                <a href="#entrega" >entrega</a>
+                            </li>
+                            <li>
+                                <a href="#findClienteById" >findClienteById</a>
+                            </li>
+                            <li>
+                                <a href="#findLivrosById" >findLivrosById</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#removerLivro" >removerLivro</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(livrosService: <a href="../injectables/LivrosService.html" target="_self">LivrosService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, pedidoService: <a href="../injectables/PedidoService.html" target="_self">PedidoService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>livrosService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LivrosService.html" target="_self" >LivrosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>pedidoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PedidoService.html" target="_self" >PedidoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carrinhoAtt"></a>
+                    <span class="name">
+                        <span ><b>carrinhoAtt</b></span>
+                        <a href="#carrinhoAtt"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>carrinhoAtt()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="54"
+                            class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:54</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="criarPedido"></a>
+                    <span class="name">
+                        <span ><b>criarPedido</b></span>
+                        <a href="#criarPedido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>criarPedido()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:69</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="entrega"></a>
+                    <span class="name">
+                        <span ><b>entrega</b></span>
+                        <a href="#entrega"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>entrega()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findClienteById"></a>
+                    <span class="name">
+                        <span ><b>findClienteById</b></span>
+                        <a href="#findClienteById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findClienteById(id_cliente: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_cliente</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findLivrosById"></a>
+                    <span class="name">
+                        <span ><b>findLivrosById</b></span>
+                        <a href="#findLivrosById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findLivrosById(id_livros: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:45</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_livros</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="36"
+                            class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removerLivro"></a>
+                    <span class="name">
+                        <span ><b>removerLivro</b></span>
+                        <a href="#removerLivro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removerLivro(livro: <a href="../classes/Livros.html" target="_self">Livros</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="95"
+                            class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:95</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>livro</td>
+                                    <td>
+                                                <code><a href="../classes/Livros.html" target="_self" >Livros</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carrinho"></a>
+                    <span class="name">
+                        <span ><b>carrinho</b></span>
+                        <a href="#carrinho"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.carrinho</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cliente"></a>
+                    <span class="name">
+                        <span ><b>cliente</b></span>
+                        <a href="#cliente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Cliente.html" target="_self" >Cliente</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Cliente()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listaLivros"></a>
+                    <span class="name">
+                        <span ><b>listaLivros</b></span>
+                        <a href="#listaLivros"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Livros.html" target="_self" >Array&lt;Livros&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="livro"></a>
+                    <span class="name">
+                        <span ><b>livro</b></span>
+                        <a href="#livro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Livros.html" target="_self" >Livros</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Livros()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pedido"></a>
+                    <span class="name">
+                        <span ><b>pedido</b></span>
+                        <a href="#pedido"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Pedido.html" target="_self" >Pedido</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Pedido()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="soma"></a>
+                    <span class="name">
+                        <span ><b>soma</b></span>
+                        <a href="#soma"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/template/carrinho/carrinho.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { Cliente } from &#x27;src/app/model/Cliente&#x27;;
+import { Livros } from &#x27;src/app/model/Livros&#x27;;
+import { Pedido } from &#x27;src/app/model/Pedido&#x27;;
+import { AuthService } from &#x27;src/app/service/auth.service&#x27;;
+import { LivrosService } from &#x27;src/app/service/livros.service&#x27;;
+import { PedidoService } from &#x27;src/app/service/pedido.service&#x27;;
+import { environment } from &#x27;src/environments/environment.prod&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
+@Component({
+  selector: &#x27;app-carrinho&#x27;,
+  templateUrl: &#x27;./carrinho.component.html&#x27;,
+  styleUrls: [&#x27;./carrinho.component.css&#x27;]
+})
+export class CarrinhoComponent implements OnInit {
+  carrinho &#x3D; environment.carrinho
+  livro: Livros &#x3D; new Livros()
+  listaLivros:  Array&lt;Livros&gt; &#x3D; []
+  
+  soma &#x3D; 0
+
+  pedido: Pedido &#x3D; new Pedido()
+
+  cliente: Cliente &#x3D; new Cliente()
+
+
+  constructor(
+    private livrosService: LivrosService,
+    private router: Router,
+    private pedidoService: PedidoService,
+    private authService: AuthService
+  ) { }
+
+  ngOnInit() {
+    console.log(&quot;TAMANHO DO ENVIRONMENT CARRINHO: &quot; + environment.carrinho)
+    console.log(&quot;TAMANHO DO LISTALIVROS: &quot; + this.listaLivros.length)
+    console.log(&quot;TAMANHO DO CARRINHO NO PEDIDO: &quot; + this.carrinho)
+
+    this.carrinhoAtt()
+    this.findClienteById(environment.id_cliente)
+  }
+
+  findLivrosById(id_livros: number){
+    this.livrosService.getLivrosById(id_livros).subscribe((resp: Livros) &#x3D;&gt;{
+      this.livro &#x3D; resp
+      this.soma +&#x3D; this.livro.valorUnitario
+      this.listaLivros.push(this.livro)
+    })
+    environment.soma &#x3D; this.soma
+  }
+
+  carrinhoAtt(){
+    for(let item in this.carrinho){
+      if(this.carrinho[item]&gt;0){
+        let id &#x3D; this.carrinho[item]
+        this.findLivrosById(id)
+      }
+    }
+  }
+
+  findClienteById(id_cliente: number){
+    this.authService.getClienteById(id_cliente).subscribe((resp: Cliente) &#x3D;&gt; {
+      this.cliente &#x3D; resp
+    })
+  }
+
+  criarPedido(){
+
+    this.pedido.cliente &#x3D; this.cliente
+
+    this.pedido.livros &#x3D; this.listaLivros
+
+    if(this.listaLivros.length &#x3D;&#x3D; 0 &amp;&amp; environment.token &#x3D;&#x3D; &#x27;&#x27;){
+      Swal.fire({
+        icon: &#x27;error&#x27;,
+        text: &#x27;Seu carrinho está vazio&#x27;})
+    }else if(environment.token &#x3D;&#x3D; &#x27;&#x27;){
+      Swal.fire({
+        icon: &#x27;error&#x27;,
+        title: &#x27;Você deve logar como cliente para poder finalizar o pedido&#x27;})
+    }else if(this.listaLivros.length &gt; 0){
+      this.pedidoService.post(this.pedido).subscribe((resp: Pedido) &#x3D;&gt;{
+        this.pedido &#x3D; resp
+        Swal.fire(&#x27;Pedido feito!&#x27;)
+        this.listaLivros &#x3D; []
+        environment.carrinho &#x3D; [0]
+        this.router.navigate([&#x27;/home&#x27;])
+      }
+      )
+    }
+  }
+
+  removerLivro(livro: Livros){
+    const index &#x3D; this.listaLivros.indexOf(livro)
+    this.listaLivros.splice(index, 1)
+    this.carrinho.splice(index, 1)
+    console.log(&quot;Livro removido: &quot; + index)
+    Swal.fire(&#x27;Livro removido&#x27;)
+  }
+
+  entrega(){
+    if(environment.token &#x3D;&#x3D; &#x27;&#x27;){
+      Swal.fire(&#x27;Você deve logar como cliente para poder finalizar o pedido&#x27;)
+      this.router.navigate([&#x27;/home&#x27;])
+    }else if(this.listaLivros.length &#x3D;&#x3D; 0){
+      Swal.fire(&#x27;Seu carrinho está vazio&#x27;)
+      this.router.navigate([&#x27;/home&#x27;])
+    }else{
+      this.router.navigate([&#x27;/cad-endereco&#x27;])
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;!--menu--&gt;
+    &lt;div class&#x3D;&quot;nav justify-content-evenly h5 py-3 traco&quot;&gt;
+        &lt;div class&#x3D;&quot;nav-item&quot;&gt;
+            &lt;ul class&#x3D;&quot;nav-link text-center carrinho&quot; aria-current&#x3D;&quot;page&quot; href&#x3D;&quot;#&quot;&gt;
+                &lt;a routerLink&#x3D;&quot;#&quot;&gt;
+                    &lt;li&gt;&lt;img src&#x3D;&quot;../../../../assets/img/carrinho_preto.png&quot; /&gt;&lt;/li&gt;
+                    &lt;li class&#x3D;&quot;text-dark&quot;&gt;Carrinho&lt;/li&gt;
+                &lt;/a&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;nav-item opacity-25 text-center&quot;&gt;
+            &lt;ul class&#x3D;&quot;nav-link text-dark&quot;&gt;
+                &lt;li&gt;&lt;img src&#x3D;&quot;../../../../assets/img/caminhao-bau.png&quot; /&gt;&lt;/li&gt;
+                &lt;li&gt;Entrega&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;nav-item opacity-25 text-center&quot;&gt;
+            &lt;ul class&#x3D;&quot;nav-link text-dark&quot;&gt;
+                &lt;li&gt;&lt;img src&#x3D;&quot;../../../../assets/img/conta.png&quot; /&gt;&lt;/li&gt;
+                &lt;li&gt;Finalização&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--conteúdo--&gt;
+    &lt;div class&#x3D;&quot;d-flex justify-content-center&quot;&gt;
+        &lt;h2 class&#x3D;&quot;my-4&quot;&gt;Meu Carrinho&lt;/h2&gt;
+    &lt;/div&gt;
+
+
+    &lt;table class&#x3D;&quot;table table-borderless borda align-middle&quot;&gt;
+        &lt;thead class&#x3D;&quot;vermelho text-light&quot;&gt;
+            &lt;tr&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;Produto(s)&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;Valor do Produto&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;Titulo&lt;/th&gt;
+                &lt;th scope&#x3D;&quot;col&quot;&gt;Remover&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr *ngFor&#x3D;&quot;let livro of listaLivros&quot;&gt;
+                &lt;th class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                    &lt;img class&#x3D;&quot;img-thumbnail tam me-4&quot; src&#x3D;{{livro.capa}} /&gt;
+                &lt;/th&gt;
+                &lt;td&gt;{{livro.valorUnitario | currency : &#x27;BRL&#x27;}}&lt;/td&gt;
+                &lt;td&gt;{{livro.titulo}}&lt;/td&gt;
+                &lt;td&gt;&lt;a (click)&#x3D;&quot;removerLivro(livro)&quot;&gt;&lt;img src&#x3D;&quot;../../../../assets/img/lata-de-lixo.png&quot; /&gt;&lt;/a&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;th&gt;
+                &lt;button class&#x3D;&quot;btn btn-sm btn-outline-secondary m-1&quot; routerLink&#x3D;&quot;/home&quot;&gt;Adicionar mais itens ao
+                    carrinho&lt;/button&gt;
+            &lt;/th&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+    &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+        &lt;button class&#x3D;&quot;btn btn-success btn-lg&quot; (click)&#x3D;&quot;entrega()&quot;&gt;Entrega&lt;/button&gt; &lt;!--(click)&#x3D;&quot;criarPedido()&quot;--&gt;
+    &lt;/div&gt;
+
+    &lt;!-- AQUI VAI SER O PESQUISAR CEP E PREÇO TOTAL E BOTÃO DE FINALIZAR PEDIDO
+    &lt;div class&#x3D;&quot;d-flex justify-content-between&quot;&gt;
+  
+            &lt;div class&#x3D;&quot;card tam-card&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body&quot;&gt;
+              &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Card title&lt;/h5&gt;
+              &lt;h6 class&#x3D;&quot;card-subtitle mb-2 text-muted&quot;&gt;Card subtitle&lt;/h6&gt;
+              &lt;p class&#x3D;&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.&lt;/p&gt;
+              &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;card-link&quot;&gt;Card link&lt;/a&gt;
+              &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;card-link&quot;&gt;Another link&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;card tam-card&quot;&gt;
+            &lt;div class&#x3D;&quot;card-body&quot;&gt;
+              &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Card title&lt;/h5&gt;
+              &lt;h6 class&#x3D;&quot;card-subtitle mb-2 text-muted&quot;&gt;Card subtitle&lt;/h6&gt;
+              &lt;p class&#x3D;&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.&lt;/p&gt;
+              &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;card-link&quot;&gt;Card link&lt;/a&gt;
+              &lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;card-link&quot;&gt;Another link&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+    &lt;/div&gt; --&gt;
+
+    &lt;!--&lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;th class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                    &lt;img class&#x3D;&quot;img-thumbnail tam me-4&quot; src&#x3D;&quot;../../../../assets/img/a-cabana.jpg&quot; /&gt;
+                    &lt;a routerLink&#x3D;&quot;#&quot;&gt;A CABANA (William P. Young)&lt;/a&gt;
+                &lt;/th&gt;
+                &lt;td&gt;R$ 56,50&lt;/td&gt;
+                &lt;td&gt;&lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;qtdItem&quot; value&#x3D;&quot;1&quot;&gt;&lt;/td&gt;
+                &lt;td&gt;(VU*Qtd) &lt;/td&gt;
+                &lt;td&gt;&lt;a (click)&#x3D;&quot;delete()&quot;&gt;&lt;img class&#x3D;&quot;lixo&quot; src&#x3D;&quot;../../../../assets/img/lata-de-lixo.png&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                    &lt;img class&#x3D;&quot;img-thumbnail tam me-4&quot; src&#x3D;&quot;../../../../assets/img/hp-ordemdafenix.jpg&quot; /&gt;
+                    &lt;a routerLink&#x3D;&quot;#&quot;&gt;HARRY POTTER E A ORDEM DA FÊNIX (J. K. Rowling)&lt;/a&gt;
+                &lt;/th&gt;
+                &lt;td&gt;R$ 56,50&lt;/td&gt;
+                &lt;td&gt;&lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;qtdItem&quot; value&#x3D;&quot;1&quot;&gt;&lt;/td&gt;
+                &lt;td&gt;(VU*Qtd) &lt;/td&gt;
+                &lt;td&gt;&lt;a (click)&#x3D;&quot;delete()&quot;&gt;&lt;img class&#x3D;&quot;lixo&quot; src&#x3D;&quot;../../../../assets/img/lata-de-lixo.png&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+                    &lt;img class&#x3D;&quot;img-thumbnail tam me-4&quot; src&#x3D;&quot;../../../../assets/img/a-menina-que-roubava-livros.jpg&quot; /&gt;
+                    &lt;a routerLink&#x3D;&quot;#&quot;&gt;A MENINA QUE ROUBAVA LIVROS (Markus Zusak)&lt;/a&gt;
+                &lt;/th&gt;
+                &lt;td&gt;R$ 56,50&lt;/td&gt;
+                &lt;td&gt;&lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;qtdItem&quot; value&#x3D;&quot;1&quot;&gt;&lt;/td&gt;
+                &lt;td&gt;(VU*Qtd) &lt;/td&gt;
+                &lt;td&gt;&lt;a (click)&#x3D;&quot;delete()&quot;&gt;&lt;img class&#x3D;&quot;lixo&quot; src&#x3D;&quot;../../../../assets/img/lata-de-lixo.png&quot;&gt;&lt;/a&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;th&gt;
+                    &lt;button class&#x3D;&quot;btn btn-outline-secondary&quot;&gt;Escolher mais produtos&lt;/button&gt;
+                &lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;--&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./carrinho.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">a {
+    text-decoration: none;
+}
+
+* {
+    list-style: none;
+}
+
+.carrinho {
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, transparent 0%, #c10000, transparent 100%) 1 100%; 
+}
+
+.traco {
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.borda {
+    border: 3px solid #000 ;
+}
+
+.vermelho {
+    background-color: #000 ;
+}
+
+.tam {
+    width: auto;
+    height: 90px;
+}
+
+#qtdItem {
+    width: 9vh;
+  }
+.lixo:hover {
+    opacity: 40%;
+}
+
+.tam-card {
+    width: 39rem;
+    background-color: beige;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">    <!--menu-->    <div class="nav justify-content-evenly h5 py-3 traco">        <div class="nav-item">            <ul class="nav-link text-center carrinho" aria-current="page" href="#">                <a routerLink="#">                    <li><img src="../../../../assets/img/carrinho_preto.png" /></li>                    <li class="text-dark">Carrinho</li>                </a>            </ul>        </div>        <div class="nav-item opacity-25 text-center">            <ul class="nav-link text-dark">                <li><img src="../../../../assets/img/caminhao-bau.png" /></li>                <li>Entrega</li>            </ul>        </div>        <div class="nav-item opacity-25 text-center">            <ul class="nav-link text-dark">                <li><img src="../../../../assets/img/conta.png" /></li>                <li>Finalização</li>            </ul>        </div>    </div>    <!--conteúdo-->    <div class="d-flex justify-content-center">        <h2 class="my-4">Meu Carrinho</h2>    </div>    <table class="table table-borderless borda align-middle">        <thead class="vermelho text-light">            <tr>                <th scope="col">Produto(s)</th>                <th scope="col">Valor do Produto</th>                <th scope="col">Titulo</th>                <th scope="col">Remover</th>            </tr>        </thead>        <tbody>            <tr *ngFor="let livro of listaLivros">                <th class="d-flex align-items-center">                    <img class="img-thumbnail tam me-4" src={{livro.capa}} />                </th>                <td>{{livro.valorUnitario | currency : \'BRL\'}}</td>                <td>{{livro.titulo}}</td>                <td><a (click)="removerLivro(livro)"><img src="../../../../assets/img/lata-de-lixo.png" /></a>                </td>            </tr>            <th>                <button class="btn btn-sm btn-outline-secondary m-1" routerLink="/home">Adicionar mais itens ao                    carrinho</button>            </th>        </tbody>    </table>    <div class="d-flex justify-content-end">        <button class="btn btn-success btn-lg" (click)="entrega()">Entrega</button> <!--(click)="criarPedido()"-->    </div>    <!-- AQUI VAI SER O PESQUISAR CEP E PREÇO TOTAL E BOTÃO DE FINALIZAR PEDIDO    <div class="d-flex justify-content-between">              <div class="card tam-card">            <div class="card-body">              <h5 class="card-title">Card title</h5>              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content.</p>              <a href="#" class="card-link">Card link</a>              <a href="#" class="card-link">Another link</a>            </div>          </div>          <div class="card tam-card">            <div class="card-body">              <h5 class="card-title">Card title</h5>              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content.</p>              <a href="#" class="card-link">Card link</a>              <a href="#" class="card-link">Another link</a>            </div>          </div>    </div> -->    <!--<tbody>            <tr>                <th class="d-flex align-items-center">                    <img class="img-thumbnail tam me-4" src="../../../../assets/img/a-cabana.jpg" />                    <a routerLink="#">A CABANA (William P. Young)</a>                </th>                <td>R$ 56,50</td>                <td><input type="number" class="form-control" id="qtdItem" value="1"></td>                <td>(VU*Qtd) </td>                <td><a (click)="delete()"><img class="lixo" src="../../../../assets/img/lata-de-lixo.png"></a></td>            </tr>            <tr>                <th class="d-flex align-items-center">                    <img class="img-thumbnail tam me-4" src="../../../../assets/img/hp-ordemdafenix.jpg" />                    <a routerLink="#">HARRY POTTER E A ORDEM DA FÊNIX (J. K. Rowling)</a>                </th>                <td>R$ 56,50</td>                <td><input type="number" class="form-control" id="qtdItem" value="1"></td>                <td>(VU*Qtd) </td>                <td><a (click)="delete()"><img class="lixo" src="../../../../assets/img/lata-de-lixo.png"></a></td>            </tr>            <tr>                <th class="d-flex align-items-center">                    <img class="img-thumbnail tam me-4" src="../../../../assets/img/a-menina-que-roubava-livros.jpg" />                    <a routerLink="#">A MENINA QUE ROUBAVA LIVROS (Markus Zusak)</a>                </th>                <td>R$ 56,50</td>                <td><input type="number" class="form-control" id="qtdItem" value="1"></td>                <td>(VU*Qtd) </td>                <td><a (click)="delete()"><img class="lixo" src="../../../../assets/img/lata-de-lixo.png"></a></td>            </tr>            <tr>                <th>                    <button class="btn btn-outline-secondary">Escolher mais produtos</button>                </th>            </tr>        </tbody>--></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuscaEtiquetaComponent', 'selector': 'app-busca-etiqueta'},{'name': 'BuscaLivroComponent', 'selector': 'app-busca-livro'},{'name': 'CadastrarLivroComponent', 'selector': 'app-cadastrar-livro'},{'name': 'CadEnderecoComponent', 'selector': 'app-cad-endereco'},{'name': 'CarouselInicioComponent', 'selector': 'app-carousel-inicio'},{'name': 'CarrinhoComponent', 'selector': 'app-carrinho'},{'name': 'DeletarLivroComponent', 'selector': 'app-deletar-livro'},{'name': 'EditarLivroComponent', 'selector': 'app-editar-livro'},{'name': 'EnderecoComponent', 'selector': 'app-endereco'},{'name': 'FaleConoscoComponent', 'selector': 'app-fale-conosco'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FuncionarioComponent', 'selector': 'app-funcionario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LivroComponent', 'selector': 'app-livro'},{'name': 'MeusPedidosComponent', 'selector': 'app-meus-pedidos'},{'name': 'MinhaContaComponent', 'selector': 'app-minha-conta'},{'name': 'PagamentoComponent', 'selector': 'app-pagamento'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CarrinhoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CarrinhoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

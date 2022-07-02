@@ -1,0 +1,1232 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  CadEnderecoComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/template/cad-endereco/cad-endereco.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-cad-endereco</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./cad-endereco.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./cad-endereco.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cliente" >cliente</a>
+                            </li>
+                            <li>
+                                <a href="#endereco" >endereco</a>
+                            </li>
+                            <li>
+                                <a href="#idCliente" >idCliente</a>
+                            </li>
+                            <li>
+                                <a href="#listaEndereco" >listaEndereco</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#adicionar" >adicionar</a>
+                            </li>
+                            <li>
+                                <a href="#apagar" >apagar</a>
+                            </li>
+                            <li>
+                                <a href="#escolherEndereco" >escolherEndereco</a>
+                            </li>
+                            <li>
+                                <a href="#findClienteById" >findClienteById</a>
+                            </li>
+                            <li>
+                                <a href="#getAllEndereco" >getAllEndereco</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#pagamento" >pagamento</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, enderecoService: <a href="../injectables/EnderecoService.html" target="_self">EnderecoService</a>, route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>enderecoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EnderecoService.html" target="_self" >EnderecoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adicionar"></a>
+                    <span class="name">
+                        <span ><b>adicionar</b></span>
+                        <a href="#adicionar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>adicionar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apagar"></a>
+                    <span class="name">
+                        <span ><b>apagar</b></span>
+                        <a href="#apagar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>apagar(id_endereco: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="72"
+                            class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_endereco</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="escolherEndereco"></a>
+                    <span class="name">
+                        <span ><b>escolherEndereco</b></span>
+                        <a href="#escolherEndereco"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>escolherEndereco(event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="56"
+                            class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>event</td>
+                                    <td>
+                                                <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findClienteById"></a>
+                    <span class="name">
+                        <span ><b>findClienteById</b></span>
+                        <a href="#findClienteById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findClienteById(id_cliente: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_cliente</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllEndereco"></a>
+                    <span class="name">
+                        <span ><b>getAllEndereco</b></span>
+                        <a href="#getAllEndereco"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllEndereco()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="44"
+                            class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pagamento"></a>
+                    <span class="name">
+                        <span ><b>pagamento</b></span>
+                        <a href="#pagamento"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>pagamento()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="79"
+                            class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:79</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cliente"></a>
+                    <span class="name">
+                        <span ><b>cliente</b></span>
+                        <a href="#cliente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Cliente.html" target="_self" >Cliente</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Cliente()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="endereco"></a>
+                    <span class="name">
+                        <span ><b>endereco</b></span>
+                        <a href="#endereco"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Endereco.html" target="_self" >Endereco</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Endereco()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="idCliente"></a>
+                    <span class="name">
+                        <span ><b>idCliente</b></span>
+                        <a href="#idCliente"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="listaEndereco"></a>
+                    <span class="name">
+                        <span ><b>listaEndereco</b></span>
+                        <a href="#listaEndereco"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Endereco.html" target="_self" >Endereco[]</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/template/cad-endereco/cad-endereco.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { Cliente } from &#x27;src/app/model/Cliente&#x27;;
+import { Endereco } from &#x27;src/app/model/Endereco&#x27;;
+import { Livros } from &#x27;src/app/model/Livros&#x27;;
+import { Pedido } from &#x27;src/app/model/Pedido&#x27;;
+import { AuthService } from &#x27;src/app/service/auth.service&#x27;;
+import { EnderecoService } from &#x27;src/app/service/endereco.service&#x27;;
+import { LivrosService } from &#x27;src/app/service/livros.service&#x27;;
+import { PedidoService } from &#x27;src/app/service/pedido.service&#x27;;
+import { environment } from &#x27;src/environments/environment.prod&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
+@Component({
+  selector: &#x27;app-cad-endereco&#x27;,
+  templateUrl: &#x27;./cad-endereco.component.html&#x27;,
+  styleUrls: [&#x27;./cad-endereco.component.css&#x27;]
+})
+export class CadEnderecoComponent implements OnInit {
+
+  endereco: Endereco &#x3D; new Endereco()
+  
+  idCliente: number
+  cliente: Cliente &#x3D; new Cliente()
+
+  listaEndereco: Endereco[]
+
+  constructor(
+    private router: Router,
+    private enderecoService: EnderecoService,
+    private route: ActivatedRoute,
+    private authService: AuthService
+  ) { }
+
+  ngOnInit(){
+
+    this.idCliente &#x3D; environment.id_cliente
+    this.getAllEndereco()
+    
+    this.findClienteById(environment.id_cliente)
+
+  }
+
+  getAllEndereco(){
+    this.enderecoService.getAllEndereco().subscribe((resp: Endereco[]) &#x3D;&gt;{
+      this.listaEndereco &#x3D; resp
+    })
+  }
+
+  findClienteById(id_cliente: number){
+    this.authService.getClienteById(id_cliente).subscribe((resp: Cliente) &#x3D;&gt; {
+      this.cliente &#x3D; resp
+    })
+  }
+  
+  escolherEndereco(event: any){
+    environment.id_endereco &#x3D; event.target.value
+    console.log(environment.id_endereco)
+  }
+  
+  adicionar(){
+    this.cliente.id_cliente &#x3D; this.idCliente
+    this.endereco.cliente &#x3D; this.cliente
+
+    this.enderecoService.adicionar(this.endereco).subscribe((resp: Endereco) &#x3D;&gt;{
+      this.endereco &#x3D; resp
+      Swal.fire(&#x27;Endereço cadastrado!&#x27;)
+      this.getAllEndereco()
+    })
+  }
+
+  apagar(id_endereco: number){
+    this.enderecoService.delete(id_endereco).subscribe(() &#x3D;&gt;{
+      Swal.fire(&#x27;Endereço apagado!&#x27;)
+      this.getAllEndereco()
+    })
+  }
+
+  pagamento(){
+    if(environment.id_endereco &#x3D;&#x3D; 0 &amp;&amp; environment.token !&#x3D; &#x27;&#x27;){
+      Swal.fire({
+        icon: &#x27;error&#x27;,
+        text: &#x27;Você deve adicionar um endereço de entrega&#x27;
+      })
+    }else if(environment.id_endereco &#x3D;&#x3D; 0 &amp;&amp; environment.token &#x3D;&#x3D; &#x27;&#x27;){
+      this.router.navigate([&#x27;/home&#x27;])
+    }else{
+      this.router.navigate([&#x27;/pagamento&#x27;])
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+    &lt;!--menu--&gt;
+    &lt;div class&#x3D;&quot;nav justify-content-evenly h5 py-3 traco&quot;&gt;
+        &lt;div class&#x3D;&quot;nav-item&quot;&gt;
+            &lt;ul class&#x3D;&quot;nav-link text-center opacity-25 &quot; aria-current&#x3D;&quot;page&quot; href&#x3D;&quot;#&quot;&gt;
+                &lt;a routerLink&#x3D;&quot;/carrinho&quot;&gt;
+                    &lt;li&gt;&lt;img src&#x3D;&quot;../../../../assets/img/carrinho_preto.png&quot; /&gt;&lt;/li&gt;
+                    &lt;li class&#x3D;&quot;text-dark&quot;&gt;Carrinho&lt;/li&gt;
+                &lt;/a&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;nav-item text-center carrinho&quot;&gt;
+            &lt;ul class&#x3D;&quot;nav-link text-dark&quot;&gt;
+                &lt;li&gt;&lt;img src&#x3D;&quot;../../../../assets/img/caminhao-bau.png&quot; /&gt;&lt;/li&gt;
+                &lt;li&gt;Entrega&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;nav-item opacity-25 text-center&quot;&gt;
+            &lt;ul class&#x3D;&quot;nav-link text-dark&quot;&gt;
+                &lt;li&gt;&lt;img src&#x3D;&quot;../../../../assets/img/conta.png&quot; /&gt;&lt;/li&gt;
+                &lt;li&gt;Finalização&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!--conteúdo--&gt;
+    &lt;div class&#x3D;&quot;row g-3&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;row g-3 mt-3 d-flex justify-content-around&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-5&quot;&gt;
+            &lt;h4&gt;Adicionar endereço&lt;/h4&gt;
+            &lt;div class&#x3D;&quot;row g-3&quot;&gt;
+                &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;titulo&quot;&gt;Nome do endereço&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;endereco.nome_endereco&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;nome&quot;
+                        placeholder&#x3D;&quot;Nome que você quer dar ao endereço&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group col-10&quot;&gt;
+                    &lt;label for&#x3D;&quot;titulo&quot;&gt;Rua&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;endereco.rua&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;rua&quot;
+                        placeholder&#x3D;&quot;Digite a rua&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group col-2&quot;&gt;
+                    &lt;label for&#x3D;&quot;titulo&quot;&gt;Número&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;endereco.numero&quot; type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;numero&quot;
+                        placeholder&#x3D;&quot;Digite o número&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group col-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;titulo&quot;&gt;Complemento&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;endereco.complemento&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;complemento&quot;
+                        placeholder&#x3D;&quot;Digite o complemento&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group col-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;texto&quot;&gt;Bairro&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;endereco.bairro&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;bairro&quot;
+                        placeholder&#x3D;&quot;Digite o bairro&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group col-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;titulo&quot;&gt;Cidade&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;endereco.cidade&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;cidade&quot;
+                        placeholder&#x3D;&quot;Digite a cidade&quot; /&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;form-group col-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;titulo&quot;&gt;CEP&lt;/label&gt;
+                    &lt;input [(ngModel)]&#x3D;&quot;endereco.cep&quot; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;cep&quot;
+                        placeholder&#x3D;&quot;Digite o cep&quot; /&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;adicionar()&quot;&gt;Cadastrar&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-5 ms-2&quot;&gt;
+            &lt;h4&gt;Meus Endereços&lt;/h4&gt;
+            &lt;div class&#x3D;&quot;col-md-6 ms-2&quot;&gt;
+                &lt;ng-container *ngFor&#x3D;&quot;let item of listaEndereco&quot;&gt;
+                    &lt;div class&#x3D;&quot;form-check py-2&quot; *ngIf&#x3D;&quot;item.cliente.id_cliente &#x3D;&#x3D; idCliente&quot;&gt;
+                        &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; id&#x3D;&quot;address&quot; (click)&#x3D;&#x27;escolherEndereco($event)&#x27; value&#x3D;&quot;{{item.id_endereco}}&quot;&gt;
+                        &lt;h6&gt;{{item.nome_endereco}}&lt;/h6&gt;
+                        &lt;label class&#x3D;&quot;form-check-label borda p-2&quot; for&#x3D;&quot;address&quot;&gt;
+                            &lt;div&gt;{{item.cliente.nome}}&lt;/div&gt;
+                            &lt;div&gt;{{item.rua}}, {{item.numero}}&lt;/div&gt;
+                            &lt;div&gt;{{item.complemento}}, {{item.bairro}}&lt;/div&gt;
+                            &lt;div&gt;{{item.cidade}} - SP - {{item.cep}}&lt;/div&gt;
+                            &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+                                &lt;button class&#x3D;&quot;badge rounded-pill bg-danger border-0&quot;
+                                    (click)&#x3D;&quot;apagar(item.id_endereco)&quot;&gt;Delete&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/ng-container&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class&#x3D;&quot;row g-3 mt-3 d-flex justify-content-around&quot;&gt;
+
+            &lt;!--&lt;div class&#x3D;&quot;col-md-3&quot;&gt;
+            &lt;label for&#x3D;&quot;pagamento&quot; class&#x3D;&quot;form-label&quot;&gt;Selecione a forma de pagamento:&lt;/label&gt;
+            &lt;select id&#x3D;&quot;pagamento&quot; name&#x3D;&quot;pagamento&quot; class&#x3D;&quot;form-control&quot; (change)&#x3D;&#x27;tipoPagamento($event)&#x27;&gt;
+                &lt;option value&#x3D;&quot;Boleto&quot;&gt;Boleto&lt;/option&gt;
+                &lt;option value&#x3D;&quot;Cartão de Crédito&quot;&gt;Cartão de Crédito&lt;/option&gt;
+                &lt;option value&#x3D;&quot;Cartão de Débito&quot;&gt;Cartão de Débito&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;div&gt;
+                &lt;h3&gt;Valor total: {{soma | currency:  &#x27;BRL&#x27;}}&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;ng-container *ngIf&#x3D;&quot;pagamento &#x3D;&#x3D; &#x27;credito&#x27;&quot;&gt;
+                &lt;label for&#x3D;&quot;dividir&quot; class&#x3D;&quot;form-label&quot;&gt;Quantas vezes deseja dividir?&lt;/label&gt;
+                &lt;select id&#x3D;&quot;dividir&quot; class&#x3D;&quot;form-select&quot; (change)&#x3D;&#x27;dividido($event)&#x27;&gt;
+                    &lt;option value&#x3D;1&gt;1x de {{soma | currency:  &#x27;BRL&#x27;}} sem juros&lt;/option&gt;
+                    &lt;option value&#x3D;2&gt;2x de {{soma/2 | currency:  &#x27;BRL&#x27;}} sem juros&lt;/option&gt;
+                    &lt;option value&#x3D;3&gt;3x de {{soma/3 | currency:  &#x27;BRL&#x27;}} sem juros&lt;/option&gt;
+                    &lt;option value&#x3D;4&gt;4x de {{soma/4 | currency:  &#x27;BRL&#x27;}} sem juros&lt;/option&gt;
+                    &lt;option value&#x3D;5&gt;5x de {{soma/5 | currency:  &#x27;BRL&#x27;}} sem juros&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/ng-container&gt;
+        &lt;/div&gt;--&gt;
+&lt;!--
+            &lt;div class&#x3D;&quot;col-md-6 ms-2&quot;&gt;
+                &lt;h4&gt;Selecione o endereço de entrega ou &lt;a [routerLink]&#x3D;&quot;[&#x27;/endereco&#x27;, idCliente]&quot;&gt;cadastre um novo&lt;/a&gt;
+                &lt;/h4&gt;--&gt;
+
+
+                &lt;!--&lt;div class&#x3D;&quot;form-check py-2&quot;&gt;
+                &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; id&#x3D;&quot;address&quot;&gt;
+                &lt;h6&gt;Trabalho&lt;/h6&gt;
+                &lt;label class&#x3D;&quot;form-check-label borda p-2&quot; for&#x3D;&quot;address&quot;&gt;
+                    &lt;div&gt;Maria da Silva&lt;/div&gt;
+                    &lt;div&gt;Rua Coronel Euclides Machado, 235&lt;/div&gt;
+                    &lt;div&gt;Ap 37 Torre 3, Jardim das Graças&lt;/div&gt;
+                    &lt;div&gt; São Paulo - SP - 02713-000&lt;/div&gt;
+                &lt;/label&gt;
+            &lt;/div&gt;--&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;d-flex justify-content-end&quot;&gt;
+            &lt;button class&#x3D;&quot;btn btn-success btn-lg&quot; (click)&#x3D;&quot;pagamento()&quot;&gt;Pagamento&lt;/button&gt;
+        &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--
+    &lt;div class&#x3D;&quot;col-md-6&quot;&gt;&lt;h4&gt;Cadastro de endereço&lt;/h4&gt;
+            &lt;form class&#x3D;&quot;row g-3&quot;&gt;
+                &lt;div class&#x3D;&quot;col-12&quot;&gt;
+                    &lt;label for&#x3D;&quot;tituloEndereco&quot; class&#x3D;&quot;form-label&quot;&gt;&lt;h6&gt;Título&lt;/h6&gt;&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;tituloEndereco&quot; placeholder&#x3D;&quot;Ex: Casa, Trabalho...&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+                    &lt;label for&#x3D;&quot;nomeEndereco&quot; class&#x3D;&quot;form-label&quot;&gt;Nome Completo&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;nomeEndereco&quot; placeholder&#x3D;&quot;Maria da Silva&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-10&quot;&gt;
+                    &lt;label for&#x3D;&quot;logradouroEndereco&quot; class&#x3D;&quot;form-label&quot;&gt;Logradouro&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;logradouroEndereco&quot; placeholder&#x3D;&quot;Rua das Rosas&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-2&quot;&gt;
+                    &lt;label for&#x3D;&quot;numeroEndereco&quot; class&#x3D;&quot;form-label&quot;&gt;Número&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;numeroEndereco&quot; placeholder&#x3D;&quot;123&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;complementoEndereco&quot; class&#x3D;&quot;form-label&quot;&gt;Complemento&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;complementoEndereco&quot;
+                        placeholder&#x3D;&quot;Apartamento, Torre, Casa C&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+                    &lt;label for&#x3D;&quot;bairroEndereco&quot; class&#x3D;&quot;form-label&quot;&gt;Bairro&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;bairroEndereco&quot; placeholder&#x3D;&quot;Jardim das Flores&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-5&quot;&gt;
+                    &lt;label for&#x3D;&quot;cidadeEndereco&quot; class&#x3D;&quot;form-label&quot;&gt;Cidade&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;cidadeEndereco&quot; placeholder&#x3D;&quot;São Paulo&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-2&quot;&gt;
+                    &lt;label for&#x3D;&quot;estadoEndereco&quot; class&#x3D;&quot;form-label&quot;&gt;Estado&lt;/label&gt;
+                    &lt;select id&#x3D;&quot;estadoEndereco&quot; class&#x3D;&quot;form-select&quot;&gt;
+                        &lt;option selected&gt;SP&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;AC&quot;&gt;AC&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;AL&quot;&gt;AL&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;AP&quot;&gt;AP&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;AM&quot;&gt;AM&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;BA&quot;&gt;BA&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;CE&quot;&gt;CE&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;DF&quot;&gt;DF&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;ES&quot;&gt;ES&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;GO&quot;&gt;GO&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;MA&quot;&gt;MA&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;MT&quot;&gt;MT&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;MS&quot;&gt;MS&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;MG&quot;&gt;MG&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;PA&quot;&gt;PA&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;PB&quot;&gt;PB&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;PR&quot;&gt;PR&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;PE&quot;&gt;PE&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;PI&quot;&gt;PI&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;RJ&quot;&gt;RJ&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;RN&quot;&gt;RN&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;RS&quot;&gt;RS&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;RO&quot;&gt;RO&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;RR&quot;&gt;RR&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;SC&quot;&gt;SC&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;SE&quot;&gt;SE&lt;/option&gt;
+                        &lt;option value&#x3D;&quot;TO&quot;&gt;TO&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;col-md-7&quot;&gt;
+                    &lt;label for&#x3D;&quot;cepEndereco&quot; class&#x3D;&quot;form-label&quot;&gt;CEP&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;cepEndereco&quot;&gt;
+                &lt;/div&gt;
+                
+                &lt;div class&#x3D;&quot;col-6&quot;&gt;
+                    &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Cadastrar Endereço&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+--&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./cad-endereco.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">a {
+    text-decoration: none;
+}
+
+* {
+    list-style: none;
+}
+
+.carrinho {
+    border: 5px solid;
+    border-image: linear-gradient(to bottom, transparent 0%, #c10000, transparent 100%) 1 100%; 
+}
+
+.traco {
+    border-bottom: 1px solid rgb(192, 192, 192);
+}
+
+.borda {
+    border: 1px solid #ccc;
+    width: 300px;
+}
+.tam {
+    width: auto;
+    height: 90px;
+}
+
+#qtdItem {
+    width: 9vh;
+  }
+.lixo:hover {
+    opacity: 40%;
+}
+
+.tam-card {
+    width: 39rem;
+    background-color: beige;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">    <!--menu-->    <div class="nav justify-content-evenly h5 py-3 traco">        <div class="nav-item">            <ul class="nav-link text-center opacity-25 " aria-current="page" href="#">                <a routerLink="/carrinho">                    <li><img src="../../../../assets/img/carrinho_preto.png" /></li>                    <li class="text-dark">Carrinho</li>                </a>            </ul>        </div>        <div class="nav-item text-center carrinho">            <ul class="nav-link text-dark">                <li><img src="../../../../assets/img/caminhao-bau.png" /></li>                <li>Entrega</li>            </ul>        </div>        <div class="nav-item opacity-25 text-center">            <ul class="nav-link text-dark">                <li><img src="../../../../assets/img/conta.png" /></li>                <li>Finalização</li>            </ul>        </div>    </div>    <!--conteúdo-->    <div class="row g-3"></div>    <div class="row g-3 mt-3 d-flex justify-content-around">        <div class="col-md-5">            <h4>Adicionar endereço</h4>            <div class="row g-3">                <div class="form-group">                    <label for="titulo">Nome do endereço</label>                    <input [(ngModel)]="endereco.nome_endereco" type="text" class="form-control" id="nome"                        placeholder="Nome que você quer dar ao endereço" />                </div>                <div class="form-group col-10">                    <label for="titulo">Rua</label>                    <input [(ngModel)]="endereco.rua" type="text" class="form-control" id="rua"                        placeholder="Digite a rua" />                </div>                <div class="form-group col-2">                    <label for="titulo">Número</label>                    <input [(ngModel)]="endereco.numero" type="number" class="form-control" id="numero"                        placeholder="Digite o número" />                </div>                <div class="form-group col-6">                    <label for="titulo">Complemento</label>                    <input [(ngModel)]="endereco.complemento" type="text" class="form-control" id="complemento"                        placeholder="Digite o complemento" />                </div>                <div class="form-group col-6">                    <label for="texto">Bairro</label>                    <input [(ngModel)]="endereco.bairro" type="text" class="form-control" id="bairro"                        placeholder="Digite o bairro" />                </div>                <div class="form-group col-6">                    <label for="titulo">Cidade</label>                    <input [(ngModel)]="endereco.cidade" type="text" class="form-control" id="cidade"                        placeholder="Digite a cidade" />                </div>                <div class="form-group col-6">                    <label for="titulo">CEP</label>                    <input [(ngModel)]="endereco.cep" type="text" class="form-control" id="cep"                        placeholder="Digite o cep" />                </div>                <div>                    <button class="btn btn-primary" (click)="adicionar()">Cadastrar</button>                </div>            </div>        </div>        <div class="col-md-5 ms-2">            <h4>Meus Endereços</h4>            <div class="col-md-6 ms-2">                <ng-container *ngFor="let item of listaEndereco">                    <div class="form-check py-2" *ngIf="item.cliente.id_cliente == idCliente">                        <input class="form-check-input" type="radio" id="address" (click)=\'escolherEndereco($event)\' value="{{item.id_endereco}}">                        <h6>{{item.nome_endereco}}</h6>                        <label class="form-check-label borda p-2" for="address">                            <div>{{item.cliente.nome}}</div>                            <div>{{item.rua}}, {{item.numero}}</div>                            <div>{{item.complemento}}, {{item.bairro}}</div>                            <div>{{item.cidade}} - SP - {{item.cep}}</div>                            <div class="d-flex justify-content-end">                                <button class="badge rounded-pill bg-danger border-0"                                    (click)="apagar(item.id_endereco)">Delete</button>                            </div>                        </label>                    </div>                </ng-container>            </div>        </div>                <div class="row g-3 mt-3 d-flex justify-content-around">            <!--<div class="col-md-3">            <label for="pagamento" class="form-label">Selecione a forma de pagamento:</label>            <select id="pagamento" name="pagamento" class="form-control" (change)=\'tipoPagamento($event)\'>                <option value="Boleto">Boleto</option>                <option value="Cartão de Crédito">Cartão de Crédito</option>                <option value="Cartão de Débito">Cartão de Débito</option>            </select>            <div>                <h3>Valor total: {{soma | currency:  \'BRL\'}}</h3>            </div>            <ng-container *ngIf="pagamento == \'credito\'">                <label for="dividir" class="form-label">Quantas vezes deseja dividir?</label>                <select id="dividir" class="form-select" (change)=\'dividido($event)\'>                    <option value=1>1x de {{soma | currency:  \'BRL\'}} sem juros</option>                    <option value=2>2x de {{soma/2 | currency:  \'BRL\'}} sem juros</option>                    <option value=3>3x de {{soma/3 | currency:  \'BRL\'}} sem juros</option>                    <option value=4>4x de {{soma/4 | currency:  \'BRL\'}} sem juros</option>                    <option value=5>5x de {{soma/5 | currency:  \'BRL\'}} sem juros</option>                </select>            </ng-container>        </div>--><!--            <div class="col-md-6 ms-2">                <h4>Selecione o endereço de entrega ou <a [routerLink]="[\'/endereco\', idCliente]">cadastre um novo</a>                </h4>-->                <!--<div class="form-check py-2">                <input class="form-check-input" type="radio" id="address">                <h6>Trabalho</h6>                <label class="form-check-label borda p-2" for="address">                    <div>Maria da Silva</div>                    <div>Rua Coronel Euclides Machado, 235</div>                    <div>Ap 37 Torre 3, Jardim das Graças</div>                    <div> São Paulo - SP - 02713-000</div>                </label>            </div>-->            </div>        </div>        <div class="d-flex justify-content-end">            <button class="btn btn-success btn-lg" (click)="pagamento()">Pagamento</button>        </div></div><!--    <div class="col-md-6"><h4>Cadastro de endereço</h4>            <form class="row g-3">                <div class="col-12">                    <label for="tituloEndereco" class="form-label"><h6>Título</h6></label>                    <input type="text" class="form-control" id="tituloEndereco" placeholder="Ex: Casa, Trabalho...">                </div>                <div class="col-md-12">                    <label for="nomeEndereco" class="form-label">Nome Completo</label>                    <input type="text" class="form-control" id="nomeEndereco" placeholder="Maria da Silva">                </div>                <div class="col-10">                    <label for="logradouroEndereco" class="form-label">Logradouro</label>                    <input type="text" class="form-control" id="logradouroEndereco" placeholder="Rua das Rosas">                </div>                <div class="col-2">                    <label for="numeroEndereco" class="form-label">Número</label>                    <input type="text" class="form-control" id="numeroEndereco" placeholder="123">                </div>                <div class="col-6">                    <label for="complementoEndereco" class="form-label">Complemento</label>                    <input type="text" class="form-control" id="complementoEndereco"                        placeholder="Apartamento, Torre, Casa C">                </div>                <div class="col-md-6">                    <label for="bairroEndereco" class="form-label">Bairro</label>                    <input type="text" class="form-control" id="bairroEndereco" placeholder="Jardim das Flores">                </div>                <div class="col-md-5">                    <label for="cidadeEndereco" class="form-label">Cidade</label>                    <input type="text" class="form-control" id="cidadeEndereco" placeholder="São Paulo">                </div>                <div class="col-md-2">                    <label for="estadoEndereco" class="form-label">Estado</label>                    <select id="estadoEndereco" class="form-select">                        <option selected>SP</option>                        <option value="AC">AC</option>                        <option value="AL">AL</option>                        <option value="AP">AP</option>                        <option value="AM">AM</option>                        <option value="BA">BA</option>                        <option value="CE">CE</option>                        <option value="DF">DF</option>                        <option value="ES">ES</option>                        <option value="GO">GO</option>                        <option value="MA">MA</option>                        <option value="MT">MT</option>                        <option value="MS">MS</option>                        <option value="MG">MG</option>                        <option value="PA">PA</option>                        <option value="PB">PB</option>                        <option value="PR">PR</option>                        <option value="PE">PE</option>                        <option value="PI">PI</option>                        <option value="RJ">RJ</option>                        <option value="RN">RN</option>                        <option value="RS">RS</option>                        <option value="RO">RO</option>                        <option value="RR">RR</option>                        <option value="SC">SC</option>                        <option value="SE">SE</option>                        <option value="TO">TO</option>                    </select>                </div>                <div class="col-md-7">                    <label for="cepEndereco" class="form-label">CEP</label>                    <input type="text" class="form-control" id="cepEndereco">                </div>                                <div class="col-6">                    <button type="submit" class="btn btn-primary">Cadastrar Endereço</button>                </div>            </form>        </div>--></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuscaEtiquetaComponent', 'selector': 'app-busca-etiqueta'},{'name': 'BuscaLivroComponent', 'selector': 'app-busca-livro'},{'name': 'CadastrarLivroComponent', 'selector': 'app-cadastrar-livro'},{'name': 'CadEnderecoComponent', 'selector': 'app-cad-endereco'},{'name': 'CarouselInicioComponent', 'selector': 'app-carousel-inicio'},{'name': 'CarrinhoComponent', 'selector': 'app-carrinho'},{'name': 'DeletarLivroComponent', 'selector': 'app-deletar-livro'},{'name': 'EditarLivroComponent', 'selector': 'app-editar-livro'},{'name': 'EnderecoComponent', 'selector': 'app-endereco'},{'name': 'FaleConoscoComponent', 'selector': 'app-fale-conosco'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FuncionarioComponent', 'selector': 'app-funcionario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LivroComponent', 'selector': 'app-livro'},{'name': 'MeusPedidosComponent', 'selector': 'app-meus-pedidos'},{'name': 'MinhaContaComponent', 'selector': 'app-minha-conta'},{'name': 'PagamentoComponent', 'selector': 'app-pagamento'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CadEnderecoComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CadEnderecoComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

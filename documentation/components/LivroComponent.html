@@ -1,0 +1,804 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>frontend documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">frontend documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  LivroComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/template/livro/livro.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-livro</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./livro.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./livro.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#authService" >authService</a>
+                            </li>
+                            <li>
+                                <a href="#carrinho" >carrinho</a>
+                            </li>
+                            <li>
+                                <a href="#livro" >livro</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#adicionarCarrinho" >adicionarCarrinho</a>
+                            </li>
+                            <li>
+                                <a href="#findByIdLivro" >findByIdLivro</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(route: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, livrosService: <a href="../injectables/LivrosService.html" target="_self">LivrosService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/template/livro/livro.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>route</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>livrosService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LivrosService.html" target="_self" >LivrosService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="adicionarCarrinho"></a>
+                    <span class="name">
+                        <span ><b>adicionarCarrinho</b></span>
+                        <a href="#adicionarCarrinho"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>adicionarCarrinho(id_livros: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="41"
+                            class="link-to-prism">src/app/components/template/livro/livro.component.ts:41</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_livros</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="findByIdLivro"></a>
+                    <span class="name">
+                        <span ><b>findByIdLivro</b></span>
+                        <a href="#findByIdLivro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>findByIdLivro(id_livros: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="35"
+                            class="link-to-prism">src/app/components/template/livro/livro.component.ts:35</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id_livros</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="25"
+                            class="link-to-prism">src/app/components/template/livro/livro.component.ts:25</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="authService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>authService</b></span>
+                        <a href="#authService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/template/livro/livro.component.ts:22</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="carrinho"></a>
+                    <span class="name">
+                        <span ><b>carrinho</b></span>
+                        <a href="#carrinho"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>environment.carrinho</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/components/template/livro/livro.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="livro"></a>
+                    <span class="name">
+                        <span ><b>livro</b></span>
+                        <a href="#livro"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Livros.html" target="_self" >Livros</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/template/livro/livro.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ActivatedRoute, Router } from &#x27;@angular/router&#x27;;
+import { Livros } from &#x27;src/app/model/Livros&#x27;;
+import { AuthService } from &#x27;src/app/service/auth.service&#x27;;
+import { LivrosService } from &#x27;src/app/service/livros.service&#x27;;
+import { environment } from &#x27;src/environments/environment.prod&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+
+@Component({
+  selector: &#x27;app-livro&#x27;,
+  templateUrl: &#x27;./livro.component.html&#x27;,
+  styleUrls: [&#x27;./livro.component.css&#x27;]
+})
+export class LivroComponent implements OnInit {
+
+  carrinho &#x3D; environment.carrinho
+  livro: Livros
+
+  constructor(
+    private route: ActivatedRoute,
+    private livrosService: LivrosService,
+    public authService: AuthService
+    ) { }
+
+  ngOnInit(){
+    let id_livros &#x3D; this.route.snapshot.params[&#x27;id_livros&#x27;]
+    this.findByIdLivro(id_livros)
+    
+    console.log(&quot;ID DO LIVRO NA BUSCA: &quot; + id_livros)
+    console.log(&quot;Metodo: &quot; + this.findByIdLivro(id_livros))
+    console.log(&quot;TAMANHO DO CARRINHO ATUALMENTE: &quot; + this.carrinho)
+    console.log(&quot;TAMANHO DO ENVIRONMENT CARRINHO: &quot; + environment.carrinho)
+  }
+
+  findByIdLivro(id_livros: number){
+    this.livrosService.getLivrosById(id_livros).subscribe((resp: Livros) &#x3D;&gt;{
+      this.livro &#x3D; resp
+    })
+  }
+
+  adicionarCarrinho(id_livros: number){
+    this.carrinho.push(id_livros)
+    Swal.fire(&#x27;Produto adicionado ao carrinho!&#x27;)
+    console.log(&quot;TAMANHO DO CARRINHO DEPOIS DE ADICIONAR UM LIVRO NELE: &quot; + this.carrinho.length)
+    console.log(&quot;TAMANHO DO ENVIRONMENT CARRINHO DEPOIS DE ADICIONAR UM CARRINHO NELE: &quot; + environment.carrinho.length)
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+  &lt;!--aqui a casinha apontando para qual livro está mostrando os detalhes --&gt;
+  &lt;a routerLink&#x3D;&quot;/home&quot;&gt;&lt;i class&#x3D;&quot;fa fa-home my-3&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+  &lt;i class&#x3D;&quot;fa fa-angle-right mx-2&quot;&gt;&lt;/i&gt;
+  &lt;small&gt;{{livro.titulo}}&lt;/small&gt;
+  &lt;div class&#x3D;&quot;row ms-4&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-6 my-3 border d-flex justify-content-center&quot;&gt;&lt;img
+              src&#x3D;&quot;{{livro.capa}}&quot; /&gt;&lt;/div&gt;
+
+      &lt;!--livro e compra--&gt;
+      &lt;div class&#x3D;&quot;col-md-6 mt-5 mb-5&quot;&gt;
+          &lt;div class&#x3D;&quot;row d-flex justify-content-center&quot;&gt;
+              &lt;div class&#x3D;&quot;col-md-10&quot;&gt;
+                  &lt;h4&gt;{{livro.titulo}}&lt;/h4&gt;
+                  &lt;p&gt;&lt;strong&gt;ISBN:&lt;/strong&gt; {{livro.isbn}}&lt;/p&gt;
+                  &lt;p *ngIf&#x3D;&quot;authService.logadoFuncionario()&quot;&gt;&lt;strong&gt;Id:&lt;/strong&gt; {{livro.id_livros}}&lt;/p&gt;
+                  &lt;p *ngIf&#x3D;&quot;authService.logadoFuncionario()&quot;&gt;&lt;strong&gt;Quem cadastrou: &lt;/strong&gt;{{livro.funcionario.nome}}&lt;/p&gt;
+                  &lt;p&gt;&lt;strong&gt;Qtde. Estoque: &lt;/strong&gt;{{livro.qtdeEstoque}}&lt;/p&gt;
+                  &lt;!--filtros coloridos indicando a qual categoria pertence um livro--&gt;
+                  &lt;a [routerLink]&#x3D;&quot;[&#x27;/busca-etiqueta&#x27;, livro.etiqueta.id_etiqueta]&quot; class&#x3D;&quot;badge bg-success text-white filtro-badge mx-1&quot;&gt;{{livro.etiqueta.nome}}&lt;/a&gt;
+                  &lt;div class&#x3D;&quot;my-4&quot;&gt;
+                      &lt;h4&gt;&lt;em&gt;&lt;small&gt;&lt;del *ngIf&#x3D;&quot;authService.logadoFuncionario() &#x3D;&#x3D; false&quot; class&#x3D;&quot;del&quot;&gt;{{livro.valorUnitario*2 | currency : &#x27;BRL&#x27;}}&lt;/del&gt;&lt;/small&gt;&lt;/em&gt;&lt;strong&gt;{{livro.valorUnitario | currency : &#x27;BRL&#x27;}}&lt;/strong&gt;
+                      &lt;/h4&gt;
+                      &lt;!--&lt;p *ngIf&#x3D;&quot;authService.logadoFuncionario() &#x3D;&#x3D; false&quot;&gt;Em até 10x de {{livro.valorUnitario/10 | currency : &#x27;BRL&#x27;}} sem juros&lt;/p&gt;--&gt;
+                  &lt;/div&gt;
+                  &lt;div class&#x3D;&quot;d-flex justify-content-start&quot;&gt;
+                      &lt;a *ngIf&#x3D;&quot;authService.logadoFuncionario() &#x3D;&#x3D; false&quot; (click)&#x3D;&quot;adicionarCarrinho(livro.id_livros)&quot; class&#x3D;&quot;btn btn-danger comprar-qtd mx-3&quot;&gt;Comprar&lt;/a&gt;
+                  &lt;/div&gt;
+                  &lt;!--&lt;div class&#x3D;&quot;d-flex pt-4 frete &quot; *ngIf&#x3D;&quot;authService.logadoFuncionario() &#x3D;&#x3D; false&quot;&gt;
+                      &lt;img class&#x3D;&quot;caminhao&quot; src&#x3D;&quot;../../../../assets/img/caminhao-de-entrega.png&quot; /&gt;
+                      &lt;h3 class&#x3D;&quot;mx-2&quot;&gt;Calcular Frete&lt;/h3&gt;
+                  &lt;/div&gt;--&gt;
+                  &lt;div class&#x3D;&quot;d-flex justify-content-start&quot;&gt;
+                    &lt;h1 class&#x3D;&quot;text-align-center text-danger&quot; *ngIf&#x3D;&quot;authService.logadoFuncionario() &amp;&amp; livro.qtdeEstoque&lt;&#x3D;0&quot;&gt;LIVRO SEM ESTOQUE&lt;/h1&gt;
+                  &lt;/div&gt;
+                  &lt;!--&lt;div class&#x3D;&quot;input d-flex &quot; *ngIf&#x3D;&quot;authService.logadoFuncionario() &#x3D;&#x3D; false&quot;&gt;
+                      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control tamanho_input_cep&quot; placeholder&#x3D;&quot;00000-000&quot;
+                          aria-label&#x3D;&quot;cepConsulta&quot; aria-describedby&#x3D;&quot;button-addon2&quot;&gt;
+                      &lt;button class&#x3D;&quot;btn btn-outline-dark ms-2&quot; type&#x3D;&quot;button&quot; id&#x3D;&quot;cepConsulta&quot;&gt;Calcular&lt;/button&gt;
+                  &lt;/div&gt;--&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;!--Descrição e detalhes--&gt;
+&lt;div class&#x3D;&quot;container pt-3&quot;&gt;
+  &lt;h2&gt;Descrição&lt;/h2&gt;
+  &lt;p&gt;{{livro.descricao}}&lt;/p&gt;
+      &lt;h4 class&#x3D;&quot;py-4&quot;&gt;Mais Informações &lt;/h4&gt;
+      &lt;p&gt;Autor(a): {{livro.autor}}&lt;/p&gt;
+      &lt;p&gt;Qtde. Estoque: {{livro.qtdeEstoque}}&lt;/p&gt;
+      &lt;p&gt;ISBN: {{livro.isbn}}&lt;/p&gt;
+      &lt;p&gt;Tags: &lt;a [routerLink]&#x3D;&quot;[&#x27;/busca-etiqueta&#x27;, livro.etiqueta.id_etiqueta]&quot; class&#x3D;&quot;badge bg-success text-white filtro-badge mx-1&quot;&gt;{{livro.etiqueta.nome}}&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./livro.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">img {
+    width: 370px;
+    height: auto;
+}
+
+.border {
+    border: 5px solid #000
+}
+
+.filtro-badge {
+    text-decoration: none;
+}
+
+.filtro-badge:hover {
+    padding: 0.5%;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.del {
+    color: #a9a9a9;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.tam-qtd-item {
+    width: 10vh;
+
+}
+
+.comprar-qtd {
+    width: 40vh;
+}
+.caminhao {
+    width: 60px;
+    height: auto;
+}
+.frete {
+    align-items: end;
+}
+
+.tamanho_input_cep {
+    width: 39vh;
+}
+
+p {
+    text-align: justify;
+}
+
+@media (max-width: 420px) {
+    img {
+        width: 170px;
+        height: auto;
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <!--aqui a casinha apontando para qual livro está mostrando os detalhes -->  <a routerLink="/home"><i class="fa fa-home my-3"></i></a>  <i class="fa fa-angle-right mx-2"></i>  <small>{{livro.titulo}}</small>  <div class="row ms-4">      <div class="col-md-6 my-3 border d-flex justify-content-center"><img              src="{{livro.capa}}" /></div>      <!--livro e compra-->      <div class="col-md-6 mt-5 mb-5">          <div class="row d-flex justify-content-center">              <div class="col-md-10">                  <h4>{{livro.titulo}}</h4>                  <p><strong>ISBN:</strong> {{livro.isbn}}</p>                  <p *ngIf="authService.logadoFuncionario()"><strong>Id:</strong> {{livro.id_livros}}</p>                  <p *ngIf="authService.logadoFuncionario()"><strong>Quem cadastrou: </strong>{{livro.funcionario.nome}}</p>                  <p><strong>Qtde. Estoque: </strong>{{livro.qtdeEstoque}}</p>                  <!--filtros coloridos indicando a qual categoria pertence um livro-->                  <a [routerLink]="[\'/busca-etiqueta\', livro.etiqueta.id_etiqueta]" class="badge bg-success text-white filtro-badge mx-1">{{livro.etiqueta.nome}}</a>                  <div class="my-4">                      <h4><em><small><del *ngIf="authService.logadoFuncionario() == false" class="del">{{livro.valorUnitario*2 | currency : \'BRL\'}}</del></small></em><strong>{{livro.valorUnitario | currency : \'BRL\'}}</strong>                      </h4>                      <!--<p *ngIf="authService.logadoFuncionario() == false">Em até 10x de {{livro.valorUnitario/10 | currency : \'BRL\'}} sem juros</p>-->                  </div>                  <div class="d-flex justify-content-start">                      <a *ngIf="authService.logadoFuncionario() == false" (click)="adicionarCarrinho(livro.id_livros)" class="btn btn-danger comprar-qtd mx-3">Comprar</a>                  </div>                  <!--<div class="d-flex pt-4 frete " *ngIf="authService.logadoFuncionario() == false">                      <img class="caminhao" src="../../../../assets/img/caminhao-de-entrega.png" />                      <h3 class="mx-2">Calcular Frete</h3>                  </div>-->                  <div class="d-flex justify-content-start">                    <h1 class="text-align-center text-danger" *ngIf="authService.logadoFuncionario() && livro.qtdeEstoque<=0">LIVRO SEM ESTOQUE</h1>                  </div>                  <!--<div class="input d-flex " *ngIf="authService.logadoFuncionario() == false">                      <input type="text" class="form-control tamanho_input_cep" placeholder="00000-000"                          aria-label="cepConsulta" aria-describedby="button-addon2">                      <button class="btn btn-outline-dark ms-2" type="button" id="cepConsulta">Calcular</button>                  </div>-->              </div>          </div>      </div>  </div></div><!--Descrição e detalhes--><div class="container pt-3">  <h2>Descrição</h2>  <p>{{livro.descricao}}</p>      <h4 class="py-4">Mais Informações </h4>      <p>Autor(a): {{livro.autor}}</p>      <p>Qtde. Estoque: {{livro.qtdeEstoque}}</p>      <p>ISBN: {{livro.isbn}}</p>      <p>Tags: <a [routerLink]="[\'/busca-etiqueta\', livro.etiqueta.id_etiqueta]" class="badge bg-success text-white filtro-badge mx-1">{{livro.etiqueta.nome}}</a></p></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuscaEtiquetaComponent', 'selector': 'app-busca-etiqueta'},{'name': 'BuscaLivroComponent', 'selector': 'app-busca-livro'},{'name': 'CadastrarLivroComponent', 'selector': 'app-cadastrar-livro'},{'name': 'CadEnderecoComponent', 'selector': 'app-cad-endereco'},{'name': 'CarouselInicioComponent', 'selector': 'app-carousel-inicio'},{'name': 'CarrinhoComponent', 'selector': 'app-carrinho'},{'name': 'DeletarLivroComponent', 'selector': 'app-deletar-livro'},{'name': 'EditarLivroComponent', 'selector': 'app-editar-livro'},{'name': 'EnderecoComponent', 'selector': 'app-endereco'},{'name': 'FaleConoscoComponent', 'selector': 'app-fale-conosco'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FuncionarioComponent', 'selector': 'app-funcionario'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LivroComponent', 'selector': 'app-livro'},{'name': 'MeusPedidosComponent', 'selector': 'app-meus-pedidos'},{'name': 'MinhaContaComponent', 'selector': 'app-minha-conta'},{'name': 'PagamentoComponent', 'selector': 'app-pagamento'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'LivroComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LivroComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
