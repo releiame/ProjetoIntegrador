@@ -18,14 +18,14 @@ export class PedidoService {
   }
 
   getAllPedidos():Observable<Pedido[]> {
-    return this.http.get<Pedido[]>('http://localhost:8080/pedidos')
+    return this.http.get<Pedido[]>('https://releiame.herokuapp.com/pedidos')
   }
 
   post(pedido: Pedido):Observable<Pedido>{
-    return this.http.post<Pedido>('http://localhost:8080/pedidos', pedido)
+    return this.http.post<Pedido>('https://releiame.herokuapp.com/pedidos', pedido)
   }
 
   getPedidoById(id_pedido: number):Observable<Pedido>{
-    return this.http.get<Pedido>(`http://localhost:8080/pedidos/${id_pedido}`, this.token)
+    return this.http.get<Pedido>(`https://releiame.herokuapp.com/pedidos/${id_pedido}`, this.token)
   }
 }

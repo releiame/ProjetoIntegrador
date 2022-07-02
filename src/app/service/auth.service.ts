@@ -21,19 +21,19 @@ export class AuthService {
   }
 
   entrar(clienteLogin:ClienteLogin): Observable<ClienteLogin> {
-    return this.http.post<ClienteLogin>('http://localhost:8080/cliente/logar', clienteLogin)
+    return this.http.post<ClienteLogin>('https://releiame.herokuapp.com/cliente/logar', clienteLogin)
   }
 
   putCliente(cliente: Cliente):Observable<Cliente>{
-    return this.http.put<Cliente>('http://localhost:8080/cliente/atualizar', cliente)
+    return this.http.put<Cliente>('https://releiame.herokuapp.com/cliente/atualizar', cliente)
   }
 
   getClienteById(id_cliente: number){
-    return this.http.get<Cliente>(`http://localhost:8080/cliente/${id_cliente}`)
+    return this.http.get<Cliente>(`https://releiame.herokuapp.com/cliente/${id_cliente}`)
   }
 
   cadastrar(cliente:Cliente):Observable<Cliente> {
-    return this.http.post<Cliente>('http://localhost:8080/cliente/cadastrar', cliente)
+    return this.http.post<Cliente>('https://releiame.herokuapp.com/cliente/cadastrar', cliente)
 
   }
 

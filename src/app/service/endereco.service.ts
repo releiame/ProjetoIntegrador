@@ -18,21 +18,21 @@ export class EnderecoService {
   }
 
   getAllEndereco():Observable<Endereco[]> {
-    return this.http.get<Endereco[]>('http://localhost:8080/endereco', this.token)
+    return this.http.get<Endereco[]>('https://releiame.herokuapp.com/endereco', this.token)
 
   }
 
   getEnderecoById(id_endereco: number):Observable<Endereco>{
-    return this.http.get<Endereco>(`http://localhost:8080/endereco/${id_endereco}`, this.token)
+    return this.http.get<Endereco>(`https://releiame.herokuapp.com/endereco/${id_endereco}`, this.token)
   }
 
   adicionar(endereco: Endereco):Observable<Endereco>{
     console.log('Chegou no método o service')
-    return this.http.post<Endereco>('http://localhost:8080/endereco', endereco, this.token)
+    return this.http.post<Endereco>('https://releiame.herokuapp.com/endereco', endereco, this.token)
   }
 
   delete(id_endereco: number){
-    return this.http.delete(`http://localhost:8080/endereco/${id_endereco}`, this.token)
+    return this.http.delete(`https://releiame.herokuapp.com/endereco/${id_endereco}`, this.token)
   }
 
 }
