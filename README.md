@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.7.
@@ -29,4 +28,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 =======
 # ProjetoIntegrador
 Projeto final do bootcamp oferecido pela Porto Seguro em parceria com a Digital House Brasil
->>>>>>> 842891e5 (Initial commit)
