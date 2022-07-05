@@ -38,15 +38,15 @@ export class AuthService {
   }
 
   cadastrarfuncionario(funcionario: Funcionario):Observable<Funcionario>{
-    return this.http.post<Funcionario>('http://localhost:8080/funcionario/cadastrar_funcionario', funcionario)
+    return this.http.post<Funcionario>('https://releiame.herokuapp.com/funcionario/cadastrar_funcionario', funcionario)
   }
 
   entrarfunc(funcionarioLogin: FuncionarioLogin): Observable<FuncionarioLogin> {
-    return this.http.post<FuncionarioLogin>('http://localhost:8080/funcionario/logar_funcionario', funcionarioLogin)
+    return this.http.post<FuncionarioLogin>('https://releiame.herokuapp.com/funcionario/logar_funcionario', funcionarioLogin)
   }
 
   getByIdFuncionario(id_funcionario: number): Observable<Funcionario> {
-    return this.http.get<Funcionario>(`http://localhost:8080/funcionario/${id_funcionario}`, this.token)
+    return this.http.get<Funcionario>(`https://releiame.herokuapp.com/funcionario/${id_funcionario}`, this.token)
   }
 
   logado(){

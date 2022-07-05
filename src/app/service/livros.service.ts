@@ -40,10 +40,10 @@ export class LivrosService {
   }
 
   deleteLivros(id_livros: number){
-    return this.http.delete(`http://localhost:8080/livros/${id_livros}`, this.token)
+    return this.http.delete(`https://releiame.herokuapp.com/livros/${id_livros}`, this.token)
   }
 
   putLivros(id_livros: number, id_pedido: number){
-    return this.http.put<Livros>(`http://localhost:8080/livros/livro_pedido/livros/${id_livros}/pedido/${id_pedido}`, this.token)
+    return this.http.put<Livros>(`https://releiame.herokuapp.com/livros/livro_pedido/livros/${id_livros}/pedido/${id_pedido}`, this.token)
   }
 }
