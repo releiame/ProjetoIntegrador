@@ -49,8 +49,6 @@ export class EnderecoComponent implements OnInit {
 
     this.endereco.cliente = this.cliente
 
-    console.log(this.endereco.cliente.nome)
-
     this.enderecoService.adicionar(this.endereco).subscribe((resp: Endereco) =>{
       this.endereco = resp
       this.router.navigate(['/home'])

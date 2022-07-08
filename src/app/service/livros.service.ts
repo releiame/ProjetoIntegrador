@@ -31,7 +31,6 @@ export class LivrosService {
   }
 
   cadastrar(livros:Livros):Observable<Livros>{
-    console.log('Chegou no método o service')
     return this.http.post<Livros>('https://releiame.herokuapp.com/livros/cadastrar', livros, this.token)
   }
 

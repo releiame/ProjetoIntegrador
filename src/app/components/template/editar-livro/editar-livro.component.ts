@@ -44,7 +44,6 @@ export class EditarLivroComponent implements OnInit {
 
     this.findByIdLivros(id)
     this.getAllEtiquetas()
-    console.log(this.livro.titulo)
 
   }
 

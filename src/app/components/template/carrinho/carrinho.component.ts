@@ -34,10 +34,6 @@ export class CarrinhoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log("TAMANHO DO ENVIRONMENT CARRINHO: " + environment.carrinho)
-    console.log("TAMANHO DO LISTALIVROS: " + this.listaLivros.length)
-    console.log("TAMANHO DO CARRINHO NO PEDIDO: " + this.carrinho)
-
     this.carrinhoAtt()
     this.findClienteById(environment.id_cliente)
   }

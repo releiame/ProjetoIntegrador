@@ -27,7 +27,6 @@ export class EnderecoService {
   }
 
   adicionar(endereco: Endereco):Observable<Endereco>{
-    console.log('Chegou no método o service')
     return this.http.post<Endereco>('https://releiame.herokuapp.com/endereco', endereco, this.token)
   }
 

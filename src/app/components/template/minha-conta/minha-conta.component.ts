@@ -36,7 +36,6 @@ export class MinhaContaComponent implements OnInit {
     this.authService.getClienteById(environment.id_cliente).subscribe((resp: Cliente) => {
       this.cliente = resp
       this.cliente.senha = ''
-      console.log(this.cliente.nome)
     })
   }
 

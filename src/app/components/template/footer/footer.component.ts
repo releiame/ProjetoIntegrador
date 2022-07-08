@@ -36,9 +36,6 @@ export class FooterComponent implements OnInit {
   }
 
   cadastrarFuncionario() {
-    console.log(this.funcionario.nome)
-    console.log(this.funcionario.codf)
-    console.log(this.funcionario.senha)
     this.authService.cadastrarfuncionario(this.funcionario).subscribe((resp: Funcionario) => {
       this.funcionario = resp
       this.router.navigate(['/home'])

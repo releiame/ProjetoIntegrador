@@ -44,10 +44,6 @@ export class CadastrarLivroComponent implements OnInit {
       this.router.navigate(['/home'])
     }
 
-    console.log(environment.token)
-    console.log(environment.id_funcionario)
-
-
     this.getAllLivros()
     this.getAllEtiquetas()
     

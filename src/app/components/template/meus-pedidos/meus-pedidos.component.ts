@@ -33,8 +33,6 @@ export class MeusPedidosComponent implements OnInit {
   ngOnInit() {
     this.getClienteById(this.idCliente)
     this.getAllPedidos()
-    console.log(this.listaPedidos)
-    console.log(this.idCliente)
   }
 
   getAllPedidos(){

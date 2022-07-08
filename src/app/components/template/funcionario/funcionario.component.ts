@@ -193,9 +193,6 @@ export class FuncionarioComponent implements OnInit {
   }
 
   confirmaEdit(id_etiqueta: number){
-    console.log(this.etiqueta.nome)
-    console.log(this.etiqueta.id_etiqueta)
-    console.log(this.etiqueta.livros)
     this.etiqueta.livros = this.tentando
     this.etiquetaService.putTag(this.etiqueta).subscribe((resp: Etiqueta) =>{
       this.etiqueta = resp
