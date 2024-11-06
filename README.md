@@ -1,7 +1,6 @@
 # :artificial_satellite: Sobre o Projeto Integrador
 Projeto final do bootcamp oferecido pela Porto Seguro em parceria com a Digital House Brasil
 
-:construction::warning: Em desenvolvimento 
 ## Integrantes
 
 * <a href="https://www.linkedin.com/in/alinetiburcio/" target="_blank">Aline Gabriela Tibúrcio</a>
@@ -37,7 +36,7 @@ Diante disso, percebemos a necessidade em desenvolver uma plataforma com intuito
 
 ## 🛠 Tecnologias
 
-As seguintes linguagens de programação foram usadas:
+As linguagens de programação escolhidas para o desenvolvimento desse projeto foram:
 
 ### **Back-end**
 <br>
@@ -68,7 +67,7 @@ As seguintes linguagens de programação foram usadas:
 
 # :framed_picture: Projeto de Interface
 
-Dentre as preocupações para a montagem da interface do sistema, estabelecemos um foco em questões como simplificar a vida dos leitores, e por isso, criamos uma plataforma dinâmica, interativa e acessível e para diversos usuários. Desta forma, o projeto tem uma identidade visual padronizada em todas as telas que são projetadas para funcionamento em desktops e dispositivos móveis.
+Dentre as preocupações para a montagem da interface do sistema, estabelecemos um foco em questões como simplificar a vida dos leitores, e por isso, criamos uma plataforma dinâmica, interativa e acessível para diversos usuários. Desta forma, o projeto tem uma identidade visual padronizada em todas as telas que são projetadas para funcionamento em desktops e dispositivos móveis.
 
 ### :abacus: Diagrama de Fluxo
 
